@@ -1,0 +1,28 @@
+include ./_mixins.jade
+
+doctype html
+html.no-js(lang=lang)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    | !{title}
+    | !{meta}
+    meta(
+      name='viewport',
+      content='width=device-width, initial-scale=1'
+    )
+
+    //- TODO
+    //- link(rel='apple-touch-icon', href='apple-touch-icon.png')
+
+    +stylesheet('/stylesheets/app.css')
+    script(src='/javascripts/lib/modernizr-custom.js')
+  body
+    <!--[if lt IE 9]>!{BROWSER_UPGRADE}<![endif]-->
+
+    #content
+      | !{content}
+
+    script
+      | window.INITIAL_STATE = !{INITIAL_STATE};
+    script(src='/javascripts/app.js')
