@@ -1,10 +1,12 @@
 'use strict';
 
-const {TYPES} = require('../actions/route');
+const {
+  POP_ROUTE
+} = require('../actions/route').TYPES;
 
 function serverError(state = null, action) {
   switch (action.type) {
-  case TYPES.POP_ROUTE:
+  case POP_ROUTE:
     return state ? null : state;
   default:
     return state;

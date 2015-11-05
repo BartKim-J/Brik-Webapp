@@ -95,7 +95,8 @@ let Router = React.createClass({
         history.replaceState(url);
         break;
       default:
-        return;
+        // TODO: error
+        break;
       }
       nextProps.onPopRoute(window.location.pathname);
     }
@@ -136,6 +137,7 @@ let Route = React.createClass({
   },
 
   contextTypes: ROUTE_CONTEXT_TYPES,
+
   childContextTypes: ROUTE_CONTEXT_TYPES,
   getChildContext() {
     let {routePath} = this.context;

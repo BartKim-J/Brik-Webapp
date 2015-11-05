@@ -2,20 +2,24 @@
 
 let Immutable = require('seamless-immutable');
 
-const {TYPES} = require('../actions/route');
+const {
+  PUSH_ROUTE,
+  REPLACE_ROUTE,
+  POP_ROUTE
+} = require('../actions/route').TYPES;
 
 function route(state = null, action) {
-  const {
+  let {
     type,
     url, pathname
   } = action;
 
   switch (type) {
-  case TYPES.PUSH_ROUTE:
+  case PUSH_ROUTE:
     return Immutable({url, urlType: 'PUSH'});
-  case TYPES.REPLACE_ROUTE:
+  case REPLACE_ROUTE:
     return Immutable({url, urlType: 'REPLACE'});
-  case TYPES.POP_ROUTE:
+  case POP_ROUTE:
     return Immutable({pathname});
   default:
     return state;
