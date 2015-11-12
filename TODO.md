@@ -56,7 +56,6 @@ X-UA-Compatible: IE=edge
 - [Customize Modernizr build.](https://modernizr.com/download)
 - DNS prefetching
 - <https://github.com/h5bp/ant-build-script>
-- Override `shouldComponentUpdate` with an implementation that compares the old props and state to their replacements.
 - Remove Jade.
 
 ### Refactoring
