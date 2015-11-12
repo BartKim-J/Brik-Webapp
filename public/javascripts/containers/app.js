@@ -4,6 +4,7 @@ let {connect} = require('react-redux');
 
 let Spend = require('../components/spend');
 
+let {fetchFaqSections} = require('../actions/faqSections');
 let {
   pushRoute, replaceRoute, popRoute
 } = require('../actions/route');
@@ -13,6 +14,7 @@ function mapStateToProps(state) {
 }
 
 let actionCreators = {
+  fetchFaqSections,
   pushRoute, replaceRoute, popRoute
 };
 

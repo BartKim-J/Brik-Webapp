@@ -78,7 +78,7 @@ let Router = React.createClass({
 
   componentDidMount() {
     window.addEventListener('popstate', this.handlePopState);
-    window.setTimeout(() => {
+    setTimeout(() => {
       _Router_.history.init();
     }, 0);
   },

@@ -9,12 +9,15 @@ let Menu = require('./menu');
 let Index = require('./spendIndex');
 let About = require('./about');
 let Jobs = require('./jobs');
-let Faqs = require('./faqs');
+let Faq = require('./faq');
 
 let Spend = React.createClass({
   propTypes: {
+    faqSections: React.PropTypes.object,
     route: React.PropTypes.object,
     serverError: React.PropTypes.object,
+
+    fetchFaqSections: React.PropTypes.func.isRequired,
 
     pushRoute: React.PropTypes.func.isRequired,
     replaceRoute: React.PropTypes.func.isRequired,
@@ -42,6 +45,7 @@ let Spend = React.createClass({
         <ServerError {...serverError} />
       );
     } else {
+      const {faqSections, fetchFaqSections} = this.props;
       return [
         <Route key="index" path="/$">
           <Index />
@@ -52,8 +56,8 @@ let Spend = React.createClass({
         <Route key="jobs" path="/jobs$">
           <Jobs />
         </Route>,
-        <Route key="faqs" path="/faqs$">
-          <Faqs />
+        <Route key="faq" path="/faq$">
+          <Faq sections={faqSections} onEmpty={fetchFaqSections} />
         </Route>,
         <Route key="pageNotFound">
           <PageNotFound />

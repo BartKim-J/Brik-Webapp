@@ -1,0 +1,22 @@
+$Collapse-transitionDuration: 500ms;
+
+$CollapseTarget-negativeInfinite: -9999px;
+
+.CollapseTarget {
+  overflow-y: hidden;
+}
+.CollapseTarget-inner {
+  display: none;
+  transition: margin-top $Collapse-transitionDuration;
+}
+.is-Collapse-active .CollapseTarget-inner {
+  display: block;
+}
+.is-Collapse-active-in .CollapseTarget-inner {
+  margin-top: 0 !important;
+}
+.is-CollapseTarget-init .CollapseTarget-inner {
+  display: block;
+  margin-top: $CollapseTarget-negativeInfinite;
+  transition: none;
+}

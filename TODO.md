@@ -45,13 +45,24 @@ X-UA-Compatible: IE=edge
 - Theme color
 - Touch icons for Chrome Mobile
 
+## Misc
+
+- Get window viewport size without scrollbars.
+- <https://github.com/github/fetch#obtaining-the-response-url>
+
 ## Optimization
 
+- Check performance of React context.
 - [Customize Modernizr build.](https://modernizr.com/download)
 - DNS prefetching
 - <https://github.com/h5bp/ant-build-script>
 - Override `shouldComponentUpdate` with an implementation that compares the old props and state to their replacements.
 - Remove Jade.
+
+### Refactoring
+
+- A better way to house React component level properties.
+- Improve `react-window-resize-listener` to support horizontal/vertical resizing.
 
 ## Responsive Web
 

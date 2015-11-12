@@ -2,6 +2,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  font-weight: 300;
+}
+
 /*
  * Remove `text-shadow` in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -10,6 +14,10 @@ html {
 ::selection {
   background: $selection-bg;
   text-shadow: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /*

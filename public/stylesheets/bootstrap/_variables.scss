@@ -4,9 +4,10 @@
 
 //== Colors
 
+// TODO
 $gray-base:              #000;
 $gray-darker:            lighten($gray-base, 13.5%);
-$gray-dark:              lighten($gray-base, 20%);
+$gray-dark:              #515151;
 $gray:                   lighten($gray-base, 33.5%);
 $gray-light:             lighten($gray-base, 46.7%);
 $gray-lighter:           lighten($gray-base, 93.5%);
@@ -20,7 +21,7 @@ $text-color:            $gray-dark;
 
 //== Typography
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Lato", sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-base:        $font-family-sans-serif;
 
@@ -28,7 +29,7 @@ $font-size-base:          14px;
 $font-size-large:         ceil($font-size-base*1.25);
 $font-size-small:         ceil($font-size-base*0.85);
 
-$font-size-h1:            floor($font-size-base*2.6);
+$font-size-h1:            40px;
 $font-size-h2:            floor($font-size-base*2.15);
 $font-size-h3:            ceil($font-size-base*1.7);
 $font-size-h4:            ceil($font-size-base*1.25);
@@ -42,7 +43,7 @@ $line-height-computed:    floor($font-size-base*$line-height-base);
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit;
-$headings-font-weight:    500;
+$headings-font-weight:    400;
 $headings-line-height:    1.1;
 $headings-color:          inherit;
 
@@ -73,7 +74,7 @@ $screen-md-max:              $screen-lg-min - 1;
 //** Number of columns in the grid
 $grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px;
+$grid-gutter-width:         114px;
 
 //== Container sizes
 

@@ -1,6 +1,7 @@
 'use strict';
 
 let React = require('react');
+let classNames = require('classnames');
 
 let BlankLink = React.createClass({
   propTypes: {
@@ -16,6 +17,17 @@ let BlankLink = React.createClass({
   }
 });
 
+let LinkBlock = React.createClass({
+  render() {
+    const {className, children} = this.props;
+    return (
+      <div className={classNames('LinkBlock', className)}>
+        {children}
+      </div>
+    );
+  }
+});
+
 module.exports = {
-  BlankLink
+  BlankLink, LinkBlock
 };

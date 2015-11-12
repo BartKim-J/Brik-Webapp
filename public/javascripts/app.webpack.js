@@ -1,9 +1,11 @@
 'use strict';
 
+require('isomorphic-fetch');
 require('../../conf');
 
+let thunk = require('redux-thunk');
+let {createStore, applyMiddleware} = require('redux');
 let spendReducer = require('reducers/spend');
-let {createStore} = require('redux');
 let React = require('react');
 let ReactDOM = require('react-dom');
 let {Provider} = require('react-redux');
@@ -33,6 +35,7 @@ if (Modernizr.touchevents) {
   React.initializeTouchEvent(true);
 }
 
+createStore = applyMiddleware(thunk)(createStore);
 let store = createStore(spendReducer, window.INITIAL_STATE);
 
 ReactDOM.render(

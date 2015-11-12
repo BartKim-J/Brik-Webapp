@@ -1,0 +1,219 @@
+$SpendFaq-section-border-color: #dadada;
+$SpendFaq-h3-color: #498ecc;
+$SpendFaq-question-color: #828282;
+$SpendFaq-answer-bg: #f9f9f9;
+$SpendFaq-answer-color: #989898;
+$SpendFaq-container-footer-h2-color: #3c3c3c;
+$SpendFaq-container-footer-h2-p-color: #828282;
+$SpendFaq-emailUsLink-border-color: #cecece;
+$SpendFaq-emailUsLink-color: #c0c0c0;
+
+.SpendFaq {
+  padding: 105px 0 50px;
+}
+.SpendFaq-container {
+  $horizontal-padding: 10.5%;
+
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+}
+
+.SpendFaq-container-header {
+  width: 250px;
+  margin: 0 auto 36px;
+}
+.SpendFaq-h1 {
+  margin: 0;
+}
+.SpendFaq-h1-p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.SpendFaq-sections {
+  margin-right: -18px;
+}
+.SpendFaq-section {
+  padding: 27px 0;
+  border-top: 1px solid $SpendFaq-section-border-color;
+}
+.SpendFaq-section-first {
+  padding-top: 0;
+  border-top: 0;
+}
+.SpendFaq-section-last {
+  padding-bottom: 0;
+}
+.SpendFaq-h3 {
+  margin: 0 0 27px;
+  color: $SpendFaq-h3-color;
+  font-size: 16px;
+  line-height: 1.1875;
+}
+.SpendFaq-qna {
+  margin: 15px 0;
+}
+.SpendFaq-qna-last {
+  margin-bottom: 0;
+}
+.SpendFaq-question,
+.SpendFaq-answer {
+  font-size: 16px;
+  line-height: 1.25;
+}
+.SpendFaq-question {
+  margin: 0;
+  color: $SpendFaq-question-color;
+}
+.SpendFaq-question:hover .SpendFaq-question-inner,
+.SpendFaq-qna.is-Collapse-active .SpendFaq-question-inner {
+  border-bottom: 1px solid;
+}
+.SpendFaq-answer {
+  padding: 14px 12px;
+  background-color: $SpendFaq-answer-bg;
+  color: $SpendFaq-answer-color;
+}
+.is-Collapse-active-in .SpendFaq-answer.CollapseTarget-inner {
+  margin-top: 8px !important;
+}
+.SpendFaq-answer p {
+  margin: 14px 0;
+}
+.SpendFaq-answer > p:first-child {
+  margin-top: 0;
+}
+.SpendFaq-answer > p:last-child {
+  margin-bottom: 0;
+}
+
+.SpendFaq-container-footer {
+  margin-top: 75px;
+}
+.SpendFaq-container-footer-header {
+  margin-bottom: 18px;
+  text-align: center;
+}
+.SpendFaq-container-footer-h2,
+.SpendFaq-container-footer-h2-p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 21px;
+}
+.SpendFaq-container-footer-h2 {
+  color: $SpendFaq-container-footer-h2-color;
+}
+.SpendFaq-container-footer-h2-p {
+  color: $SpendFaq-container-footer-h2-p-color;
+}
+.SpendFaq-container-footer-LinkBlock {
+  margin: 18px 0;
+  text-align: center;
+}
+.SpendFaq-container-footer-LinkBlock-last {
+  margin-bottom: 0;
+}
+.SpendFaq-emailUsLink {
+  display: inline-block;
+  padding: 9.5px 35px;
+  border: 1px solid $SpendFaq-emailUsLink-border-color;
+  border-radius: 18.5px;
+  color: $SpendFaq-emailUsLink-color;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@media (min-width: $screen-md-min) {
+  .SpendFaq {
+    padding: 184px 0 125px;
+  }
+  .SpendFaq-container {
+    width: 75%;
+    max-width: 1000px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .SpendFaq-container-header {
+    width: auto;
+    margin: 0 0 164px;
+  }
+  .SpendFaq-h1-p {
+    font-size: 34px;
+  }
+
+  .SpendFaq-sections {
+    margin: 0 -48px -53px 0;
+  }
+  .SpendFaq-section {
+    padding: 47px 0 53px;
+  }
+  .SpendFaq-section-first {
+    padding-top: 0;
+  }
+  .SpendFaq-col-md-6-section-first {
+    padding-top: 0;
+    border-top: 0;
+  }
+  .SpendFaq-h3 {
+    margin-bottom: 17px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  .SpendFaq-qna {
+    margin: 10px 0;
+  }
+  .SpendFaq-qna-last {
+    margin-bottom: 0;
+  }
+  .SpendFaq-question {
+    font-size: 20px;
+  }
+  .SpendFaq-answer {
+    margin-bottom: 10px;
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+  .is-Collapse-active-in .SpendFaq-answer.CollapseTarget-inner {
+    margin-top: 20px !important;
+  }
+  .SpendFaq-answer p {
+    margin: 16px 0;
+  }
+
+  .SpendFaq-container-footer {
+    margin-top: 109px;
+  }
+  .SpendFaq-container-footer-header {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .SpendFaq-container-footer-h2,
+  .SpendFaq-container-footer-h2-p {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .SpendFaq-container-footer-h2 {
+    margin-bottom: 7px;
+  }
+  .SpendFaq-container-footer-h2-p {
+    margin: 7px 0;
+  }
+  .SpendFaq-container-footer-h2-p-last {
+    margin-bottom: 0;
+  }
+  .SpendFaq-container-footer-LinkBlock {
+    margin: 0;
+    text-align: right;
+  }
+  .SpendFaq-emailUsLink {
+    padding: 14.5px 52px;
+    border-radius: 27.5px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}

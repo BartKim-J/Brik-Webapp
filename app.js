@@ -1,5 +1,6 @@
 'use strict';
 
+require('isomorphic-fetch');
 require('./conf');
 
 let express = require('express');
@@ -47,31 +48,27 @@ app.use('/', routes);
 
 // catch 404
 app.use((req, res, next) => {
-  res.status(404);
-  res.renderApp();
+  res.status(404).renderApp();
 });
 
 // non-404 error handlers
 
-// development error handler
-// will print stacktrace
-if (isDev) {
-  app.use((err, req, res, next) => {
-    let {status, message: title, stack} = err;
-    res.status(status || 500);
-    res.renderError({
-      title, detail: {status, stack}
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
 app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.renderError({
-    title: err.message
-  });
+  let {status, message, stack} = err;
+  res.status(status || 500);
+  if (req.accepts(['html', 'json']) === 'json') {
+    res.json({
+      error: isDev ?
+        {message, stack} :
+        {message}
+    });
+  } else {
+    res.renderError(
+      isDev ?
+        {title: message, detail: {status, stack}} :
+        {title: message}
+    );
+  }
 });
 
 module.exports = app;

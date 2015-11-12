@@ -14,7 +14,7 @@ let SpendMenu = React.createClass({
         <ul>
           <li><Link url="/about">About</Link></li>
           <li><Link url="/jobs">Jobs</Link></li>
-          <li><Link url="/faqs">FAQs</Link></li>
+          <li><Link url="/faq">FAQ</Link></li>
         </ul>
       </div>
     );
