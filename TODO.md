@@ -61,6 +61,7 @@ X-UA-Compatible: IE=edge
 ### Refactoring
 
 - A better way to house React component level properties.
+- Improve `ExtendChildMixin` to leverage React component child.
 - Improve `react-window-resize-listener` to support horizontal/vertical resizing.
 
 ## Responsive Web

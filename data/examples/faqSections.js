@@ -1,6 +1,6 @@
 'use strict';
 
-// `section.answer`: Markdown; support for paragraph checked
+// `entry.answer`: Markdown; support for paragraph checked
 
 module.exports = {
   version: 1,
