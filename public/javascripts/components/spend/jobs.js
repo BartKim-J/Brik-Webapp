@@ -84,7 +84,7 @@ let SpendJobs = React.createClass({
                       <CollapseButton>
                         <div className="SpendJobs-opening-category">
                           {category}
-                          <span className="SpendJobs-opening-category-arrow"></span>
+                          <span className="SpendJobs-opening-category-arrow" />
                         </div>
                       </CollapseButton>
                       <CollapseTarget>
