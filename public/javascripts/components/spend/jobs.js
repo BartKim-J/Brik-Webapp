@@ -78,23 +78,24 @@ let SpendJobs = React.createClass({
                 </div>
               </header>
               <ul className="listUnstyled">
-                {openings.data.map(({category, desc}, i) => (
-                  <Collapse key={i}>
-                    <li className="SpendJobs-opening">
-                      <CollapseButton>
-                        <div className="SpendJobs-opening-category">
-                          {category}
-                          <span className="SpendJobs-opening-category-arrow" />
-                        </div>
-                      </CollapseButton>
-                      <CollapseTarget>
-                        <div className="SpendJobs-opening-desc">
-                          <Markdown>{desc}</Markdown>
-                        </div>
-                      </CollapseTarget>
-                    </li>
-                  </Collapse>
-                ))}
+                {openings.data.asMutable()
+                  .map(({category, desc}, i) => (
+                    <Collapse key={i}>
+                      <li className="SpendJobs-opening">
+                        <CollapseButton>
+                          <div className="SpendJobs-opening-category">
+                            {category}
+                            <span className="SpendJobs-opening-category-arrow" />
+                          </div>
+                        </CollapseButton>
+                        <CollapseTarget>
+                          <div className="SpendJobs-opening-desc">
+                            <Markdown>{desc}</Markdown>
+                          </div>
+                        </CollapseTarget>
+                      </li>
+                    </Collapse>
+                  ))}
               </ul>
             </section>
           </div>

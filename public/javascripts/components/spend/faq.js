@@ -86,42 +86,44 @@ let SpendFaq = React.createClass({
             [col2, 'SpendFaq-col-md-6-section-first', 'SpendFaq-section-last']
           ].map(([col, firstClassName, lastClassName = null], i) => (
             <div className="col-md-6" key={i}>
-              {col.map(({title, entries}, i) => (
-                <section
-                  className={classNames('SpendFaq-section', {
-                    [firstClassName]: i === 0
-                  }, (
-                    lastClassName ? {
-                      [lastClassName]: i === col.length - 1
-                    } : null
-                  ))}
-                  key={i}
-                >
-                  <h3 className="SpendFaq-h3">{title}</h3>
-                  <ul className="listUnstyled">
-                    {entries.map(({question, answer}, i) => (
-                      <Collapse key={i}>
-                        <li
-                          className={classNames('SpendFaq-qna', {
-                            'SpendFaq-qna-last': i === entries.length - 1
-                          })}
-                        >
-                          <CollapseButton>
-                            <p className="SpendFaq-question">
-                              <span className="SpendFaq-question-inner">{question}</span>
-                            </p>
-                          </CollapseButton>
-                          <CollapseTarget>
-                            <div className="SpendFaq-answer">
-                              <Markdown>{answer}</Markdown>
-                            </div>
-                          </CollapseTarget>
-                        </li>
-                      </Collapse>
+              {col.asMutable()
+                .map(({title, entries}, i) => (
+                  <section
+                    className={classNames('SpendFaq-section', {
+                      [firstClassName]: i === 0
+                    }, (
+                      lastClassName ? {
+                        [lastClassName]: i === col.length - 1
+                      } : null
                     ))}
-                  </ul>
-                </section>
-              ))}
+                    key={i}
+                  >
+                    <h3 className="SpendFaq-h3">{title}</h3>
+                    <ul className="listUnstyled">
+                      {entries.asMutable()
+                        .map(({question, answer}, i) => (
+                          <Collapse key={i}>
+                            <li
+                              className={classNames('SpendFaq-qna', {
+                                'SpendFaq-qna-last': i === entries.length - 1
+                              })}
+                            >
+                              <CollapseButton>
+                                <p className="SpendFaq-question">
+                                  <span className="SpendFaq-question-inner">{question}</span>
+                                </p>
+                              </CollapseButton>
+                              <CollapseTarget>
+                                <div className="SpendFaq-answer">
+                                  <Markdown>{answer}</Markdown>
+                                </div>
+                              </CollapseTarget>
+                            </li>
+                          </Collapse>
+                        ))}
+                    </ul>
+                  </section>
+                ))}
             </div>
           ))}
         </div>
