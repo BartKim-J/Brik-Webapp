@@ -10,7 +10,7 @@ let {
 } = require('../collapse');
 
 let Markdown = require('../markdown');
-let {LinkBlock} = require('../tags');
+let {EmailLink, LinkBlock} = require('../tags');
 
 let SpendFaq = React.createClass({
   propTypes: {
@@ -67,7 +67,7 @@ let SpendFaq = React.createClass({
                   className="SpendFaq-container-footer-LinkBlock
                     SpendFaq-container-footer-LinkBlock-last"
                 >
-                  <a className="SpendFaq-emailUsLink" href="mailto:contact@xengineering.co">Email Us</a>
+                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co">Email Us</EmailLink>
                 </LinkBlock>
               </div>
             </div>

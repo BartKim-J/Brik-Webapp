@@ -1,5 +1,5 @@
-h1,
-.h1 {
+h1, .h1,
+h2, .h2 {
   font-weight: 300;
   line-height: 1.2;
 }
@@ -9,6 +9,10 @@ h1,
   .h1 {
     font-size: 52px;
     line-height: 64px;
+  }
+  h2,
+  .h2 {
+    font-size: 30px;
   }
 }
 

@@ -2,12 +2,12 @@
 
 let {combineReducers} = require('redux');
 
-let faqSections = require('./faqSections');
+let data = require('./data');
 let route = require('./route');
 let serverError = require('./serverError');
 
 let spendReducer = combineReducers({
-  faqSections,
+  data,
   route,
   serverError
 });

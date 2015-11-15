@@ -9,7 +9,7 @@ let SpendMenu = React.createClass({
     return (
       <div className="SpendMenu">
         <div className="SpendMenu-logo">
-          <Link url="/">spend.</Link>
+          <Link url="/"><span className="logo">spend.</span></Link>
         </div>
         <ul>
           <li><Link url="/about">About</Link></li>

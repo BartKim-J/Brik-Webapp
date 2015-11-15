@@ -17,6 +17,19 @@ let BlankLink = React.createClass({
   }
 });
 
+let EmailLink = React.createClass({
+  propTypes: {
+    email: React.PropTypes.string.isRequired
+  },
+
+  render() {
+    const {email, className, children} = this.props;
+    return (
+      <a className={className} href={`mailto:${email}`}>{React.Children.count(children) > 0 ? children : email}</a>
+    );
+  }
+});
+
 let LinkBlock = React.createClass({
   render() {
     const {className, children} = this.props;
@@ -29,5 +42,5 @@ let LinkBlock = React.createClass({
 });
 
 module.exports = {
-  BlankLink, LinkBlock
+  BlankLink, EmailLink, LinkBlock
 };

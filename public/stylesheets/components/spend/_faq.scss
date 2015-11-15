@@ -8,9 +8,6 @@ $SpendFaq-container-footer-h2-p-color: #828282;
 $SpendFaq-emailUsLink-border-color: #cecece;
 $SpendFaq-emailUsLink-color: #c0c0c0;
 
-.SpendFaq {
-  padding: 105px 0 50px;
-}
 .SpendFaq-container {
   $horizontal-padding: 10.5%;
 
@@ -20,15 +17,8 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
 
 .SpendFaq-container-header {
   width: 250px;
-  margin: 0 auto 36px;
-}
-.SpendFaq-h1 {
-  margin: 0;
-}
-.SpendFaq-h1-p {
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.2;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .SpendFaq-sections {

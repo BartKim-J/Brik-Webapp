@@ -1,0 +1,182 @@
+$SpendJobs-opening-border-color: #f5f5f5;
+$SpendJobs-opening-color: #8c8c8c;
+$SpendJobs-opening-category-arrow-color: #e4e4e4;
+$SpendJobs-container-footer-color: #8c8c8c;
+
+.SpendJobs-container {
+  $horizontal-padding: 7%;
+
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+}
+
+.SpendJobs-container-header {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.SpendJobs-sections {
+  margin-right: -4px;
+}
+.SpendJobs-section {
+  margin: 84px 0;
+}
+.SpendJobs-section-last {
+  margin-bottom: 0;
+}
+.SpendJobs-section-openRoles-header {
+  margin: 29px 0;
+}
+.SpendJobs-h2 {
+  margin: 18px 0;
+}
+.SpendJobs-section-openRoles-h2 {
+  margin: 0;
+}
+.SpendJobs-section-openRoles-contact {
+  margin: 2.4px 0;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.SpendJobs-p {
+  margin: 1.8em 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.SpendJobs-h2-p {
+  margin-top: 0;
+}
+
+.SpendJobs-opening {
+  border-top: 1px solid $SpendJobs-opening-border-color;
+}
+.SpendJobs-opening-category {
+  position: relative;
+  padding: 21px 30px 21px 6px;
+  color: $SpendJobs-opening-color;
+  font-size: 16px;
+  line-height: 1.1875;
+}
+.SpendJobs-opening-category-arrow {
+  position: absolute;
+  top: 19px;
+  right: 2px;
+  transform-origin: 3px center;
+  border: 11px solid transparent;
+  border-left-color: $SpendJobs-opening-category-arrow-color;
+  transition: transform $Collapse-transitionDuration;
+}
+.is-Collapse-active-in .SpendJobs-opening-category-arrow {
+  transform: rotateZ(90deg);
+}
+.SpendJobs-opening-category-arrow:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -11px;
+  border: 10px solid transparent;
+  border-left-color: $body-bg;
+}
+.SpendJobs-opening-desc {
+  padding: 0 6px;
+  color: $SpendJobs-opening-color;
+  font-size: 15px;
+  line-height: 20px;
+}
+.SpendJobs-opening-desc em {
+  font-weight: 700;
+  font-style: normal;
+}
+.SpendJobs-opening-desc p {
+  margin: 20px 0;
+}
+.SpendJobs-opening-desc p:first-child {
+  margin-top: 0;
+}
+
+.SpendJobs-container-footer {
+  max-width: 310px;
+  margin: 44px auto 0;
+  color: $SpendJobs-container-footer-color;
+  font-size: 16px;
+  line-height: 1.4375;
+}
+
+@media (min-width: $screen-md-min) {
+  .SpendJobs {
+    padding: 184px 0 75px;
+  }
+  .SpendJobs-container {
+    width: 75%;
+    max-width: 1024px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .SpendJobs-container-header {
+    width: auto;
+    margin: 0 0 164px;
+  }
+  .SpendJobs-h1-p {
+    font-size: 34px;
+  }
+
+  .SpendJobs-section {
+    margin: 87px 0;
+  }
+  .SpendJobs-section-last {
+    margin-bottom: 0;
+  }
+  .SpendJobs-section-openRoles-header {
+    margin: 60px 0;
+  }
+  .SpendJobs-h2 {
+    margin: 38px 0;
+  }
+  .SpendJobs-section-openRoles-h2 {
+    margin: 0;
+  }
+  .SpendJobs-section-openRoles-contact {
+    margin: 6px 0 0;
+    font-size: 22px;
+    text-align: right;
+  }
+  .SpendJobs-p {
+    font-size: 20px;
+  }
+
+  .SpendJobs-opening-category {
+    padding: 32px 57px 32px 14px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .SpendJobs-opening-category-arrow {
+    top: 24.5px;
+    right: 1px;
+    transform-origin: 9px center;
+    border-width: 21px;
+  }
+  .SpendJobs-opening-category-arrow:after {
+    top: -20px;
+    left: -21px;
+    border-width: 20px;
+  }
+  .SpendJobs-opening-desc {
+    padding: 0 14px;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .SpendJobs-opening-desc p {
+    margin: 27px 0;
+  }
+
+  .SpendJobs-container-footer {
+    max-width: none;
+    margin: 65px 0 0;
+    font-size: 20px;
+    line-height: 1.55;
+  }
+}

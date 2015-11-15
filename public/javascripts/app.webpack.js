@@ -3,6 +3,8 @@
 require('isomorphic-fetch');
 require('../../conf');
 
+let Immutable = require('seamless-immutable');
+
 let thunk = require('redux-thunk');
 let {createStore, applyMiddleware} = require('redux');
 let spendReducer = require('reducers/spend');
@@ -36,7 +38,10 @@ if (Modernizr.touchevents) {
 }
 
 createStore = applyMiddleware(thunk)(createStore);
-let store = createStore(spendReducer, window.INITIAL_STATE);
+let store = createStore(
+  spendReducer,
+  Immutable(window.INITIAL_STATE)
+);
 
 ReactDOM.render(
   <Provider store={store}>

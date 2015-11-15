@@ -13,11 +13,11 @@ let Faq = require('./faq');
 
 let Spend = React.createClass({
   propTypes: {
-    faqSections: React.PropTypes.object,
+    data: React.PropTypes.object.isRequired,
     route: React.PropTypes.object,
     serverError: React.PropTypes.object,
 
-    fetchFaqSections: React.PropTypes.func.isRequired,
+    fetchData: React.PropTypes.func.isRequired,
 
     pushRoute: React.PropTypes.func.isRequired,
     replaceRoute: React.PropTypes.func.isRequired,
@@ -40,12 +40,17 @@ let Spend = React.createClass({
   },
   renderMain() {
     const {serverError} = this.props;
+
     if (serverError) {
       return (
         <ServerError {...serverError} />
       );
     } else {
-      const {faqSections, fetchFaqSections} = this.props;
+      const {
+        data: {jobOpenings, faqSections},
+        fetchData
+      } = this.props;
+
       return [
         <Route key="index" path="/$">
           <Index />
@@ -54,10 +59,18 @@ let Spend = React.createClass({
           <About />
         </Route>,
         <Route key="jobs" path="/jobs$">
-          <Jobs />
+          <Jobs
+            openings={jobOpenings}
+            onEmpty={() => {
+              fetchData('jobOpenings');
+            }} />
         </Route>,
         <Route key="faq" path="/faq$">
-          <Faq sections={faqSections} onEmpty={fetchFaqSections} />
+          <Faq
+            sections={faqSections}
+            onEmpty={() => {
+              fetchData('faqSections');
+            }} />
         </Route>,
         <Route key="pageNotFound">
           <PageNotFound />
