@@ -3,11 +3,11 @@ $Collapse-transitionDuration: 500ms;
 $CollapseTarget-negativeInfinite: -9999px;
 
 .CollapseTarget {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .CollapseTarget-inner {
   display: none;
-  overflow-y: hidden;
+  overflow: hidden;
   transition: margin-top $Collapse-transitionDuration;
 }
 .is-Collapse-active .CollapseTarget-inner {

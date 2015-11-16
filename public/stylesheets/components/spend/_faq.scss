@@ -13,7 +13,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .SpendFaq-container-header {
@@ -124,6 +124,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
     padding-left: 0;
     margin-right: auto;
     margin-left: auto;
+    overflow: visible;
   }
 
   .SpendFaq-container-header {

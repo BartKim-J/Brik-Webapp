@@ -7,6 +7,7 @@
 ## Accessibility
 
 - accessifyhtml5.js
+- Check `preventDefault`.
 - `humans.txt`
 - Microformats
 
