@@ -38,7 +38,7 @@ let SpendJobs = React.createClass({
     if (openings) {
       const {BRAND} = CONF;
       return (
-        <div className="container SpendJobs-container">
+        <div className="container-fluid SpendJobs-container">
           <header className="SpendJobs-container-header text-center">
             <h1 className="SpendJobs-h1">
               Join <span className="logo">spend.</span><span className="visible-md-inline"> Journey</span>

@@ -37,7 +37,7 @@ let SpendFaq = React.createClass({
   renderContainer() {
     if (this.props.sections) {
       return (
-        <div className="container SpendFaq-container">
+        <div className="container-fluid SpendFaq-container">
           <header className="SpendFaq-container-header text-center">
             <h1 className="SpendFaq-h1">
               F<span className="visible-md-inline">requently </span>A<span className="visible-md-inline">sked </span>Q<span className="visible-md-inline">uestions</span>
@@ -63,10 +63,7 @@ let SpendFaq = React.createClass({
                 </div>
               </div>
               <div className="col-md-6">
-                <LinkBlock
-                  className="SpendFaq-container-footer-LinkBlock
-                    SpendFaq-container-footer-LinkBlock-last"
-                >
+                <LinkBlock className="SpendFaq-container-footer-LinkBlock">
                   <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co">Email Us</EmailLink>
                 </LinkBlock>
               </div>

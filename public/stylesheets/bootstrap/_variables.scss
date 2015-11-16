@@ -79,17 +79,17 @@ $grid-gutter-width:         114px;
 //== Container sizes
 
 // Small screen / tablet
-$container-tablet:             720px + $grid-gutter-width;
+$container-tablet:             750px;
 //** For `$screen-sm-min` and up
 $container-sm:                 $container-tablet;
 
 // Medium screen / desktop
-$container-desktop:            940px + $grid-gutter-width;
+$container-desktop:            970px;
 //** For `$screen-md-min` and up
 $container-md:                 $container-desktop;
 
 // Large screen / wide desktop
-$container-large-desktop:      1140px + $grid-gutter-width;
+$container-large-desktop:      1170px;
 //** For `$screen-lg-min` and up
 $container-lg:                 $container-large-desktop;
 

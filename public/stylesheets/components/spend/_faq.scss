@@ -13,6 +13,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
 
   padding-right: $horizontal-padding;
   padding-left: $horizontal-padding;
+  overflow-x: hidden;
 }
 
 .SpendFaq-container-header {
@@ -98,11 +99,8 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
   color: $SpendFaq-container-footer-h2-p-color;
 }
 .SpendFaq-container-footer-LinkBlock {
-  margin: 18px 0;
+  margin-top: 18px;
   text-align: center;
-}
-.SpendFaq-container-footer-LinkBlock-last {
-  margin-bottom: 0;
 }
 .SpendFaq-emailUsLink {
   display: inline-block;
@@ -197,7 +195,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
     margin-bottom: 0;
   }
   .SpendFaq-container-footer-LinkBlock {
-    margin: 0;
+    margin-top: 0;
     text-align: right;
   }
   .SpendFaq-emailUsLink {
