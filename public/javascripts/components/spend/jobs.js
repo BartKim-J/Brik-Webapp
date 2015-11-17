@@ -11,6 +11,8 @@ let {
 let Markdown = require('../markdown');
 let {EmailLink} = require('../tags');
 
+let Logo = require('./logo');
+
 let SpendJobs = React.createClass({
   propTypes: {
     openings: React.PropTypes.object,
@@ -41,7 +43,7 @@ let SpendJobs = React.createClass({
         <div className="container-fluid SpendJobs-container">
           <header className="SpendJobs-container-header text-center">
             <h1 className="SpendJobs-h1">
-              Join <span className="logo">spend.</span><span className="visible-md-inline"> Journey</span>
+              Join <Logo /><span className="visible-md-inline"> Journey</span>
             </h1>
             <p className="SpendJobs-h1-p">
               {`Working at ${BRAND} is more than a job`}
@@ -50,7 +52,7 @@ let SpendJobs = React.createClass({
           <div className="SpendJobs-sections">
             <section className="SpendJobs-section">
               <h2 className="SpendJobs-h2">
-                What is <span className="logo">spend.</span>?
+                What is <Logo />?
               </h2>
               <p className="SpendJobs-p SpendJobs-h2-p">
                 {`${BRAND}를 만드는 X Engineering은, 많은 사람들에게 가치 있게 사용되는 좋은 기술로 더욱 행복한 세상을 만들고자 하는 IoT 스타트업입니다. 다양한 간편결제 서비스가 존재하는 온라인에서 뿐만 아니라, 전체 상거래의 90% 이상을 차지하는 오프라인 결제분야에서도 간편결제를 제공하고자 ${BRAND}를 개발합니다.`}

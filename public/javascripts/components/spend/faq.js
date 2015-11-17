@@ -1,8 +1,8 @@
 'use strict';
 
 let React = require('react');
-let Helmet = require('react-helmet');
 let classNames = require('classnames');
+let Helmet = require('react-helmet');
 
 let {
   Collapse,

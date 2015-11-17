@@ -10,5 +10,6 @@ function requireData(id) {
 
 module.exports = {
   faqSections: requireData('faqSections'),
-  jobOpenings: requireData('jobOpenings')
+  jobOpenings: requireData('jobOpenings'),
+  team: requireData('team')
 };

@@ -177,9 +177,9 @@ let Link = React.createClass({
   },
 
   render() {
-    const {url, children} = this.props;
+    const {url, className, children} = this.props;
     return (
-      <a href={url} onClick={this.handleClick}>{children}</a>
+      <a className={className} href={url} onClick={this.handleClick}>{children}</a>
     );
   }
 });

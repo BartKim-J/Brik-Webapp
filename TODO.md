@@ -62,8 +62,11 @@ X-UA-Compatible: IE=edge
 ### Refactoring
 
 - A better way to house React component level properties.
+- Check `getDuration()` of `css-animation` module.
 - Improve `ExtendChildMixin` to leverage React component child.
 - Improve `react-window-resize-listener` to support horizontal/vertical resizing.
+- Modularize `SpendAbout-member`.
+- Refactor media query breakpoints.
 
 ## Responsive Web
 
@@ -93,4 +96,5 @@ X-UA-Compatible: IE=edge
 
 - <https://www.paulirish.com/2009/avoiding-the-fouc-v3/>
 - Native style momentum scrolling in iOS 5+
+- Prevent tooltip from hiding when hover.
 - Print styles (and related utilities from Bootstrap)

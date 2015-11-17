@@ -2,8 +2,8 @@
 
 let React = require('react');
 
-let {Router, Route} = require('../router');
 let {PageNotFound, ServerError} = require('../errors');
+let {Router, Route} = require('../router');
 
 let Menu = require('./menu');
 let Index = require('./spendIndex');
@@ -47,7 +47,7 @@ let Spend = React.createClass({
       );
     } else {
       const {
-        data: {jobOpenings, faqSections},
+        data: {jobOpenings, faqSections, team},
         fetchData
       } = this.props;
 
@@ -56,7 +56,11 @@ let Spend = React.createClass({
           <Index />
         </Route>,
         <Route key="about" path="/about$">
-          <About />
+          <About
+            team={team}
+            onEmpty={() => {
+              fetchData('team');
+            }} />
         </Route>,
         <Route key="jobs" path="/jobs$">
           <Jobs

@@ -1,0 +1,227 @@
+$SpendAbout-jobsLink-border-color: #cecece;
+$SpendAbout-jobsLink-color: #c0c0c0;
+
+$SpendAbout-member-RImage-hover-border-color: #cdcdcd;
+$SpendAbout-member-detail-arrow-color: #fff;
+$SpendAbout-member-detail-overlay-shadow-color: rgba(231,231,231, 0.5);
+$SpendAbout-member-detail-overlay-bg: #fff;
+$SpendAbout-member-detail-name-color: #777;
+$SpendAbout-member-detail-p-color: #919191;
+
+.SpendAbout {
+  padding: 105px 0 65px;
+}
+.SpendAbout-container {
+  $horizontal-padding: 8.5%;
+
+  padding-right: $horizontal-padding;
+  padding-left: $horizontal-padding;
+  overflow: hidden;
+}
+
+.SpendAbout-container-header {
+  max-width: 350px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.SpendAbout-team {
+  max-width: 310px;
+  margin: 98px auto 75px;
+}
+.SpendAbout-team-list {
+  margin: 0 -15px -40px;
+}
+.SpendAbout-member {
+  width: 50%;
+  max-width: 170px;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+.SpendAbout-member-caption {
+  margin: 20px -15px 0;
+}
+.SpendAbout-member-name,
+.SpendAbout-member-role {
+  font-size: 12px;
+  line-height: 1.25;
+}
+.SpendAbout-member-name {
+  font-weight: 700;
+}
+
+.SpendAbout-container-footer-header {
+  width: 260px;
+  margin: 0 auto 25px;
+  text-align: center;
+}
+.SpendAbout-container-footer-h2,
+.SpendAbout-container-footer-h2-p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.SpendAbout-container-footer-h2 {
+  font-weight: 700;
+}
+.SpendAbout-container-footer-LinkBlock {
+  margin-top: 25px;
+  text-align: center;
+}
+.SpendAbout-jobsLink {
+  display: inline-block;
+  padding: 14.5px 38px;
+  border: 1px solid $SpendAbout-jobsLink-border-color;
+  border-radius: 26px;
+  color: $SpendAbout-jobsLink-color;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+@media (min-width: 579px) {
+  .SpendAbout-team {
+    max-width: 480px;
+  }
+}
+@media (min-width: 784px) {
+  .SpendAbout-team {
+    max-width: 650px;
+  }
+}
+@media (min-width: $screen-md-min) {
+  .SpendAbout {
+    padding: 184px 0 80px;
+  }
+  .SpendAbout-container {
+    width: 75%;
+    min-width: 828px;
+    max-width: 928px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: visible;
+  }
+
+  .SpendAbout-container-header {
+    max-width: none;
+    margin: 0 0 119px;
+  }
+  .SpendAbout-h1-p {
+    font-size: 34px;
+  }
+
+  .SpendAbout-team {
+    max-width: none;
+    margin: 119px 0 90px;
+  }
+  .SpendAbout-team-list {
+    margin: 0 -28.5px -42px;
+  }
+  .SpendAbout-member {
+    width: 20%;
+    max-width: 197px;
+    padding: 0 28.5px;
+    margin-bottom: 42px;
+  }
+  .SpendAbout-member-RImage {
+    position: relative;
+    cursor: help;
+  }
+  .SpendAbout-member-RImage:after {
+    content: "";
+    position: absolute;
+    top: -7.857142857142858%;
+    right: -7.857142857142858%;
+    bottom: -7.857142857142858%;
+    left: -7.857142857142858%;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transform: scale3d(0.8641975308641975, 0.8641975308641975, 1);
+    transition: border-color 1s, transform 1s;
+  }
+  .SpendAbout-member-RImage:hover:after {
+    border-color: $SpendAbout-member-RImage-hover-border-color;
+    transform: scale3d(1,1,1);
+  }
+  .SpendAbout-member-detail.rc-tooltip-placement-top {
+    padding-bottom: 25px;
+  }
+  .SpendAbout-member-detail.rc-tooltip-placement-bottom {
+    padding-top: 25px;
+  }
+  .SpendAbout-member-detail .rc-tooltip-arrow {
+    border-width: 14px;
+  }
+  .SpendAbout-member-detail.rc-tooltip-placement-top .rc-tooltip-arrow,
+  .SpendAbout-member-detail.rc-tooltip-placement-bottom .rc-tooltip-arrow {
+    position: absolute;
+    left: 50%;
+    margin-left: -14px;
+  }
+  .SpendAbout-member-detail.rc-tooltip-placement-top .rc-tooltip-arrow {
+    bottom: -3px;
+    border-top-color: $SpendAbout-member-detail-arrow-color;
+  }
+  .SpendAbout-member-detail.rc-tooltip-placement-bottom .rc-tooltip-arrow {
+    top: -3px;
+    border-bottom-color: $SpendAbout-member-detail-arrow-color;
+  }
+  .SpendAbout-member-detail-overlay {
+    width: 200px;
+    padding: 27px 12px 27px 30px;
+    border-radius: 13px;
+    box-shadow: 0 2px 4px 4px $SpendAbout-member-detail-overlay-shadow-color;
+    background-color: $SpendAbout-member-detail-overlay-bg;
+  }
+  .SpendAbout-member-detail-overlay-header {
+    height: 30px;
+    margin-bottom: 17px;
+  }
+  .SpendAbout-member-detail-name {
+    color: $SpendAbout-member-detail-name-color;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .SpendAbout-member-detail-link {
+    margin-left: 10px;
+    font-size: 21px;
+    line-height: 30px;
+  }
+  .SpendAbout-member-detail-p {
+    margin: 17px 0;
+    color: $SpendAbout-member-detail-p-color;
+    font-size: 12px;
+    line-height: 19px;
+  }
+  .SpendAbout-member-detail-p-last {
+    margin-bottom: 0;
+  }
+  .SpendAbout-member-caption {
+    margin: 21px -28.5px 0;
+  }
+
+  .SpendAbout-container-footer {
+    margin-top: 90px;
+  }
+  .SpendAbout-container-footer-header {
+    width: auto;
+    margin: 13px 0 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .SpendAbout-container-footer-h2 {
+    display: inline-block;
+    padding-right: 20px;
+    border-right: 2px solid;
+    margin-right: 20px;
+  }
+  .SpendAbout-container-footer-h2-p {
+    display: inline;
+  }
+  .SpendAbout-container-footer-LinkBlock {
+    margin-top: 0;
+    text-align: right;
+  }
+}

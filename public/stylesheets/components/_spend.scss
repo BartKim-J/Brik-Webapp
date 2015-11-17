@@ -1,27 +1,32 @@
-.logo {
-  font-weight: 900;
-  letter-spacing: -0.01em;
-}
+@import "spend/logo";
 
 .SpendFaq,
 .SpendJobs {
   padding: 105px 0 50px;
 }
+.SpendAbout-container-header,
 .SpendFaq-container-header,
 .SpendJobs-container-header {
   margin-top: 0;
   margin-bottom: 36px;
 }
+.SpendAbout-h1,
 .SpendFaq-h1,
 .SpendJobs-h1 {
   margin: 0;
 }
+.SpendAbout-h1-p,
 .SpendFaq-h1-p,
 .SpendJobs-h1-p {
   margin: 0;
   font-size: 20px;
   line-height: 1.2;
 }
+.SpendAbout-container-footer,
+.SpendFaq-container-footer {
+  margin-top: 75px;
+}
 
+@import "spend/about";
 @import "spend/faq";
 @import "spend/jobs";

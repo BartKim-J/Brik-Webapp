@@ -1,8 +1,8 @@
 'use strict';
 
 let React = require('react');
-let {WindowResizeListener} = require('react-window-resize-listener');
 let classNames = require('classnames');
+let {WindowResizeListener} = require('react-window-resize-listener');
 
 let ExtendChildMixin = require('../mixins/extendChild');
 

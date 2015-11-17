@@ -5,7 +5,7 @@ let router = express.Router();
 
 let Immutable = require('seamless-immutable');
 
-let {faqSections, jobOpenings} = require('../data');
+let {faqSections, jobOpenings, team} = require('../data');
 
 function makeRoute(data) {
   return ((req, res, next) => {
@@ -24,10 +24,11 @@ function makeRoute(data) {
   });
 }
 
-router.get(/^\/(?:about)?$/, (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.renderApp();
 });
 
+router.get('/about', makeRoute({team}));
 router.get('/jobs', makeRoute({jobOpenings}));
 router.get('/faq', makeRoute({faqSections}));
 

@@ -27,6 +27,9 @@ function fetchData(key) {
   case 'jobOpenings':
     url = '/jobs';
     break;
+  case 'team':
+    url = '/about';
+    break;
   default:
     // TODO: error
     break;
