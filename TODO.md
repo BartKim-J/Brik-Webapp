@@ -63,7 +63,6 @@ X-UA-Compatible: IE=edge
 
 - A better way to house React component level properties.
 - Check `getDuration()` of `css-animation` module.
-- Improve `ExtendChildMixin` to leverage React component child.
 - Improve `react-window-resize-listener` to support horizontal/vertical resizing.
 - Modularize `SpendAbout-member`.
 - Refactor media query breakpoints.

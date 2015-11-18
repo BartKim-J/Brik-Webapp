@@ -5,7 +5,6 @@ let classNames = require('classnames');
 
 let ExtendChildMixin = {
   extendChild(props) {
-    // TODO: reuse `child`
     let child = React.Children.only(this.props.children);
     const childProps = child.props;
     for (let key in props) {
