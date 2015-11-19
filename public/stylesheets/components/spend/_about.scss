@@ -135,14 +135,14 @@ $SpendAbout-member-detail-p-color: #919191;
     right: -7.857142857142858%;
     bottom: -7.857142857142858%;
     left: -7.857142857142858%;
+    transform: scale3d(0.8641975308641975, 0.8641975308641975, 1);
     border: 1px solid transparent;
     border-radius: 50%;
-    transform: scale3d(0.8641975308641975, 0.8641975308641975, 1);
-    transition: border-color 1s, transform 1s;
+    transition: transform 1s, border-color 1s;
   }
   .SpendAbout-member-RImage:hover:after {
-    border-color: $SpendAbout-member-RImage-hover-border-color;
     transform: scale3d(1,1,1);
+    border-color: $SpendAbout-member-RImage-hover-border-color;
   }
   .SpendAbout-member-detail.rc-tooltip-placement-top {
     padding-bottom: 25px;

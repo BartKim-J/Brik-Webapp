@@ -33,11 +33,8 @@ let noop = require('lodash/utility/noop');
   });
 })(window, noop);
 
-if (Modernizr.touchevents) {
-  React.initializeTouchEvent(true);
-}
-
 createStore = applyMiddleware(thunk)(createStore);
+
 let store = createStore(
   spendReducer,
   Immutable(window.INITIAL_STATE)
