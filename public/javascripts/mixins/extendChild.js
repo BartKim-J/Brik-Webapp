@@ -2,27 +2,26 @@
 
 let React = require('react');
 let classNames = require('classnames');
+let assign = require('lodash/object/assign');
 
 let ExtendChildMixin = {
   extendChild(props) {
     let child = React.Children.only(this.props.children);
-    const childProps = child.props;
-    for (let key in props) {
-      let prop = props[key];
+
+    assign(props, child.props, (prop, childProp, key) => {
       if (key.startsWith('on')) {
-        let childHandler = childProps[key];
-        if (childHandler) {
-          let handler = prop;
-          prop = (e => {
-            childHandler(e);
-            handler(e);
+        if (childProp) {
+          return (e => {
+            childProp(e);
+            prop(e);
           });
         }
       } else if (key === 'className') {
-        prop = classNames(childProps.className, prop);
+        return classNames(prop, childProp);
       }
-      props[key] = prop;
-    }
+      return prop || childProp;
+    });
+
     return React.cloneElement(child, props);
   }
 };

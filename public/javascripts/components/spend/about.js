@@ -109,7 +109,11 @@ let SpendAbout = React.createClass({
       </div>
     );
   },
-  renderMemberImage({name, image, links, desc}) {
+  renderMemberImage({
+    name, image,
+    links: {twitter = null, facebook = null},
+    desc
+  }) {
     const {windowWidth} = this.state;
     let rImageEl = (
       <RImage
@@ -123,7 +127,11 @@ let SpendAbout = React.createClass({
           <div className="SpendAbout-member-detail-overlay">
             <header className="SpendAbout-member-detail-overlay-header">
               <span className="SpendAbout-member-detail-name">{name}</span>
-              {this.renderMemberLinks(links)}
+              {[['twitter', twitter], ['facebook', facebook]]
+                .filter(([name, data]) => data)
+                .map(([name, data]) => (
+                  <BlankLink className="SpendAbout-member-detail-link" href={data} key={name}><i className={`fa fa-${name}`} /></BlankLink>
+                ))}
             </header>
             <p
               className="SpendAbout-member-detail-p
@@ -139,18 +147,6 @@ let SpendAbout = React.createClass({
         {rImageEl}
       </Tooltip>) :
       rImageEl;
-  },
-  renderMemberLinks({twitter = null, facebook = null}) {
-    let links = [];
-    [['twitter', twitter], ['facebook', facebook]]
-      .forEach(([name, data = null]) => {
-        if (data) {
-          links.push(
-            <BlankLink className="SpendAbout-member-detail-link" href={data} key={name}><i className={`fa fa-${name}`} /></BlankLink>
-          );
-        }
-      });
-    return links;
   }
 });
 

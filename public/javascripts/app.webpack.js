@@ -13,10 +13,10 @@ let ReactDOM = require('react-dom');
 let {Provider} = require('react-redux');
 let App = require('containers/app');
 
-const NOOP = (() => {});
+let noop = require('lodash/utility/noop');
 
 // Avoid `console` errors in browsers that lack a console.
-((window, NOOP) => {
+((window, noop) => {
   let methods = [
     'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
     'exception', 'group', 'groupCollapsed', 'groupEnd', 'info',
@@ -28,10 +28,10 @@ const NOOP = (() => {});
   methods.forEach(method => {
     // Only stub undefined methods.
     if (!(console[method])) {
-      console[method] = NOOP;
+      console[method] = noop;
     }
   });
-})(window, NOOP);
+})(window, noop);
 
 if (Modernizr.touchevents) {
   React.initializeTouchEvent(true);

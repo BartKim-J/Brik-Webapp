@@ -2,6 +2,7 @@
 
 let React = require('react');
 let classNames = require('classnames');
+let pick = require('lodash/object/pick');
 
 const IMAGE_PROP_TYPES = {
   src: React.PropTypes.string.isRequired,
@@ -24,16 +25,11 @@ let RImage = React.createClass({
   propTypes: IMAGE_PROP_TYPES,
 
   render() {
-    const {props} = this;
-    const {src, width, height, alt, className} = props;
-    const handlerProps = {};
-
-    for (let key in props) {
-      if (key.startsWith('on')) {
-        handlerProps[key] = props[key];
-      }
-    }
-
+    const {src, width, height, alt, className} = this.props;
+    const handlerProps = pick(
+      this.props,
+      (value, key) => key.startsWith('on')
+    );
     return (
       <span
         className={classNames('RImage', className)}
