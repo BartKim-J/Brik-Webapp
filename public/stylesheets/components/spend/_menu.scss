@@ -1,0 +1,187 @@
+$SpendMenu-transitionDuration: 500ms;
+$SpendMenu-scrolling-border-color: #d9d9d9;
+$SpendMenu-scrolling-bg: rgba(#fff, 0.95);
+$SpendMenu-open-bg: #fff;
+$SpendMenu-Logo-color: #3a3a3a;
+$SpendMenu-button-color: #3a3a3a;
+$SpendMenu-item-link-border-color: #d5d5d5;
+$SpendMenu-item-link-color: #383838;
+$SpendMenu-item-link-screen-md-color: #707070;
+$SpendMenu-socialLink-color: #383838;
+
+.SpendMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $SpendMenu-z-index;
+  padding: 0 7% 0 8.5%;
+  border-bottom: 1px solid $SAFE-TRANSPARENT;
+  background-color: $SAFE-TRANSPARENT;
+  transition:
+    transform $SpendMenu-transitionDuration,
+    border-bottom-color $SpendMenu-transitionDuration,
+    background-color $SpendMenu-transitionDuration;
+}
+.is-SpendMenu-scrolling {
+  transform: translate3d(0,-5px,0);
+  border-bottom-color: $SpendMenu-scrolling-border-color;
+  background-color: $SpendMenu-scrolling-bg;
+}
+.is-SpendMenu-open {
+  bottom: 0;
+  transform: translate3d(0,0,0);
+  background-color: $SpendMenu-open-bg;
+}
+.SpendMenu-inner {
+  padding: 16px 0;
+}
+.SpendMenu-Logo {
+  font-size: 33px;
+  line-height: 40px;
+}
+.SpendMenu-Logo-link {
+  color: $SpendMenu-Logo-color;
+}
+.SpendMenu-nav {
+  float: right;
+}
+.is-SpendMenu-open .SpendMenu-nav {
+  float: none;
+}
+.SpendMenu-button {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 33px;
+  margin-top: 5px;
+}
+.SpendMenu-button-bar {
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background-color: $SpendMenu-button-color;
+  transition: transform 500ms;
+}
+.SpendMenu-button-bar-1,
+.SpendMenu-button-bar-2,
+.SpendMenu-button-bar-3 {
+  position: absolute;
+  left: 0;
+}
+.SpendMenu-button-bar-1 {
+  top: 6px;
+}
+.SpendMenu-button-bar-2 {
+  top: 15px;
+}
+.SpendMenu-button-bar-3 {
+  top: 24px;
+}
+.is-SpendMenu-open .SpendMenu-button-bar-1 {
+  transform: translate3d(0,9px,0) rotateZ(45deg);
+}
+.is-SpendMenu-open .SpendMenu-button-bar-2 {
+  transform: rotateZ(135deg);
+  transition-delay: 100ms;
+}
+.is-SpendMenu-open .SpendMenu-button-bar-3 {
+  transform: translate3d(0,-9px,0) rotateZ(225deg);
+  transition-delay: 200ms;
+}
+.SpendMenu-lists {
+  display: none;
+}
+.is-SpendMenu-open .SpendMenu-lists {
+  display: block;
+  clear: left;
+  padding: 54px 0;
+  margin-right: 19px;
+}
+.SpendMenu-items {
+  margin-bottom: 32px;
+}
+.SpendMenu-item-link {
+  display: block;
+  padding: 0 11px;
+  border-bottom: 1px solid $SpendMenu-item-link-border-color;
+  color: $SpendMenu-item-link-color;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 2.4;
+}
+.SpendMenu-socialLink-items {
+  height: 26px;
+  margin: 32px 22px 0;
+  font-size: 26px;
+  line-height: 1;
+}
+.SpendMenu-socialLink-item {
+  margin-right: 26px;
+}
+.SpendMenu-socialLink-item-last {
+  margin-right: 0;
+}
+.SpendMenu-socialLink {
+  color: $SpendMenu-socialLink-color;
+}
+
+@media (min-width: $screen-md-min) {
+  .SpendMenu {
+    padding: 0;
+  }
+  .is-SpendMenu-open {
+    bottom: auto;
+    background-color: $SAFE-TRANSPARENT;
+  }
+  .is-SpendMenu-scrolling.is-SpendMenu-open {
+    transform: translate(0,-5px,0);
+    background-color: $SpendMenu-scrolling-bg;
+  }
+  .SpendMenu-inner {
+    width: 75%;
+    max-width: 1200px;
+    padding: 43px 0;
+    margin: 0 auto;
+  }
+  .SpendMenu-nav {
+    margin: 11px 10px 0 0;
+  }
+  .is-SpendMenu-open .SpendMenu-nav {
+    float: right;
+  }
+  .SpendMenu-button {
+    display: none;
+  }
+  .SpendMenu-lists {
+    display: block;
+  }
+  .is-SpendMenu-open .SpendMenu-lists {
+    clear: none;
+    padding: 0;
+    margin-right: 0;
+  }
+  .SpendMenu-items {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .SpendMenu-item {
+    float: left;
+    margin-right: 30px;
+  }
+  .SpendMenu-item-last {
+    margin-right: 0;
+  }
+  .SpendMenu-item-link {
+    display: inline;
+    padding: 0;
+    border-bottom: 0;
+    color: $SpendMenu-item-link-screen-md-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.1875;
+  }
+  .SpendMenu-socialLink-items {
+    display: none;
+  }
+}
