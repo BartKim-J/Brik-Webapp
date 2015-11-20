@@ -104,6 +104,12 @@ let Router = React.createClass({
   shouldComponentUpdate(nextProps, nextState) {
     return !!(nextProps.route.pathname);
   },
+  componentDidUpdate(prevProps, prevState) {
+    const {route} = this.props;
+    if (prevProps.route !== route && route.pathname) {
+      window.scroll(0, 0);
+    }
+  },
   componentWillUnmount() {
     window.removeEventListener('popstate', this.handlePopState);
   },

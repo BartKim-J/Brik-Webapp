@@ -79,7 +79,7 @@ let SpendAbout = React.createClass({
               </div>
               <div className="col-md-4">
                 <LinkBlock className="SpendAbout-container-footer-LinkBlock">
-                  <Link className="SpendAbout-jobsLink" url="/about">View Openings</Link>
+                  <Link className="SpendAbout-jobsLink" url="/jobs">View Openings</Link>
                 </LinkBlock>
               </div>
             </div>
@@ -129,11 +129,11 @@ let SpendAbout = React.createClass({
           <div className="SpendAbout-member-detail-overlay">
             <header className="SpendAbout-member-detail-overlay-header">
               <span className="SpendAbout-member-detail-name">{name}</span>
-              {[['twitter', twitter], ['facebook', facebook]]
+              {/* [['twitter', twitter], ['facebook', facebook]]
                 .filter(([name, data]) => data)
                 .map(([name, data]) => (
                   <BlankLink className="SpendAbout-member-detail-link" href={data} key={name}><i className={`fa fa-${name}`} /></BlankLink>
-                ))}
+                )) */}
             </header>
             <p
               className="SpendAbout-member-detail-p

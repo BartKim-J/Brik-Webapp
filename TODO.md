@@ -1,6 +1,5 @@
 # TODO
 
-- Check [HTML5 Boilerplate Favicon and Apple Touch Icon PSD-Template](https://drublic.de/blog/html5-boilerplate-favicons-psd-template/).
 - <https://github.com/h5bp/mobile-boilerplate>
 - Licensing
 
@@ -41,10 +40,8 @@ X-UA-Compatible: IE=edge
 
 ## Integrations
 
-- IE specifics (eg. `browserconfig.xml`)
+- IE specifics
 - Social networks
-- Theme color
-- Touch icons for Chrome Mobile
 
 ## Misc
 
