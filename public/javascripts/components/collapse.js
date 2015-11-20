@@ -181,7 +181,7 @@ let CollapseTarget = React.createClass({
     } else if (this._windowWidth !== windowWidth) {
       if (this.context.isActive()) {
         this.calcHiddenHeight();
-      } else {
+      } else if (this.state.hiddenHeight) {
         this.setState({hiddenHeight: null});
       }
     }

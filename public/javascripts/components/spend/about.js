@@ -23,7 +23,7 @@ let SpendAbout = React.createClass({
 
   getInitialState() {
     return {
-      windowWidth: null
+      isTooltip: false
     };
   },
 
@@ -35,8 +35,10 @@ let SpendAbout = React.createClass({
   },
 
   handleWindowResize(windowSize) {
-    let {windowWidth} = windowSize;
-    this.setState({windowWidth});
+    let isTooltip = (windowSize.windowWidth >= 992);
+    if (this.state.isTooltip !== isTooltip) {
+      this.setState({isTooltip});
+    }
   },
 
   render() {
@@ -114,13 +116,12 @@ let SpendAbout = React.createClass({
     links: {twitter = null, facebook = null},
     desc
   }) {
-    const {windowWidth} = this.state;
     let rImageEl = (
       <RImage
         className="SpendAbout-member-RImage"
         src={image} width={140} height={140} alt={name} />
     );
-    return (windowWidth && windowWidth >= 992) ?
+    return this.state.isTooltip ?
       (<Tooltip
         overlayClassName="SpendAbout-member-detail"
         overlay={
