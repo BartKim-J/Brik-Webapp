@@ -27,6 +27,17 @@ let SpendMenu = React.createClass({
     };
   },
 
+  componentDidUpdate(prevProps, prevState) {
+    const {isOpen: isOpenPrev} = prevProps;
+    const {isOpen} = this.props;
+    let docStyle = document.documentElement.style;
+    if (!isOpenPrev && isOpen) {
+      docStyle.overflow = 'hidden';
+    } else if (isOpenPrev && !isOpen) {
+      docStyle.overflow = '';
+    }
+  },
+
   handleButtonClick(e) {
     this.props.onToggle();
   },
@@ -34,12 +45,6 @@ let SpendMenu = React.createClass({
     const {isOpen, onToggle} = this.props;
     if (isOpen && screen >= SCREEN_NAMES.MD) {
       onToggle();
-    }
-  },
-  handleWheel(e) {
-    if (this.props.isOpen) {
-      e.preventDefault();
-      e.stopPropagation();
     }
   },
   handleWindowScroll({pageYOffset}) {
@@ -57,7 +62,6 @@ let SpendMenu = React.createClass({
           'is-SpendMenu-scrolling': this.state.isScrolling,
           'is-SpendMenu-open': this.props.isOpen
         })}
-        onWheel={this.handleWheel}
       >
         <WindowListener
           onScreenChange={this.handleScreenChange}
