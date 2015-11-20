@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "webpack --progress",
     "start": "node ./bin/www",
     "develop": "webpack --watch & DEBUG=seagull npm start"
   },
