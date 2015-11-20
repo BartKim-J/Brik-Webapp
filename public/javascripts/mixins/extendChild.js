@@ -2,6 +2,7 @@
 
 let React = require('react');
 let classNames = require('classnames');
+
 let assign = require('lodash/object/assign');
 
 let ExtendChildMixin = {

@@ -14,10 +14,13 @@ let Faq = require('./faq');
 let Spend = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired,
+    menu: React.PropTypes.object.isRequired,
     route: React.PropTypes.object,
     serverError: React.PropTypes.object,
 
     fetchData: React.PropTypes.func.isRequired,
+
+    toggleMenu: React.PropTypes.func.isRequired,
 
     pushRoute: React.PropTypes.func.isRequired,
     replaceRoute: React.PropTypes.func.isRequired,
@@ -25,14 +28,18 @@ let Spend = React.createClass({
   },
 
   render() {
-    const {route, pushRoute, popRoute} = this.props;
+    const {
+      menu, toggleMenu,
+      route, pushRoute, popRoute
+    } = this.props;
+
     return (
       <Router
         route={route}
         onPushRoute={pushRoute} onPopRoute={popRoute}
       >
         <div className="Spend">
-          <Menu />
+          <Menu onToggle={toggleMenu} {...menu} />
           {this.renderMain()}
         </div>
       </Router>

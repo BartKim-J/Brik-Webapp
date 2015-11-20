@@ -2,7 +2,31 @@
 
 let React = require('react');
 let classNames = require('classnames');
+
 let pick = require('lodash/object/pick');
+
+let ExtendChildMixin = require('../mixins/extendChild');
+
+let PseudoButton = React.createClass({
+  mixins: [ExtendChildMixin],
+
+  propTypes: {
+    onClick: React.PropTypes.func.isRequired
+  },
+
+  render() {
+    return this.extendChild({
+      onClick: this.props.onClick,
+
+      // Prevent double-click selection.
+      onMouseDown: e => {
+        e.preventDefault();
+      },
+
+      role: 'button'
+    });
+  }
+});
 
 const IMAGE_PROP_TYPES = {
   src: React.PropTypes.string.isRequired,
@@ -106,6 +130,7 @@ let LinkBlock = React.createClass({
 });
 
 module.exports = {
+  PseudoButton,
   Image, RImage, ImageBlock,
   BlankLink, EmailLink, LinkBlock
 };

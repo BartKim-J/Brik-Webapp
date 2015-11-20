@@ -2,9 +2,11 @@
 
 let React = require('react');
 let classNames = require('classnames');
-let {WindowResizeListener} = require('react-window-resize-listener');
 
 let ExtendChildMixin = require('../mixins/extendChild');
+
+let {PseudoButton} = require('./tags');
+let {WindowListener} = require('./windowListener');
 
 let _Collapse_ = {
   ACTIVE_CLASSES: {
@@ -120,23 +122,14 @@ let Collapse = React.createClass({
 });
 
 let CollapseButton = React.createClass({
-  mixins: [ExtendChildMixin],
-
   contextTypes: {
     onButtonClick: React.PropTypes.func.isRequired
   },
 
   render() {
-    return this.extendChild({
-      onClick: this.context.onButtonClick,
-
-      // Prevent double-click selection.
-      onMouseDown: e => {
-        e.preventDefault();
-      },
-
-      role: 'button'
-    });
+    return (
+      <PseudoButton onClick={this.context.onButtonClick}>{this.props.children}</PseudoButton>
+    );
   }
 });
 
@@ -174,11 +167,10 @@ let CollapseTarget = React.createClass({
     }
   },
 
-  handleWindowResize(windowSize) {
-    let {windowWidth} = windowSize;
+  handleWindowResize({width}) {
     if (typeof this._windowWidth !== 'number') {
-      this._windowWidth = windowWidth;
-    } else if (this._windowWidth !== windowWidth) {
+      this._windowWidth = width;
+    } else if (this._windowWidth !== width) {
       if (this.context.isActive()) {
         this.calcHiddenHeight();
       } else if (this.state.hiddenHeight) {
@@ -197,7 +189,7 @@ let CollapseTarget = React.createClass({
           'is-CollapseTarget-init': !isHiddenHeightDefined
         })}
       >
-        <WindowResizeListener onResize={this.handleWindowResize} />
+        <WindowListener onResize={this.handleWindowResize} />
         {this.extendChild({
           className: 'CollapseTarget-inner',
           style: {

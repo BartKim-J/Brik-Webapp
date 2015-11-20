@@ -61,9 +61,8 @@ X-UA-Compatible: IE=edge
 
 ### Refactoring
 
-- A better way to house React component level properties.
+- Add `onHResize` and `onVResize` to `WindowListener`.
 - Check `getDuration()` of `css-animation` module.
-- Improve `react-window-resize-listener` to support horizontal/vertical resizing.
 - Modularize `SpendAbout-member`.
 - Refactor media query breakpoints.
 

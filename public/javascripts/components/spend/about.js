@@ -3,7 +3,6 @@
 let React = require('react');
 let Tooltip = require('rc-tooltip');
 let Helmet = require('react-helmet');
-let {WindowResizeListener} = require('react-window-resize-listener');
 
 let {Link} = require('../router');
 
@@ -11,6 +10,8 @@ let {
   RImage, ImageBlock,
   BlankLink, LinkBlock
 } = require('../tags');
+
+let {SCREEN_NAMES, WindowListener} = require('../windowListener');
 
 let Logo = require('./logo');
 
@@ -34,8 +35,8 @@ let SpendAbout = React.createClass({
     }
   },
 
-  handleWindowResize(windowSize) {
-    let isTooltip = (windowSize.windowWidth >= 992);
+  handleScreenChange(prevScreen, screen) {
+    let isTooltip = (screen >= SCREEN_NAMES.MD);
     if (this.state.isTooltip !== isTooltip) {
       this.setState({isTooltip});
     }
@@ -45,7 +46,7 @@ let SpendAbout = React.createClass({
     return (
       <div className="SpendAbout">
         <Helmet title={`About${CONF.TITLE_SUFFIX}`} />
-        <WindowResizeListener onResize={this.handleWindowResize} />
+        <WindowListener onScreenChange={this.handleScreenChange} />
 
         {this.renderContainer()}
       </div>
