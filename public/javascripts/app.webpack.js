@@ -1,5 +1,7 @@
 'use strict';
 
+require('stylesheets/app.scss');
+
 require('isomorphic-fetch');
 require('../../conf');
 
@@ -7,11 +9,11 @@ let Immutable = require('seamless-immutable');
 
 let thunk = require('redux-thunk');
 let {createStore, applyMiddleware} = require('redux');
-let spendReducer = require('reducers/spend');
+let spendReducer = require('./reducers/spend');
 let React = require('react');
 let ReactDOM = require('react-dom');
 let {Provider} = require('react-redux');
-let App = require('containers/app');
+let App = require('./containers/app');
 
 let noop = require('lodash/utility/noop');
 
