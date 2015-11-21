@@ -11,7 +11,6 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
-let sassMiddleware = require('node-sass-middleware');
 let appRenderer = require('./middlewares/appRenderer');
 let serfSafe = require('./middlewares/serfSafe');
 
@@ -31,11 +30,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: publicPath, dest: publicPath,
-  precision: 8,
-  sourceMap: true
-}));
 app.use(express.static(publicPath));
 
 app.use(appRenderer);

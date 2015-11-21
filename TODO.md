@@ -12,7 +12,6 @@
 
 ## Cross-browser
 
-- Autoprefixer
 - Check [512+ bytes for IE](http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx).
 
 - Move `x-ua-compatible` into HTTP response header.

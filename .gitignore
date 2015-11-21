@@ -31,5 +31,4 @@ npm-debug.log
 
 # Generated assets
 *.css
-*.map
 public/javascripts/app.js
