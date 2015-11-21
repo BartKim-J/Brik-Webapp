@@ -1,6 +1,6 @@
-'use strict';
-
 require('isomorphic-fetch');
+require('string.prototype.startswith');
+
 require('./conf');
 
 let express = require('express');

@@ -1,5 +1,3 @@
-'use strict';
-
 // `image`: image; 280x280
 // `links.twitter`, `links.facebook`: optional
 

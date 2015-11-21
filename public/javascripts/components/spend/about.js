@@ -1,5 +1,3 @@
-'use strict';
-
 let React = require('react');
 let Tooltip = require('rc-tooltip');
 let Helmet = require('react-helmet');

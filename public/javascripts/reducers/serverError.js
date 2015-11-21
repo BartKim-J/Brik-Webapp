@@ -1,5 +1,3 @@
-'use strict';
-
 const {
   POP_ROUTE
 } = require('../actions/route').TYPES;

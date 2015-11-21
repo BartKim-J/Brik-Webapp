@@ -1,5 +1,3 @@
-'use strict';
-
 function requireData(id) {
   try {
     return require(`./${id}`);

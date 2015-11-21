@@ -1,5 +1,3 @@
-'use strict';
-
 let React = require('react');
 let classNames = require('classnames');
 let Helmet = require('react-helmet');

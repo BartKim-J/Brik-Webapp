@@ -1,5 +1,3 @@
-'use strict';
-
 let Immutable = require('seamless-immutable');
 
 const {

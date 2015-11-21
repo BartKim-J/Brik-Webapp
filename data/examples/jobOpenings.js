@@ -1,5 +1,3 @@
-'use strict';
-
 // `desc`: Markdown; support for emphasis and paragragh checked
 
 module.exports = {

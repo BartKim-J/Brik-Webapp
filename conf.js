@@ -1,5 +1,3 @@
-'use strict';
-
 const BRAND = 'Spend';
 const TITLE_SUFFIX = ` – ${BRAND}`;
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const TYPES = {
   PUSH_ROUTE: 'PUSH_ROUTE',
   REPLACE_ROUTE: 'REPLACE_ROUTE',
