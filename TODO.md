@@ -54,6 +54,7 @@ X-UA-Compatible: IE=edge
 - DNS prefetching
 - <https://github.com/h5bp/ant-build-script>
 - Remove Jade.
+- [Update Babel.](https://medium.com/@malyw/how-to-update-babel-5-x-6-x-d828c230ec53#.rb2186njw)
 
 ### Refactoring
 

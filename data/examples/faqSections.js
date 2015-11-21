@@ -1,5 +1,3 @@
-'use strict';
-
 // `entry.answer`: Markdown; support for paragraph checked
 
 module.exports = {

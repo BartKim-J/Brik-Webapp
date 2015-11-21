@@ -1,5 +1,3 @@
-'use strict';
-
 const TYPES = {
   REQUEST_DATA: 'REQUEST_DATA',
   RECEIVE_DATA: 'RECEIVE_DATA'

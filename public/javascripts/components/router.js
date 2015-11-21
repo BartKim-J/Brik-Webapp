@@ -1,6 +1,6 @@
-'use strict';
-
 let React = require('react');
+
+let assign = require('lodash/object/assign');
 
 const ROUTE_CONTEXT_TYPES = {
   routePath: React.PropTypes.object.isRequired
@@ -121,7 +121,7 @@ let Router = React.createClass({
     }
   },
 
-  childContextTypes: Object.assign({
+  childContextTypes: assign({
     onPushRoute: React.PropTypes.func.isRequired
   }, ROUTE_CONTEXT_TYPES),
   getChildContext() {

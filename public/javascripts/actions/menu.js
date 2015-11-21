@@ -1,5 +1,3 @@
-'use strict';
-
 const TYPES = {
   TOGGLE_MENU: 'TOGGLE_MENU'
 };

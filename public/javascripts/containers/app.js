@@ -1,5 +1,3 @@
-'use strict';
-
 let {connect} = require('react-redux');
 
 let Spend = require('../components/spend');

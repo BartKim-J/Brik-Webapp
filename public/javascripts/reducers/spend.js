@@ -1,5 +1,3 @@
-'use strict';
-
 let {combineReducers} = require('redux');
 
 let data = require('./data');

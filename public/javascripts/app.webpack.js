@@ -1,8 +1,12 @@
-'use strict';
-
 require('stylesheets/app.scss');
 
 require('isomorphic-fetch');
+require('string.prototype.startswith');
+
+// TEMP
+window.Promise = window.Promise ||
+  require('es6-promise').Promise;
+
 require('../../conf');
 
 let Immutable = require('seamless-immutable');
