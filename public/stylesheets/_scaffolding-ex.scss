@@ -2,6 +2,19 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+//
+// 1. http://www.teamtownend.com/2013/07/ios-prevent-scrolling-on-body/
+//
+
+.is-html-scrollable {
+  position: fixed; // 1
+  top: 0; // 1
+  right: 0; // 1
+  bottom: 0; // 1
+  left: 0; // 1
+  overflow: hidden;
+}
+
 body {
   font-weight: 300;
 }
