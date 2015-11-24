@@ -2,7 +2,7 @@ let React = require('react');
 
 let pull = require('lodash/array/pull');
 let debounce = require('lodash/function/debounce');
-let throttle = require('lodash/function/throttle');
+let assign = require('lodash/object/assign');
 let camelCase = require('lodash/string/camelCase');
 let capitalize = require('lodash/string/capitalize');
 
@@ -21,17 +21,18 @@ const SCREEN_NAMES = {
 
 let _WindowListener_ = {
   HANDLE_RESIZE_WAIT: 100,
-  HANDLE_SCROLL_WAIT: 100,
+  LOOP_FALLBACK_TIMEOUT: 1000/60,
 
-  handlers: {
-    resize: [],
-    screenChange: [],
-    scroll: []
-  },
+  handlers: {},
 
   handleResize: null,
-  handleScreenChange: null,
-  handleScroll: null,
+  triggerScreenChange: null,
+  triggerScroll: null,
+
+  isLooping: false,
+
+  pageXOffset: 0,
+  pageYOffset: 0,
 
   screenNames: {
     prev: null,
@@ -47,36 +48,63 @@ let _WindowListener_ = {
 
   callHandler(type, handler = null) {
     let handlers = handler ? [handler] : this.handlers[type];
-    let {
-      innerWidth: width, innerHeight: height,
-      pageXOffset, pageYOffset
-    } = window;
-    let {prev: prevScreen, cur: screen} = this.screenNames;
-    let args = [];
 
-    switch (type) {
-    case 'resize':
-      args.push({width, height});
-      break;
-    case 'screenChange':
-      args.push(prevScreen, screen);
-      break;
-    case 'scroll':
-      args.push({pageXOffset, pageYOffset});
-      break;
-    default:
-      // TODO: error
-      break;
+    if (handlers && handlers.length > 0) {
+      let {
+        innerWidth: width, innerHeight: height,
+        pageXOffset, pageYOffset
+      } = window;
+      let {prev: prevScreen, cur: screen} = this.screenNames;
+      let args = [];
+
+      switch (type) {
+      case 'resize':
+        args.push({width, height});
+        break;
+      case 'screenChange':
+        args.push(prevScreen, screen);
+        break;
+      case 'scroll':
+        args.push({pageXOffset, pageYOffset});
+        break;
+      default:
+        break;
+      }
+
+      handlers.forEach(handler => {
+        handler(...args);
+      });
     }
-
-    handlers.forEach(handler => {
-      handler(...args);
-    });
   },
 
-  createSharedHandler(type) {
-    let handler = (type === 'screenChange') ?
-      ({width}) => {
+  startLoop() {
+    if (!this.isLooping) {
+      let {requestAnimationFrame = (callback => {
+        setTimeout(callback, this.LOOP_FALLBACK_TIMEOUT);
+      })} = window;
+      let loop = (() => {
+        this.callHandler('loop');
+        if (this.isLooping) {
+          requestAnimationFrame(loop);
+        }
+      });
+      this.isLooping = true;
+      loop();
+    }
+  },
+  stopLoop() {
+    if (this.isLooping) {
+      this.isLooping = false;
+    }
+  },
+
+  manageTrigger(action, type) {
+    let methodName = `trigger${capitalize(type)}`;
+    let func, targetType;
+
+    switch (type) {
+    case 'screenChange':
+      func = (({width}) => {
         let {prev: prevName, cur: name} = this.screenNames;
         let newName = this.getScreenName(width);
         if (name !== newName) {
@@ -86,37 +114,99 @@ let _WindowListener_ = {
           this.screenNames.cur = newName;
           this.callHandler('screenChange');
         }
-      } :
-      this.callHandler.bind(this, type, null);
-
-    switch (type) {
-    case 'resize':
-      return debounce(handler, this.HANDLE_RESIZE_WAIT);
+      });
+      targetType = 'resize';
+      break;
     case 'scroll':
-      return throttle(handler, this.HANDLE_SCROLL_WAIT);
+      func = (() => {
+        let {pageXOffset, pageYOffset} = window;
+        if (this.pageXOffset !== pageXOffset ||
+          this.pageYOffset !== pageYOffset)
+        {
+          assign(this, {pageXOffset, pageYOffset});
+          this.callHandler('scroll');
+        }
+      });
+      targetType = 'loop';
+      break;
     default:
-      return handler;
+      // TODO: error
+      break;
     }
+
+    switch (action) {
+    case 'start':
+      if (!this[methodName]) {
+        this[methodName] = func;
+      }
+      this.listen(targetType, this[methodName]);
+      break;
+    case 'stop':
+      this.unlisten(targetType, this[methodName]);
+      break;
+    default:
+      // TODO: error
+      break;
+    }
+  },
+  startTrigger(type) {
+    this.manageTrigger('start', type);
+  },
+  stopTrigger(type) {
+    this.manageTrigger('stop', type);
   },
 
   listen(type, handler) {
-    let handlers = this.handlers[type];
+    let handlers = (
+      this.handlers[type] = this.handlers[type] || []
+    );
     if (handlers.length <= 0) {
-      let method = `handle${capitalize(type)}`;
-      if (!this[method]) {
-        this[method] = this.createSharedHandler(type);
-      }
-      if (type === 'screenChange') {
-        this.listen('resize', this.handleScreenChange);
-      } else {
-        window.addEventListener(type, this[method]);
+      switch (type) {
+      case 'loop':
+        this.startLoop();
+        break;
+      case 'resize':
+        if (!this.handleResize) {
+          this.handleResize = debounce(
+            e => {
+              this.callHandler('resize');
+            }, this.HANDLE_RESIZE_WAIT
+          ).bind(this);
+        }
+        window.addEventListener('resize', this.handleResize);
+        break;
+      case 'screenChange':
+      case 'scroll':
+        this.startTrigger(type);
+        break;
+      default:
+        // TODO: error
+        break;
       }
     }
     this.callHandler(type, handler);
     handlers.push(handler);
   },
   unlisten(type, handler) {
-    pull(this.handlers[type], handler);
+    let handlers = this.handlers[type];
+    pull(handlers, handler);
+    if (handlers.length <= 0) {
+      switch (type) {
+      case 'loop':
+        this.stopLoop();
+        break;
+      case 'resize':
+        window.removeEventListener('resize', this.handleResize);
+        break;
+      case 'screenChange':
+      case 'scroll':
+        this.stopTrigger(type);
+        break;
+      default:
+        // TODO: error
+        break;
+      }
+    }
   }
 };
 
