@@ -25,17 +25,6 @@ let SpendMenu = React.createClass({
     };
   },
 
-  componentDidUpdate(prevProps, prevState) {
-    const {isOpen: isOpenPrev} = prevProps;
-    const {isOpen} = this.props;
-    let docStyle = document.documentElement.style;
-    if (!isOpenPrev && isOpen) {
-      docStyle.overflow = 'hidden';
-    } else if (isOpenPrev && !isOpen) {
-      docStyle.overflow = '';
-    }
-  },
-
   handleButtonClick(e) {
     this.props.onToggle();
   },
