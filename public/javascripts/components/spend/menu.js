@@ -44,7 +44,7 @@ let SpendMenu = React.createClass({
   render() {
     const {FACEBOOK_URL, TWITTER_URL, LINKEDIN_URL} = CONF;
     return (
-      <div
+      <header
         className={classNames('SpendMenu', {
           'is-SpendMenu-scrolling': this.state.isScrolling,
           'is-SpendMenu-open': this.props.isOpen
@@ -92,14 +92,14 @@ let SpendMenu = React.createClass({
                       })}
                       key={name}
                     >
-                      <BlankLink className="SpendMenu-socialLink" href={url}><i className={`fa fa-${name}`} /></BlankLink>
+                      <BlankLink className="SpendMenu-socialLink" href={url}><i className={`fa fa-${name} SpendMenu-socialLink-icon`} /></BlankLink>
                     </li>
                   ))}
               </ul>
             </div>
           </nav>
         </div>
-      </div>
+      </header>
     );
   }
 });

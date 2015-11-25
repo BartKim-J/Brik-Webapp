@@ -111,7 +111,6 @@ $SpendMenu-socialLink-color: #383838;
   line-height: 2.4;
 }
 .SpendMenu-socialLink-items {
-  height: 26px;
   margin: 32px 22px 0;
   font-size: 26px;
   line-height: 1;
@@ -124,6 +123,9 @@ $SpendMenu-socialLink-color: #383838;
 }
 .SpendMenu-socialLink {
   color: $SpendMenu-socialLink-color;
+}
+.SpendMenu-socialLink-icon {
+  vertical-align: top;
 }
 
 @media (min-width: $screen-md-min) {

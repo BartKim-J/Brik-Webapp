@@ -35,17 +35,18 @@ let Spend = React.createClass({
   componentDidUpdate(prevProps, prevState) {
     const {isOpen: isMenuOpenPrev} = prevProps.menu;
     const {isOpen: isMenuOpen} = this.props.menu;
-    let bodyStyle = document.body.style;
+    let {documentElement, body} = document;
+    let bodyStyle = body.style;
     if (!isMenuOpenPrev && isMenuOpen) {
       let {pageYOffset} = window;
-      document.documentElement.className = classNames(
+      documentElement.className = classNames(
         this._htmlClassNames, 'is-html-scrollable'
       );
       bodyStyle.marginTop = `-${pageYOffset}px`;
     } else if (isMenuOpenPrev && !isMenuOpen) {
       let pageYOffset = -window.parseInt(bodyStyle.marginTop, 10);
       bodyStyle.marginTop = '';
-      document.documentElement.className = this._htmlClassNames;
+      documentElement.className = this._htmlClassNames;
       window.scroll(0, pageYOffset);
     }
   },
