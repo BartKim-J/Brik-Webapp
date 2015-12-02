@@ -1,5 +1,4 @@
 let React = require('react');
-let classNames = require('classnames');
 
 let {PageNotFound, ServerError} = require('../errors');
 let {Router, Route} = require('../router');
@@ -26,27 +25,22 @@ let Spend = React.createClass({
     popRoute: React.PropTypes.func.isRequired
   },
 
-  // Instance variables
-  // - _htmlClassNames
-
-  componentDidMount() {
-    this._htmlClassNames = document.documentElement.className;
-  },
   componentDidUpdate(prevProps, prevState) {
     const {isOpen: isMenuOpenPrev} = prevProps.menu;
     const {isOpen: isMenuOpen} = this.props.menu;
+
     let {documentElement, body} = document;
+    let docClassList = documentElement.classList;
     let bodyStyle = body.style;
+
     if (!isMenuOpenPrev && isMenuOpen) {
       let {pageYOffset} = window;
-      documentElement.className = classNames(
-        this._htmlClassNames, 'is-html-scrollable'
-      );
+      docClassList.add('is-html-scrollable');
       bodyStyle.marginTop = `-${pageYOffset}px`;
     } else if (isMenuOpenPrev && !isMenuOpen) {
       let pageYOffset = -window.parseInt(bodyStyle.marginTop, 10);
       bodyStyle.marginTop = '';
-      documentElement.className = this._htmlClassNames;
+      docClassList.remove('is-html-scrollable');
       window.scroll(0, pageYOffset);
     }
   },

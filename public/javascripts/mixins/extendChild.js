@@ -9,7 +9,7 @@ let ExtendChildMixin = {
 
     assign(props, child.props, (prop, childProp, key) => {
       if (key.startsWith('on')) {
-        if (childProp) {
+        if (prop && childProp) {
           return (e => {
             childProp(e);
             prop(e);

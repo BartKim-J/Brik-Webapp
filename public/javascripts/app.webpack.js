@@ -1,5 +1,6 @@
 require('stylesheets/app.scss');
 
+require('classlist-polyfill');
 require('isomorphic-fetch');
 require('string.prototype.startswith');
 

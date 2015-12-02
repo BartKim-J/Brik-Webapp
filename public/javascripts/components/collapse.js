@@ -6,13 +6,7 @@ let ExtendChildMixin = require('../mixins/extendChild');
 let {PseudoButton} = require('./tags');
 let {WindowListener} = require('./windowListener');
 
-let _Collapse_ = {
-  ACTIVE_CLASSES: {
-    ACTIVE: 'is-Collapse-active',
-    IN: 'is-Collapse-active is-Collapse-active-in'
-  },
-  TRANSITION_DURATION: 500
-};
+const TRANSITION_DURATION = 500;
 
 let Collapse = React.createClass({
   mixins: [ExtendChildMixin],
@@ -32,86 +26,48 @@ let Collapse = React.createClass({
 
   getInitialState() {
     return {
-      activeClass: this.props.initialIsActive ?
-        _Collapse_.ACTIVE_CLASSES.IN :
-        ''
+      isActive: this.props.initialIsActive
     };
   },
 
-  isActive() {
-    return !!(this.state.activeClass);
-  },
-
-  componentDidUpdate(prevProps, prevState) {
-    const {ACTIVE_CLASSES, TRANSITION_DURATION} = _Collapse_;
-    const {
-      ACTIVE: ACTIVE_CLASS_ACTIVE, IN: ACTIVE_CLASS_IN
-    } = ACTIVE_CLASSES;
-
-    if (this.state.activeClass === ACTIVE_CLASS_ACTIVE) {
-      switch (prevState.activeClass) {
-      case '':
-        this._childRef.offsetWidth; // force reflow
-        this.setState({activeClass: ACTIVE_CLASS_IN});
-        break;
-      case ACTIVE_CLASS_IN:
-        console.assert(
-          !(this._deactivateTimeout),
-          '`this._deactivateTimeout` should be null.'
-        );
-        this._deactivateTimeout = setTimeout(() => {
-          this.setState({activeClass: ''});
-        }, TRANSITION_DURATION);
-        break;
-      default:
-        break;
-      }
-    }
-  },
-
   handleButtonClick(e) {
-    let activeClass;
-
-    const {
-      ACTIVE: ACTIVE_CLASS_ACTIVE,
-      IN: ACTIVE_CLASS_IN
-    } = _Collapse_.ACTIVE_CLASSES;
-
-    switch (this.state.activeClass) {
-    case '':
-    case ACTIVE_CLASS_IN:
-      activeClass = ACTIVE_CLASS_ACTIVE;
-      break;
-    case ACTIVE_CLASS_ACTIVE:
-      activeClass = ACTIVE_CLASS_IN;
-      break;
-    default:
-      // TODO: error
-      break;
-    }
-
-    this.setState({activeClass});
-
-    if (this._deactivateTimeout) {
-      clearTimeout(this._deactivateTimeout);
-      this._deactivateTimeout = null;
+    let childClassList = this._childRef.classList;
+    if (this.state.isActive) {
+      if (this._deactivateTimeout) {
+        clearTimeout(this._deactivateTimeout);
+        this._deactivateTimeout = null;
+        childClassList.add('is-Collapse-active-in');
+      } else {
+        childClassList.remove('is-Collapse-active-in');
+        this._deactivateTimeout = setTimeout(() => {
+          this.setState({isActive: false});
+          this._deactivateTimeout = null;
+        }, TRANSITION_DURATION);
+      }
+    } else {
+      childClassList.add('is-Collapse-active');
+      this._childRef.offsetWidth; // force reflow
+      this.setState({isActive: true});
     }
   },
 
   childContextTypes: {
-    isActive: React.PropTypes.func.isRequired,
+    isActive: React.PropTypes.bool.isRequired,
     onButtonClick: React.PropTypes.func.isRequired
   },
   getChildContext() {
+    const {isActive} = this.state;
     return {
-      isActive: this.isActive,
+      isActive,
       onButtonClick: this.handleButtonClick
     };
   },
 
   render() {
     return this.extendChild({
-      className: this.state.activeClass,
+      className: this.state.isActive ?
+        'is-Collapse-active is-Collapse-active-in' :
+        null,
       ref: ref => {
         this._childRef = ref;
       }
@@ -135,7 +91,7 @@ let CollapseTarget = React.createClass({
   mixins: [ExtendChildMixin],
 
   contextTypes: {
-    isActive: React.PropTypes.func.isRequired
+    isActive: React.PropTypes.bool.isRequired
   },
 
   // Instance variables
@@ -169,7 +125,7 @@ let CollapseTarget = React.createClass({
     if (typeof this._windowWidth !== 'number') {
       this._windowWidth = width;
     } else if (this._windowWidth !== width) {
-      if (this.context.isActive()) {
+      if (this.context.isActive) {
         this.calcHiddenHeight();
       } else if (this.state.hiddenHeight) {
         this.setState({hiddenHeight: null});
