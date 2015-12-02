@@ -75,7 +75,7 @@ let Collapse = React.createClass({
   }
 });
 
-let CollapseButton = React.createClass({
+Collapse.Button = React.createClass({
   contextTypes: {
     onButtonClick: React.PropTypes.func.isRequired
   },
@@ -87,7 +87,7 @@ let CollapseButton = React.createClass({
   }
 });
 
-let CollapseTarget = React.createClass({
+Collapse.Target = React.createClass({
   mixins: [ExtendChildMixin],
 
   contextTypes: {
@@ -139,13 +139,13 @@ let CollapseTarget = React.createClass({
 
     return (
       <div
-        className={classNames('CollapseTarget', {
-          'is-CollapseTarget-init': !isHiddenHeightDefined
+        className={classNames('Collapse-Target', {
+          'is-Collapse-Target-init': !isHiddenHeightDefined
         })}
       >
         <WindowListener onResize={this.handleWindowResize} />
         {this.extendChild({
-          className: 'CollapseTarget-inner',
+          className: 'Collapse-Target-inner',
           style: {
             marginTop: isHiddenHeightDefined ? -hiddenHeight : null
           },
@@ -158,7 +158,4 @@ let CollapseTarget = React.createClass({
   }
 });
 
-module.exports = {
-  Collapse,
-  CollapseButton, CollapseTarget
-};
+module.exports = Collapse;

@@ -1,7 +1,9 @@
 let React = require('react');
 
 let {PageNotFound, ServerError} = require('../errors');
-let {Router, Route} = require('../router');
+
+let Router = require('../router');
+let {Route} = Router;
 
 let Menu = require('./menu');
 let Index = require('./spendIndex');

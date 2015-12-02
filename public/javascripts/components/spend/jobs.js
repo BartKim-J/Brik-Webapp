@@ -1,11 +1,7 @@
 let React = require('react');
 let Helmet = require('react-helmet');
 
-let {
-  Collapse,
-  CollapseButton, CollapseTarget
-} = require('../collapse');
-
+let Collapse = require('../collapse');
 let Markdown = require('../markdown');
 let {EmailLink} = require('../tags');
 
@@ -82,17 +78,17 @@ let SpendJobs = React.createClass({
                   .map(({category, desc}, i) => (
                     <Collapse key={i}>
                       <li className="SpendJobs-opening">
-                        <CollapseButton>
+                        <Collapse.Button>
                           <div className="SpendJobs-opening-category">
                             {category}
                             <span className="SpendJobs-opening-category-arrow" />
                           </div>
-                        </CollapseButton>
-                        <CollapseTarget>
+                        </Collapse.Button>
+                        <Collapse.Target>
                           <div className="SpendJobs-opening-desc">
                             <Markdown>{desc}</Markdown>
                           </div>
-                        </CollapseTarget>
+                        </Collapse.Target>
                       </li>
                     </Collapse>
                   ))}

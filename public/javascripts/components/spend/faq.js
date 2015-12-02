@@ -2,11 +2,7 @@ let React = require('react');
 let classNames = require('classnames');
 let Helmet = require('react-helmet');
 
-let {
-  Collapse,
-  CollapseButton, CollapseTarget
-} = require('../collapse');
-
+let Collapse = require('../collapse');
 let Markdown = require('../markdown');
 let {EmailLink, LinkBlock} = require('../tags');
 
@@ -103,16 +99,16 @@ let SpendFaq = React.createClass({
                                 'SpendFaq-qna-last': i === entries.length - 1
                               })}
                             >
-                              <CollapseButton>
+                              <Collapse.Button>
                                 <p className="SpendFaq-question">
                                   <span className="SpendFaq-question-inner">{question}</span>
                                 </p>
-                              </CollapseButton>
-                              <CollapseTarget>
+                              </Collapse.Button>
+                              <Collapse.Target>
                                 <div className="SpendFaq-answer">
                                   <Markdown>{answer}</Markdown>
                                 </div>
-                              </CollapseTarget>
+                              </Collapse.Target>
                             </li>
                           </Collapse>
                         ))}

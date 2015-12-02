@@ -137,7 +137,7 @@ let Router = React.createClass({
   }
 });
 
-let Route = React.createClass({
+Router.Route = React.createClass({
   propTypes: {
     path: React.PropTypes.string
   },
@@ -168,7 +168,7 @@ let Route = React.createClass({
   }
 });
 
-let Link = React.createClass({
+Router.Link = React.createClass({
   propTypes: {
     url: React.PropTypes.string.isRequired
   },
@@ -190,4 +190,4 @@ let Link = React.createClass({
   }
 });
 
-module.exports = {Router, Route, Link};
+module.exports = Router;
