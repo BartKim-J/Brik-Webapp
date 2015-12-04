@@ -5,8 +5,9 @@ require('isomorphic-fetch');
 require('string.prototype.startswith');
 
 // TEMP
-window.Promise = window.Promise ||
-  require('es6-promise').Promise;
+if (!(window.Promise)) {
+  window.Promise = require('es6-promise').Promise;
+}
 
 require('../../conf');
 
