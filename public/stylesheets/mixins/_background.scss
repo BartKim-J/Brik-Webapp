@@ -1,0 +1,45 @@
+@mixin background-size($size) {
+  background-size: $size;
+  @if $size == contain {
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin background-image(
+  $url, $url-2x: null, $width: null, $height: null
+) {
+  background-image: url("#{$image-path}/#{$url}");
+  @if $url-2x {
+    @media print,
+           (-webkit-min-device-pixel-ratio: 1.25),
+           (min-resolution: 1.25dppx),
+           (min-resolution: 120dpi) {
+      background-image: url("#{$image-path}/#{$url-2x}");
+      @if $width and $height {
+        @include background-size($width $height);
+      }
+    }
+  }
+}
+
+@mixin r-background-image-update(
+  $url, $url-2x,
+  $width: null, $height: null, $padding-bottom: null
+) {
+  @if not $padding-bottom {
+    $padding-bottom: #{($height/$width)*100}%
+  }
+
+  padding-bottom: $padding-bottom;
+  @include background-image($url, $url-2x);
+}
+@mixin r-background-image(
+  $url, $url-2x,
+  $width: null, $height: null, $padding-bottom: null
+) {
+  height: 0;
+  @include r-background-image-update(
+    $url, $url-2x, $width, $height, $padding-bottom
+  );
+  @include background-size(contain);
+}

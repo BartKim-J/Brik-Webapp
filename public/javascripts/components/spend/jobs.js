@@ -2,8 +2,8 @@ let React = require('react');
 let Helmet = require('react-helmet');
 
 let Collapse = require('../collapse');
+let {EmailLink} = require('../links');
 let Markdown = require('../markdown');
-let {EmailLink} = require('../tags');
 
 let Logo = require('./logo');
 

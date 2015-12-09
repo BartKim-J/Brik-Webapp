@@ -41,11 +41,16 @@ function fetchData(key) {
       }
     }).then(response =>
       response.json().then(json => ({response, json}))
-    ).then(({response, json}) =>
-      dispatch(response.ok ?
-        receiveData(key, 'success', json.data[key]) :
-        receiveData(key, 'error', json.error))
-    );
+    ).then(({response, json: {data = null, error = null}}) => {
+      if (response.ok) {
+        data = data[key];
+        dispatch(receiveData(key, 'success', data));
+        return Promise.resolve(data);
+      } else {
+        dispatch(receiveData(key, 'error', error));
+        return Promise.reject(error);
+      }
+    });
   });
 }
 

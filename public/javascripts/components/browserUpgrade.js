@@ -1,6 +1,6 @@
 let React = require('react');
 
-let {BlankLink} = require('./tags');
+let {BlankLink} = require('./links');
 
 let BrowserUpgrade = React.createClass({
   render() {

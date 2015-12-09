@@ -2,14 +2,13 @@ let React = require('react');
 let classNames = require('classnames');
 
 let ExtendChildMixin = require('../mixins/extendChild');
+let TransitionMixin = require('../mixins/transition');
 
-let {PseudoButton} = require('./tags');
+let {PseudoButton} = require('./buttons');
 let {WindowListener} = require('./windowListener');
 
-const TRANSITION_DURATION = 500;
-
 let Collapse = React.createClass({
-  mixins: [ExtendChildMixin],
+  mixins: [ExtendChildMixin, TransitionMixin],
 
   propTypes: {
     initialIsActive: React.PropTypes.bool
@@ -22,50 +21,42 @@ let Collapse = React.createClass({
 
   // Instance variables
   // - _childRef
-  // - _deactivateTimeout
 
   getInitialState() {
     return {
-      isActive: this.props.initialIsActive
+      isVisuallyActive: this.props.initialIsActive
+    };
+  },
+
+  componentWillMount() {
+    this._transitions = {
+      isVisuallyActive: {
+        refKey: '_childRef',
+        className: 'is-Collapse-active',
+        duration: 500
+      }
     };
   },
 
   handleButtonClick(e) {
-    let childClassList = this._childRef.classList;
-    if (this.state.isActive) {
-      if (this._deactivateTimeout) {
-        clearTimeout(this._deactivateTimeout);
-        this._deactivateTimeout = null;
-        childClassList.add('is-Collapse-active-in');
-      } else {
-        childClassList.remove('is-Collapse-active-in');
-        this._deactivateTimeout = setTimeout(() => {
-          this.setState({isActive: false});
-          this._deactivateTimeout = null;
-        }, TRANSITION_DURATION);
-      }
-    } else {
-      childClassList.add('is-Collapse-active');
-      this._childRef.offsetWidth; // force reflow
-      this.setState({isActive: true});
-    }
+    this.toggleTransition('isVisuallyActive');
   },
 
   childContextTypes: {
-    isActive: React.PropTypes.bool.isRequired,
+    isVisuallyActive: React.PropTypes.bool.isRequired,
     onButtonClick: React.PropTypes.func.isRequired
   },
   getChildContext() {
-    const {isActive} = this.state;
+    const {isVisuallyActive} = this.state;
     return {
-      isActive,
+      isVisuallyActive,
       onButtonClick: this.handleButtonClick
     };
   },
 
   render() {
     return this.extendChild({
-      className: this.state.isActive ?
+      className: this.state.isVisuallyActive ?
         'is-Collapse-active is-Collapse-active-in' :
         null,
       ref: ref => {
@@ -91,7 +82,7 @@ Collapse.Target = React.createClass({
   mixins: [ExtendChildMixin],
 
   contextTypes: {
-    isActive: React.PropTypes.bool.isRequired
+    isVisuallyActive: React.PropTypes.bool.isRequired
   },
 
   // Instance variables
@@ -125,7 +116,7 @@ Collapse.Target = React.createClass({
     if (typeof this._windowWidth !== 'number') {
       this._windowWidth = width;
     } else if (this._windowWidth !== width) {
-      if (this.context.isActive) {
+      if (this.context.isVisuallyActive) {
         this.calcHiddenHeight();
       } else if (this.state.hiddenHeight) {
         this.setState({hiddenHeight: null});

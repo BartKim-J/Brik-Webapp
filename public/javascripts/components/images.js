@@ -3,34 +3,11 @@ let classNames = require('classnames');
 
 let pick = require('lodash/object/pick');
 
-let ExtendChildMixin = require('../mixins/extendChild');
-
-let PseudoButton = React.createClass({
-  mixins: [ExtendChildMixin],
-
-  propTypes: {
-    onClick: React.PropTypes.func.isRequired
-  },
-
-  render() {
-    return this.extendChild({
-      onClick: this.props.onClick,
-
-      // Prevent double-click selection.
-      onMouseDown: e => {
-        e.preventDefault();
-      },
-
-      role: 'button'
-    });
-  }
-});
-
 const IMAGE_PROP_TYPES = {
   src: React.PropTypes.string.isRequired,
   width: React.PropTypes.number.isRequired,
   height: React.PropTypes.number.isRequired,
-  alt: React.PropTypes.string.isRequired
+  alt: React.PropTypes.string
 };
 
 let Image = React.createClass({
@@ -83,44 +60,9 @@ let RImage = React.createClass({
 
 let ImageBlock = React.createClass({
   render() {
-    return (
-      <div className="ImageBlock">{this.props.children}</div>
-    );
-  }
-});
-
-let BlankLink = React.createClass({
-  propTypes: {
-    href: React.PropTypes.string.isRequired
-  },
-
-  render() {
-    const {href, className, children} = this.props;
-    return (
-      // TOOD: new window icon
-      <a className={className} href={href} target="_blank">{children}</a>
-    );
-  }
-});
-
-let EmailLink = React.createClass({
-  propTypes: {
-    email: React.PropTypes.string.isRequired
-  },
-
-  render() {
-    const {email, className, children} = this.props;
-    return (
-      <a className={className} href={`mailto:${email}`}>{React.Children.count(children) > 0 ? children : email}</a>
-    );
-  }
-});
-
-let LinkBlock = React.createClass({
-  render() {
     const {className, children} = this.props;
     return (
-      <div className={classNames('LinkBlock', className)}>
+      <div className={classNames('ImageBlock', className)}>
         {children}
       </div>
     );
@@ -128,7 +70,6 @@ let LinkBlock = React.createClass({
 });
 
 module.exports = {
-  PseudoButton,
-  Image, RImage, ImageBlock,
-  BlankLink, EmailLink, LinkBlock
+  Image, RImage,
+  ImageBlock
 };

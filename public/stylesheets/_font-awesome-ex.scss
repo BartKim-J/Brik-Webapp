@@ -1,0 +1,11 @@
+.fa-Spend-caret-right {
+  @include image-replacement(
+    "triangle.png", "triangle@2x.png", 10px, 9px
+  );
+  vertical-align: -0.05em;
+}
+.fa-Spend-paper-plane {
+  @include image-replacement(
+    "plane.png", "plane@2x.png", 23px, 22px
+  );
+}

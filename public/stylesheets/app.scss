@@ -1,13 +1,17 @@
 @import "bootstrap-custom",
 
         "variables",
+        "mixins",
+
         "scaffolding-ex",
         "type-ex",
 
         "lib/font-awesome-4.4.0",
+        "font-awesome-ex",
 
         "rc-tooltip",
 
-        "components/tags",
         "components/collapse",
+        "components/images",
+
         "components/spend";

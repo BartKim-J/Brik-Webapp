@@ -41,16 +41,14 @@ let noop = require('lodash/utility/noop');
   });
 })(window, noop);
 
-createStore = applyMiddleware(thunk)(createStore);
+const {INITIAL_STATE, CSRF_TOKEN} = window;
 
-let store = createStore(
-  spendReducer,
-  Immutable(window.INITIAL_STATE)
-);
+createStore = applyMiddleware(thunk)(createStore);
+let store = createStore(spendReducer, Immutable(INITIAL_STATE));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App csrfToken={CSRF_TOKEN} />
   </Provider>,
   document.getElementById('content')
 );

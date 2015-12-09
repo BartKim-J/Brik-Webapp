@@ -1,0 +1,24 @@
+$SpendIndiegogoLink-border-color: #cecece;
+$SpendIndiegogoLink-bg: #fff;
+$SpendIndiegogoLink-color: #565656;
+
+.SpendIndiegogoLink {
+  display: inline-block;
+  padding: 5.5px 32px 5.5px 21.5px;
+  border: 1px solid $SpendIndiegogoLink-border-color;
+  border-radius: 20.5px;
+  background-color: $SpendIndiegogoLink-bg;
+  color: $SpendIndiegogoLink-color;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.SpendIndiegogoLink-logo {
+  @include image-replacement(
+    "indiegogo.png", "indiegogo@2x.png", 114px, 28px
+  );
+  margin-left: 0.25em;
+  font-size: 12px;
+  line-height: 28px;
+  vertical-align: 0.1em;
+}

@@ -13,6 +13,7 @@ let Faq = require('./faq');
 
 let Spend = React.createClass({
   propTypes: {
+    csrfToken: React.PropTypes.string.isRequired,
     data: React.PropTypes.object.isRequired,
     menu: React.PropTypes.object.isRequired,
     route: React.PropTypes.object,
@@ -24,7 +25,9 @@ let Spend = React.createClass({
 
     pushRoute: React.PropTypes.func.isRequired,
     replaceRoute: React.PropTypes.func.isRequired,
-    popRoute: React.PropTypes.func.isRequired
+    popRoute: React.PropTypes.func.isRequired,
+
+    postSubscription: React.PropTypes.func.isRequired
   },
 
   componentDidUpdate(prevProps, prevState) {
@@ -47,6 +50,15 @@ let Spend = React.createClass({
     }
   },
 
+  childContextTypes: {
+    csrfToken: React.PropTypes.string.isRequired
+  },
+  getChildContext() {
+    return {
+      csrfToken: this.props.csrfToken
+    };
+  },
+
   render() {
     const {
       menu, toggleMenu,
@@ -55,6 +67,12 @@ let Spend = React.createClass({
 
     return (
       <Router
+        map={{
+          index: '/$',
+          about: '/about$',
+          jobs: '/jobs$',
+          faq: '/faq$'
+        }}
         route={route}
         onPushRoute={pushRoute} onPopRoute={popRoute}
       >
@@ -75,28 +93,30 @@ let Spend = React.createClass({
     } else {
       const {
         data: {jobOpenings, faqSections, team},
+
+        postSubscription,
         fetchData
       } = this.props;
 
       return [
-        <Route key="index" path="/$">
-          <Index />
+        <Route key="index" name="index">
+          <Index onNewSubscription={postSubscription} />
         </Route>,
-        <Route key="about" path="/about$">
+        <Route key="about" name="about">
           <About
             team={team}
             onEmpty={() => {
               fetchData('team');
             }} />
         </Route>,
-        <Route key="jobs" path="/jobs$">
+        <Route key="jobs" name="jobs">
           <Jobs
             openings={jobOpenings}
             onEmpty={() => {
               fetchData('jobOpenings');
             }} />
         </Route>,
-        <Route key="faq" path="/faq$">
+        <Route key="faq" name="faq">
           <Faq
             sections={faqSections}
             onEmpty={() => {

@@ -3,8 +3,8 @@ let classNames = require('classnames');
 let Helmet = require('react-helmet');
 
 let Collapse = require('../collapse');
+let {EmailLink, LinkBlock} = require('../links');
 let Markdown = require('../markdown');
-let {EmailLink, LinkBlock} = require('../tags');
 
 let SpendFaq = React.createClass({
   propTypes: {

@@ -1,9 +1,10 @@
 let React = require('react');
+let classNames = require('classnames');
 
 let SpendLogo = React.createClass({
   render() {
     return (
-      <span className="SpendLogo">spend.</span>
+      <span className={classNames('SpendLogo', this.props.className)}>spend.</span>
     );
   }
 });

@@ -2,13 +2,9 @@ let React = require('react');
 let Tooltip = require('rc-tooltip');
 let Helmet = require('react-helmet');
 
+let {RImage, ImageBlock} = require('../images');
+let {BlankLink, LinkBlock} = require('../links');
 let {Link} = require('../router');
-
-let {
-  RImage, ImageBlock,
-  BlankLink, LinkBlock
-} = require('../tags');
-
 let {SCREEN_NAMES, WindowListener} = require('../windowListener');
 
 let Logo = require('./logo');
