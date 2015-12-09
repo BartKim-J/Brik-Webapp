@@ -1,36 +1,11 @@
 let React = require('react');
 
+let rest = require('lodash/array/rest');
 let assign = require('lodash/object/assign');
 
 const ROUTE_CONTEXT_TYPES = {
-  routePath: React.PropTypes.object.isRequired
+  routeNames: React.PropTypes.array.isRequired
 };
-
-class RoutePath {
-  constructor(routePath) {
-    this._routePath = routePath;
-    this._resolved = null;
-  }
-
-  getResolved() {
-    return this._resolved;
-  }
-  isResolved() {
-    return (typeof this._resolved === 'string');
-  }
-
-  resolve(path) {
-    let m;
-    if (path.slice(-1) !== '$') {
-      path += '\\b';
-    }
-    m = this._routePath.match(`^${path}(.*)`);
-    if (m) {
-      this._resolved = m[1];
-    }
-    return this.isResolved();
-  }
-}
 
 let _Router_ = {
   history: {
@@ -62,6 +37,7 @@ let _Router_ = {
 
 let Router = React.createClass({
   propTypes: {
+    map: React.PropTypes.object.isRequired,
     route: React.PropTypes.object,
 
     onPushRoute: React.PropTypes.func.isRequired,
@@ -74,6 +50,29 @@ let Router = React.createClass({
       result.route = {pathname};
     }
     return result;
+  },
+
+  route(map = this.props.map, route = this.props.route) {
+    for (let name in map) {
+      let value = map[name];
+      let test = value, children = null;
+      let m;
+      if (typeof value === 'object') {
+        ({test, children} = value);
+      }
+      if (test.slice(-1) !== '$') {
+        test += '\\b';
+      }
+      m = route.pathname.match(`^${test}(.*)`);
+      if (m) {
+        let names = [name];
+        if (children) {
+          names.push(...this.route(children, m[1]));
+        }
+        return names;
+      }
+    }
+    return [];
   },
 
   componentDidMount() {
@@ -125,9 +124,9 @@ let Router = React.createClass({
     onPushRoute: React.PropTypes.func.isRequired
   }, ROUTE_CONTEXT_TYPES),
   getChildContext() {
-    const {route, onPushRoute} = this.props;
+    const {onPushRoute} = this.props;
     return {
-      routePath: new RoutePath(route.pathname),
+      routeNames: this.route(),
       onPushRoute
     };
   },
@@ -137,38 +136,29 @@ let Router = React.createClass({
   }
 });
 
-let Route = React.createClass({
+Router.Route = React.createClass({
   propTypes: {
-    path: React.PropTypes.string
+    name: React.PropTypes.string
   },
 
   contextTypes: ROUTE_CONTEXT_TYPES,
 
   childContextTypes: ROUTE_CONTEXT_TYPES,
   getChildContext() {
-    let {routePath} = this.context;
     return {
-      routePath: new RoutePath(routePath.getResolved())
+      routeNames: rest(this.context.routeNames)
     };
   },
 
   render() {
-    const {path, children} = this.props;
-    let {routePath} = this.context;
-
-    if (routePath.isResolved()) {
-      return false;
-    } else {
-      if (!path || routePath.resolve(path)) {
-        return React.Children.only(children);
-      } else {
-        return false;
-      }
-    }
+    const {name, children} = this.props;
+    return (name == this.context.routeNames[0]) ?
+      React.Children.only(children) :
+      false;
   }
 });
 
-let Link = React.createClass({
+Router.Link = React.createClass({
   propTypes: {
     url: React.PropTypes.string.isRequired
   },
@@ -190,4 +180,4 @@ let Link = React.createClass({
   }
 });
 
-module.exports = {Router, Route, Link};
+module.exports = Router;

@@ -20,12 +20,13 @@ function appRenderer(req, res, next) {
     renderApp(state = Immutable({}), lang = 'en') {
       let store;
       let content, title, meta;
+      let csrfToken = req.csrfToken();
 
       state = state.merge({route: {pathname: req.path}});
       store = createStore(spendReducer, state);
       content = ReactDOMServer.renderToString(
         <Provider store={store}>
-          <App />
+          <App csrfToken={csrfToken} />
         </Provider>
       );
       ({title, meta} = Helmet.rewind());
@@ -35,6 +36,7 @@ function appRenderer(req, res, next) {
         BROWSER_UPGRADE,
         content,
         INITIAL_STATE: JSON.stringify(store.getState()),
+        CSRF_TOKEN: JSON.stringify(csrfToken),
         lang
       });
     },

@@ -7,6 +7,7 @@ let {toggleMenu} = require('../actions/menu');
 let {
   pushRoute, replaceRoute, popRoute
 } = require('../actions/route');
+let {postSubscription} = require('../actions/subscriptions');
 
 function mapStateToProps(state) {
   return state;
@@ -15,7 +16,8 @@ function mapStateToProps(state) {
 let actionCreators = {
   fetchData,
   toggleMenu,
-  pushRoute, replaceRoute, popRoute
+  pushRoute, replaceRoute, popRoute,
+  postSubscription
 };
 
 let App = connect(mapStateToProps, actionCreators)(Spend);

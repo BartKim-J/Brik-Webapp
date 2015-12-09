@@ -66,7 +66,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
   background-color: $SpendFaq-answer-bg;
   color: $SpendFaq-answer-color;
 }
-.is-Collapse-active-in .SpendFaq-answer.CollapseTarget-inner {
+.is-Collapse-active-in .SpendFaq-answer.Collapse-Target-inner {
   margin-top: 8px !important;
 }
 .SpendFaq-answer p {
@@ -164,7 +164,7 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
     padding: 16px 20px;
     font-size: 18px;
   }
-  .is-Collapse-active-in .SpendFaq-answer.CollapseTarget-inner {
+  .is-Collapse-active-in .SpendFaq-answer.Collapse-Target-inner {
     margin-top: 20px !important;
   }
   .SpendFaq-answer p {

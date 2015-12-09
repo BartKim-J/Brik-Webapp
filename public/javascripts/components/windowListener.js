@@ -50,30 +50,32 @@ let _WindowListener_ = {
     let handlers = handler ? [handler] : this.handlers[type];
 
     if (handlers && handlers.length > 0) {
-      let {
-        innerWidth: width, innerHeight: height,
-        pageXOffset, pageYOffset
-      } = window;
-      let {prev: prevScreen, cur: screen} = this.screenNames;
-      let args = [];
+      setTimeout(() => {
+        let {
+          innerWidth: width, innerHeight: height,
+          pageXOffset, pageYOffset
+        } = window;
+        let {prev: prevScreen, cur: screen} = this.screenNames;
+        let args = [];
 
-      switch (type) {
-      case 'resize':
-        args.push({width, height});
-        break;
-      case 'screenChange':
-        args.push(prevScreen, screen);
-        break;
-      case 'scroll':
-        args.push({pageXOffset, pageYOffset});
-        break;
-      default:
-        break;
-      }
+        switch (type) {
+        case 'resize':
+          args.push({width, height});
+          break;
+        case 'screenChange':
+          args.push(prevScreen, screen);
+          break;
+        case 'scroll':
+          args.push({pageXOffset, pageYOffset});
+          break;
+        default:
+          break;
+        }
 
-      handlers.forEach(handler => {
-        handler(...args);
-      });
+        handlers.forEach(handler => {
+          handler(...args);
+        });
+      }, 0);
     }
   },
 

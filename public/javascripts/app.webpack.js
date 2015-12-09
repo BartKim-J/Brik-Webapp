@@ -1,11 +1,13 @@
 require('stylesheets/app.scss');
 
+require('classlist-polyfill');
 require('isomorphic-fetch');
 require('string.prototype.startswith');
 
 // TEMP
-window.Promise = window.Promise ||
-  require('es6-promise').Promise;
+if (!(window.Promise)) {
+  window.Promise = require('es6-promise').Promise;
+}
 
 require('../../conf');
 
@@ -39,16 +41,14 @@ let noop = require('lodash/utility/noop');
   });
 })(window, noop);
 
-createStore = applyMiddleware(thunk)(createStore);
+const {INITIAL_STATE, CSRF_TOKEN} = window;
 
-let store = createStore(
-  spendReducer,
-  Immutable(window.INITIAL_STATE)
-);
+createStore = applyMiddleware(thunk)(createStore);
+let store = createStore(spendReducer, Immutable(INITIAL_STATE));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App csrfToken={CSRF_TOKEN} />
   </Provider>,
   document.getElementById('content')
 );

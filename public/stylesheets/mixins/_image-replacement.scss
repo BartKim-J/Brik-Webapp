@@ -1,0 +1,10 @@
+@mixin image-replacement-core($url, $url-2x, $width, $height) {
+  width: $width;
+  height: $height;
+  @include background-image($url, $url-2x, $width, $height);
+}
+
+@mixin image-replacement($url, $url-2x, $width, $height) {
+  display: inline-block;
+  @include image-replacement-core($url, $url-2x, $width, $height);
+}

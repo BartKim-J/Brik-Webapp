@@ -1,23 +1,23 @@
 $Collapse-transitionDuration: 500ms;
 
-$CollapseTarget-negativeInfinite: -9999px;
+$Collapse-Target-negativeInfinite: -9999px;
 
-.CollapseTarget {
+.Collapse-Target {
   overflow: hidden;
 }
-.CollapseTarget-inner {
+.Collapse-Target-inner {
   display: none;
   overflow: hidden;
   transition: margin-top $Collapse-transitionDuration;
 }
-.is-Collapse-active .CollapseTarget-inner {
+.is-Collapse-active .Collapse-Target-inner {
   display: block;
 }
-.is-Collapse-active-in .CollapseTarget-inner {
+.is-Collapse-active-in .Collapse-Target-inner {
   margin-top: 0 !important;
 }
-.is-CollapseTarget-init .CollapseTarget-inner {
+.is-Collapse-Target-init .Collapse-Target-inner {
   display: block;
-  margin-top: $CollapseTarget-negativeInfinite;
+  margin-top: $Collapse-Target-negativeInfinite;
   transition: none;
 }

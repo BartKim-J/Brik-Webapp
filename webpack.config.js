@@ -18,7 +18,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        'raw!autoprefixer!sass?precision=8'
+        'raw!autoprefixer!sass?precision=17'
       )
     }]
   },

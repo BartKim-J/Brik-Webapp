@@ -15,6 +15,7 @@ let appRenderer = require('./middlewares/appRenderer');
 let serfSafe = require('./middlewares/serfSafe');
 
 let routes = require('./routes');
+let subscriptions = require('./routes/subscriptions');
 
 let app = express();
 
@@ -38,6 +39,7 @@ if (isDev) {
 }
 
 app.use('/', routes);
+app.use('/subscriptions', subscriptions);
 
 // catch 404
 app.use((req, res, next) => {
