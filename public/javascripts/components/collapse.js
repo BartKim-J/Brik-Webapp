@@ -24,22 +24,24 @@ let Collapse = React.createClass({
 
   getInitialState() {
     return {
-      isVisuallyActive: this.props.initialIsActive
+      activeClasses: this.props.initialIsActive ?
+        'is-Collapse-active is-Collapse-active-in' :
+        ''
     };
   },
 
   componentWillMount() {
     this._transitions = {
-      isVisuallyActive: {
+      'is-Collapse-active': {
+        key: 'activeClasses',
         refKey: '_childRef',
-        className: 'is-Collapse-active',
         duration: 500
       }
     };
   },
 
   handleButtonClick(e) {
-    this.toggleTransition('isVisuallyActive');
+    this.toggleTransition('is-Collapse-active');
   },
 
   childContextTypes: {
@@ -47,18 +49,15 @@ let Collapse = React.createClass({
     onButtonClick: React.PropTypes.func.isRequired
   },
   getChildContext() {
-    const {isVisuallyActive} = this.state;
     return {
-      isVisuallyActive,
+      isVisuallyActive: !!(this.state.activeClasses),
       onButtonClick: this.handleButtonClick
     };
   },
 
   render() {
     return this.extendChild({
-      className: this.state.isVisuallyActive ?
-        'is-Collapse-active is-Collapse-active-in' :
-        null,
+      className: this.state.activeClasses,
       ref: ref => {
         this._childRef = ref;
       }

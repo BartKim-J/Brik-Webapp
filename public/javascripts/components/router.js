@@ -18,11 +18,12 @@ let _Router_ = {
       let {location} = window;
       if (url === location.pathname) {
         location.reload(true);
-      }
-      if (Modernizr.history) {
-        history.pushState({}, '', url);
       } else {
-        window.location = url;
+        if (Modernizr.history) {
+          history.pushState({}, '', url);
+        } else {
+          window.location = url;
+        }
       }
     },
     replaceState(url = null) {
@@ -104,8 +105,8 @@ let Router = React.createClass({
     return !!(nextProps.route.pathname);
   },
   componentDidUpdate(prevProps, prevState) {
-    const {route} = this.props;
-    if (prevProps.route !== route && route.pathname) {
+    if (prevProps.route !== this.props.route) {
+      // TODO: restore scroll position when moving back
       window.scroll(0, 0);
     }
   },

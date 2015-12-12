@@ -32,39 +32,76 @@ let SpendMenu = React.createClass({
   // Instance variables
   // - _ref
   // - _logoRef
+  // - _winListenerRef
   // - _isScrollPrevented
   // - _pageYOffset
   // - _scrollThreshold
 
   getInitialState() {
     return {
-      isLogoForceShown: false,
       isScrolling: false,
-      isVisuallyOpen: this.props.isOpen
+      openClasses: this.props.isOpen ?
+        'is-SpendMenu-open is-SpendMenu-open-in' :
+        '',
+      indexLogoClasses: ''
     };
   },
 
   isRouteIndex() {
     return (this.context.routeNames[0] === 'index');
   },
-
-  updateScrolling() {
+  updateIsScrolling() {
     let isScrolling = (this._pageYOffset > this._scrollThreshold);
     if (isScrolling !== this.state.isScrolling) {
       this.setState({isScrolling});
     }
   },
+  /* public */ updateScrolling(pageYOffset = window.pageYOffset) {
+    let prevPageYOffset = this._pageYOffset || 0;
+    let isRouteIndex = this.isRouteIndex();
+
+    this._pageYOffset = pageYOffset;
+
+    if (this._scrollThreshold) {
+      this.updateIsScrolling();
+    }
+
+    // TEMP: 32 hardcoded
+    if (prevPageYOffset <= 32 && pageYOffset > 32) {
+      if (isRouteIndex) {
+        this.transitionIn('is-SpendMenu-index-Logo-forceShown');
+      } else {
+        this.setState({
+          indexLogoClasses: 'is-SpendMenu-index-Logo-forceShown is-SpendMenu-index-Logo-forceShown-in'
+        });
+      }
+    } else if (prevPageYOffset > 32 && pageYOffset <= 32) {
+      if (isRouteIndex) {
+        this.transitionOut('is-SpendMenu-index-Logo-forceShown');
+      } else {
+        this.setState({indexLogoClasses: ''});
+      }
+    }
+  },
+  /* public */ pauseScrolling() {
+    this._isScrollPrevented = true;
+  },
+  /* public */ resumeScrolling() {
+    this._winListenerRef.one('loop', () => {
+      this._isScrollPrevented = false;
+    });
+  },
 
   componentWillMount() {
     this._transitions = {
-      isLogoForceShown: {
-        refKey: '_logoRef',
-        className: 'is-SpendMenu-index-Logo-forceShown',
+      'is-SpendMenu-open': {
+        key: 'openClasses',
+        refKey: '_ref',
         duration: 500
       },
-      isVisuallyOpen: {
-        refKey: '_ref',
-        className: 'is-SpendMenu-open',
+      'is-SpendMenu-index-Logo-forceShown': {
+        key: 'indexLogoClasses',
+        refKey: '_logoRef',
         duration: 500
       }
     };
@@ -73,9 +110,9 @@ let SpendMenu = React.createClass({
     const {isOpen} = this.props;
     const {isOpen: isOpenNext} = nextProps;
     if (!isOpen && isOpenNext) {
-      this.transitionIn('isVisuallyOpen');
+      this.transitionIn('is-SpendMenu-open');
     } else if (isOpen && !isOpenNext) {
-      this.transitionOut('isVisuallyOpen');
+      this.transitionOut('is-SpendMenu-open');
     }
   },
 
@@ -91,7 +128,7 @@ let SpendMenu = React.createClass({
     if (typeof prevScreen !== 'number' &&
       typeof this._pageYOffset !== 'number')
     {
-      this.updateScrolling();
+      this.updateIsScrolling();
     }
 
     if (isOpen && isScreenMd) {
@@ -99,31 +136,14 @@ let SpendMenu = React.createClass({
     }
   },
   handleWindowScroll({pageYOffset}) {
-    if (this.props.isOpen) {
-      this._isScrollPrevented = true;
-    } else if (this._isScrollPrevented) {
-      this._isScrollPrevented = false;
-    } else {
-      let prevPageYOffset = this._pageYOffset || 0;
-      this._pageYOffset = pageYOffset;
-
-      if (this._scrollThreshold) {
-        this.updateScrolling();
-      }
-      if (this.isRouteIndex()) {
-        // TEMP: 32 hardcoded
-        if (prevPageYOffset <= 32 && pageYOffset > 32) {
-          this.transitionIn('isLogoForceShown');
-        } else if (prevPageYOffset > 32 && pageYOffset <= 32) {
-          this.transitionOut('isLogoForceShown');
-        }
-      }
+    if (!this._isScrollPrevented) {
+      this.updateScrolling(pageYOffset);
     }
   },
 
   render() {
     const {FACEBOOK_URL, TWITTER_URL, LINKEDIN_URL} = CONF;
-    const {isLogoForceShown, isScrolling, isVisuallyOpen} = this.state;
+    const {isScrolling, openClasses, indexLogoClasses} = this.state;
 
     let isRouteIndex = this.isRouteIndex();
 
@@ -131,16 +151,19 @@ let SpendMenu = React.createClass({
       <header
         className={classNames('SpendMenu', {
           'SpendMenu-index': isRouteIndex,
-          'is-SpendMenu-scrolling': isScrolling,
-          'is-SpendMenu-open is-SpendMenu-open-in': isVisuallyOpen
-        })}
+          'is-SpendMenu-scrolling': isScrolling
+        }, openClasses)}
         ref={ref => {
           this._ref = ref;
         }}
       >
         <WindowListener
           onScreenChange={this.handleScreenChange}
-          onScroll={this.handleWindowScroll} />
+          onScroll={this.handleWindowScroll}
+
+          ref={ref => {
+            this._winListenerRef = ref;
+          }} />
 
         <div
           className={classNames('SpendMenu-inner clearfix', {
@@ -150,7 +173,7 @@ let SpendMenu = React.createClass({
           <div
             className={classNames('SpendMenu-Logo pull-left', {
               'SpendMenu-index-Logo': isRouteIndex,
-              'is-SpendMenu-index-Logo-forceShown is-SpendMenu-index-Logo-forceShown-in': isRouteIndex && isLogoForceShown
+              [indexLogoClasses]: isRouteIndex
             })}
             ref={ref => {
               this._logoRef = ref;

@@ -23,6 +23,7 @@ let _WindowListener_ = {
   HANDLE_RESIZE_WAIT: 100,
   LOOP_FALLBACK_TIMEOUT: 1000/60,
 
+  listenTimeouts: [],
   handlers: {},
 
   handleResize: null,
@@ -50,32 +51,30 @@ let _WindowListener_ = {
     let handlers = handler ? [handler] : this.handlers[type];
 
     if (handlers && handlers.length > 0) {
-      setTimeout(() => {
-        let {
-          innerWidth: width, innerHeight: height,
-          pageXOffset, pageYOffset
-        } = window;
-        let {prev: prevScreen, cur: screen} = this.screenNames;
-        let args = [];
+      let {
+        innerWidth: width, innerHeight: height,
+        pageXOffset, pageYOffset
+      } = window;
+      let {prev: prevScreen, cur: screen} = this.screenNames;
+      let args = [];
 
-        switch (type) {
-        case 'resize':
-          args.push({width, height});
-          break;
-        case 'screenChange':
-          args.push(prevScreen, screen);
-          break;
-        case 'scroll':
-          args.push({pageXOffset, pageYOffset});
-          break;
-        default:
-          break;
-        }
+      switch (type) {
+      case 'resize':
+        args.push({width, height});
+        break;
+      case 'screenChange':
+        args.push(prevScreen, screen);
+        break;
+      case 'scroll':
+        args.push({pageXOffset, pageYOffset});
+        break;
+      default:
+        break;
+      }
 
-        handlers.forEach(handler => {
-          handler(...args);
-        });
-      }, 0);
+      handlers.forEach(handler => {
+        handler(...args);
+      });
     }
   },
 
@@ -95,9 +94,7 @@ let _WindowListener_ = {
     }
   },
   stopLoop() {
-    if (this.isLooping) {
-      this.isLooping = false;
-    }
+    this.isLooping = false;
   },
 
   manageTrigger(action, type) {
@@ -107,13 +104,13 @@ let _WindowListener_ = {
     switch (type) {
     case 'screenChange':
       func = (({width}) => {
-        let {prev: prevName, cur: name} = this.screenNames;
+        let {cur: name} = this.screenNames;
         let newName = this.getScreenName(width);
+
         if (name !== newName) {
-          if (prevName) {
-            this.screenNames.prev = name;
-          }
+          this.screenNames.prev = name;
           this.screenNames.cur = newName;
+
           this.callHandler('screenChange');
         }
       });
@@ -158,10 +155,11 @@ let _WindowListener_ = {
     this.manageTrigger('stop', type);
   },
 
-  listen(type, handler) {
+  listen(type, handler, isOne = false) {
     let handlers = (
       this.handlers[type] = this.handlers[type] || []
     );
+
     if (handlers.length <= 0) {
       switch (type) {
       case 'loop':
@@ -186,12 +184,33 @@ let _WindowListener_ = {
         break;
       }
     }
-    this.callHandler(type, handler);
-    handlers.push(handler);
+
+    if (isOne) {
+      handlers.push(handler);
+    } else {
+      let id = setTimeout(() => {
+        this.callHandler(type, handler);
+        handlers.push(handler);
+        this.listenTimeouts.splice(
+          this.listenTimeouts.findIndex(timeout => (timeout.id === id)), 1
+        );
+      }, 0);
+      this.listenTimeouts.push({id, handler});
+    }
   },
   unlisten(type, handler) {
     let handlers = this.handlers[type];
+
+    this.listenTimeouts = this.listenTimeouts.filter(timeout => {
+      let isMatch = (timeout.handler === handler);
+      if (isMatch) {
+        clearTimeout(timeout.id);
+      }
+      return !isMatch;
+    });
+
     pull(handlers, handler);
+
     if (handlers.length <= 0) {
       switch (type) {
       case 'loop':
@@ -209,6 +228,13 @@ let _WindowListener_ = {
         break;
       }
     }
+  },
+  one(type, handler) {
+    let wrapped = ((...args) => {
+      handler(...args);
+      this.unlisten(type, wrapped);
+    });
+    this.listen(type, wrapped, true);
   }
 };
 
@@ -223,6 +249,9 @@ let WindowListener = React.createClass({
         callback(handler, type);
       }
     });
+  },
+  /* public */ one(type, handler) {
+    _WindowListener_.one(...arguments);
   },
 
   componentDidMount() {
