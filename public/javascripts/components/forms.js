@@ -20,7 +20,7 @@ let Form = React.createClass({
   // Instance variables
   // - _ref
 
-  reset() {
+  /* public */ reset() {
     this._ref.reset();
   },
 

@@ -104,8 +104,8 @@ let Router = React.createClass({
     return !!(nextProps.route.pathname);
   },
   componentDidUpdate(prevProps, prevState) {
-    const {route} = this.props;
-    if (prevProps.route !== route && route.pathname) {
+    if (prevProps.route !== this.props.route) {
+      // TODO: restore scroll position when moving back
       window.scroll(0, 0);
     }
   },

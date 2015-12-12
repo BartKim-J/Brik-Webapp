@@ -30,23 +30,22 @@ let Spend = React.createClass({
     postSubscription: React.PropTypes.func.isRequired
   },
 
-  componentDidUpdate(prevProps, prevState) {
-    const {isOpen: isMenuOpenPrev} = prevProps.menu;
-    const {isOpen: isMenuOpen} = this.props.menu;
-
+  componentWillUpdate(nextProps, nextState) {
     let {documentElement, body} = document;
-    let docClassList = documentElement.classList;
     let bodyStyle = body.style;
-
-    if (!isMenuOpenPrev && isMenuOpen) {
-      let {pageYOffset} = window;
-      docClassList.add('is-html-scrollable');
-      bodyStyle.marginTop = `-${pageYOffset}px`;
-    } else if (isMenuOpenPrev && !isMenuOpen) {
+    if (this.props.menu.isOpen && !(nextProps.menu.isOpen)) {
       let pageYOffset = -window.parseInt(bodyStyle.marginTop, 10);
       bodyStyle.marginTop = '';
-      docClassList.remove('is-html-scrollable');
+      documentElement.classList.remove('is-html-scrollable');
       window.scroll(0, pageYOffset);
+    }
+  },
+  componentDidUpdate(prevProps, prevState) {
+    let {documentElement, body} = document;
+    if (!(prevProps.menu.isOpen) && this.props.menu.isOpen) {
+      let {pageYOffset} = window;
+      documentElement.classList.add('is-html-scrollable');
+      body.style.marginTop = `-${pageYOffset}px`;
     }
   },
 
