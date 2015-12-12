@@ -18,11 +18,12 @@ let _Router_ = {
       let {location} = window;
       if (url === location.pathname) {
         location.reload(true);
-      }
-      if (Modernizr.history) {
-        history.pushState({}, '', url);
       } else {
-        window.location = url;
+        if (Modernizr.history) {
+          history.pushState({}, '', url);
+        } else {
+          window.location = url;
+        }
       }
     },
     replaceState(url = null) {

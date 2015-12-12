@@ -1,7 +1,6 @@
 let React = require('react');
 
 let pull = require('lodash/array/pull');
-let includes = require('lodash/collection/includes');
 let debounce = require('lodash/function/debounce');
 let assign = require('lodash/object/assign');
 let camelCase = require('lodash/string/camelCase');
@@ -24,7 +23,7 @@ let _WindowListener_ = {
   HANDLE_RESIZE_WAIT: 100,
   LOOP_FALLBACK_TIMEOUT: 1000/60,
 
-  listenTimeouts: {},
+  listenTimeouts: [],
   handlers: {},
 
   handleResize: null,
@@ -161,11 +160,6 @@ let _WindowListener_ = {
       this.handlers[type] = this.handlers[type] || []
     );
 
-    if (this.listenTimeouts[handler] || includes(handlers, handler)) {
-      console.warn('The handler is already registered, being ignored this time.');
-      return;
-    }
-
     if (handlers.length <= 0) {
       switch (type) {
       case 'loop':
@@ -194,38 +188,44 @@ let _WindowListener_ = {
     if (isOne) {
       handlers.push(handler);
     } else {
-      this.listenTimeouts[handler] = setTimeout(() => {
+      let id = setTimeout(() => {
         this.callHandler(type, handler);
         handlers.push(handler);
-
-        this.listenTimeouts[handler] = null;
+        this.listenTimeouts.splice(
+          this.listenTimeouts.findIndex(timeout => (timeout.id === id)), 1
+        );
       }, 0);
+      this.listenTimeouts.push({id, handler});
     }
   },
   unlisten(type, handler) {
-    let listenTimeout = this.listenTimeouts[handler];
-    if (listenTimeout) {
-      clearTimeout(listenTimeout);
-      this.listenTimeouts[handler] = null;
-    } else {
-      let handlers = this.handlers[type];
-      pull(handlers, handler);
-      if (handlers.length <= 0) {
-        switch (type) {
-        case 'loop':
-          this.stopLoop();
-          break;
-        case 'resize':
-          window.removeEventListener('resize', this.handleResize);
-          break;
-        case 'screenChange':
-        case 'scroll':
-          this.stopTrigger(type);
-          break;
-        default:
-          // TODO: error
-          break;
-        }
+    let handlers = this.handlers[type];
+
+    this.listenTimeouts = this.listenTimeouts.filter(timeout => {
+      let isMatch = (timeout.handler === handler);
+      if (isMatch) {
+        clearTimeout(timeout.id);
+      }
+      return !isMatch;
+    });
+
+    pull(handlers, handler);
+
+    if (handlers.length <= 0) {
+      switch (type) {
+      case 'loop':
+        this.stopLoop();
+        break;
+      case 'resize':
+        window.removeEventListener('resize', this.handleResize);
+        break;
+      case 'screenChange':
+      case 'scroll':
+        this.stopTrigger(type);
+        break;
+      default:
+        // TODO: error
+        break;
       }
     }
   },
