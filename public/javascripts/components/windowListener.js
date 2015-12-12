@@ -156,7 +156,7 @@ let _WindowListener_ = {
     this.manageTrigger('stop', type);
   },
 
-  listen(type, handler) {
+  listen(type, handler, isOne = false) {
     let handlers = (
       this.handlers[type] = this.handlers[type] || []
     );
@@ -191,12 +191,16 @@ let _WindowListener_ = {
       }
     }
 
-    this.listenTimeouts[handler] = setTimeout(() => {
-      this.callHandler(type, handler);
+    if (isOne) {
       handlers.push(handler);
+    } else {
+      this.listenTimeouts[handler] = setTimeout(() => {
+        this.callHandler(type, handler);
+        handlers.push(handler);
 
-      this.listenTimeouts[handler] = null;
-    }, 0);
+        this.listenTimeouts[handler] = null;
+      }, 0);
+    }
   },
   unlisten(type, handler) {
     let listenTimeout = this.listenTimeouts[handler];
@@ -224,6 +228,13 @@ let _WindowListener_ = {
         }
       }
     }
+  },
+  one(type, handler) {
+    let wrapped = ((...args) => {
+      handler(...args);
+      this.unlisten(type, wrapped);
+    });
+    this.listen(type, wrapped, true);
   }
 };
 
@@ -238,6 +249,9 @@ let WindowListener = React.createClass({
         callback(handler, type);
       }
     });
+  },
+  /* public */ one(type, handler) {
+    _WindowListener_.one(...arguments);
   },
 
   componentDidMount() {

@@ -30,22 +30,44 @@ let Spend = React.createClass({
     postSubscription: React.PropTypes.func.isRequired
   },
 
+  // Instance variables
+  // - _menuRef
+
   componentWillUpdate(nextProps, nextState) {
     let {documentElement, body} = document;
     let bodyStyle = body.style;
+
     if (this.props.menu.isOpen && !(nextProps.menu.isOpen)) {
       let pageYOffset = -window.parseInt(bodyStyle.marginTop, 10);
+      this._menuRef.pauseScrolling();
+
       bodyStyle.marginTop = '';
       documentElement.classList.remove('is-html-scrollable');
       window.scroll(0, pageYOffset);
+
+      this._menuRef.resumeScrolling();
     }
   },
   componentDidUpdate(prevProps, prevState) {
-    let {documentElement, body} = document;
-    if (!(prevProps.menu.isOpen) && this.props.menu.isOpen) {
+    const {menu: prevMenu, route: prevRoute} = prevProps;
+    const {isOpen: isOpenPrev} = prevMenu;
+    const {menu, route} = this.props;
+    const {isOpen} = menu;
+
+    if (!isOpenPrev && isOpen) {
       let {pageYOffset} = window;
+      let {documentElement, body} = document;
+
+      this._menuRef.pauseScrolling();
       documentElement.classList.add('is-html-scrollable');
       body.style.marginTop = `-${pageYOffset}px`;
+      this._menuRef.resumeScrolling();
+    } else if (isOpenPrev && !isOpen) {
+      if (prevRoute !== route && route.pathname) {
+        setTimeout(() => {
+          this._menuRef.updateScrolling();
+        }, 1);
+      }
     }
   },
 
@@ -76,7 +98,11 @@ let Spend = React.createClass({
         onPushRoute={pushRoute} onPopRoute={popRoute}
       >
         <div className="Spend">
-          <Menu onToggle={toggleMenu} {...menu} />
+          <Menu
+            onToggle={toggleMenu} {...menu}
+            ref={ref => {
+              this._menuRef = ref;
+            }} />
           {this.renderMain()}
         </div>
       </Router>
