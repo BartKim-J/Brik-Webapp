@@ -72,10 +72,10 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-index-bg">
               <video
                 className="SpendIndex-index-bg-video"
-                width="1024" height="725" poster="/images/white.png"
+                width="1366" height="806" poster="/images/white.png"
                 autoPlay
               >
-                <source src="/videos/main_FINSPEND_mv_201.137.mp4" type="video/mp4" />
+                <source src="/videos/Main2_h.264.mov" type="video/mp4" />
               </video>
             </div>
           </section>
