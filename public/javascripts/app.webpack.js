@@ -1,5 +1,6 @@
 require('stylesheets/app.scss');
 
+require('array.prototype.findindex');
 require('classlist-polyfill');
 require('isomorphic-fetch');
 require('string.prototype.startswith');

@@ -1,5 +1,5 @@
+require('array.prototype.findindex');
 require('isomorphic-fetch');
-require('string.prototype.startswith');
 
 require('./conf');
 
