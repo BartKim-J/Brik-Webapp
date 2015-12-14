@@ -2,7 +2,6 @@ let React = require('react');
 
 let pull = require('lodash/array/pull');
 let debounce = require('lodash/function/debounce');
-let assign = require('lodash/object/assign');
 let camelCase = require('lodash/string/camelCase');
 let capitalize = require('lodash/string/capitalize');
 
@@ -122,7 +121,7 @@ let _WindowListener_ = {
         if (this.pageXOffset !== pageXOffset ||
           this.pageYOffset !== pageYOffset)
         {
-          assign(this, {pageXOffset, pageYOffset});
+          Object.assign(this, {pageXOffset, pageYOffset});
           this.callHandler('scroll');
         }
       });

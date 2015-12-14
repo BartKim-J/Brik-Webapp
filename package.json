@@ -28,6 +28,7 @@
     "marked": "^0.3.5",
     "morgan": "~1.6.1",
     "node-sass": "^3.4.2",
+    "object-assign": "^4.0.1",
     "raw-loader": "^0.5.1",
     "rc-tooltip": "^3.2.0",
     "react": "^0.14.2",

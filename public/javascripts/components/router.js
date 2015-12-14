@@ -1,7 +1,6 @@
 let React = require('react');
 
 let rest = require('lodash/array/rest');
-let assign = require('lodash/object/assign');
 
 const ROUTE_CONTEXT_TYPES = {
   routeNames: React.PropTypes.array.isRequired
@@ -121,7 +120,7 @@ let Router = React.createClass({
     }
   },
 
-  childContextTypes: assign({
+  childContextTypes: Object.assign({
     onPushRoute: React.PropTypes.func.isRequired
   }, ROUTE_CONTEXT_TYPES),
   getChildContext() {
