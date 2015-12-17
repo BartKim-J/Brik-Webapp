@@ -5,7 +5,7 @@ let ExtendChildMixin = require('../mixins/extendChild');
 let TransitionMixin = require('../mixins/transition');
 
 let {PseudoButton} = require('./buttons');
-let {WindowListener} = require('./windowListener');
+let WindowListener = require('./windowListener');
 
 let Collapse = React.createClass({
   mixins: [ExtendChildMixin, TransitionMixin],

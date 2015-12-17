@@ -18,7 +18,7 @@ const SCREEN_NAMES = {
   LG: 3
 };
 
-let _WindowListener_ = {
+let sharedListener = {
   HANDLE_RESIZE_WAIT: 100,
   LOOP_FALLBACK_TIMEOUT: 1000/60,
 
@@ -238,6 +238,10 @@ let _WindowListener_ = {
 };
 
 let WindowListener = React.createClass({
+  statics: {
+    SCREEN_NAMES
+  },
+
   propTypes: PROP_TYPES,
 
   forHandlers(callback) {
@@ -250,17 +254,17 @@ let WindowListener = React.createClass({
     });
   },
   /* public */ one(type, handler) {
-    _WindowListener_.one(...arguments);
+    sharedListener.one(...arguments);
   },
 
   componentDidMount() {
     this.forHandlers((handler, type) => {
-      _WindowListener_.listen(type, handler);
+      sharedListener.listen(type, handler);
     });
   },
   componentWillUnmount() {
     this.forHandlers((handler, type) => {
-      _WindowListener_.unlisten(type, handler);
+      sharedListener.unlisten(type, handler);
     });
   },
 
@@ -269,8 +273,4 @@ let WindowListener = React.createClass({
   }
 });
 
-module.exports = {
-  SCREEN_NAMES,
-
-  WindowListener
-};
+module.exports = WindowListener;

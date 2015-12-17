@@ -6,31 +6,30 @@ const ROUTE_CONTEXT_TYPES = {
   routeNames: React.PropTypes.array.isRequired
 };
 
-let _Router_ = {
-  history: {
-    init() {
-      if (Modernizr.history && !(history.state)) {
-        this.replaceState();
-      }
-    },
-    pushState(url) {
-      let {location} = window;
-      if (url === location.pathname) {
-        location.reload(true);
-      } else {
-        if (Modernizr.history) {
-          history.pushState({}, '', url);
-        } else {
-          window.location = url;
-        }
-      }
-    },
-    replaceState(url = null) {
+let history = {
+  init() {
+    if (Modernizr.history && !(window.history.state)) {
+      this.replaceState();
+    }
+  },
+  pushState(url) {
+    let {history: winHistory, location} = window;
+    if (url === location.pathname) {
+      location.reload(true);
+    } else {
       if (Modernizr.history) {
-        history.replaceState({}, '', url);
-      } else if (url) {
-        window.location.replace(url);
+        winHistory.pushState({}, '', url);
+      } else {
+        window.location = url;
       }
+    }
+  },
+  replaceState(url = null) {
+    let {history: winHistory, location} = window;
+    if (Modernizr.history) {
+      winHistory.replaceState({}, '', url);
+    } else if (url) {
+      location.replace(url);
     }
   }
 };
@@ -78,13 +77,11 @@ let Router = React.createClass({
   componentDidMount() {
     window.addEventListener('popstate', this.handlePopState);
     setTimeout(() => {
-      _Router_.history.init();
+      history.init();
     }, 0);
   },
   componentWillReceiveProps(nextProps) {
     const {url, urlType} = nextProps.route;
-    let {history} = _Router_;
-
     if (url) {
       switch (urlType) {
       case 'PUSH':

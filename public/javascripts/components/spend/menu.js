@@ -6,7 +6,7 @@ let TransitionMixin = require('../../mixins/transition');
 let {PseudoButton} = require('../buttons');
 let {BlankLink, LinkBlock} = require('../links');
 let {Link} = require('../router');
-let {SCREEN_NAMES, WindowListener} = require('../windowListener');
+let WindowListener = require('../windowListener');
 
 let Logo = require('./logo');
 let IndiegogoLink = require('./indiegogoLink');
@@ -129,7 +129,7 @@ let SpendMenu = React.createClass({
   },
   handleScreenChange(prevScreen, screen) {
     const {isOpen, onToggle} = this.props;
-    let isScreenMd = (screen >= SCREEN_NAMES.MD);
+    let isScreenMd = (screen >= WindowListener.SCREEN_NAMES.MD);
 
     this._scrollThreshold = isScreenMd ? 27 : 5; // TEMP
 

@@ -1,13 +1,13 @@
 let React = require('react');
 let Helmet = require('react-helmet');
 
-let _PageNotFound_ = {
-  TITLE: 'Page Not Found'
-};
-
 let PageNotFound = React.createClass({
+  statics: {
+    TITLE: 'Page Not Found'
+  },
+
   render() {
-    const {TITLE} = _PageNotFound_;
+    const {TITLE} = PageNotFound;
 
     return (
       <div className="PageNotFound">
