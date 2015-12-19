@@ -41,6 +41,8 @@ let SpendMenu = React.createClass({
   getInitialState() {
     return {
       isScrolling: false,
+      indexEnteredClass: '',
+
       openClasses: this.props.isOpen ?
         'is-SpendMenu-open is-SpendMenu-open-in' :
         '',
@@ -112,14 +114,34 @@ let SpendMenu = React.createClass({
   },
   componentDidUpdate(prevProps, prevState) {
     let isRouteIndex = this.isRouteIndex();
-    if (this._isRouteIndexPrev && !isRouteIndex) {
-      this.resetTransition('is-SpendMenu-index-Logo-forceShown');
-    } else if (!this._isRouteIndexPrev && isRouteIndex) {
-      if (this._pageYOffset > 32) {
-        this.setState({
-          indexLogoClasses: 'is-SpendMenu-index-Logo-forceShown is-SpendMenu-index-Logo-forceShown-in'
-        });
+    if (isRouteIndex) {
+      if (!this._isRouteIndexPrev) {
+        let state = {
+          indexEnteredClass: 'is-SpendMenu-index-entered-done'
+        };
+        if (this._pageYOffset > 32) {
+          state.indexLogoClasses = 'is-SpendMenu-index-Logo-forceShown is-SpendMenu-index-Logo-forceShown-in';
+        }
+        this.setState(state);
+      } else {
+        const {isScrolling, indexEnteredClass, openClasses} = this.state;
+        if (indexEnteredClass !== 'is-SpendMenu-index-entered-done') {
+          const {
+            isScrolling: isScrollingPrev,
+            openClasses: prevOpenClasses
+          } = prevState;
+          if ((!isScrollingPrev && isScrolling) ||
+            (!prevOpenClasses && openClasses))
+          {
+            this.setState({
+              indexEnteredClass: 'is-SpendMenu-index-entered-done'
+            });
+          }
+        }
       }
+    } else if (this._isRouteIndexPrev) {
+      this.setState({indexEnteredClass: ''});
+      this.resetTransition('is-SpendMenu-index-Logo-forceShown');
     }
     this._isRouteIndexPrev = isRouteIndex;
   },
@@ -129,14 +151,24 @@ let SpendMenu = React.createClass({
   },
   handleScreenChange(prevScreen, screen) {
     const {isOpen, onToggle} = this.props;
+    let isInit = (typeof prevScreen !== 'number');
     let isScreenMd = (screen >= WindowListener.SCREEN_NAMES.MD);
-
     this._scrollThreshold = isScreenMd ? 27 : 5; // TEMP
 
-    if (typeof prevScreen !== 'number' &&
-      typeof this._pageYOffset === 'number')
-    {
+    if (isInit && typeof this._pageYOffset === 'number') {
       this.updateIsScrolling();
+    }
+
+    if (this.isRouteIndex()) {
+      if (isScreenMd) {
+        if (isInit) {
+          this.setState({indexEnteredClass: 'is-SpendMenu-index-entered'});
+        }
+      } else if (this.state.indexEnteredClass !== 'is-SpendMenu-index-entered-done') {
+        this.setState({
+          indexEnteredClass: 'is-SpendMenu-index-entered-done'
+        });
+      }
     }
 
     if (isOpen && isScreenMd) {
@@ -151,7 +183,10 @@ let SpendMenu = React.createClass({
 
   render() {
     const {FACEBOOK_URL, TWITTER_URL, LINKEDIN_URL} = CONF;
-    const {isScrolling, openClasses, indexLogoClasses} = this.state;
+    const {
+      isScrolling, indexEnteredClass,
+      openClasses, indexLogoClasses
+    } = this.state;
 
     let isRouteIndex = this.isRouteIndex();
 
@@ -160,7 +195,7 @@ let SpendMenu = React.createClass({
         className={classNames('SpendMenu', {
           'SpendMenu-index': isRouteIndex,
           'is-SpendMenu-scrolling': isScrolling
-        }, openClasses)}
+        }, openClasses, indexEnteredClass)}
         ref={ref => {
           this._ref = ref;
         }}

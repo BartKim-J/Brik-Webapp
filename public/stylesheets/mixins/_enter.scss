@@ -1,0 +1,21 @@
+@mixin enter($targetCls, $animation, $contextCls: null) {
+  @if $contextCls {
+    $enteredSel: ".#{$contextCls} .#{$targetCls}";
+    $doneSel: ".#{$contextCls}-done .#{$targetCls}";
+  } @else {
+    $enteredSel: ".is-#{$targetCls}-entered";
+    $doneSel: "#{$enteredSel}-done";
+  }
+
+  .#{$targetCls} {
+    visibility: hidden;
+    @content;
+  }
+  #{$enteredSel},
+  #{$doneSel} {
+    visibility: visible;
+  }
+  #{$enteredSel} {
+    animation: $animation;
+  }
+}

@@ -39,6 +39,11 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 $SpendIndex-app-bg: #f4ebe0;
 $SpendIndex-app-p-color: #767676;
 
+$SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
+$SpendIndex-videoLink-h2-md-anim: slideDown 1s 2s both;
+$SpendIndex-video-LinkBlock-md-anim: slideUp 1s 2s both;
+$SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
+
 .SpendIndex {
   background-color: $SpendIndex-bg;
 }
@@ -446,13 +451,19 @@ $SpendIndex-app-p-color: #767676;
   .SpendIndex-videoLink-group {
     margin-bottom: 125px;
   }
-  .SpendIndex-videoLink-h2 {
+  @include enter(
+    "SpendIndex-videoLink-h2", $SpendIndex-videoLink-h2-md-anim,
+    "is-SpendIndex-index-entered"
+  ) {
     display: block;
     margin: 0 0 47px;
     font-size: 38px;
     line-height: 46px;
   }
-  .SpendIndex-video-LinkBlock {
+  @include enter(
+    "SpendIndex-video-LinkBlock", $SpendIndex-video-LinkBlock-md-anim,
+    "is-SpendIndex-index-entered"
+  ) {
     margin: 47px 0;
   }
   .SpendIndex-videoLink {
@@ -461,7 +472,10 @@ $SpendIndex-app-p-color: #767676;
     font-size: 13.5px;
     line-height: 17px;
   }
-  .SpendIndex-Form-group {
+  @include enter(
+    "SpendIndex-Form-group", $SpendIndex-Form-group-md-anim,
+    "is-SpendIndex-index-entered"
+  ) {
     width: 295px;
     margin: 125px 0 0;
   }
@@ -493,7 +507,10 @@ $SpendIndex-app-p-color: #767676;
     height: 628px;
     padding-top: 0;
   }
-  .SpendIndex-contactless-inner {
+  @include enter(
+    "SpendIndex-contactless-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-contactless-entered"
+  ) {
     position: absolute;
     top: 45.45454545454545%;
     left: 6.44216691068814%;
@@ -544,7 +561,10 @@ $SpendIndex-app-p-color: #767676;
     height: 590px;
     padding-top: 0;
   }
-  .SpendIndex-display-inner {
+  @include enter(
+    "SpendIndex-display-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-display-entered"
+  ) {
     position: absolute;
     top: 54.01459854014598%;
     left: 10.541727672035138%;
@@ -586,7 +606,10 @@ $SpendIndex-app-p-color: #767676;
     height: 644px;
     padding: 0;
   }
-  .SpendIndex-charge-inner {
+  @include enter(
+    "SpendIndex-charge-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-charge-entered"
+  ) {
     position: absolute;
     top: 52.38095238095238%;
     right: 8.199121522693996%;
@@ -635,7 +658,11 @@ $SpendIndex-app-p-color: #767676;
     height: 590px;
     padding-top: 0;
   }
-  .SpendIndex-physicalCards-inner {
+  @include enter(
+    "SpendIndex-physicalCards-inner",
+    $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-physicalCards-entered"
+  ) {
     position: absolute;
     top: 50%;
     left: 7.759882869692533%;
@@ -694,7 +721,10 @@ $SpendIndex-app-p-color: #767676;
     );
     margin: 0;
   }
-  .SpendIndex-tech-inner {
+  @include enter(
+    "SpendIndex-tech-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-tech-entered"
+  ) {
     position: absolute;
     top: 60.543130990415335%;
     left: 44.436310395314784%;
@@ -753,7 +783,10 @@ $SpendIndex-app-p-color: #767676;
     height: 958px;
     padding-top: 0;
   }
-  .SpendIndex-app-inner {
+  @include enter(
+    "SpendIndex-app-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-app-entered"
+  ) {
     position: absolute;
     top: 44.832605531295485%;
     right: 10.61493411420205%;

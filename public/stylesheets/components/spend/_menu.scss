@@ -10,6 +10,8 @@ $SpendMenu-item-link-color: #383838;
 $SpendMenu-item-link-screen-md-color: #707070;
 $SpendMenu-socialLink-color: #383838;
 
+$SpendMenu-index-md-anim: slideDown 1s 1750ms both;
+
 .SpendMenu {
   position: absolute;
   top: 0;
@@ -195,9 +197,17 @@ $SpendMenu-socialLink-color: #383838;
     border-bottom-color: $SpendMenu-scrolling-border-color;
     background-color: $SpendMenu-scrolling-bg;
   }
-  .SpendMenu-index {
+  @include enter("SpendMenu-index", $SpendMenu-index-md-anim) {
     max-width: 1366px;
     margin: 0 auto;
+  }
+  .SpendMenu-index.is-SpendMenu-scrolling,
+  .SpendMenu-index.is-SpendMenu-open {
+    visibility: visible;
+  }
+  .is-SpendMenu-scrolling.is-SpendMenu-index-entered,
+  .is-SpendMenu-open.is-SpendMenu-index-entered {
+    animation: none;
   }
   .SpendMenu-inner {
     width: 87.11566617862371%;
