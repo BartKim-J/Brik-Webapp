@@ -492,14 +492,14 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     background-image: none;
     @include background-size(auto);
     background-position: 0;
+    overflow: hidden;
   }
   .SpendIndex-index-bg-video {
     display: block;
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    max-width: 100%;
+    top: 0;
+    left: 35%;
+    transform: translateX(-35%);
   }
 
   .SpendIndex-contactless {
