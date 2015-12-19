@@ -10,6 +10,9 @@ $SpendAbout-member-detail-p-color: #919191;
 
 .SpendAbout {
   padding: 105px 0 65px;
+  @include background-image("about/background.png");
+  background-position: 56% top;
+  background-repeat: no-repeat;
 }
 .SpendAbout-container {
   $horizontal-padding: 8.5%;
@@ -91,6 +94,8 @@ $SpendAbout-member-detail-p-color: #919191;
 @media (min-width: $screen-md-min) {
   .SpendAbout {
     padding: 184px 0 80px;
+    @include background-size(contain);
+    background-position-x: center;
   }
   .SpendAbout-container {
     width: 75%;

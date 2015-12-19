@@ -5,7 +5,7 @@ let ExtendChildMixin = require('../mixins/extendChild');
 let TransitionMixin = require('../mixins/transition');
 
 let {PseudoButton} = require('./buttons');
-let {WindowListener} = require('./windowListener');
+let WindowListener = require('./windowListener');
 
 let Collapse = React.createClass({
   mixins: [ExtendChildMixin, TransitionMixin],
@@ -134,11 +134,12 @@ Collapse.Target = React.createClass({
         })}
       >
         <WindowListener onResize={this.handleWindowResize} />
+
         {this.extendChild({
           className: 'Collapse-Target-inner',
-          style: {
-            marginTop: isHiddenHeightDefined ? -hiddenHeight : null
-          },
+          style: isHiddenHeightDefined ?
+            {marginTop: -hiddenHeight} :
+            null,
           ref: ref => {
             this._childRef = ref;
           }

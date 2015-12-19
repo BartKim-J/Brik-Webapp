@@ -36,16 +36,12 @@ let Spend = React.createClass({
   componentWillUpdate(nextProps, nextState) {
     let {documentElement, body} = document;
     let bodyStyle = body.style;
-
     if (this.props.menu.isOpen && !(nextProps.menu.isOpen)) {
       let pageYOffset = -window.parseInt(bodyStyle.marginTop, 10);
       this._menuRef.pauseScrolling();
-
       bodyStyle.marginTop = '';
       documentElement.classList.remove('is-html-scrollable');
       window.scroll(0, pageYOffset);
-
-      this._menuRef.resumeScrolling();
     }
   },
   componentDidUpdate(prevProps, prevState) {
@@ -65,8 +61,11 @@ let Spend = React.createClass({
     } else if (isOpenPrev && !isOpen) {
       if (prevRoute !== route && route.pathname) {
         setTimeout(() => {
-          this._menuRef.updateScrolling();
+          this._menuRef.updateScrolling()
+            .resumeScrolling();
         }, 1);
+      } else {
+        this._menuRef.resumeScrolling();
       }
     }
   },

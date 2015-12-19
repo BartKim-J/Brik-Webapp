@@ -2,7 +2,6 @@ let React = require('react');
 
 let pull = require('lodash/array/pull');
 let debounce = require('lodash/function/debounce');
-let assign = require('lodash/object/assign');
 let camelCase = require('lodash/string/camelCase');
 let capitalize = require('lodash/string/capitalize');
 
@@ -19,7 +18,7 @@ const SCREEN_NAMES = {
   LG: 3
 };
 
-let _WindowListener_ = {
+let sharedListener = {
   HANDLE_RESIZE_WAIT: 100,
   LOOP_FALLBACK_TIMEOUT: 1000/60,
 
@@ -122,7 +121,7 @@ let _WindowListener_ = {
         if (this.pageXOffset !== pageXOffset ||
           this.pageYOffset !== pageYOffset)
         {
-          assign(this, {pageXOffset, pageYOffset});
+          Object.assign(this, {pageXOffset, pageYOffset});
           this.callHandler('scroll');
         }
       });
@@ -239,6 +238,10 @@ let _WindowListener_ = {
 };
 
 let WindowListener = React.createClass({
+  statics: {
+    SCREEN_NAMES
+  },
+
   propTypes: PROP_TYPES,
 
   forHandlers(callback) {
@@ -251,17 +254,17 @@ let WindowListener = React.createClass({
     });
   },
   /* public */ one(type, handler) {
-    _WindowListener_.one(...arguments);
+    sharedListener.one(...arguments);
   },
 
   componentDidMount() {
     this.forHandlers((handler, type) => {
-      _WindowListener_.listen(type, handler);
+      sharedListener.listen(type, handler);
     });
   },
   componentWillUnmount() {
     this.forHandlers((handler, type) => {
-      _WindowListener_.unlisten(type, handler);
+      sharedListener.unlisten(type, handler);
     });
   },
 
@@ -270,8 +273,4 @@ let WindowListener = React.createClass({
   }
 });
 
-module.exports = {
-  SCREEN_NAMES,
-
-  WindowListener
-};
+module.exports = WindowListener;

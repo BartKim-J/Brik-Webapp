@@ -5,12 +5,16 @@ let TransitionMixin = {
   // - _transitions
   // - _transitionTimeouts
 
+  getTransitionTimeout(name) {
+    return this._transitionTimeouts ?
+      this._transitionTimeouts[name] :
+      null;
+  },
+
   transitionIn(name) {
     let {key, refKey} = this._transitions[name];
     let ref = this[refKey];
-    let timeout = this._transitionTimeouts ?
-      this._transitionTimeouts[name] :
-      null;
+    let timeout = this.getTransitionTimeout(name);
     if (timeout) {
       clearTimeout(timeout);
       this._transitionTimeouts[name] = null;
@@ -33,13 +37,24 @@ let TransitionMixin = {
   },
   toggleTransition(name) {
     let {key} = this._transitions[name];
-    let timeout = this._transitionTimeouts ?
-      this._transitionTimeouts[name] :
-      null;
-    if (this.state[key] === '' || timeout) {
+    let timeout = this.getTransitionTimeout(name);
+
+    if (!(this.state[key]) || timeout) {
       this.transitionIn(name);
     } else {
       this.transitionOut(name);
+    }
+  },
+
+  resetTransition(name) {
+    let {key} = this._transitions[name];
+    let timeout = this.getTransitionTimeout(name);
+    if (timeout) {
+      clearTimeout(timeout);
+      this._transitionTimeouts[name] = null;
+    }
+    if (this.state[key]) {
+      this.setState({[key]: ''});
     }
   },
 

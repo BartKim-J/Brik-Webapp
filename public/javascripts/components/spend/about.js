@@ -5,7 +5,7 @@ let Helmet = require('react-helmet');
 let {RImage, ImageBlock} = require('../images');
 let {BlankLink, LinkBlock} = require('../links');
 let {Link} = require('../router');
-let {SCREEN_NAMES, WindowListener} = require('../windowListener');
+let WindowListener = require('../windowListener');
 
 let Logo = require('./logo');
 
@@ -30,7 +30,7 @@ let SpendAbout = React.createClass({
   },
 
   handleScreenChange(prevScreen, screen) {
-    let isTooltip = (screen >= SCREEN_NAMES.MD);
+    let isTooltip = (screen >= WindowListener.SCREEN_NAMES.MD);
     if (this.state.isTooltip !== isTooltip) {
       this.setState({isTooltip});
     }

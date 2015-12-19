@@ -5,6 +5,10 @@ require('classlist-polyfill');
 require('isomorphic-fetch');
 require('string.prototype.startswith');
 
+if (!(Object.assign)) {
+  Object.assign = require('object-assign');
+}
+
 // TEMP
 if (!(window.Promise)) {
   window.Promise = require('es6-promise').Promise;
