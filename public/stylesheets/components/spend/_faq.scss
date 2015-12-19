@@ -8,6 +8,12 @@ $SpendFaq-container-footer-h2-p-color: #828282;
 $SpendFaq-emailUsLink-border-color: #cecece;
 $SpendFaq-emailUsLink-color: #c0c0c0;
 
+.SpendFaq {
+  @include background-image("faq/background.png");
+  @include background-size(auto 376px);
+  background-position: 40% top;
+  background-repeat: no-repeat;
+}
 .SpendFaq-container {
   $horizontal-padding: 10.5%;
 
@@ -113,6 +119,8 @@ $SpendFaq-emailUsLink-color: #c0c0c0;
 @media (min-width: $screen-md-min) {
   .SpendFaq {
     padding: 184px 0 125px;
+    @include background-size(contain);
+    background-position-x: center;
   }
   .SpendFaq-container {
     width: 75%;

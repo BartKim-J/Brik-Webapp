@@ -3,6 +3,12 @@ $SpendJobs-opening-color: #8c8c8c;
 $SpendJobs-opening-category-arrow-color: #e4e4e4;
 $SpendJobs-container-footer-color: #8c8c8c;
 
+.SpendJobs {
+  @include background-image("jobs/background.png");
+  @include background-size(auto 451px);
+  background-position: 58% top;
+  background-repeat: no-repeat;
+}
 .SpendJobs-container {
   $horizontal-padding: 7%;
 
@@ -104,6 +110,12 @@ $SpendJobs-container-footer-color: #8c8c8c;
   line-height: 1.4375;
 }
 
+@media (min-width: 960px) {
+  .SpendJobs {
+    @include background-size(contain);
+    background-position-x: center;
+  }
+}
 @media (min-width: $screen-md-min) {
   .SpendJobs {
     padding: 184px 0 75px;
