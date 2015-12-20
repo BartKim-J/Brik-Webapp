@@ -187,14 +187,23 @@ let SpendIndex = React.createClass({
   },
 
   componentDidUpdate(prevProps, prevState) {
-    const {index: prevIndexEntered} = prevState.enteredClasses;
-    const {index: indexEntered} = this.state.enteredClasses;
-    if (!prevIndexEntered &&
-      indexEntered === 'is-SpendIndex-index-entered')
-    {
-      this._videoRef.play();
-    } else if (prevIndexEntered && !indexEntered) {
-      this._videoRef.currentTime = 0;
+    if (Modernizr.video) {
+      const {index: prevIndexEntered} = prevState.enteredClasses;
+      const {index: indexEntered} = this.state.enteredClasses;
+      if (!prevIndexEntered) {
+        switch (indexEntered) {
+        case 'is-SpendIndex-index-entered':
+          this._videoRef.play();
+          break;
+        case 'is-SpendIndex-index-entered-done':
+          this._videoRef.currentTime = this._videoRef.duration;
+          break;
+        default:
+          break;
+        }
+      } else if (!indexEntered) {
+        this._videoRef.currentTime = 0;
+      }
     }
   },
 
@@ -312,7 +321,7 @@ let SpendIndex = React.createClass({
                   this._videoRef = ref;
                 }}
               >
-                <source src="/videos/Main2_h.264.mov" type="video/mp4" />
+                <source src="/videos/Main4_h.264.mp4" type="video/mp4" />
               </video>
             </div>
           </section>
