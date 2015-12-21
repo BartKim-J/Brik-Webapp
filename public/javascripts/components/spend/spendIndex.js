@@ -185,27 +185,36 @@ let SpendIndex = React.createClass({
       transform: `translate3d(0,${offsetY}%,0)`
     } : null;
   },
+  pauseVideoAtTime(time) {
+    if (Modernizr.video) {
+      this._videoRef.currentTime = time;
+      if (!(this._videoRef.paused)) {
+        this._videoRef.pause();
+      }
+    }
+  },
 
   componentDidUpdate(prevProps, prevState) {
     if (Modernizr.video) {
-      const {index: prevIndexEntered} = prevState.enteredClasses;
-      const {index: indexEntered} = this.state.enteredClasses;
-      if (!prevIndexEntered) {
+      const indexEntered = this.state.enteredClasses.index;
+      if (prevState.enteredClasses.index !== indexEntered) {
         let videoDuration = this._videoRef.duration;
         switch (indexEntered) {
+        case '':
+          this.pauseVideoAtTime(0);
+          break;
         case 'is-SpendIndex-index-entered':
           this._videoRef.play();
           break;
         case 'is-SpendIndex-index-entered-done':
-          if (videoDuration !== NaN) {
-            this._videoRef.currentTime = Math.floor(videoDuration);
+          if (!Number.isNaN(videoDuration)) {
+            this.pauseVideoAtTime(Math.floor(videoDuration));
           }
           break;
         default:
+          // TODO: error
           break;
         }
-      } else if (!indexEntered) {
-        this._videoRef.currentTime = 0;
       }
     }
   },
@@ -234,7 +243,7 @@ let SpendIndex = React.createClass({
   },
   handleVideoLoadedMetadata(e) {
     if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
-      this._videoRef.currentTime = Math.floor(this._videoRef.duration);
+      this.pauseVideoAtTime(Math.floor(this._videoRef.duration));
     }
   },
   handleWindowResize({height}) {
