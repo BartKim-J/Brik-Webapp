@@ -191,12 +191,15 @@ let SpendIndex = React.createClass({
       const {index: prevIndexEntered} = prevState.enteredClasses;
       const {index: indexEntered} = this.state.enteredClasses;
       if (!prevIndexEntered) {
+        let videoDuration = this._videoRef.duration;
         switch (indexEntered) {
         case 'is-SpendIndex-index-entered':
           this._videoRef.play();
           break;
         case 'is-SpendIndex-index-entered-done':
-          this._videoRef.currentTime = this._videoRef.duration;
+          if (videoDuration !== NaN) {
+            this._videoRef.currentTime = Math.floor(videoDuration);
+          }
           break;
         default:
           break;
@@ -227,6 +230,11 @@ let SpendIndex = React.createClass({
       this.updateBgYOffsets();
     } else if ((isInit || isScreenMdPrev) && !this._isScreenMd) {
       this.setSmallScreenState(isInit);
+    }
+  },
+  handleVideoLoadedMetadata(e) {
+    if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
+      this._videoRef.currentTime = Math.floor(this._videoRef.duration);
     }
   },
   handleWindowResize({height}) {
@@ -317,6 +325,7 @@ let SpendIndex = React.createClass({
               <video
                 className="SpendIndex-index-bg-video"
                 width="1366" height="806" poster="/images/white.png"
+                onLoadedMetadata={this.handleVideoLoadedMetadata}
                 ref={ref => {
                   this._videoRef = ref;
                 }}
