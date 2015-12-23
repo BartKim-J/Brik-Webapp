@@ -13,6 +13,11 @@ $SpendIndex-contactless-h2-color: #686d6b;
 $SpendIndex-contactless-h2-p-color: #999;
 $SpendIndex-contactless-p-color: #5b6964;
 
+$SpendIndex-security-bg: #fff;
+$SpendIndex-security-feature-name-color: #060606;
+$SpendIndex-security-feature-desc-color: #969696;
+$SpendIndex-security-arrow-color: #d1d1d1;
+
 $SpendIndex-display-bg: #f6f3ea;
 $SpendIndex-display-h2-color: #595959;
 $SpendIndex-display-p-color: #737373;
@@ -38,6 +43,10 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 
 $SpendIndex-app-bg: #f4ebe0;
 $SpendIndex-app-p-color: #767676;
+
+$SpendIndex-indiegogo-bg: #fff;
+$SpendIndex-indiegogo-h2-color: #5a5a5a;
+$SpendIndex-indiegogo-cta-info-color: #ababab;
 
 $SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
 $SpendIndex-videoLink-h2-md-anim: slideDown 1s 2s both;
@@ -210,6 +219,113 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   margin-left: 7.733333333333333%;
 }
 
+.SpendIndex-security {
+  background-color: $SpendIndex-security-bg;
+}
+.SpendIndex-security-slider {
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+.SpendIndex-security-flatten {
+  display: none;
+}
+.SpendIndex-security-features {
+  width: 87.18887262079063%;
+  margin: 0 auto;
+}
+.SpendIndex-security-slider-features {
+  position: relative;
+  width: auto;
+  margin: 0;
+  overflow: hidden;
+}
+.SpendIndex-security-feature {
+  width: 33.333333333333336%;
+  padding-top: 300px;
+  text-align: center;
+}
+.SpendIndex-security-slider-feature {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 281px 0 72px;
+}
+.SpendIndex-security-feature-alert,
+.SpendIndex-security-feature-passcode,
+.SpendIndex-security-feature-encrypt {
+  @include background-image(
+    "lost-alert.png", "lost-alert@2x.png", 172px, 298px
+  );
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.SpendIndex-security-slider-feature-alert,
+.SpendIndex-security-slider-feature-passcode,
+.SpendIndex-security-slider-feature-encrypt {
+  @include background-image(
+    "lost-alert-slider.png", "lost-alert-slider@2x.png", 122px, 211px
+  );
+  background-position-y: 70px;
+}
+.SpendIndex-security-feature-name {
+  margin-bottom: 15px;
+  color: $SpendIndex-security-feature-name-color;
+  font-size: 23px;
+  line-height: 28px;
+}
+.SpendIndex-security-slider-feature-name {
+  margin-bottom: 11.5px;
+  font-size: 16px;
+  line-height: 1.15625;
+  letter-spacing: 0.5px;
+}
+.SpendIndex-security-feature-desc {
+  margin-top: 15px;
+  color: $SpendIndex-security-feature-desc-color;
+  font-size: 19px;
+  line-height: 23px;
+}
+.SpendIndex-security-slider-feature-desc {
+  margin-top: 11.5px;
+  font-size: 13.5px;
+  line-height: 16.5px;
+}
+.SpendIndex-security-feature-desc p {
+  margin: 0;
+}
+.SpendIndex-security-arrow {
+  border: 18px solid transparent;
+}
+.SpendIndex-security-arrow-left,
+.SpendIndex-security-arrow-right {
+  position: absolute;
+  top: 172px;
+}
+.SpendIndex-security-arrow-left {
+  left: 2px;
+  border-right-color: $SpendIndex-security-arrow-color;
+}
+.SpendIndex-security-arrow-right {
+  right: 2px;
+  border-left-color: $SpendIndex-security-arrow-color;
+}
+.SpendIndex-security-arrow-left:after,
+.SpendIndex-security-arrow-right:after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  border: 17px solid transparent;
+}
+.SpendIndex-security-arrow-left:after {
+  right: -18px;
+  border-right-color: $SpendIndex-security-bg;
+}
+.SpendIndex-security-arrow-right:after {
+  left: -18px;
+  border-left-color: $SpendIndex-security-bg;
+}
+
 .SpendIndex-display {
   padding-top: 62px;
   background-color: $SpendIndex-display-bg;
@@ -281,6 +397,9 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   font-size: 22px;
   line-height: 27px;
   text-align: center;
+}
+.SpendIndex-charge-bg {
+  display: none;
 }
 
 .SpendIndex-physicalCards {
@@ -425,6 +544,46 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   margin-right: 21.333333333333332%;
 }
 
+.SpendIndex-indiegogo {
+  padding: 60px 0 80px;
+  background-color: $SpendIndex-indiegogo-bg;
+}
+.SpendIndex-indiegogo-h2 {
+  margin: 0 0 80px;
+  color: $SpendIndex-indiegogo-h2-color;
+  font-size: 26px;
+  line-height: 1.4;
+  text-align: center;
+}
+.SpendIndex-indiegogo-h2-em {
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+}
+.SpendIndex-indiegogo-ImageBlock {
+  margin: 80px 0;
+  text-align: center;
+}
+.SpendIndex-indiegogo-cta {
+  margin-top: 90px;
+  text-align: center;
+}
+.SpendIndex-indiegogo-cta-LinkBlock {
+  margin: 15px 0;
+}
+.SpendIndex-indiegogo-cta-info {
+  margin-top: 15px;
+  color: $SpendIndex-indiegogo-cta-info-color;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+.SpendIndex-indiegogo-bg {
+  display: none;
+}
+
 @media (min-width: $screen-md-min) {
   .SpendIndex-container {
     max-width: 1366px;
@@ -556,6 +715,14 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     margin-left: 0;
   }
 
+  .SpendIndex-security-slider {
+    display: none;
+  }
+  .SpendIndex-security-flatten {
+    display: block;
+    padding: 196px 0 162px;
+  }
+
   .SpendIndex-display {
     position: relative;
     height: 590px;
@@ -642,6 +809,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     text-align: left;
   }
   .SpendIndex-charge-bg {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -824,5 +992,56 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
       "app-md.png", "app-md@2x.png", 600, 839
     );
     margin-right: 0;
+  }
+
+  .SpendIndex-indiegogo {
+    position: relative;
+    height: 897px;
+    padding: 0;
+  }
+  @include enter(
+    "SpendIndex-indiegogo-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-indiegogo-entered"
+  ) {
+    position: absolute;
+    top: 43.159609120521175%;
+    left: 11.273792093704246%;
+    transform: translateY(-43.159609120521175%);
+  }
+  .SpendIndex-indiegogo-h2 {
+    margin-bottom: 100px;
+    font-size: 35px;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .SpendIndex-indiegogo-h2-em {
+    font-size: 35px;
+    letter-spacing: normal;
+  }
+  .SpendIndex-indiegogo-ImageBlock {
+    display: none;
+  }
+  .SpendIndex-indiegogo-cta {
+    display: inline-block;
+    margin-top: 0;
+  }
+  .SpendIndex-indiegogo-cta-LinkBlock {
+    margin-top: 0;
+  }
+  .SpendIndex-indiegogo-cta-info {
+    letter-spacing: normal;
+  }
+  .SpendIndex-indiegogo-bg {
+    display: block;
+    position: absolute;
+    top: 43.159609120521175%;
+    right: 0;
+    transform: translateY(-46.47160068846816%);
+    width: 41.65446559297218%;
+  }
+  .SpendIndex-indiegogo-bg-inner {
+    @include r-background-image(
+      "fin-spend-2-md.png", "fin-spend-2-md@2x.png", 569, 581
+    );
   }
 }

@@ -5,10 +5,11 @@ let Helmet = require('react-helmet');
 let size = require('lodash/collection/size');
 let some = require('lodash/collection/some');
 
-let {Button} = require('../buttons');
+let {Button, PseudoButton} = require('../buttons');
 let {Form} = require('../forms');
-let {ImageBlock, RImage} = require('../images');
+let {Image, RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
+let Markdown = require('../markdown');
 let WindowListener = require('../windowListener');
 
 let Logo = require('./logo');
@@ -24,7 +25,8 @@ let SpendIndex = React.createClass({
       charge: 0,
       physicalCards: 0,
       tech: 0,
-      app: 0
+      app: 0,
+      indiegogo: 0
     }),
     BG_OFFSET_Y_MAX: 10
   },
@@ -35,13 +37,16 @@ let SpendIndex = React.createClass({
 
   // Instance variables
   // - _formRef
+  // - _securitySliderRef
   // - _videoRef
   // - _isScreenMd
   // - _pageYOffset
+  // - _securitySwipe
   // - _windowHeight
 
   getInitialState() {
     return {
+      bgYOffsets: SpendIndex.DEFAULT_BG_Y_OFFSETS,
       enteredClasses: Immutable({
         index: '',
         contactless: '',
@@ -49,9 +54,10 @@ let SpendIndex = React.createClass({
         charge: '',
         physicalCards: '',
         tech: '',
-        app: ''
+        app: '',
+        indiegogo: ''
       }),
-      bgYOffsets: SpendIndex.DEFAULT_BG_Y_OFFSETS
+      securitySwipePos: 0
     };
   },
 
@@ -64,7 +70,8 @@ let SpendIndex = React.createClass({
         charge: 'is-SpendIndex-charge-entered-done',
         physicalCards: 'is-SpendIndex-physicalCards-entered-done',
         tech: 'is-SpendIndex-tech-entered-done',
-        app: 'is-SpendIndex-app-entered-done'
+        app: 'is-SpendIndex-app-entered-done',
+        indiegogo: 'is-SpendIndex-indiegogo-entered-done'
       })
     };
     if (!isInit && some(this.state.bgYOffsets)) {
@@ -73,50 +80,6 @@ let SpendIndex = React.createClass({
     this.setState(state);
   },
 
-  updateEntered(isReset = false) {
-    if (typeof this._isScreenMd !== 'boolean' ||
-      typeof this._pageYOffset !== 'number' ||
-      typeof this._windowHeight !== 'number')
-    {
-      return;
-    }
-
-    if (this._isScreenMd) {
-      const {enteredClasses} = this.state;
-      let newEnteredClasses = {};
-
-      // TEMP: hardcoded numbers (thresholds: 1/3s and 2/3s of heights)
-      let ranges = {
-        index: [0, 537],
-        contactless: [1015 - this._windowHeight, 1225],
-        display: [1626 - this._windowHeight, 1822],
-        charge: [2234 - this._windowHeight, 2448],
-        physicalCards: [2860 - this._windowHeight, 3056],
-        tech: [3535 - this._windowHeight, 3816],
-        app: [4984 - this._windowHeight, 5304]
-      };
-
-      for (let key in ranges) {
-        let [min, max] = ranges[key];
-        let enteredClass = enteredClasses[key];
-        if (!enteredClass) {
-          if (this._pageYOffset >= min && this._pageYOffset <= max) {
-            newEnteredClasses[key] = `is-SpendIndex-${key}-entered`;
-          }
-        } else if (isReset) {
-          if (this._pageYOffset < min || this._pageYOffset > max) {
-            newEnteredClasses[key] = '';
-          }
-        }
-      }
-
-      if (size(newEnteredClasses) > 0) {
-        this.setState({
-          enteredClasses: enteredClasses.merge(newEnteredClasses)
-        });
-      }
-    }
-  },
   updateBgYOffsets() {
     if (typeof this._isScreenMd !== 'boolean' ||
       typeof this._pageYOffset !== 'number' ||
@@ -136,11 +99,12 @@ let SpendIndex = React.createClass({
       // (thresholds: 1/3s of section heights and vertical centers)
       let ranges = {
         contactless: [1015 - this._windowHeight, 1117.5 - halfHeight],
-        display: [1626 - this._windowHeight, 1724 - halfHeight],
-        charge: [2234 - this._windowHeight, 2341 - halfHeight],
-        physicalCards: [2860 - this._windowHeight, 2958 - halfHeight],
-        tech: [3535 - this._windowHeight, 3816],
-        app: [4984 - this._windowHeight, 5144 - halfHeight]
+        display: [2378 - this._windowHeight, 2476 - halfHeight],
+        charge: [2986 - this._windowHeight, 3093 - halfHeight],
+        physicalCards: [3612 - this._windowHeight, 3710 - halfHeight],
+        tech: [4287 - this._windowHeight, 4568],
+        app: [5736 - this._windowHeight, 5896 - halfHeight],
+        indiegogo: [6674 - this._windowHeight, 6973]
       };
 
       for (let key in ranges) {
@@ -178,6 +142,51 @@ let SpendIndex = React.createClass({
       }
     }
   },
+  updateEntered(isReset = false) {
+    if (typeof this._isScreenMd !== 'boolean' ||
+      typeof this._pageYOffset !== 'number' ||
+      typeof this._windowHeight !== 'number')
+    {
+      return;
+    }
+
+    if (this._isScreenMd) {
+      const {enteredClasses} = this.state;
+      let newEnteredClasses = {};
+
+      // TEMP: hardcoded numbers (thresholds: 1/3s and 2/3s of heights)
+      let ranges = {
+        index: [0, 537],
+        contactless: [1015 - this._windowHeight, 1225],
+        display: [2378 - this._windowHeight, 2574],
+        charge: [2986 - this._windowHeight, 3200],
+        physicalCards: [3612 - this._windowHeight, 3808],
+        tech: [4287 - this._windowHeight, 4568],
+        app: [5736 - this._windowHeight, 6056],
+        indiegogo: [6674 - this._windowHeight, 6973]
+      };
+
+      for (let key in ranges) {
+        let [min, max] = ranges[key];
+        let enteredClass = enteredClasses[key];
+        if (!enteredClass) {
+          if (this._pageYOffset >= min && this._pageYOffset <= max) {
+            newEnteredClasses[key] = `is-SpendIndex-${key}-entered`;
+          }
+        } else if (isReset) {
+          if (this._pageYOffset < min || this._pageYOffset > max) {
+            newEnteredClasses[key] = '';
+          }
+        }
+      }
+
+      if (size(newEnteredClasses) > 0) {
+        this.setState({
+          enteredClasses: enteredClasses.merge(newEnteredClasses)
+        });
+      }
+    }
+  },
 
   offsetY2Style(offsetY) {
     return offsetY ? {
@@ -194,6 +203,13 @@ let SpendIndex = React.createClass({
     }
   },
 
+  componentDidMount() {
+    this._securitySwipe = new Swipe(this._securitySliderRef, {
+      callback: (index, el) => {
+        this.setState({securitySwipePos: index});
+      }
+    });
+  },
   componentDidUpdate(prevProps, prevState) {
     if (Modernizr.video) {
       const indexEntered = this.state.enteredClasses.index;
@@ -235,11 +251,17 @@ let SpendIndex = React.createClass({
     this._isScreenMd = (screen >= WindowListener.SCREEN_NAMES.MD);
 
     if ((isInit || !isScreenMdPrev) && this._isScreenMd) {
-      this.updateEntered(!isInit);
       this.updateBgYOffsets();
+      this.updateEntered(!isInit);
     } else if ((isInit || isScreenMdPrev) && !this._isScreenMd) {
       this.setSmallScreenState(isInit);
     }
+  },
+  handleSecuritySliderPrevClick(e) {
+    this._securitySwipe.prev();
+  },
+  handleSecuritySliderNextClick(e) {
+    this._securitySwipe.next();
   },
   handleVideoLoadedMetadata(e) {
     if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
@@ -249,18 +271,27 @@ let SpendIndex = React.createClass({
   handleWindowResize({height}) {
     this._windowHeight = height;
 
-    this.updateEntered();
     this.updateBgYOffsets();
+    this.updateEntered();
   },
   handleWindowScroll({pageYOffset}) {
     this._pageYOffset = pageYOffset;
 
-    this.updateEntered();
     this.updateBgYOffsets();
+    this.updateEntered();
   },
 
   render() {
-    const {enteredClasses, bgYOffsets} = this.state;
+    const {bgYOffsets, enteredClasses} = this.state;
+    const {
+      contactless: contactlessBgY,
+      display: displayBgY,
+      charge: chargeBgY,
+      physicalCards: physicalCardsBgY,
+      tech: techBgY,
+      app: appBgY,
+      indiegogo: indiegogoBgY
+    } = bgYOffsets;
     const {
       index: indexEnteredClass,
       contactless: contactlessEnteredClass,
@@ -268,16 +299,9 @@ let SpendIndex = React.createClass({
       charge: chargeEnteredClass,
       physicalCards: physicalCardsEnteredClass,
       tech: techEnteredClass,
-      app: appEnteredClass
+      app: appEnteredClass,
+      indiegogo: indiegogoEnteredClass
     } = enteredClasses;
-    const {
-      contactless: contactlessBgY,
-      display: displayBgY,
-      charge: chargeBgY,
-      physicalCards: physicalCardsBgY,
-      tech: techBgY,
-      app: appBgY
-    } = bgYOffsets;
 
     let overflowStyle = this._isScreenMd ?
       {overflow: 'hidden'} :
@@ -372,6 +396,7 @@ let SpendIndex = React.createClass({
               <div className="SpendIndex-contactless-bg-inner" />
             </div>
           </section>
+          {this.renderSecurity()}
           <section
             className={classNames('SpendIndex-display', displayEnteredClass)}
             style={overflowStyle}
@@ -499,8 +524,124 @@ let SpendIndex = React.createClass({
               <div className="SpendIndex-app-bg-inner" />
             </div>
           </section>
+          <section
+            className={classNames(
+              'SpendIndex-indiegogo', indiegogoEnteredClass
+            )}
+            style={overflowStyle}
+          >
+            <div className="SpendIndex-indiegogo-inner">
+              <h2 className="SpendIndex-indiegogo-h2">
+                Use it easily anywhere<br />
+                <em className="SpendIndex-indiegogo-h2-em">Get your First</em>
+              </h2>
+              <ImageBlock className="SpendIndex-indiegogo-ImageBlock">
+                <Image src="/images/fin-spend-2.png" width={293} height={235} />
+              </ImageBlock>
+              <div className="SpendIndex-indiegogo-cta">
+                <LinkBlock className="SpendIndex-indiegogo-cta-LinkBlock">
+                  <IndiegogoLink />
+                </LinkBlock>
+                <div className="SpendIndex-indiegogo-cta-info">
+                  Shipping this Fall 2016
+                </div>
+              </div>
+            </div>
+            <div className="SpendIndex-indiegogo-bg">
+              <div
+                className="SpendIndex-indiegogo-bg-inner"
+                style={this.offsetY2Style(indiegogoBgY)} />
+            </div>
+          </section>
         </div>
       </div>
+    );
+  },
+  renderSecurity() {
+    const {securitySwipePos} = this.state;
+    return (
+      <section className="SpendIndex-security">
+        <div
+          className="SpendIndex-security-slider"
+          ref={ref => {
+            this._securitySliderRef = ref;
+          }}
+        >
+          {this.renderSecurityFeatures(true)}
+          <div className="SpendIndex-security-slider-buttons">
+            <PseudoButton onClick={this.handleSecuritySliderPrevClick}>
+              <span
+                className={classNames('SpendIndex-security-arrow SpendIndex-security-arrow-left text-hide', {
+                  hidden: securitySwipePos <= 0
+                })}
+              >
+                Previous
+              </span>
+            </PseudoButton>
+            <PseudoButton onClick={this.handleSecuritySliderNextClick}>
+              <span
+                className={classNames('SpendIndex-security-arrow SpendIndex-security-arrow-right text-hide', {
+                  hidden: securitySwipePos >= 2
+                })}
+              >
+                Next
+              </span>
+            </PseudoButton>
+          </div>
+        </div>
+        <div className="SpendIndex-security-flatten">
+          {this.renderSecurityFeatures()}
+        </div>
+      </section>
+    );
+  },
+  renderSecurityFeatures(isSlider = false) {
+    return (
+      <ul
+        className={classNames('SpendIndex-security-features listUnstyled', (
+          isSlider ?
+            'SpendIndex-security-slider-features' :
+            'clearfix'
+        ))}
+      >
+        {[{
+          key: 'alert',
+          name: 'Proximity Alert',
+          description: 'Auto-lock when lost.\nSelf-destruction after time.'
+        }, {
+          key: 'passcode',
+          name: 'Security Passcode',
+          description: 'Protect your card and\nbank information'
+        }, {
+          key: 'encrypt',
+          name: 'Bank Level Encyrption',
+          description: '256 bit encryption\nfor card data'
+        }].map(({key, name, description}) => (
+          <li
+            className={classNames(`SpendIndex-security-feature SpendIndex-security-feature-${key}`, (
+              isSlider ?
+                `SpendIndex-security-slider-feature SpendIndex-security-slider-feature-${key}` :
+                'pull-left'
+            ))}
+            key={key}
+          >
+            <div
+              className={classNames('SpendIndex-security-feature-name', {
+                'SpendIndex-security-slider-feature-name': isSlider
+              })}
+            >
+              {name}
+            </div>
+            <Markdown
+              className={classNames('SpendIndex-security-feature-desc', {
+                'SpendIndex-security-slider-feature-desc': isSlider
+              })}
+            >
+              {description}
+            </Markdown>
+          </li>
+        ))}
+      </ul>
     );
   }
 });
