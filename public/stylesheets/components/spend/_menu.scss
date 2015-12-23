@@ -7,7 +7,7 @@ $SpendMenu-Logo-color: #3a3a3a;
 $SpendMenu-button-color: #3a3a3a;
 $SpendMenu-item-link-border-color: #d5d5d5;
 $SpendMenu-item-link-color: #383838;
-$SpendMenu-item-link-screen-md-color: #707070;
+$SpendMenu-item-link-md-color: #707070;
 $SpendMenu-socialLink-color: #383838;
 
 $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
@@ -258,7 +258,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     display: inline;
     padding: 0;
     border-bottom: 0;
-    color: $SpendMenu-item-link-screen-md-color;
+    color: $SpendMenu-item-link-md-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.1875;

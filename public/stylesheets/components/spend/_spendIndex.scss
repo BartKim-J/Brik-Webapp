@@ -73,7 +73,6 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   right: 0;
   left: 0;
   z-index: 1;
-  text-align: center;
 }
 .SpendIndex-h1 {
   margin: 0 0 16px;
@@ -225,7 +224,6 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 .SpendIndex-security-slider {
   position: relative;
   overflow: hidden;
-  visibility: hidden;
 }
 .SpendIndex-security-flatten {
   display: none;
@@ -243,7 +241,6 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 .SpendIndex-security-feature {
   width: 33.333333333333336%;
   padding-top: 300px;
-  text-align: center;
 }
 .SpendIndex-security-slider-feature {
   position: relative;
@@ -563,11 +560,9 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 }
 .SpendIndex-indiegogo-ImageBlock {
   margin: 80px 0;
-  text-align: center;
 }
 .SpendIndex-indiegogo-cta {
   margin-top: 90px;
-  text-align: center;
 }
 .SpendIndex-indiegogo-cta-LinkBlock {
   margin: 15px 0;

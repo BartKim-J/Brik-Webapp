@@ -320,7 +320,7 @@ let SpendIndex = React.createClass({
             className={classNames('SpendIndex-index', indexEnteredClass)}
           >
             <div className="SpendIndex-index-inner">
-              <header className="SpendIndex-index-header">
+              <header className="SpendIndex-index-header text-center">
                 <h1 className="SpendIndex-h1">
                   <Logo className="SpendIndex-h1-Logo" />
                 </h1>
@@ -535,10 +535,12 @@ let SpendIndex = React.createClass({
                 Use it easily anywhere<br />
                 <em className="SpendIndex-indiegogo-h2-em">Get your First</em>
               </h2>
-              <ImageBlock className="SpendIndex-indiegogo-ImageBlock">
+              <ImageBlock
+                className="SpendIndex-indiegogo-ImageBlock text-center"
+              >
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
-              <div className="SpendIndex-indiegogo-cta">
+              <div className="SpendIndex-indiegogo-cta text-center">
                 <LinkBlock className="SpendIndex-indiegogo-cta-LinkBlock">
                   <IndiegogoLink />
                 </LinkBlock>
@@ -562,7 +564,7 @@ let SpendIndex = React.createClass({
     return (
       <section className="SpendIndex-security">
         <div
-          className="SpendIndex-security-slider"
+          className="SpendIndex-security-slider invisible"
           ref={ref => {
             this._securitySliderRef = ref;
           }}
@@ -618,7 +620,7 @@ let SpendIndex = React.createClass({
           description: '256 bit encryption\nfor card data'
         }].map(({key, name, description}) => (
           <li
-            className={classNames(`SpendIndex-security-feature SpendIndex-security-feature-${key}`, (
+            className={classNames(`SpendIndex-security-feature SpendIndex-security-feature-${key} text-center`, (
               isSlider ?
                 `SpendIndex-security-slider-feature SpendIndex-security-slider-feature-${key}` :
                 'pull-left'
