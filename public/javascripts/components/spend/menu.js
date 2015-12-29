@@ -4,12 +4,13 @@ let classNames = require('classnames');
 let TransitionMixin = require('../../mixins/transition');
 
 let {PseudoButton} = require('../buttons');
-let {BlankLink, LinkBlock} = require('../links');
+let {LinkBlock} = require('../links');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
-let Logo = require('./logo');
 let IndiegogoLink = require('./indiegogoLink');
+let Logo = require('./logo');
+let SocialLinks = require('./socialLinks');
 
 let SpendMenu = React.createClass({
   mixins: [TransitionMixin],
@@ -182,12 +183,10 @@ let SpendMenu = React.createClass({
   },
 
   render() {
-    const {FACEBOOK_URL, TWITTER_URL, LINKEDIN_URL} = CONF;
     const {
       isScrolling, indexEnteredClass,
       openClasses, indexLogoClasses
     } = this.state;
-
     let isRouteIndex = this.isRouteIndex();
 
     return (
@@ -244,24 +243,7 @@ let SpendMenu = React.createClass({
                     <Link className="SpendMenu-item-link" url="/faq">FAQ</Link>
                   </li>
                 </ul>
-                <ul className="SpendMenu-socialLink-items listUnstyled clearfix">
-                  {[
-                    ['facebook', FACEBOOK_URL],
-                    ['twitter', TWITTER_URL],
-                    ['linkedin', LINKEDIN_URL]
-                  ]
-                    .filter(([name, url]) => url)
-                    .map(([name, url], i, array) => (
-                      <li
-                        className={classNames('SpendMenu-socialLink-item pull-left', {
-                          'SpendMenu-socialLink-item-last': i === array.length - 1
-                        })}
-                        key={name}
-                      >
-                        <BlankLink className="SpendMenu-socialLink" href={url}><i className={`fa fa-${name} SpendMenu-socialLink-icon`} /></BlankLink>
-                      </li>
-                    ))}
-                </ul>
+                <SocialLinks className="SpendMenu-SocialLinks" />
               </div>
               <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
                 <IndiegogoLink className="SpendMenu-IndiegogoLink" />

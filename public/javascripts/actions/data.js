@@ -25,6 +25,9 @@ function fetchData(key) {
   case 'jobOpenings':
     url = '/jobs';
     break;
+  case 'legalDocs':
+    url = '/legal';
+    break;
   case 'team':
     url = '/about';
     break;

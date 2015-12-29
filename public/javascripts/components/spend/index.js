@@ -10,6 +10,7 @@ let Index = require('./spendIndex');
 let About = require('./about');
 let Jobs = require('./jobs');
 let Faq = require('./faq');
+let Legal = require('./legal');
 
 let Spend = React.createClass({
   propTypes: {
@@ -91,7 +92,8 @@ let Spend = React.createClass({
           index: '/$',
           about: '/about$',
           jobs: '/jobs$',
-          faq: '/faq$'
+          faq: '/faq$',
+          legal: '/legal$'
         }}
         route={route}
         onPushRoute={pushRoute} onPopRoute={popRoute}
@@ -116,10 +118,10 @@ let Spend = React.createClass({
       );
     } else {
       const {
-        data: {jobOpenings, faqSections, team},
+        data: {faqSections, jobOpenings, legalDocs, team},
+        fetchData,
 
-        postSubscription,
-        fetchData
+        postSubscription
       } = this.props;
 
       return [
@@ -145,6 +147,13 @@ let Spend = React.createClass({
             sections={faqSections}
             onEmpty={() => {
               fetchData('faqSections');
+            }} />
+        </Route>,
+        <Route key="legal" name="legal">
+          <Legal
+            docs={legalDocs}
+            onEmpty={() => {
+              fetchData('legalDocs');
             }} />
         </Route>,
         <Route key="pageNotFound">

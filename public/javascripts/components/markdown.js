@@ -2,7 +2,10 @@ let React = require('react');
 let classNames = require('classnames');
 let marked = require('marked');
 
-marked.setOptions({breaks: true});
+marked.setOptions({
+  breaks: true,
+  smartypants: true
+});
 
 let Markdown = React.createClass({
   makeMarkup() {

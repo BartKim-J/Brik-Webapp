@@ -4,7 +4,9 @@ let router = express.Router();
 let Immutable = require('seamless-immutable');
 
 let csrf = require('csurf');
-let {faqSections, jobOpenings, team} = require('../data');
+let {
+  faqSections, jobOpenings, legalDocs, team
+} = require('../data');
 
 let csrfProtection = csrf({
   cookie: {
@@ -38,6 +40,7 @@ router.get('/', csrfProtection, (req, res, next) => {
 router.get('/about', makeRoute({team}));
 router.get('/jobs', makeRoute({jobOpenings}));
 router.get('/faq', makeRoute({faqSections}));
+router.get('/legal', makeRoute({legalDocs}));
 
 router.csrfProtection = csrfProtection;
 

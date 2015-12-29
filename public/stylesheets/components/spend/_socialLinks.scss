@@ -1,0 +1,17 @@
+$SpendSocialLinks-link-color: #383838;
+
+.SpendSocialLinks {
+  line-height: 1;
+}
+.SpendSocialLinks-item {
+  margin-right: 1em;
+}
+.SpendSocialLinks-item-last {
+  margin-right: 0;
+}
+.SpendSocialLinks-link {
+  color: $SpendSocialLinks-link-color;
+}
+.SpendSocialLinks-icon {
+  vertical-align: top;
+}

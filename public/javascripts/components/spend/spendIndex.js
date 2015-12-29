@@ -10,10 +10,12 @@ let {Form} = require('../forms');
 let {Image, RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
 let Markdown = require('../markdown');
+let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
-let Logo = require('./logo');
 let IndiegogoLink = require('./indiegogoLink');
+let Logo = require('./logo');
+let SocialLinks = require('./socialLinks');
 
 let Immutable = require('seamless-immutable');
 
@@ -282,6 +284,8 @@ let SpendIndex = React.createClass({
   },
 
   render() {
+    const {BRAND} = CONF;
+
     const {bgYOffsets, enteredClasses} = this.state;
     const {
       contactless: contactlessBgY,
@@ -309,7 +313,7 @@ let SpendIndex = React.createClass({
 
     return (
       <div className="SpendIndex">
-        <Helmet title={CONF.BRAND} />
+        <Helmet title={BRAND} />
         <WindowListener
           onResize={this.handleWindowResize}
           onScreenChange={this.handleScreenChange}
@@ -556,6 +560,36 @@ let SpendIndex = React.createClass({
             </div>
           </section>
         </div>
+        <footer className="SpendIndex-footer">
+          <div className="SpendIndex-footer-Logo"><Logo /></div>
+          <ul
+            className="SpendIndex-footer-link-items
+              listUnstyled text-uppercase"
+          >
+            <li className="SpendIndex-footer-link-item pull-left">
+              <Link className="SpendIndex-footer-link" url="/about">About</Link>
+            </li>
+            <li className="SpendIndex-footer-link-item pull-left">
+              <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
+            </li>
+            <li className="SpendIndex-footer-link-item pull-left">
+              <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
+            </li>
+            <li
+              className="SpendIndex-footer-link-item
+                SpendIndex-footer-link-item-last
+                pull-left"
+            >
+              <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
+            </li>
+          </ul>
+          <div className="SpendIndex-footer-copyrights">
+            {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
+          </div>
+          <SocialLinks
+            className="SpendIndex-footer-SocialLinks"
+            linkClassName="SpendIndex-footer-SocialLinks-link" />
+        </footer>
       </div>
     );
   },
