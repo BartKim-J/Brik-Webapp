@@ -7,8 +7,7 @@ $SpendMenu-Logo-color: #3a3a3a;
 $SpendMenu-button-color: #3a3a3a;
 $SpendMenu-item-link-border-color: #d5d5d5;
 $SpendMenu-item-link-color: #383838;
-$SpendMenu-item-link-screen-md-color: #707070;
-$SpendMenu-socialLink-color: #383838;
+$SpendMenu-item-link-md-color: #707070;
 
 $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
 
@@ -143,22 +142,9 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   font-weight: 700;
   line-height: 2.4;
 }
-.SpendMenu-socialLink-items {
+.SpendMenu-SocialLinks {
   margin: 32px 22px 0;
   font-size: 26px;
-  line-height: 1;
-}
-.SpendMenu-socialLink-item {
-  margin-right: 26px;
-}
-.SpendMenu-socialLink-item-last {
-  margin-right: 0;
-}
-.SpendMenu-socialLink {
-  color: $SpendMenu-socialLink-color;
-}
-.SpendMenu-socialLink-icon {
-  vertical-align: top;
 }
 .SpendMenu-Indiegogo-LinkBlock {
   position: absolute;
@@ -258,12 +244,12 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     display: inline;
     padding: 0;
     border-bottom: 0;
-    color: $SpendMenu-item-link-screen-md-color;
+    color: $SpendMenu-item-link-md-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.1875;
   }
-  .SpendMenu-socialLink-items {
+  .SpendMenu-SocialLinks {
     display: none;
   }
   .SpendMenu-Indiegogo-LinkBlock {

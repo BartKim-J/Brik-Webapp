@@ -1,5 +1,11 @@
 let React = require('react');
+let classNames = require('classnames');
 let marked = require('marked');
+
+marked.setOptions({
+  breaks: true,
+  smartypants: true
+});
 
 let Markdown = React.createClass({
   makeMarkup() {
@@ -11,7 +17,7 @@ let Markdown = React.createClass({
   render() {
     return (
       <div
-        className="Markdown"
+        className={classNames('Markdown', this.props.className)}
         dangerouslySetInnerHTML={this.makeMarkup()} />
     );
   }
