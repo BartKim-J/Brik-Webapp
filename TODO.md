@@ -32,11 +32,6 @@ X-UA-Compatible: IE=edge
 - Prevent unwanted access to `/public`.
 - Set `NODE_ENV` to `production` on production.
 
-## Design
-
-- `BrowserUpgrade`
-- Error pages
-
 ## Integrations
 
 - IE specifics
@@ -61,7 +56,6 @@ X-UA-Compatible: IE=edge
 
 - Add `onHResize` and `onVResize` to `WindowListener`.
 - Check `getDuration()` of `css-animation` module.
-- Modularize `SpendAbout-member`.
 - Refactor media query breakpoints.
 
 ## SEO
