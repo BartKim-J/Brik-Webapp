@@ -21,16 +21,19 @@ function postSubscription(email) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({email})
-    }).then(response =>
-      response.json().then(json => ({response, json}))
+    }).then(
+      response =>
+        response.json().then(json => ({response, json}))
     ).then(({response, json: {error = null}}) => {
       if (response.ok) {
         dispatch(receiveNewSubscription('success'));
         return Promise.resolve();
       } else {
-        dispatch(receiveNewSubscription('error', error));
         return Promise.reject(error);
       }
+    }).catch(error => {
+      dispatch(receiveNewSubscription('error', error));
+      throw error;
     });
   });
 }
