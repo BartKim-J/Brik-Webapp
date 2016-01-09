@@ -30,7 +30,6 @@ X-UA-Compatible: IE=edge
 - <https://github.com/h5bp/server-configs>
     - Check trailing slash.
 - Prevent unwanted access to `/public`.
-- Set `NODE_ENV` to `production` on production.
 
 ## Integrations
 

@@ -6,10 +6,11 @@ let size = require('lodash/collection/size');
 let some = require('lodash/collection/some');
 
 let {Button, PseudoButton} = require('../buttons');
-let {Form} = require('../forms');
+let {Input, Form} = require('../forms');
 let {Image, RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
 let Markdown = require('../markdown');
+let MessageBoard = require('../messageBoard');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
@@ -59,7 +60,8 @@ let SpendIndex = React.createClass({
         app: '',
         indiegogo: ''
       }),
-      securitySwipePos: 0
+      securitySwipePos: 0,
+      subscriptionMsg: null
     };
   },
 
@@ -240,10 +242,22 @@ let SpendIndex = React.createClass({
   handleNewSubscription({email}) {
     this.props.onNewSubscription(email)
       .then(() => {
-        // TODO
+        this.setState({
+          subscriptionMsg: Immutable({
+            className: 'SpendIndex-Form-MessageBoard-success',
+            content: 'Thank you for your subscription.',
+            isFading: true
+          })
+        });
         this._formRef.reset();
       }, error => {
-        // TODO
+        this.setState({
+          subscriptionMsg: Immutable({
+            className: 'SpendIndex-Form-MessageBoard-error',
+            content: error.message,
+            isFading: false
+          })
+        });
       });
   },
   handleScreenChange(prevScreen, screen) {
@@ -286,7 +300,11 @@ let SpendIndex = React.createClass({
   render() {
     const {BRAND} = CONF;
 
-    const {bgYOffsets, enteredClasses} = this.state;
+    const {
+      bgYOffsets,
+      enteredClasses,
+      subscriptionMsg
+    } = this.state;
     const {
       contactless: contactlessBgY,
       display: displayBgY,
@@ -349,12 +367,15 @@ let SpendIndex = React.createClass({
                       this._formRef = ref;
                     }}
                   >
-                    <input className="SpendIndex-Form-email" type="email" name="email" placeholder="E-mail address" />
+                    <Input className="SpendIndex-Form-email" type="email" name="email" placeholder="E-mail address" />
                     <Button className="SpendIndex-Form-submit" type="submit"><i className="fa fa-Spend-paper-plane SpendIndex-Form-submit-icon" /></Button>
                   </Form>
-                  <p className="SpendIndex-Form-p SpendIndex-Form-p-last">
+                  <MessageBoard
+                    className="SpendIndex-Form-MessageBoard"
+                    message={subscriptionMsg}
+                  >
                     Be first to find out when we launch campaign
-                  </p>
+                  </MessageBoard>
                 </div>
               </div>
             </div>

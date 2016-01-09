@@ -8,10 +8,10 @@ $Collapse-Target-negativeInfinite: -9999px;
 .Collapse-Target-inner {
   display: none;
   overflow: hidden;
-  transition: margin-top $Collapse-transitionDuration;
 }
 .is-Collapse-active .Collapse-Target-inner {
   display: block;
+  transition: margin-top $Collapse-transitionDuration;
 }
 .is-Collapse-active-in .Collapse-Target-inner {
   margin-top: 0 !important;
@@ -19,5 +19,7 @@ $Collapse-Target-negativeInfinite: -9999px;
 .is-Collapse-Target-init .Collapse-Target-inner {
   display: block;
   margin-top: $Collapse-Target-negativeInfinite;
+}
+.is-Collapse-active.is-Collapse-Target-init .Collapse-Target-inner {
   transition: none;
 }

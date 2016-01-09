@@ -6,7 +6,9 @@ $SpendIndex-videoLink-bg: #242424;
 $SpendIndex-videoLink-color: #d3d3d3;
 $SpendIndex-Form-border-color: #d8d8d8;
 $SpendIndex-Form-email-placeholder-color: #afafaf;
-$SpendIndex-Form-p-color: #636363;
+$SpendIndex-Form-MessageBoard-color: #636363;
+$SpendIndex-Form-MessageBoard-success-color: #5692ff;
+$SpendIndex-Form-MessageBoard-error-color: #e85353;
 
 $SpendIndex-contactless-bg: #f3f3f3;
 $SpendIndex-contactless-h2-color: #686d6b;
@@ -132,7 +134,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 }
 .SpendIndex-Form-email {
   width: 100%;
-  padding: 0 35px 0 0;
+  padding: 0 35px 6px 0;
   border: 0;
   margin-right: -35px;
   font-size: 13.5px;
@@ -157,14 +159,21 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 .SpendIndex-Form-submit-icon {
   vertical-align: top;
 }
-.SpendIndex-Form-p {
-  margin: 5px 0;
-  color: $SpendIndex-Form-p-color;
+.SpendIndex-Form-MessageBoard {
+  margin: 5px 0 0;
+  color: $SpendIndex-Form-MessageBoard-color;
   font-size: 13.5px;
   line-height: 16.5px;
 }
-.SpendIndex-Form-p-last {
-  margin-bottom: 0;
+.SpendIndex-Form-MessageBoard-success,
+.SpendIndex-Form-MessageBoard-error {
+  font-weight: 400;
+}
+.SpendIndex-Form-MessageBoard-success {
+  color: $SpendIndex-Form-MessageBoard-success-color;
+}
+.SpendIndex-Form-MessageBoard-error {
+  color: $SpendIndex-Form-MessageBoard-error-color;
 }
 .SpendIndex-index-bg {
   position: absolute;
@@ -684,13 +693,15 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     margin: 125px 0 0;
   }
   .SpendIndex-Form-email {
+    padding-bottom: 4px;
     font-size: 15px;
     line-height: 1.2;
     text-align: left;
   }
-  .SpendIndex-Form-p {
+  .SpendIndex-Form-MessageBoard {
     font-size: 15px;
     line-height: 18.5px;
+    text-align: center;
   }
   .SpendIndex-index-bg {
     background-image: none;

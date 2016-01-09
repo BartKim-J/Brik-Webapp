@@ -1,5 +1,40 @@
 let React = require('react');
 
+let Input = React.createClass({
+  propTypes: {
+    type: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    optional: React.PropTypes.bool,
+    placeholder: React.PropTypes.string
+  },
+  getDefaultProps() {
+    return {
+      optional: false
+    };
+  },
+
+  render() {
+    const {type, name, optional, placeholder, className} = this.props;
+    return (
+      <input className={className} type={type} name={name} required={!optional} placeholder={placeholder} />
+    );
+  }
+});
+
+let HiddenInput = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    value: React.PropTypes.string.isRequired
+  },
+
+  render() {
+    const {name, value} = this.props;
+    return (
+      <input type="hidden" name={name} value={value} />
+    );
+  }
+});
+
 let Form = React.createClass({
   propTypes: {
     action: React.PropTypes.string,
@@ -64,7 +99,7 @@ let Form = React.createClass({
           this._ref = ref;
         }}
       >
-        <input type="hidden" name="_csrf" value={this.context.csrfToken} />
+        <HiddenInput name="_csrf" value={this.context.csrfToken} />
         {children}
       </form>
     );
@@ -72,5 +107,6 @@ let Form = React.createClass({
 });
 
 module.exports = {
+  Input, HiddenInput,
   Form
 };
