@@ -65,7 +65,7 @@ let SpendIndex = React.createClass({
     };
   },
 
-  setSmallScreenState(isInit) {
+  setSmallScreenState() {
     let state = {
       enteredClasses: Immutable({
         index: 'is-SpendIndex-index-entered-done',
@@ -78,7 +78,7 @@ let SpendIndex = React.createClass({
         indiegogo: 'is-SpendIndex-indiegogo-entered-done'
       })
     };
-    if (!isInit && some(this.state.bgYOffsets)) {
+    if (some(this.state.bgYOffsets)) {
       state.bgYOffsets = SpendIndex.DEFAULT_BG_Y_OFFSETS;
     }
     this.setState(state);
@@ -270,7 +270,7 @@ let SpendIndex = React.createClass({
       this.updateBgYOffsets();
       this.updateEntered(!isInit);
     } else if ((isInit || isScreenMdPrev) && !this._isScreenMd) {
-      this.setSmallScreenState(isInit);
+      this.setSmallScreenState();
     }
   },
   handleSecuritySliderPrevClick(e) {

@@ -133,9 +133,7 @@ let TransitionMixin = {
       clearTimeout(timeout.id);
       this._transitionTimeouts[name] = null;
     }
-    if (this.state[key]) {
-      this.setState({[key]: ''});
-    }
+    this.setState({[key]: ''});
   },
 
   componentWillMount() {

@@ -59,15 +59,11 @@ let MessageBoard = React.createClass({
   componentWillReceiveProps(nextProps) {
     const {message: nextMessage} = nextProps;
     if (this.props.message !== nextMessage) {
-      if (nextMessage) {
-        this.setState({
-          activeMessage: Immutable(
-            pick(nextMessage, 'className', 'content')
-          )
-        });
-      } else if (this.state.activeMessage) {
-        this.setState({activeMessage: null});
-      }
+      this.setState({
+        activeMessage: nextMessage ?
+          Immutable(pick(nextMessage, 'className', 'content')) :
+          null
+      });
     }
   },
   componentDidUpdate(prevProps, prevState) {
