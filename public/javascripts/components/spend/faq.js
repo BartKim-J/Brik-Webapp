@@ -34,7 +34,7 @@ let SpendFaq = React.createClass({
         <div className="container-fluid SpendFaq-container">
           <header className="SpendFaq-container-header text-center">
             <h1 className="SpendFaq-h1">
-              F<span className="visible-md-inline">requently </span>A<span className="visible-md-inline">sked </span>Q<span className="visible-md-inline">uestions</span>
+              F<span className="visible-md-inline visible-lg-inline">requently </span>A<span className="visible-md-inline visible-lg-inline">sked </span>Q<span className="visible-md-inline visible-lg-inline">uestions</span>
             </h1>
             <p className="SpendFaq-h1-p">
               You can find some answers to commonly asked questions below.

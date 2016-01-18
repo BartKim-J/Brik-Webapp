@@ -31,7 +31,7 @@ let SpendIndex = React.createClass({
       app: 0,
       indiegogo: 0
     }),
-    BG_OFFSET_Y_MAX: 10
+    BG_OFFSET_Y_MAX: 25
   },
 
   propTypes: {
@@ -582,34 +582,38 @@ let SpendIndex = React.createClass({
           </section>
         </div>
         <footer className="SpendIndex-footer">
-          <div className="SpendIndex-footer-Logo"><Logo /></div>
-          <ul
-            className="SpendIndex-footer-link-items
-              listUnstyled text-uppercase"
-          >
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/about">About</Link>
-            </li>
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
-            </li>
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
-            </li>
-            <li
-              className="SpendIndex-footer-link-item
-                SpendIndex-footer-link-item-last
-                pull-left"
-            >
-              <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
-            </li>
-          </ul>
-          <div className="SpendIndex-footer-copyrights">
-            {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
+          <div className="SpendIndex-footer-inner">
+            <div className="SpendIndex-footer-inner-inner">
+              <div className="SpendIndex-footer-Logo"><Logo /></div>
+              <ul
+                className="SpendIndex-footer-link-items
+                  listUnstyled text-uppercase"
+              >
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/about">About</Link>
+                </li>
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
+                </li>
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
+                </li>
+                <li
+                  className="SpendIndex-footer-link-item
+                    SpendIndex-footer-link-item-last
+                    pull-left"
+                >
+                  <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
+                </li>
+              </ul>
+              <div className="SpendIndex-footer-copyrights">
+                {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
+              </div>
+              <SocialLinks
+                className="SpendIndex-footer-SocialLinks"
+                linkClassName="SpendIndex-footer-SocialLinks-link" />
+            </div>
           </div>
-          <SocialLinks
-            className="SpendIndex-footer-SocialLinks"
-            linkClassName="SpendIndex-footer-SocialLinks-link" />
         </footer>
       </div>
     );
