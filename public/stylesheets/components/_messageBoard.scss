@@ -1,0 +1,8 @@
+$MessageBoard-fading-transitionDuration: 5s;
+
+.is-MessageBoard-fading {
+  transition: opacity $MessageBoard-fading-transitionDuration;
+}
+.is-MessageBoard-fading-out {
+  opacity: 0;
+}

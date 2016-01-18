@@ -7,6 +7,7 @@ let csrf = require('csurf');
 let {
   faqSections, jobOpenings, legalDocs, team
 } = require('../data');
+let StatusError = require('../errors/StatusError');
 
 let csrfProtection = csrf({
   cookie: {
@@ -27,8 +28,7 @@ function makeRoute(data) {
       res.json({data});
       break;
     default:
-      res.status(406);
-      throw new Error('Not Acceptable');
+      throw new StatusError(406, 'Not Acceptable');
     }
   });
 }

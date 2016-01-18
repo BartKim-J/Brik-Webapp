@@ -55,10 +55,9 @@ let SpendMenu = React.createClass({
     return (this.context.routeNames[0] === 'index');
   },
   updateIsScrolling() {
-    let isScrolling = (this._pageYOffset > this._scrollThreshold);
-    if (isScrolling !== this.state.isScrolling) {
-      this.setState({isScrolling});
-    }
+    this.setState({
+      isScrolling: (this._pageYOffset > this._scrollThreshold)
+    });
   },
   /* public */ updateScrolling(pageYOffset = window.pageYOffset) {
     let prevPageYOffset = this._pageYOffset || 0;
@@ -115,6 +114,7 @@ let SpendMenu = React.createClass({
   },
   componentDidUpdate(prevProps, prevState) {
     let isRouteIndex = this.isRouteIndex();
+
     if (isRouteIndex) {
       if (!this._isRouteIndexPrev) {
         let state = {
@@ -125,25 +125,25 @@ let SpendMenu = React.createClass({
         }
         this.setState(state);
       } else {
-        const {isScrolling, indexEnteredClass, openClasses} = this.state;
-        if (indexEnteredClass !== 'is-SpendMenu-index-entered-done') {
-          const {
-            isScrolling: isScrollingPrev,
-            openClasses: prevOpenClasses
-          } = prevState;
-          if ((!isScrollingPrev && isScrolling) ||
-            (!prevOpenClasses && openClasses))
-          {
-            this.setState({
-              indexEnteredClass: 'is-SpendMenu-index-entered-done'
-            });
-          }
+        const {isScrolling, openClasses} = this.state;
+        const {
+          isScrolling: isScrollingPrev,
+          openClasses: prevOpenClasses
+        } = prevState;
+
+        if ((!isScrollingPrev && isScrolling) ||
+          (!prevOpenClasses && openClasses))
+        {
+          this.setState({
+            indexEnteredClass: 'is-SpendMenu-index-entered-done'
+          });
         }
       }
     } else if (this._isRouteIndexPrev) {
       this.setState({indexEnteredClass: ''});
       this.resetTransition('is-SpendMenu-index-Logo-forceShown');
     }
+
     this._isRouteIndexPrev = isRouteIndex;
   },
 
@@ -165,7 +165,7 @@ let SpendMenu = React.createClass({
         if (isInit) {
           this.setState({indexEnteredClass: 'is-SpendMenu-index-entered'});
         }
-      } else if (this.state.indexEnteredClass !== 'is-SpendMenu-index-entered-done') {
+      } else {
         this.setState({
           indexEnteredClass: 'is-SpendMenu-index-entered-done'
         });

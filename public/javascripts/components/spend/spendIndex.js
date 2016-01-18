@@ -6,10 +6,11 @@ let size = require('lodash/collection/size');
 let some = require('lodash/collection/some');
 
 let {Button, PseudoButton} = require('../buttons');
-let {Form} = require('../forms');
+let {Input, Form} = require('../forms');
 let {Image, RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
 let Markdown = require('../markdown');
+let MessageBoard = require('../messageBoard');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
@@ -30,7 +31,7 @@ let SpendIndex = React.createClass({
       app: 0,
       indiegogo: 0
     }),
-    BG_OFFSET_Y_MAX: 10
+    BG_OFFSET_Y_MAX: 25
   },
 
   propTypes: {
@@ -59,11 +60,12 @@ let SpendIndex = React.createClass({
         app: '',
         indiegogo: ''
       }),
-      securitySwipePos: 0
+      securitySwipePos: 0,
+      subscriptionMsg: null
     };
   },
 
-  setSmallScreenState(isInit) {
+  setSmallScreenState() {
     let state = {
       enteredClasses: Immutable({
         index: 'is-SpendIndex-index-entered-done',
@@ -76,7 +78,7 @@ let SpendIndex = React.createClass({
         indiegogo: 'is-SpendIndex-indiegogo-entered-done'
       })
     };
-    if (!isInit && some(this.state.bgYOffsets)) {
+    if (some(this.state.bgYOffsets)) {
       state.bgYOffsets = SpendIndex.DEFAULT_BG_Y_OFFSETS;
     }
     this.setState(state);
@@ -240,10 +242,22 @@ let SpendIndex = React.createClass({
   handleNewSubscription({email}) {
     this.props.onNewSubscription(email)
       .then(() => {
-        // TODO
+        this.setState({
+          subscriptionMsg: Immutable({
+            className: 'SpendIndex-Form-MessageBoard-success',
+            content: 'Thank you for your subscription.',
+            isFading: true
+          })
+        });
         this._formRef.reset();
       }, error => {
-        // TODO
+        this.setState({
+          subscriptionMsg: Immutable({
+            className: 'SpendIndex-Form-MessageBoard-error',
+            content: error.message,
+            isFading: false
+          })
+        });
       });
   },
   handleScreenChange(prevScreen, screen) {
@@ -256,7 +270,7 @@ let SpendIndex = React.createClass({
       this.updateBgYOffsets();
       this.updateEntered(!isInit);
     } else if ((isInit || isScreenMdPrev) && !this._isScreenMd) {
-      this.setSmallScreenState(isInit);
+      this.setSmallScreenState();
     }
   },
   handleSecuritySliderPrevClick(e) {
@@ -286,7 +300,11 @@ let SpendIndex = React.createClass({
   render() {
     const {BRAND} = CONF;
 
-    const {bgYOffsets, enteredClasses} = this.state;
+    const {
+      bgYOffsets,
+      enteredClasses,
+      subscriptionMsg
+    } = this.state;
     const {
       contactless: contactlessBgY,
       display: displayBgY,
@@ -349,12 +367,15 @@ let SpendIndex = React.createClass({
                       this._formRef = ref;
                     }}
                   >
-                    <input className="SpendIndex-Form-email" type="email" name="email" placeholder="E-mail address" />
+                    <Input className="SpendIndex-Form-email" type="email" name="email" placeholder="E-mail address" />
                     <Button className="SpendIndex-Form-submit" type="submit"><i className="fa fa-Spend-paper-plane SpendIndex-Form-submit-icon" /></Button>
                   </Form>
-                  <p className="SpendIndex-Form-p SpendIndex-Form-p-last">
+                  <MessageBoard
+                    className="SpendIndex-Form-MessageBoard"
+                    message={subscriptionMsg}
+                  >
                     Be first to find out when we launch campaign
-                  </p>
+                  </MessageBoard>
                 </div>
               </div>
             </div>
@@ -561,34 +582,38 @@ let SpendIndex = React.createClass({
           </section>
         </div>
         <footer className="SpendIndex-footer">
-          <div className="SpendIndex-footer-Logo"><Logo /></div>
-          <ul
-            className="SpendIndex-footer-link-items
-              listUnstyled text-uppercase"
-          >
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/about">About</Link>
-            </li>
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
-            </li>
-            <li className="SpendIndex-footer-link-item pull-left">
-              <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
-            </li>
-            <li
-              className="SpendIndex-footer-link-item
-                SpendIndex-footer-link-item-last
-                pull-left"
-            >
-              <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
-            </li>
-          </ul>
-          <div className="SpendIndex-footer-copyrights">
-            {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
+          <div className="SpendIndex-footer-inner">
+            <div className="SpendIndex-footer-inner-inner">
+              <div className="SpendIndex-footer-Logo"><Logo /></div>
+              <ul
+                className="SpendIndex-footer-link-items
+                  listUnstyled text-uppercase"
+              >
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/about">About</Link>
+                </li>
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
+                </li>
+                <li className="SpendIndex-footer-link-item pull-left">
+                  <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
+                </li>
+                <li
+                  className="SpendIndex-footer-link-item
+                    SpendIndex-footer-link-item-last
+                    pull-left"
+                >
+                  <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
+                </li>
+              </ul>
+              <div className="SpendIndex-footer-copyrights">
+                {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
+              </div>
+              <SocialLinks
+                className="SpendIndex-footer-SocialLinks"
+                linkClassName="SpendIndex-footer-SocialLinks-link" />
+            </div>
           </div>
-          <SocialLinks
-            className="SpendIndex-footer-SocialLinks"
-            linkClassName="SpendIndex-footer-SocialLinks-link" />
         </footer>
       </div>
     );

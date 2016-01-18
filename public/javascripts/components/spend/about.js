@@ -30,10 +30,9 @@ let SpendAbout = React.createClass({
   },
 
   handleScreenChange(prevScreen, screen) {
-    let isTooltip = (screen >= WindowListener.SCREEN_NAMES.MD);
-    if (this.state.isTooltip !== isTooltip) {
-      this.setState({isTooltip});
-    }
+    this.setState({
+      isTooltip: (screen >= WindowListener.SCREEN_NAMES.MD)
+    });
   },
 
   render() {

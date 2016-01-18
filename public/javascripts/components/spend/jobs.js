@@ -37,7 +37,7 @@ let SpendJobs = React.createClass({
         <div className="container-fluid SpendJobs-container">
           <header className="SpendJobs-container-header text-center">
             <h1 className="SpendJobs-h1">
-              Join <Logo /><span className="visible-md-inline"> Journey</span>
+              Join <Logo /><span className="visible-md-inline visible-lg-inline"> Journey</span>
             </h1>
             <p className="SpendJobs-h1-p">
               {`Working at ${BRAND} is more than a job`}
@@ -96,7 +96,7 @@ let SpendJobs = React.createClass({
             </section>
           </div>
           <footer className="SpendJobs-container-footer text-center">
-            Don't see the position you're looking for?<br className="visible-md-inline" />
+            Don't see the position you're looking for?<br className="visible-md-inline visible-lg-inline" />{' '}
             We'd still love to hear from you! Email us at <EmailLink email="contact@xengineering.co" />
           </footer>
         </div>

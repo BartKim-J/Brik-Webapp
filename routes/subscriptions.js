@@ -1,19 +1,23 @@
 let express = require('express');
 let router = express.Router();
 
+let validator = require('validator');
+let StatusError = require('../errors/StatusError');
+let subscriptions = require('../models/subscriptions');
 let {csrfProtection} = require('./index');
 
-let subscriptions = require('../models/subscriptions');
-
 router.post('/', (req, res, next) => {
+  let {email} = req.body;
   if (req.is('json')) {
-    // TODO: validation
-    try {
-      subscriptions.create(req.body.email);
-    } catch (e) {
-      // TODO
+    if (!(validator.isEmail(email))) {
+      throw new StatusError(400, 'Invalid Email');
     }
-    res.json({});
+    subscriptions.create(email)
+      .then(email => {
+        res.json({});
+      }, error => {
+        next(error);
+      });
   } else {
     csrfProtection(req, res, () => {
       // TODO

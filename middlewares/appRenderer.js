@@ -38,7 +38,7 @@ function appRenderer(req, res, next) {
         lang
       });
     },
-    renderError({title, detail = null, lang = null}) {
+    renderError({title, detail = null, lang = undefined}) {
       this.renderApp(
         Immutable({serverError: {title, detail}}),
         lang
