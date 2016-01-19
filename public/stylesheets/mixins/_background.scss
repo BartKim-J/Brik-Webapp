@@ -10,10 +10,7 @@
 ) {
   background-image: url("#{$image-path}/#{$url}");
   @if $url-2x {
-    @media print,
-           (-webkit-min-device-pixel-ratio: 1.25),
-           (min-resolution: 1.25dppx),
-           (min-resolution: 120dpi) {
+    @include media-2x {
       background-image: url("#{$image-path}/#{$url-2x}");
       @if $width and $height {
         @include background-size($width $height);

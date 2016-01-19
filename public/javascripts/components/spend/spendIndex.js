@@ -40,8 +40,9 @@ let SpendIndex = React.createClass({
 
   // Instance variables
   // - _formRef
+  // - _indexVideoRef
   // - _securitySliderRef
-  // - _videoRef
+  // - _sideViewVideoRef
   // - _isScreenMd
   // - _pageYOffset
   // - _securitySwipe
@@ -84,111 +85,125 @@ let SpendIndex = React.createClass({
     this.setState(state);
   },
 
-  updateBgYOffsets() {
-    if (typeof this._isScreenMd !== 'boolean' ||
-      typeof this._pageYOffset !== 'number' ||
-      typeof this._windowHeight !== 'number')
+  updateAnimated(isEnteredReset = false) {
+    if (this._isScreenMd &&
+      typeof this._pageYOffset === 'number' &&
+      typeof this._windowHeight === 'number')
     {
-      return;
-    }
-
-    if (this._isScreenMd) {
-      const {bgYOffsets} = this.state;
-      let newBgYOffsets = {};
-      const {BG_OFFSET_Y_MAX} = SpendIndex;
-      let halfHeight = this._windowHeight/2;
-
-      // TEMP
-      // hardcoded numbers
-      // (thresholds: 1/3s of section heights and vertical centers)
-      let ranges = {
-        contactless: [1015 - this._windowHeight, 1117.5 - halfHeight],
-        display: [2378 - this._windowHeight, 2476 - halfHeight],
-        charge: [2986 - this._windowHeight, 3093 - halfHeight],
-        physicalCards: [3612 - this._windowHeight, 3710 - halfHeight],
-        tech: [4287 - this._windowHeight, 4568],
-        app: [5736 - this._windowHeight, 5896 - halfHeight],
-        indiegogo: [6674 - this._windowHeight, 6973]
-      };
-
-      for (let key in ranges) {
-        let bgOffsetY;
-        let [min, max] = ranges[key];
-
-        if (this._pageYOffset <= min) {
-          bgOffsetY = BG_OFFSET_Y_MAX;
-        } else if (this._pageYOffset < max) {
-          bgOffsetY = (
-            (max - this._pageYOffset)/(max - min)
-          )*BG_OFFSET_Y_MAX;
-        } else {
-          bgOffsetY = 0;
-        }
-
-        switch (key) {
-        case 'charge':
-          bgOffsetY = -bgOffsetY;
-          break;
-        case 'tech':
-          bgOffsetY = bgOffsetY*2 - 10;
-          break;
-        default:
-          break;
-        }
-
-        if (bgYOffsets[key] !== bgOffsetY) {
-          newBgYOffsets[key] = bgOffsetY;
-        }
-      }
-
-      if (size(newBgYOffsets) > 0) {
-        this.setState({bgYOffsets: bgYOffsets.merge(newBgYOffsets)});
-      }
+      this.updateBgYOffsets();
+      this.updateEntered(isEnteredReset);
+      this.updateSideViewVideo();
     }
   },
-  updateEntered(isReset = false) {
-    if (typeof this._isScreenMd !== 'boolean' ||
-      typeof this._pageYOffset !== 'number' ||
-      typeof this._windowHeight !== 'number')
-    {
-      return;
+  updateBgYOffsets() {
+    const {bgYOffsets} = this.state;
+    let newBgYOffsets = {};
+    const {BG_OFFSET_Y_MAX} = SpendIndex;
+    let halfHeight = this._windowHeight/2;
+
+    // TEMP
+    // hardcoded numbers
+    // (thresholds: 1/3s of section heights and vertical centers)
+    let ranges = {
+      contactless: [1015 - this._windowHeight, 1117.5 - halfHeight],
+      display: [2378 - this._windowHeight, 2476 - halfHeight],
+      charge: [2986 - this._windowHeight, 3093 - halfHeight],
+      physicalCards: [3612 - this._windowHeight, 3710 - halfHeight],
+      tech: [4287 - this._windowHeight, 4568],
+      app: [5735 - this._windowHeight, 5895 - halfHeight],
+      indiegogo: [6673 - this._windowHeight, 6972]
+    };
+
+    for (let key in ranges) {
+      let bgOffsetY;
+      let [min, max] = ranges[key];
+
+      if (this._pageYOffset <= min) {
+        bgOffsetY = BG_OFFSET_Y_MAX;
+      } else if (this._pageYOffset < max) {
+        bgOffsetY = (
+          (max - this._pageYOffset)/(max - min)
+        )*BG_OFFSET_Y_MAX;
+      } else {
+        bgOffsetY = 0;
+      }
+
+      switch (key) {
+      case 'charge':
+        bgOffsetY = -bgOffsetY;
+        break;
+      case 'tech':
+        bgOffsetY = bgOffsetY*2 - 10;
+        break;
+      default:
+        break;
+      }
+
+      if (bgYOffsets[key] !== bgOffsetY) {
+        newBgYOffsets[key] = bgOffsetY;
+      }
     }
 
-    if (this._isScreenMd) {
-      const {enteredClasses} = this.state;
-      let newEnteredClasses = {};
+    if (size(newBgYOffsets) > 0) {
+      this.setState({bgYOffsets: bgYOffsets.merge(newBgYOffsets)});
+    }
+  },
+  updateEntered(isReset) {
+    const {enteredClasses} = this.state;
+    let newEnteredClasses = {};
 
-      // TEMP: hardcoded numbers (thresholds: 1/3s and 2/3s of heights)
-      let ranges = {
-        index: [0, 537],
-        contactless: [1015 - this._windowHeight, 1225],
-        display: [2378 - this._windowHeight, 2574],
-        charge: [2986 - this._windowHeight, 3200],
-        physicalCards: [3612 - this._windowHeight, 3808],
-        tech: [4287 - this._windowHeight, 4568],
-        app: [5736 - this._windowHeight, 6056],
-        indiegogo: [6674 - this._windowHeight, 6973]
-      };
+    // TEMP: hardcoded numbers (thresholds: 1/3s and 2/3s of heights)
+    let ranges = {
+      index: [0, 537],
+      contactless: [1015 - this._windowHeight, 1225],
+      display: [2378 - this._windowHeight, 2574],
+      charge: [2986 - this._windowHeight, 3200],
+      physicalCards: [3612 - this._windowHeight, 3808],
+      tech: [4287 - this._windowHeight, 4568],
+      app: [5735 - this._windowHeight, 6055],
+      indiegogo: [6673 - this._windowHeight, 6972]
+    };
 
-      for (let key in ranges) {
-        let [min, max] = ranges[key];
-        let enteredClass = enteredClasses[key];
-        if (!enteredClass) {
-          if (this._pageYOffset >= min && this._pageYOffset <= max) {
-            newEnteredClasses[key] = `is-SpendIndex-${key}-entered`;
-          }
-        } else if (isReset) {
-          if (this._pageYOffset < min || this._pageYOffset > max) {
-            newEnteredClasses[key] = '';
-          }
+    for (let key in ranges) {
+      let [min, max] = ranges[key];
+      let enteredClass = enteredClasses[key];
+      if (!enteredClass) {
+        if (this._pageYOffset >= min && this._pageYOffset <= max) {
+          newEnteredClasses[key] = `is-SpendIndex-${key}-entered`;
+        }
+      } else if (isReset) {
+        if (this._pageYOffset < min || this._pageYOffset > max) {
+          newEnteredClasses[key] = '';
         }
       }
+    }
 
-      if (size(newEnteredClasses) > 0) {
-        this.setState({
-          enteredClasses: enteredClasses.merge(newEnteredClasses)
-        });
+    if (size(newEnteredClasses) > 0) {
+      this.setState({
+        enteredClasses: enteredClasses.merge(newEnteredClasses)
+      });
+    }
+  },
+  updateSideViewVideo() {
+    let {duration} = this._sideViewVideoRef;
+
+    if (!(Number.isNaN(duration)) && Modernizr.video) {
+      let time;
+      const TIME_MAX = Math.floor(duration);
+
+      // TEMP: hardcoded numbers (2/3 of height and page offset)
+      let min = 5227 - this._windowHeight;
+      let max = 4850;
+
+      if (this._pageYOffset <= min) {
+        time = 0;
+      } else if (this._pageYOffset < max) {
+        time = ((this._pageYOffset - min)/(max - min))*TIME_MAX;
+      } else {
+        time = TIME_MAX;
       }
+
+      this._sideViewVideoRef.currentTime = time;
     }
   },
 
@@ -198,11 +213,11 @@ let SpendIndex = React.createClass({
       transform: `translate3d(0,${offsetY}%,0)`
     } : null;
   },
-  pauseVideoAtTime(time) {
+  pauseIndexVideoAtTime(time) {
     if (Modernizr.video) {
-      this._videoRef.currentTime = time;
-      if (!(this._videoRef.paused)) {
-        this._videoRef.pause();
+      this._indexVideoRef.currentTime = time;
+      if (!(this._indexVideoRef.paused)) {
+        this._indexVideoRef.pause();
       }
     }
   },
@@ -218,17 +233,17 @@ let SpendIndex = React.createClass({
     if (Modernizr.video) {
       const indexEntered = this.state.enteredClasses.index;
       if (prevState.enteredClasses.index !== indexEntered) {
-        let videoDuration = this._videoRef.duration;
+        let indexVideoDuration = this._indexVideoRef.duration;
         switch (indexEntered) {
         case '':
-          this.pauseVideoAtTime(0);
+          this.pauseIndexVideoAtTime(0);
           break;
         case 'is-SpendIndex-index-entered':
-          this._videoRef.play();
+          this._indexVideoRef.play();
           break;
         case 'is-SpendIndex-index-entered-done':
-          if (!Number.isNaN(videoDuration)) {
-            this.pauseVideoAtTime(Math.floor(videoDuration));
+          if (!(Number.isNaN(indexVideoDuration))) {
+            this.pauseIndexVideoAtTime(Math.floor(indexVideoDuration));
           }
           break;
         default:
@@ -239,6 +254,13 @@ let SpendIndex = React.createClass({
     }
   },
 
+  handleIndexVideoLoadedMetadata(e) {
+    if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
+      this.pauseIndexVideoAtTime(
+        Math.floor(this._indexVideoRef.duration)
+      );
+    }
+  },
   handleNewSubscription({email}) {
     this.props.onNewSubscription(email)
       .then(() => {
@@ -267,8 +289,7 @@ let SpendIndex = React.createClass({
     this._isScreenMd = (screen >= WindowListener.SCREEN_NAMES.MD);
 
     if ((isInit || !isScreenMdPrev) && this._isScreenMd) {
-      this.updateBgYOffsets();
-      this.updateEntered(!isInit);
+      this.updateAnimated(!isInit);
     } else if ((isInit || isScreenMdPrev) && !this._isScreenMd) {
       this.setSmallScreenState();
     }
@@ -279,22 +300,16 @@ let SpendIndex = React.createClass({
   handleSecuritySliderNextClick(e) {
     this._securitySwipe.next();
   },
-  handleVideoLoadedMetadata(e) {
-    if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
-      this.pauseVideoAtTime(Math.floor(this._videoRef.duration));
-    }
+  handleSideViewVideoLoadedMetadata(e) {
+    this.updateSideViewVideo();
   },
   handleWindowResize({height}) {
     this._windowHeight = height;
-
-    this.updateBgYOffsets();
-    this.updateEntered();
+    this.updateAnimated();
   },
   handleWindowScroll({pageYOffset}) {
     this._pageYOffset = pageYOffset;
-
-    this.updateBgYOffsets();
-    this.updateEntered();
+    this.updateAnimated();
   },
 
   render() {
@@ -382,10 +397,11 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-index-bg">
               <video
                 className="SpendIndex-index-bg-video"
-                width="1366" height="806" poster="/images/white.png"
-                onLoadedMetadata={this.handleVideoLoadedMetadata}
+                width="1366" height="806"
+                poster="http://dummyimage.com/683x403/ff/ff.png"
+                onLoadedMetadata={this.handleIndexVideoLoadedMetadata}
                 ref={ref => {
-                  this._videoRef = ref;
+                  this._indexVideoRef = ref;
                 }}
               >
                 <source src="/videos/Main4_h.264.mp4" type="video/mp4" />
@@ -517,7 +533,19 @@ let SpendIndex = React.createClass({
               Most Slimmest<br />
               Lightest Smartwallet
             </h2>
-            <div className="SpendIndex-measure-sideView" />
+            <div className="SpendIndex-measure-sideView">
+              <video
+                className="SpendIndex-measure-sideView-video"
+                width="1280" height="906"
+                poster="http://dummyimage.com/640x453/ff/ff.png"
+                onLoadedMetadata={this.handleSideViewVideoLoadedMetadata}
+                ref={ref => {
+                  this._sideViewVideoRef = ref;
+                }}
+              >
+                <source src="/videos/sideview2_h.264.mp4" type="video/mp4" />
+              </video>
+            </div>
             <div className="SpendIndex-measure-numbers">
               <div className="SpendIndex-measure-numbers-big">
                 5.5mm / 65grams

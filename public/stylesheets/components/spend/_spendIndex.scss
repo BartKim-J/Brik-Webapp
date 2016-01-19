@@ -499,6 +499,9 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   );
   margin: 44px auto;
 }
+.SpendIndex-measure-sideView-video {
+  display: none;
+}
 .SpendIndex-measure-numbers {
   margin-top: 49px;
 }
@@ -976,6 +979,12 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 
   .SpendIndex-measure {
     padding: 122px 0 125px;
+    overflow: hidden;
+  }
+  .SpendIndex-measure-h2,
+  .SpendIndex-measure-numbers {
+    position: relative;
+    z-index: 1;
   }
   .SpendIndex-measure-h2 {
     width: 310px;
@@ -984,11 +993,26 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     line-height: 43px;
   }
   .SpendIndex-measure-sideView {
-    @include image-replacement-core(
-      "slim-md.png", "slim-md@2x.png", 720px, 42px
-    );
-    margin-top: 50px;
-    margin-bottom: 50px;
+    position: relative;
+    width: 858px;
+    height: 606.71875px;
+    background-image: none;
+    margin-top: -252px;
+    margin-bottom: -314px;
+    overflow: hidden;
+    @include media-2x {
+      @include background-size(auto);
+    }
+  }
+  .SpendIndex-measure-sideView-video {
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    width: 860px;
+    height: 608.71875px;
   }
   .SpendIndex-measure-numbers {
     margin-top: 50px;
