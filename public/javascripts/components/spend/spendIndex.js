@@ -398,7 +398,7 @@ let SpendIndex = React.createClass({
               <video
                 className="SpendIndex-index-bg-video"
                 width="1366" height="806"
-                poster="http://dummyimage.com/683x403/ff/ff.png"
+                poster="//dummyimage.com/683x403/ff/ff.png"
                 onLoadedMetadata={this.handleIndexVideoLoadedMetadata}
                 ref={ref => {
                   this._indexVideoRef = ref;
@@ -537,7 +537,7 @@ let SpendIndex = React.createClass({
               <video
                 className="SpendIndex-measure-sideView-video"
                 width="1280" height="906"
-                poster="http://dummyimage.com/640x453/ff/ff.png"
+                poster="//dummyimage.com/640x453/ff/ff.png"
                 onLoadedMetadata={this.handleSideViewVideoLoadedMetadata}
                 ref={ref => {
                   this._sideViewVideoRef = ref;
