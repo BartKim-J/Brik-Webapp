@@ -31,6 +31,20 @@ body {
   text-shadow: none;
 }
 
+a,
+button,
+[role="button"] {
+  transition: opacity $clickable-transitionDuration;
+}
+a:hover,
+a:active,
+button:hover,
+button:active,
+[role="button"]:hover,
+[role="button"]:active {
+  opacity: $clickable-opacity-active;
+}
+
 a {
   color: $link-color;
   text-decoration: none;
