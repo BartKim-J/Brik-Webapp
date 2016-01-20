@@ -113,9 +113,20 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 1.4px;
+  transition: color $clickable-transitionDuration;
+}
+.SpendIndex-videoLink:hover,
+.SpendIndex-videoLink:active {
+  color: rgba($SpendIndex-videoLink-color, $clickable-opacity-active);
+  opacity: 1;
 }
 .SpendIndex-videoLink-icon {
   margin-right: 1em;
+  transition: opacity $clickable-transitionDuration;
+}
+.SpendIndex-videoLink:hover .SpendIndex-videoLink-icon,
+.SpendIndex-videoLink:active .SpendIndex-videoLink-icon {
+  opacity: $clickable-opacity-active;
 }
 .SpendIndex-Form-group {
   width: 262px;
