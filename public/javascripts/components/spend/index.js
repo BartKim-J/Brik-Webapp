@@ -11,6 +11,7 @@ let About = require('./about');
 let Jobs = require('./jobs');
 let Faq = require('./faq');
 let Legal = require('./legal');
+let Footer = require('./footer');
 
 let Spend = React.createClass({
   propTypes: {
@@ -105,6 +106,7 @@ let Spend = React.createClass({
               this._menuRef = ref;
             }} />
           {this.renderMain()}
+          <Footer />
         </div>
       </Router>
     );
