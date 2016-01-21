@@ -63,5 +63,5 @@ function subscribeToMailChimp(submittedEmail) {
 
 module.exports = {
     create,
-    addToMailChimp
+    subscribeToMailChimp
 };
