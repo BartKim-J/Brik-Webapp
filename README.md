@@ -8,5 +8,5 @@
 
 ## Environment Variables
 
-- `NODE_ENV`: Set to `production` on a production environment.
+- `NODE_ENV`: Set to `production` on a production environment. Like this: export NODE_ENV=production
 - `SEAGULL_SQLITE_FILE`: If not set, an anonymous in-memory database is used.

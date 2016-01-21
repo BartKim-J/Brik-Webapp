@@ -10,6 +10,7 @@ let sqliteFile = SEAGULL_SQLITE_FILE || ':memory:';
 let db = new sqlite3.Database(sqliteFile, error => {
   if (error) {
     // TODO: error
+    console.log("Error loading SQL Lite File : " + error);
   }
 });
 

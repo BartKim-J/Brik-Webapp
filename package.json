@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "webpack --progress",
     "start": "node ./bin/www",
+    "production": "NODE_ENV=production SQLITE_FILE=/var/www/spendwallet/spendwallet.sqlite node ./bin/www",
     "develop": "webpack --watch & DEBUG=seagull npm start"
   },
   "dependencies": {
