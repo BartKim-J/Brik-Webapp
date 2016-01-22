@@ -57,8 +57,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('content')
 );
-
-console.log(store.getState());
-store.subscribe(() => {
-  console.log(store.getState());
-});
