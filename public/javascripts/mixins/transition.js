@@ -121,8 +121,10 @@ let TransitionMixin = {
 
     if (timeout ? timeout.type === 'in' : this.state[key]) {
       this.transitionOut(name);
+      return 'out';
     } else {
       this.transitionIn(name);
+      return 'in';
     }
   },
 

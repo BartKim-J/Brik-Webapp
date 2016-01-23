@@ -58,7 +58,7 @@ let SpendFaq = React.createClass({
               </div>
               <div className="col-md-6">
                 <LinkBlock className="SpendFaq-container-footer-LinkBlock">
-                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co">Email Us</EmailLink>
+                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co" eventLabel="label: Email Us, in: FAQ">Email Us</EmailLink>
                 </LinkBlock>
               </div>
             </div>
@@ -99,7 +99,9 @@ let SpendFaq = React.createClass({
                                 'SpendFaq-qna-last': i === entries.length - 1
                               })}
                             >
-                              <Collapse.Button>
+                              <Collapse.Button
+                                eventLabel={`in: "FAQ Page ${title} Section", label: "${question}"`}
+                              >
                                 <p className="SpendFaq-question">
                                   <span className="SpendFaq-question-inner">{question}</span>
                                 </p>

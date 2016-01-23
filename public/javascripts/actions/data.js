@@ -38,11 +38,11 @@ function fetchData(key) {
 
   return (dispatch => {
     dispatch(requestData(key));
-    return fetch(url, {
+    return fetchWithGa(url, {
       headers: {
         Accept: 'application/json'
       }
-    }).then(
+    }, 'Data').then(
       response =>
         response.json().then(json => ({response, json}))
     ).then(({response, json: {data = null, error = null}}) => {
@@ -55,6 +55,11 @@ function fetchData(key) {
       }
     }).catch(error => {
       dispatch(receiveData(key, 'error', error));
+      ga(
+        'send', 'event',
+        'Data', 'error', `key: \`${key}\`, message: "${error.message}"`
+      );
+
       throw error;
     });
   });

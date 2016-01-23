@@ -147,8 +147,13 @@ let SpendMenu = React.createClass({
     this._isRouteIndexPrev = isRouteIndex;
   },
 
-  handleButtonClick(e) {
-    this.props.onToggle();
+  handleButtonClick(e, tracker) {
+    const {isOpen, onToggle} = this.props;
+    tracker({
+      category: 'Menu',
+      action: isOpen ? 'close' : 'open'
+    });
+    onToggle();
   },
   handleScreenChange(prevScreen, screen) {
     const {isOpen, onToggle} = this.props;
@@ -220,7 +225,7 @@ let SpendMenu = React.createClass({
               this._logoRef = ref;
             }}
           >
-            <Link className="SpendMenu-Logo-link" url="/"><Logo /></Link>
+            <Link className="SpendMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
           </div>
           <nav className="SpendMenu-nav">
             <PseudoButton onClick={this.handleButtonClick}>
@@ -233,20 +238,22 @@ let SpendMenu = React.createClass({
             <div className="SpendMenu-nav-inner">
               <div className="SpendMenu-lists">
                 <ul className="SpendMenu-items listUnstyled text-uppercase">
-                  <li className="SpendMenu-item">
-                    <Link className="SpendMenu-item-link" url="/about">About</Link>
-                  </li>
-                  <li className="SpendMenu-item">
-                    <Link className="SpendMenu-item-link" url="/jobs">Jobs</Link>
-                  </li>
-                  <li className="SpendMenu-item">
-                    <Link className="SpendMenu-item-link" url="/faq">FAQ</Link>
-                  </li>
+                  {[
+                    {key: 'About', url: '/about'},
+                    {key: 'Jobs', url: '/jobs'},
+                    {key: 'FAQ', url: '/faq'}
+                  ].map(({key, url}) => (
+                    <li className="SpendMenu-item" key={key}>
+                      <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{key}</Link>
+                    </li>
+                  ))}
                 </ul>
-                <SocialLinks className="SpendMenu-SocialLinks" />
+                <SocialLinks
+                  className="SpendMenu-SocialLinks"
+                  eventCategory="Menu" />
               </div>
               <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
-                <IndiegogoLink className="SpendMenu-IndiegogoLink" />
+                <IndiegogoLink className="SpendMenu-IndiegogoLink" eventLabel="In Menu" />
               </LinkBlock>
             </div>
           </nav>

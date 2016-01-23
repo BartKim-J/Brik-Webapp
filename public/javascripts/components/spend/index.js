@@ -51,17 +51,19 @@ let Spend = React.createClass({
     const {isOpen: isOpenPrev} = prevMenu;
     const {menu, route} = this.props;
     const {isOpen} = menu;
+    const {pathname: routePath} = route;
+    let {pageYOffset} = window;
+    let {documentElement, title, body} = document;
+
+    let isRoutePopped = (prevRoute !== route && routePath);
 
     if (!isOpenPrev && isOpen) {
-      let {pageYOffset} = window;
-      let {documentElement, body} = document;
-
       this._menuRef.pauseScrolling();
       documentElement.classList.add('is-html-scrollable');
       body.style.marginTop = `-${pageYOffset}px`;
       this._menuRef.resumeScrolling();
     } else if (isOpenPrev && !isOpen) {
-      if (prevRoute !== route && route.pathname) {
+      if (isRoutePopped) {
         setTimeout(() => {
           this._menuRef.updateScrolling()
             .resumeScrolling();
@@ -69,6 +71,14 @@ let Spend = React.createClass({
       } else {
         this._menuRef.resumeScrolling();
       }
+    }
+
+    if (isRoutePopped) {
+      ga('set', {
+        page: routePath,
+        title
+      });
+      ga('send', 'pageview');
     }
   },
 

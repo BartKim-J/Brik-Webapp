@@ -35,7 +35,8 @@ function appRenderer(req, res, next) {
         content,
         INITIAL_STATE: JSON.stringify(store.getState()),
         CSRF_TOKEN: JSON.stringify(csrfToken),
-        lang
+        lang,
+        isDev: (process.env.NODE_ENV !== 'production')
       });
     },
     renderError({title, detail = null, lang = undefined}) {
