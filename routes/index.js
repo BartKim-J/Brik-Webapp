@@ -19,7 +19,7 @@ function makeRoute(data) {
   return ((req, res, next) => {
     let accept = req.accepts(['html', 'json']);
     switch (accept) {
-    case 'html':
+    case 'html':    
       csrfProtection(req, res, () => {
         res.renderApp(Immutable({data}));
       });

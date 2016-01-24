@@ -1,3 +1,5 @@
+"use strict";
+
 require('array.prototype.findindex');
 require('isomorphic-fetch');
 
