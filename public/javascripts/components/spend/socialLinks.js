@@ -12,7 +12,7 @@ let SpendSocialLinks = React.createClass({
     data: [
       ['facebook', FACEBOOK_URL],
       ['twitter', TWITTER_URL],
-      ['linkedin', LINKEDIN_URL]
+      ['linkedin', LINKEDIN_URL, 'LinkedIn']
     ].filter(([name, url]) => url)
   },
 
@@ -29,14 +29,15 @@ let SpendSocialLinks = React.createClass({
           'SpendSocialLinks listUnstyled clearfix', className
         )}
       >
-        {SpendSocialLinks.data.map(([name, url], i, array) => (
-          <li
-            className={classNames('SpendSocialLinks-item pull-left', {
-              'SpendSocialLinks-item-last': i === array.length - 1
-            })}
-            key={name}
-          >
-            <BlankLink className={classNames('SpendSocialLinks-link', linkClassName)} href={url} clickEvent={{category: eventCategory, label: capitalize(name)}}><i className={`fa fa-${name} SpendSocialLinks-icon`} /></BlankLink>
+        {SpendSocialLinks.data
+          .map(([name, url, displayName = capitalize(name)], i, array) => (
+            <li
+              className={classNames('SpendSocialLinks-item pull-left', {
+                'SpendSocialLinks-item-last': i === array.length - 1
+              })}
+              key={name}
+            >
+              <BlankLink className={classNames('SpendSocialLinks-link', linkClassName)} href={url} clickEvent={{category: eventCategory, label: displayName}}><i className={`fa fa-${name} SpendSocialLinks-icon`} /></BlankLink>
           </li>
         ))}
       </ul>
