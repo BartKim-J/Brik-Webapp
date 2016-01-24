@@ -1,6 +1,8 @@
 let React = require('react');
 let classNames = require('classnames');
 
+let capitalize = require('lodash/string/capitalize');
+
 let {BlankLink} = require('../links');
 
 const {FACEBOOK_URL, TWITTER_URL, LINKEDIN_URL} = CONF;
@@ -15,11 +17,12 @@ let SpendSocialLinks = React.createClass({
   },
 
   propTypes: {
+    eventCategory: React.PropTypes.string.isRequired,
     linkClassName: React.PropTypes.string
   },
 
   render() {
-    const {className, linkClassName} = this.props;
+    const {eventCategory, className, linkClassName} = this.props;
     return (
       <ul
         className={classNames(
@@ -33,7 +36,7 @@ let SpendSocialLinks = React.createClass({
             })}
             key={name}
           >
-            <BlankLink className={classNames('SpendSocialLinks-link', linkClassName)} href={url}><i className={`fa fa-${name} SpendSocialLinks-icon`} /></BlankLink>
+            <BlankLink className={classNames('SpendSocialLinks-link', linkClassName)} href={url} clickEvent={{category: eventCategory, label: capitalize(name)}}><i className={`fa fa-${name} SpendSocialLinks-icon`} /></BlankLink>
           </li>
         ))}
       </ul>

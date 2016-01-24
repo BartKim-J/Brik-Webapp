@@ -1,6 +1,7 @@
 let React = require('react');
 
 let ExtendChildMixin = require('../mixins/extendChild');
+let TrackClickMixin = require('../mixins/trackClick');
 
 let Button = React.createClass({
   propTypes: {
@@ -21,15 +22,24 @@ let Button = React.createClass({
 });
 
 let PseudoButton = React.createClass({
-  mixins: [ExtendChildMixin],
+  mixins: [ExtendChildMixin, TrackClickMixin],
 
   propTypes: {
+    clickEvent: React.PropTypes.object,
     onClick: React.PropTypes.func.isRequired
+  },
+
+  handleClick(e) {
+    const {clickEvent, onClick} = this.props;
+    onClick(e, this.trackClick);
+    if (clickEvent) {
+      this.trackClick(clickEvent);
+    }
   },
 
   render() {
     return this.extendChild({
-      onClick: this.props.onClick,
+      onClick: this.handleClick,
 
       // Prevent double-click selection.
       onMouseDown: e => {
