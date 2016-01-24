@@ -613,6 +613,10 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     overflow: visible;
   }
 
+  .SpendIndex-offsetY {
+    transition: transform 450ms $CUBIC-BEZIER-OUT-SINE;
+  }
+
   .SpendIndex-index {
     height: 806px;
   }

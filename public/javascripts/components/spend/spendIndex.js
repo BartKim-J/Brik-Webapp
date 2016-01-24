@@ -440,7 +440,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-contactless-bg"
+              className="SpendIndex-contactless-bg SpendIndex-offsetY"
               style={this.offsetY2Style(contactlessBgY)}
             >
               <div className="SpendIndex-contactless-bg-inner" />
@@ -460,7 +460,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-display-bg"
+              className="SpendIndex-display-bg SpendIndex-offsetY"
               style={this.offsetY2Style(displayBgY)}
             >
               <div className="SpendIndex-display-bg-inner" />
@@ -489,7 +489,7 @@ let SpendIndex = React.createClass({
               </div>
             </div>
             <div
-              className="SpendIndex-charge-bg"
+              className="SpendIndex-charge-bg SpendIndex-offsetY"
               style={this.offsetY2Style(chargeBgY)}
             >
               <div className="SpendIndex-charge-bg-inner" />
@@ -513,7 +513,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-physicalCards-bg"
+              className="SpendIndex-physicalCards-bg SpendIndex-offsetY"
               style={this.offsetY2Style(physicalCardsBgY)}
             >
               <div className="SpendIndex-physicalCards-bg-inner" />
@@ -525,7 +525,7 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-tech-bg">
               <div
-                className="SpendIndex-tech-bg-inner"
+                className="SpendIndex-tech-bg-inner SpendIndex-offsetY"
                 style={this.offsetY2Style(techBgY)} />
             </div>
             <div className="SpendIndex-tech-inner">
@@ -580,7 +580,7 @@ let SpendIndex = React.createClass({
               </div>
             </div>
             <div
-              className="SpendIndex-app-bg"
+              className="SpendIndex-app-bg SpendIndex-offsetY"
               style={this.offsetY2Style(appBgY)}
             >
               <div className="SpendIndex-app-bg-inner" />
@@ -613,7 +613,7 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-indiegogo-bg">
               <div
-                className="SpendIndex-indiegogo-bg-inner"
+                className="SpendIndex-indiegogo-bg-inner SpendIndex-offsetY"
                 style={this.offsetY2Style(indiegogoBgY)} />
             </div>
           </section>
