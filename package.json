@@ -6,7 +6,7 @@
     "postinstall": "webpack --progress",
     "start": "node ./bin/www",
     "production": "NODE_ENV=production SEAGULL_SQLITE_FILE=/var/www/spendwallet/spendwallet.sqlite npm start",
-    "develop": "webpack --watch & DEBUG=seagull npm start" 
+    "develop": "webpack --watch & DEBUG=seagull npm start"
   },
   "dependencies": {
     "array.prototype.findindex": "^1.0.0",
