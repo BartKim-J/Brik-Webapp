@@ -196,7 +196,7 @@ let SpendIndex = React.createClass({
     }
   },
   updateSideViewVideo() {
-      /*let {duration} = this._sideViewVideoRef;
+      let {duration} = this._sideViewVideoRef;
 
       if (!(Number.isNaN(duration)) && Modernizr.video) {
           let time;
@@ -214,7 +214,7 @@ let SpendIndex = React.createClass({
               time = TIME_MAX;
           }
           this._sideViewVideoRef.currentTime = time;
-      }*/
+      }
   },
 
   offsetY2Style(offsetY) {
@@ -397,7 +397,7 @@ let SpendIndex = React.createClass({
                     className="SpendIndex-Form-MessageBoard"
                     message={subscriptionMsg}
                   >
-                    Be first to find out when we launch campaign
+                    Stay updated with our campaign
                   </MessageBoard>
                 </div>
               </div>

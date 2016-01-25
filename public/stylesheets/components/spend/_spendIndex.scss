@@ -130,7 +130,7 @@ body {
 
 .SpendIndex-videoLink:hover,
 .SpendIndex-videoLink:active {
-  color: rgba($SpendIndex-videoLink-color, $clickable-opacity-active);
+  color: rgba($SpendIndex-videoLink-color, $clickable-opacity-active) !important;
   opacity: 1;
 }
 .SpendIndex-videoLink-icon {
@@ -139,7 +139,7 @@ body {
 }
 .SpendIndex-videoLink:hover .SpendIndex-videoLink-icon,
 .SpendIndex-videoLink:active .SpendIndex-videoLink-icon {
-  opacity: $clickable-opacity-active;
+  opacity: $clickable-opacity-active !important;
 }
 .SpendIndex-Form-group {
   width: 262px;
