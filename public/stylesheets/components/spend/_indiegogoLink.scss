@@ -1,21 +1,21 @@
-$SpendIndiegogoLink-border-color: #cecece;
-$SpendIndiegogoLink-bg: #fff;
-$SpendIndiegogoLink-color: #565656;
+$SpendIndiegogoLink-border-color: #4487ff;
+$SpendIndiegogoLink-bg: #4487ff;
+$SpendIndiegogoLink-color: #ffffff;
 
 .SpendIndiegogoLink {
-  display: inline-block;
-  padding: 5.5px 32px 5.5px 21.5px;
-  border: 1px solid $SpendIndiegogoLink-border-color;
-  border-radius: 20.5px;
-  background-color: $SpendIndiegogoLink-bg;
-  color: $SpendIndiegogoLink-color;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.25;
-  transition:
-    border-color $clickable-transitionDuration,
-    color $clickable-transitionDuration;
+    display: inline-block;
+    padding: 9px 32px 9px 21.5px;
+    border: 1px solid $SpendIndiegogoLink-border-color;
+    border-radius: 30px;
+    background-color: $SpendIndiegogoLink-bg;
+    color: $SpendIndiegogoLink-color;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.25;
+    border-color: $clickable-transitionDuration;
+    color: $clickable-transitionDuration;
 }
+
 .SpendIndiegogoLink:hover,
 .SpendIndiegogoLink:active {
   border-color: rgba($SpendIndiegogoLink-border-color, $clickable-opacity-active);

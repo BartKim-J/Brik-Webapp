@@ -11,7 +11,7 @@ let SpendIndiegogoLink = React.createClass({
   render() {
     const {eventLabel, className} = this.props;
     return (
-      <BlankLink className={classNames('SpendIndiegogoLink text-uppercase', className)} href={CONF.INDIEGOGO_URL} clickEvent={{category: 'Indiegogo Link', label: eventLabel}}>Support us on <span className="SpendIndiegogoLink-logo text-hide">Indiegogo</span></BlankLink>
+      <BlankLink className={classNames('SpendIndiegogoLink text-uppercase', className)} href={CONF.INDIEGOGO_URL} clickEvent={{category: 'Indiegogo Link', label: eventLabel}}>PRE-ORDER COMING SOON</BlankLink>
     );
   }
 });

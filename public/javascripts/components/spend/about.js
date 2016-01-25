@@ -107,7 +107,6 @@ let SpendAbout = React.createClass({
   },
   renderMemberImage({
     name, image,
-    links: {twitter = null, facebook = null},
     desc
   }) {
     let rImageEl = (
@@ -137,7 +136,7 @@ let SpendAbout = React.createClass({
           </div>
         }
         placement="top" align={{offset: [0, 0]}}
-        mouseEnterDelay={1} mouseLeaveDelay={0}
+        mouseEnterDelay={0.3} mouseLeaveDelay={0}
       >
         {rImageEl}
       </Tooltip>) :

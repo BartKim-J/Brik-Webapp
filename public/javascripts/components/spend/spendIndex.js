@@ -196,26 +196,25 @@ let SpendIndex = React.createClass({
     }
   },
   updateSideViewVideo() {
-    let {duration} = this._sideViewVideoRef;
+      /*let {duration} = this._sideViewVideoRef;
 
-    if (!(Number.isNaN(duration)) && Modernizr.video) {
-      let time;
-      const TIME_MAX = Math.floor(duration);
+      if (!(Number.isNaN(duration)) && Modernizr.video) {
+          let time;
+          const TIME_MAX = Math.floor(duration);
 
-      // TEMP: hardcoded numbers (2/3 of height and page offset)
-      let min = 5227 - this._windowHeight;
-      let max = 4850;
+          // TEMP: hardcoded numbers (2/3 of height and page offset)
+          let min = 5227 - this._windowHeight;
+          let max = 4850;
 
-      if (this._pageYOffset <= min) {
-        time = 0;
-      } else if (this._pageYOffset < max) {
-        time = ((this._pageYOffset - min)/(max - min))*TIME_MAX;
-      } else {
-        time = TIME_MAX;
-      }
-
-      this._sideViewVideoRef.currentTime = time;
-    }
+          if (this._pageYOffset <= min) {
+              time = 0;
+          } else if (this._pageYOffset < max) {
+              time = ((this._pageYOffset - min)/(max - min)) * TIME_MAX;
+          } else {
+              time = TIME_MAX;
+          }
+          this._sideViewVideoRef.currentTime = time;
+      }*/
   },
 
   offsetY2Style(offsetY) {
@@ -380,7 +379,7 @@ let SpendIndex = React.createClass({
                     Spend everywhere with one device
                   </h2>
                   <LinkBlock className="SpendIndex-video-LinkBlock">
-                    <a className="SpendIndex-videoLink text-uppercase" href=""><i className="fa fa-Spend-caret-right SpendIndex-videoLink-icon" /> Watch Video</a>
+                    <a className="SpendIndex-videoLink text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-videoLink-icon" /> VIDEO COMING SOON</a>
                   </LinkBlock>
                 </div>
                 <div className="SpendIndex-Form-group">
@@ -406,7 +405,7 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-index-bg">
               <video
                 className="SpendIndex-index-bg-video"
-                width="1366" height="806"
+                width="1440" height="806"
                 poster="//dummyimage.com/683x403/ff/ff.png"
                 onLoadedMetadata={this.handleIndexVideoLoadedMetadata}
                 ref={ref => {
@@ -426,17 +425,17 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-contactless-inner">
               <header className="SpendIndex-contactless-header">
                 <h2 className="SpendIndex-contactless-h2">
-                  Contactless Payment
+                  Contactless Payment, Anywhere.
                 </h2>
                 <p className="SpendIndex-contactless-h2-p">
-                  All your cards in one smart device
+                  Tap to pay on existing card readers
                 </p>
               </header>
               <p
                 className="SpendIndex-contactless-p
                   SpendIndex-contactless-p-last"
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                No NFC. Our self-developed Magnetic Flux Emulation (MFE) technology generates changing magnetic fields over a short period of time, which makes the card reader to respond as if a card has been swiped. So no more swiping. Just tap and finish your payment anywhere.
               </p>
             </div>
             <div
@@ -453,10 +452,10 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-display-inner">
               <h2 className="SpendIndex-display-h2">
-                Matrix Display
+                Hidden LED Display
               </h2>
               <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use.  When necessary, it will show the card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
               </p>
             </div>
             <div
@@ -473,10 +472,10 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-charge-inner">
               <div className="SpendIndex-charge-content">
                 <h2 className="SpendIndex-charge-h2">
-                  USB Cable Charger
+                  Simply Rechargeable
                 </h2>
                 <p className="SpendIndex-charge-p">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                  SpendWallet has a rechargeable battery that generally lasts for a month. When you are notified of low battery, simply charge it with the included micro USB cable.
                 </p>
               </div>
               <ImageBlock className="SpendIndex-charge-ImageBlock">
@@ -485,7 +484,7 @@ let SpendIndex = React.createClass({
                   src="/images/usbcharge.png" width={291} height={221} />
               </ImageBlock>
               <div className="SpendIndex-charge-battery">
-                Battery life 2-4 weeks
+                Up to 4 weeks of battery life
               </div>
             </div>
             <div
@@ -503,13 +502,13 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-physicalCards-inner">
               <h2 className="SpendIndex-physicalCards-h2">
-                Put physical cards
+              Born to replace your wallet, completely.
               </h2>
               <p
                 className="SpendIndex-physicalCards-p
                   SpendIndex-physicalCards-p-last"
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              SpendWallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.
               </p>
             </div>
             <div
@@ -530,17 +529,32 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-tech-inner">
               <h2 className="SpendIndex-tech-h2">
-                Advanced payment technology
+                True Electronic Wallet
               </h2>
               <p className="SpendIndex-tech-p SpendIndex-tech-p-last">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Your heavy, thick traditional wallet should better evolve into a smart digital wallet. Finally, a real physical electronic wallet that consolidates all your cards.
               </p>
+            </div>
+          </section>
+          <section
+            className={classNames('SpendIndex-charge SpendIndex-design', chargeEnteredClass)}
+            style={overflowStyle}
+          >
+            <div className="SpendIndex-charge-inner SpendIndex-design-inner">
+              <div className="SpendIndex-charge-content SpendIndex-design-content">
+                <h2 className="SpendIndex-charge-h2">
+                  Splendid Design
+                </h2>
+                <p className="SpendIndex-charge-p">
+                  The frame is made of aluminum, one of the strongest and lightest materials on earth. This makes the device strong and durable enough for everyday use in your pocket. Plastic on the front and back cover finishes up the design with style. SpendWallet has been engineered to seamlessly work with your smooth payment experience.
+                </p>
+              </div>
             </div>
           </section>
           <section className="SpendIndex-measure text-center">
             <h2 className="SpendIndex-measure-h2">
-              Most Slimmest<br />
-              Lightest Smartwallet
+              Slim. Solid.<br />
+              SpendWallet
             </h2>
             <div className="SpendIndex-measure-sideView">
               <video
@@ -557,10 +571,10 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-measure-numbers">
               <div className="SpendIndex-measure-numbers-big">
-                5.5mm / 65grams
+                6.0mm / 65grams
               </div>
               <div className="SpendIndex-measure-numbers-more">
-                Thickness: 5.5mm Dimension: 76mm x 120mm
+                Thickness: 6.0mm Dimension: 60.5mm x 105mm
               </div>
             </div>
           </section>
@@ -568,12 +582,13 @@ let SpendIndex = React.createClass({
             className={classNames('SpendIndex-app', appEnteredClass)}
             style={overflowStyle}
           >
+          <img className="SpendIndex-app-hand-background" src="images/hand_background.png"></img>
             <div className="SpendIndex-app-inner">
               <h2 className="SpendIndex-app-h2">
                 <Logo /> application
               </h2>
               <p className="SpendIndex-app-p">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable
+                Meet the app that is all-in-one for your financial management. With this app, you can easily manage credit cards, save barcodes and coupons and see expenditure analysis. As much as we care about how much you spend, we put our most effort into how smart you spend.
               </p>
               <div className="SpendIndex-app-stores text-hide">
                 iOS Android
@@ -594,8 +609,8 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-indiegogo-inner">
               <h2 className="SpendIndex-indiegogo-h2">
-                Use it easily anywhere<br />
-                <em className="SpendIndex-indiegogo-h2-em">Get your First</em>
+                Worldwide Shipping<br />
+                <em className="SpendIndex-indiegogo-h2-em">Pre-Order Coming Soon</em>
               </h2>
               <ImageBlock
                 className="SpendIndex-indiegogo-ImageBlock text-center"
@@ -603,11 +618,8 @@ let SpendIndex = React.createClass({
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
               <div className="SpendIndex-indiegogo-cta text-center">
-                <LinkBlock className="SpendIndex-indiegogo-cta-LinkBlock">
-                  <IndiegogoLink eventLabel="In Index Page Indiegogo Section" />
-                </LinkBlock>
+                <a className="SpendIndex-videoLink text-uppercase pre-order-link">PRE-ORDER COMING SOON</a>
                 <div className="SpendIndex-indiegogo-cta-info">
-                  Shipping this Fall 2016
                 </div>
               </div>
             </div>

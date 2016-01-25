@@ -4,19 +4,20 @@ module.exports = {
   version: 1,
 
   data: [{
-    category: `Server`,
-    desc: `*서버 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.
-
-*보안 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.`
+    category: `Hardware`,
+    desc: `*Firmware Developer(1 person)* - looking for an engineer who can program a core chip for SpendWallet. Experience in Bluetooth, C language, and KEIL would be welcomed.`
   }, {
     category: `Server`,
-    desc: `*서버 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.
-
-*보안 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.`
+    desc: `*Server Developer(1 person)* - looking or engineer who can manage a server and establish security system.`
   }, {
-    category: `Server`,
-    desc: `*서버 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.
-
-*보안 (1명)* - Spend의 웹사이트, 모바일 어플리케이션 등의 back-end 서버를 만들고, 유지보수를 해줄 서버 디벨로퍼가 되어주세요. PHP, Java, Python 또는 Ruby 중 한 가지를 능숙하게 다루시는 분을 우대합니다.`
+    category: `Mobile`,
+    desc: `*Android Developer(1 person)* - looking for an engineer who can develop Android mobile application. Experience in Bluetooth would be welcomed.
+           *iOS Developer(1 person)* - looking for an engieneer who can can develop iOS mobile application. Experience in Bluetooth and SWIFT would be welcomed.`
+  }, {
+    category: `Design`,
+    desc: `*Designer(1 person)* - looking for an designer who can take a charge of mass production. Experience in tool design and mass production would be welcomed.`
+  }, {
+    category: `Marketing`,
+    desc: `*Marketer & Business Developer(1 person)* - looking for a developer who can take a charge of product branding and marketing strategy. Those who excel at research would be welcomed.`
   }]
 };
