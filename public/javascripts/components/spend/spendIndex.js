@@ -529,17 +529,17 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-tech-inner">
               <h2 className="SpendIndex-tech-h2">
-                Advanced payment technology
+                True Electronic Wallet
               </h2>
               <p className="SpendIndex-tech-p SpendIndex-tech-p-last">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Your heavy, thick traditional wallet should better evolve into a smart digital wallet. Finally, a real physical electronic wallet that consolidates all your cards.
               </p>
             </div>
           </section>
           <section className="SpendIndex-measure text-center">
             <h2 className="SpendIndex-measure-h2">
-              Most Slimmest<br />
-              Lightest Smartwallet
+              Slim. Solid.<br />
+              SpendWallet
             </h2>
             <div className="SpendIndex-measure-sideView">
               <video
@@ -603,11 +603,8 @@ let SpendIndex = React.createClass({
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
               <div className="SpendIndex-indiegogo-cta text-center">
-                <LinkBlock className="SpendIndex-indiegogo-cta-LinkBlock">
-                  <IndiegogoLink eventLabel="In Index Page Indiegogo Section" />
-                </LinkBlock>
+                <a className="SpendIndex-videoLink text-uppercase pre-order-link">PRE-ORDER COMING SOON</a>
                 <div className="SpendIndex-indiegogo-cta-info">
-                  Shipping this Fall 2016
                 </div>
               </div>
             </div>

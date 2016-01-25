@@ -122,6 +122,12 @@ body {
   letter-spacing: 1.4px;
   transition: color $clickable-transitionDuration;
 }
+
+.pre-order-link {
+    background-color: #4487ff !important;
+    color: #f7f7f7 !important;
+}
+
 .SpendIndex-videoLink:hover,
 .SpendIndex-videoLink:active {
   color: rgba($SpendIndex-videoLink-color, $clickable-opacity-active);
