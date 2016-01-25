@@ -536,6 +536,21 @@ let SpendIndex = React.createClass({
               </p>
             </div>
           </section>
+          <section
+            className={classNames('SpendIndex-charge SpendIndex-design', chargeEnteredClass)}
+            style={overflowStyle}
+          >
+            <div className="SpendIndex-charge-inner SpendIndex-design-inner">
+              <div className="SpendIndex-charge-content SpendIndex-design-content">
+                <h2 className="SpendIndex-charge-h2">
+                  Splendid Design
+                </h2>
+                <p className="SpendIndex-charge-p">
+                  The frame is made of aluminum, one of the strongest and lightest materials on earth. This makes the device strong and durable enough for everyday use in your pocket. Plastic on the front and back cover finishes up the design with style. SpendWallet has been engineered to seamlessly work with your smooth payment experience.
+                </p>
+              </div>
+            </div>
+          </section>
           <section className="SpendIndex-measure text-center">
             <h2 className="SpendIndex-measure-h2">
               Slim. Solid.<br />
@@ -556,10 +571,10 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-measure-numbers">
               <div className="SpendIndex-measure-numbers-big">
-                5.5mm / 65grams
+                6.0mm / 65grams
               </div>
               <div className="SpendIndex-measure-numbers-more">
-                Thickness: 5.5mm Dimension: 76mm x 120mm
+                Thickness: 6.0mm Dimension: 60.5mm x 105mm
               </div>
             </div>
           </section>

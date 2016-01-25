@@ -67,7 +67,7 @@ body {
 
 .SpendIndex-app-hand-background {
     position: absolute;
-    bottom: 0;
+    bottom: -20px;
     width: 100%;
 }
 
@@ -631,6 +631,28 @@ body {
   display: none;
 }
 
+@media (max-width: $screen-md-min) {
+    .SpendIndex-design {
+        background-color: black;
+        background-image: url("../images/spend_black.png");
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+    .SpendIndex-design-inner {
+        margin-top: 200px;
+    }
+
+    .SpendIndex-design-content {
+        width: 340px;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    .SpendIndex-app-hand-background {
+        visibility: hidden;
+    }
+}
+
 @media (min-width: $screen-md-min) {
   .SpendIndex {
     padding-bottom: 368px;
@@ -877,6 +899,23 @@ body {
     );
   }
 
+    .SpendIndex-design {
+        background-color: black;
+        background-image: url("../images/spend_black.png");
+        background-size: 75%;
+        background-repeat: no-repeat;
+    }
+
+    .SpendIndex-design-inner {
+        top: 65%;
+    }
+
+  .SpendIndex-design-bg-inner {
+    @include r-background-image(
+      "spend_black.png", "spend_black.png", 652, 454
+    );
+  }
+
   .SpendIndex-physicalCards {
     position: relative;
     height: 590px;
@@ -973,7 +1012,7 @@ body {
   }
 
   .SpendIndex-measure {
-    padding: 122px 0 125px;
+    padding: 200px 0 200px;
     overflow: hidden;
   }
   .SpendIndex-measure-h2,
@@ -992,7 +1031,7 @@ body {
     width: 858px;
     height: 606.71875px;
     background-image: none;
-    margin-top: -252px;
+    margin-top: -282px;
     margin-bottom: -314px;
     overflow: hidden;
     @include media-2x {
@@ -1025,7 +1064,7 @@ body {
 
   .SpendIndex-app {
     position: relative;
-    height: 958px;
+    height: 720px;
     padding-top: 0;
   }
   @include enter(
@@ -1060,7 +1099,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 43.92386530014641%;
+    width: 35%;
     max-width: none;
     margin: 0;
   }

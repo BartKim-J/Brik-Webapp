@@ -1,5 +1,5 @@
 $SpendMenu-transitionDuration: 500ms;
-$SpendMenu-scrolling-border-color: #d9d9d9;
+$SpendMenu-scrolling-border-color: #F3F3F3;
 $SpendMenu-scrolling-bg: rgba(#fff, 0.95);
 $SpendMenu-open-bg: #fff;
 $SpendMenu-index-Logo-forceShown-transitionDuration: 500ms;
@@ -249,7 +249,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     padding: 0;
     color: $SpendMenu-item-link-md-color;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1875;
   }
   .SpendMenu-SocialLinks {
@@ -261,7 +261,8 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     bottom: auto;
     left: auto;
     float: left;
-    margin-top: 1px;
+    margin-top: 3px;
+    margin-right: 20px;
   }
   .SpendMenu-IndiegogoLink {
     display: inline-block;
