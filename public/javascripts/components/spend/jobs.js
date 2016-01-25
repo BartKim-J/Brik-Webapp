@@ -4,7 +4,6 @@ let Helmet = require('react-helmet');
 let Collapse = require('../collapse');
 let {EmailLink} = require('../links');
 let Markdown = require('../markdown');
-
 let Logo = require('./logo');
 
 let SpendJobs = React.createClass({
@@ -49,10 +48,10 @@ let SpendJobs = React.createClass({
                 What is <Logo />?
               </h2>
               <p className="SpendJobs-p SpendJobs-h2-p">
-                {`${BRAND}를 만드는 X Engineering은, 많은 사람들에게 가치 있게 사용되는 좋은 기술로 더욱 행복한 세상을 만들고자 하는 IoT 스타트업입니다. 다양한 간편결제 서비스가 존재하는 온라인에서 뿐만 아니라, 전체 상거래의 90% 이상을 차지하는 오프라인 결제분야에서도 간편결제를 제공하고자 ${BRAND}를 개발합니다.`}
+                {`We are developing SpendWallet that can be used not only online but also offline that comprises 90% of total commercial transaction. X Engineering believes that everyone stands to benefit from the advance of technology.`}
               </p>
               <p className="SpendJobs-p">
-                {`더 많은 사람들이 ${BRAND}를 통해 간편한 소비생활을 할 수 있도록, X Engineering과 함께 끊임없이 노력할 도전자를 찾습니다.`}
+                {`We are looking for X Engineer who can join the journey of developing a valuable product with technology we create.`}
               </p>
             </section>
             <section
@@ -94,11 +93,11 @@ let SpendJobs = React.createClass({
                   ))}
               </ul>
             </section>
+            <div className="SpendJobs-container-footer text-center">
+              Don't see the position you're looking for?<br className="visible-md-inline visible-lg-inline" />{' '}
+              We'd still love to hear from you! Email us at <EmailLink email="contact@xengineering.co" />
+            </div>
           </div>
-          <footer className="SpendJobs-container-footer text-center">
-            Don't see the position you're looking for?<br className="visible-md-inline visible-lg-inline" />{' '}
-            We'd still love to hear from you! Email us at <EmailLink email="contact@xengineering.co" />
-          </footer>
         </div>
       );
     }

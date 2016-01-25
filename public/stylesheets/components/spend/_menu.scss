@@ -184,7 +184,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     background-color: $SpendMenu-scrolling-bg;
   }
   @include enter("SpendMenu-index", $SpendMenu-index-md-anim) {
-    max-width: 1366px;
+    max-width: 1440px;
     margin: 0 auto;
   }
   .SpendMenu-index.is-SpendMenu-scrolling,

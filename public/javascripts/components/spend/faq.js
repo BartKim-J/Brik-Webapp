@@ -46,13 +46,11 @@ let SpendFaq = React.createClass({
               <div className="col-md-6">
                 <div className="SpendFaq-container-footer-header">
                   <h2 className="SpendFaq-container-footer-h2">
-                    Do you need more help?
+                    If you need any further assistance or have queries, please do not hesitate to contact us.
                   </h2>
                   <p
                     className="SpendFaq-container-footer-h2-p
-                      SpendFaq-container-footer-h2-p-last"
-                  >
-                    Directly ask us about anything
+                      SpendFaq-container-footer-h2-p-last">
                   </p>
                 </div>
               </div>

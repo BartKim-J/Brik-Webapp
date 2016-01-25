@@ -1,5 +1,5 @@
 $SpendAbout-jobsLink-border-color: #cecece;
-$SpendAbout-jobsLink-color: #c0c0c0;
+$SpendAbout-jobsLink-color: #444444;
 
 $SpendAbout-member-RImage-hover-border-color: #cdcdcd;
 $SpendAbout-member-detail-arrow-color: #fff;
@@ -11,7 +11,8 @@ $SpendAbout-member-detail-p-color: #919191;
 .SpendAbout {
   padding: 105px 0 65px;
   @include background-image("about/background.png");
-  background-position: 56% top;
+  background-position: center top;
+  background-size: 1440px !important;
   background-repeat: no-repeat;
 }
 .SpendAbout-container {
@@ -93,7 +94,7 @@ $SpendAbout-member-detail-p-color: #919191;
 }
 @media (min-width: $screen-md-min) {
   .SpendAbout {
-    padding: 184px 0 80px;
+    padding: 184px 0 0;
     @include background-size(contain);
     background-position-x: center;
   }
@@ -208,7 +209,7 @@ $SpendAbout-member-detail-p-color: #919191;
   }
 
   .SpendAbout-container-footer {
-    margin-top: 90px;
+    margin: 90px 0 90px 0;
   }
   .SpendAbout-container-footer-header {
     width: auto;

@@ -1,4 +1,4 @@
-$SpendIndex-bg: #f3f3f3;
+$SpendIndex-bg: #f8f8f8;
 
 $SpendIndex-index-bg: #fff;
 $SpendIndex-h1-Logo-color: #3a3a3a;
@@ -57,17 +57,24 @@ $SpendIndex-footer-copyrights-color: #919191;
 $SpendIndex-footer-SocialLinks-link-color: #777;
 
 $SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
+
 $SpendIndex-videoLink-h2-md-anim: slideDown 1s 2s both;
 $SpendIndex-video-LinkBlock-md-anim: slideUp 1s 2s both;
 $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 
-.SpendIndex {
+body {
   background-color: $SpendIndex-bg;
 }
 .SpendIndex-container {
   padding-right: 0;
   padding-left: 0;
   overflow: hidden;
+}
+
+.SpendIndex-app-hand-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .SpendIndex-index {
@@ -263,15 +270,31 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   width: 100%;
   padding: 281px 0 72px;
 }
-.SpendIndex-security-feature-alert,
-.SpendIndex-security-feature-passcode,
+
 .SpendIndex-security-feature-encrypt {
   @include background-image(
-    "lost-alert.png", "lost-alert@2x.png", 172px, 298px
+    "security/encrypt.png", "security/encrypt.png", 172px, 298px
   );
   background-position: center top;
   background-repeat: no-repeat;
 }
+
+.SpendIndex-security-feature-passcode {
+  @include background-image(
+    "security/fingerprint.png", "security/fingerprint.png", 172px, 298px
+  );
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.SpendIndex-security-feature-alert {
+  @include background-image(
+    "security/alarm.png", "security/alarm.png", 172px, 298px
+  );
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
 .SpendIndex-security-slider-feature-alert,
 .SpendIndex-security-slider-feature-passcode,
 .SpendIndex-security-slider-feature-encrypt {
@@ -645,7 +668,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 
 @media (min-width: $screen-md-min) {
   .SpendIndex-container {
-    max-width: 1366px;
+    max-width: 1440px;
     margin-right: auto;
     margin-left: auto;
     overflow: visible;
@@ -1074,6 +1097,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
       "app-md.png", "app-md@2x.png", 600, 839
     );
     margin-right: 0;
+    background-size: cover;
   }
 
   .SpendIndex-indiegogo {
@@ -1132,7 +1156,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     text-align: left;
   }
   .SpendIndex-footer-inner {
-    max-width: 1366px;
+    max-width: 1440px;
     margin: 0 auto;
   }
   .SpendIndex-footer-inner-inner {
