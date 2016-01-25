@@ -2,6 +2,8 @@ let React = require('react');
 
 let rest = require('lodash/array/rest');
 
+let TrackClickMixin = require('../mixins/trackClick');
+
 const ROUTE_CONTEXT_TYPES = {
   routeNames: React.PropTypes.array.isRequired
 };
@@ -14,13 +16,16 @@ let history = {
   },
   pushState(url) {
     let {history: winHistory, location} = window;
+
     if (url === location.pathname) {
       location.reload(true);
+      throw new Error('Reload Page.');
     } else {
       if (Modernizr.history) {
         winHistory.pushState({}, '', url);
       } else {
         window.location = url;
+        throw new Error('History API Not Supported');
       }
     }
   },
@@ -30,6 +35,7 @@ let history = {
       winHistory.replaceState({}, '', url);
     } else if (url) {
       location.replace(url);
+      throw new Error('History API Not Supported');
     }
   }
 };
@@ -83,18 +89,28 @@ let Router = React.createClass({
   componentWillReceiveProps(nextProps) {
     const {url, urlType} = nextProps.route;
     if (url) {
-      switch (urlType) {
-      case 'PUSH':
-        history.pushState(url);
-        break;
-      case 'REPLACE':
-        history.replaceState(url);
-        break;
-      default:
-        // TODO: error
-        break;
+      try {
+        switch (urlType) {
+        case 'PUSH':
+          history.pushState(url);
+          break;
+        case 'REPLACE':
+          history.replaceState(url);
+          break;
+        default:
+          // TODO: error
+          break;
+        }
+        nextProps.onPopRoute(window.location.pathname);
+      } catch (e) {
+        switch (e.message) {
+        case 'History API Not Supported':
+        case 'Reload Page.':
+          break;
+        default:
+          throw e;
+        }
       }
-      nextProps.onPopRoute(window.location.pathname);
     }
   },
   shouldComponentUpdate(nextProps, nextState) {
@@ -156,7 +172,10 @@ Router.Route = React.createClass({
 });
 
 Router.Link = React.createClass({
+  mixins: [TrackClickMixin],
+
   propTypes: {
+    clickEvent: React.PropTypes.object.isRequired,
     url: React.PropTypes.string.isRequired
   },
 
@@ -165,7 +184,11 @@ Router.Link = React.createClass({
   },
 
   handleClick(e) {
-    this.context.onPushRoute(this.props.url);
+    const {clickEvent, url} = this.props;
+
+    this.context.onPushRoute(url);
+    this.trackClick(clickEvent);
+
     e.preventDefault();
   },
 

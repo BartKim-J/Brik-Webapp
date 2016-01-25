@@ -46,6 +46,25 @@ let noop = require('lodash/utility/noop');
   });
 })(window, noop);
 
+window.fetchWithGa = ((input, init = undefined, gaTimingCat) => {
+  let gaTimingVar = 'load';
+  let time = Date.now();
+
+  if (!gaTimingCat) {
+    gaTimingCat = init;
+    init = undefined;
+  }
+
+  if (init && init.method && init.method !== 'get') {
+    gaTimingVar = init.method;
+  }
+
+  return fetch(input, init).then(response => {
+    ga('send', 'timing', gaTimingCat, gaTimingVar, Date.now() - time);
+    return response;
+  });
+});
+
 const {INITIAL_STATE, CSRF_TOKEN} = window;
 
 createStore = applyMiddleware(thunk)(createStore);
@@ -58,7 +77,14 @@ ReactDOM.render(
   document.getElementById('content')
 );
 
-console.log(store.getState());
-store.subscribe(() => {
-  console.log(store.getState());
+if (Modernizr.performance) {
+  ga('send', 'timing', 'Page', 'load', performance.now());
+}
+
+window.onerror = ((message, file, line, column = null) => {
+  ga('send', 'exception', {
+    exDescription: `message: "${message}", location: ${file}:${line}${
+      (typeof column === 'number') ? `:${column}` : ''
+    }`
+  });
 });

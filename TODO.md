@@ -22,7 +22,6 @@ X-UA-Compatible: IE=edge
 
 ## Data Analysis
 
-- Google Analytics
 - Pingbacks
 
 ## Deployment

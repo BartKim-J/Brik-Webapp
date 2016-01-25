@@ -40,8 +40,12 @@ let Collapse = React.createClass({
     };
   },
 
-  handleButtonClick(e) {
-    this.toggleTransition('is-Collapse-active');
+  handleButtonClick(e, tracker) {
+    let transitionType = this.toggleTransition('is-Collapse-active');
+    tracker({
+      category: 'Collapse',
+      action: (transitionType === 'in') ? 'open' : 'collapse'
+    });
   },
 
   childContextTypes: {
@@ -66,13 +70,24 @@ let Collapse = React.createClass({
 });
 
 Collapse.Button = React.createClass({
+  propTypes: {
+    eventLabel: React.PropTypes.string.isRequired
+  },
+
   contextTypes: {
     onButtonClick: React.PropTypes.func.isRequired
   },
 
+  handleClick(e, tracker) {
+    this.context.onButtonClick(e, data => {
+      data.label = this.props.eventLabel;
+      tracker(data);
+    });
+  },
+
   render() {
     return (
-      <PseudoButton onClick={this.context.onButtonClick}>{this.props.children}</PseudoButton>
+      <PseudoButton onClick={this.handleClick}>{this.props.children}</PseudoButton>
     );
   }
 });

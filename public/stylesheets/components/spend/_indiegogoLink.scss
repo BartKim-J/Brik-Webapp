@@ -12,6 +12,15 @@ $SpendIndiegogoLink-color: #565656;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
+  transition:
+    border-color $clickable-transitionDuration,
+    color $clickable-transitionDuration;
+}
+.SpendIndiegogoLink:hover,
+.SpendIndiegogoLink:active {
+  border-color: rgba($SpendIndiegogoLink-border-color, $clickable-opacity-active);
+  color: rgba($SpendIndiegogoLink-color, $clickable-opacity-active);
+  opacity: 1;
 }
 .SpendIndiegogoLink-logo {
   @include image-replacement(
@@ -21,4 +30,9 @@ $SpendIndiegogoLink-color: #565656;
   font-size: 12px;
   line-height: 28px;
   vertical-align: 0.1em;
+  transition: opacity $clickable-transitionDuration;
+}
+.SpendIndiegogoLink:hover .SpendIndiegogoLink-logo,
+.SpendIndiegogoLink:active .SpendIndiegogoLink-logo {
+  opacity: $clickable-opacity-active;
 }

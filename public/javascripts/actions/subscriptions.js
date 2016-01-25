@@ -14,14 +14,16 @@ function receiveNewSubscription(status, error = null) {
 function postSubscription(email) {
   return (dispatch => {
     dispatch(requestNewSubscription(email));
-    return fetch('/subscriptions', {
+    ga('send', 'event', 'Email Subscription', 'create', email);
+
+    return fetchWithGa('/subscriptions', {
       method: 'post',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({email})
-    }).then(
+    }, 'Email Subscription').then(
       response =>
         response.json().then(json => ({response, json}))
     ).then(({response, json: {error = null}}) => {
@@ -33,6 +35,12 @@ function postSubscription(email) {
       }
     }).catch(error => {
       dispatch(receiveNewSubscription('error', error));
+      ga(
+        'send', 'event',
+        'Email Subscription', 'error',
+        `email: ${email}, message: "${error.message}"`
+      );
+
       throw error;
     });
   });

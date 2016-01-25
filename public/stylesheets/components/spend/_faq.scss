@@ -64,6 +64,7 @@ $SpendFaq-emailUsLink-color: #444444;
   color: $SpendFaq-question-color;
 }
 .SpendFaq-question:hover .SpendFaq-question-inner,
+.SpendFaq-question:active .SpendFaq-question-inner,
 .SpendFaq-qna.is-Collapse-active .SpendFaq-question-inner {
   border-bottom: 1px solid;
 }

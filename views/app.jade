@@ -38,6 +38,10 @@ html.no-js(lang=lang)
     +stylesheet('/stylesheets/app.css')
     script(src='/javascripts/lib/modernizr-custom.js')
 
+    script
+      if isDev
+        | window['ga-disable-UA-55322295-2'] = true;
+      | (function(s,p,e,n,d,w,a,l,le,t){s.GoogleAnalyticsObject=n;s[n]||(s[n]=function(){(s[n].q=s[n].q||[]).push(arguments)});s[n].n=+new Date;d=p.createElement(e);w=p.getElementsByTagName(e)[0];d.src='https://www.google-analytics.com/analytics#{isDev ? '_debug' : ''}.js';w.parentNode.insertBefore(d,w)}(window,document,'script','ga'));ga('create','UA-55322295-2','auto');ga('send','pageview');
   body
     <!--[if lt IE 9]>!{BROWSER_UPGRADE}<![endif]-->
 

@@ -11,17 +11,16 @@ let {Image, RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
 let Markdown = require('../markdown');
 let MessageBoard = require('../messageBoard');
-let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
 let IndiegogoLink = require('./indiegogoLink');
 let Logo = require('./logo');
-let SocialLinks = require('./socialLinks');
 
 let Immutable = require('seamless-immutable');
 
 let SpendIndex = React.createClass({
   statics: {
+    BG_OFFSET_Y_MAX: 25,
     DEFAULT_BG_Y_OFFSETS: Immutable({
       contactless: 0,
       display: 0,
@@ -31,7 +30,19 @@ let SpendIndex = React.createClass({
       app: 0,
       indiegogo: 0
     }),
-    BG_OFFSET_Y_MAX: 25
+    SECURITY_FEATURES: [{
+      key: 'alert',
+      name: 'Proximity Alert',
+      description: 'Auto-lock when lost.\nSelf-destruction after time.'
+    }, {
+      key: 'passcode',
+      name: 'Security Passcode',
+      description: 'Protect your card and\nbank information'
+    }, {
+      key: 'encrypt',
+      name: 'Bank Level Encyrption',
+      description: '256 bit encryption\nfor card data'
+    }]
   },
 
   propTypes: {
@@ -312,8 +323,6 @@ let SpendIndex = React.createClass({
   },
 
   render() {
-    const {BRAND} = CONF;
-
     const {
       bgYOffsets,
       enteredClasses,
@@ -345,7 +354,7 @@ let SpendIndex = React.createClass({
 
     return (
       <div className="SpendIndex">
-        <Helmet title={BRAND} />
+        <Helmet title={CONF.BRAND} />
         <WindowListener
           onResize={this.handleWindowResize}
           onScreenChange={this.handleScreenChange}
@@ -361,7 +370,7 @@ let SpendIndex = React.createClass({
                   <Logo className="SpendIndex-h1-Logo" />
                 </h1>
                 <LinkBlock className="SpendIndex-h1-LinkBlock">
-                  <IndiegogoLink />
+                  <IndiegogoLink eventLabel="In Index Page Index Section" />
                 </LinkBlock>
               </header>
               <div className="SpendIndex-index-content">
@@ -430,7 +439,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-contactless-bg"
+              className="SpendIndex-contactless-bg SpendIndex-offsetY"
               style={this.offsetY2Style(contactlessBgY)}
             >
               <div className="SpendIndex-contactless-bg-inner" />
@@ -450,7 +459,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-display-bg"
+              className="SpendIndex-display-bg SpendIndex-offsetY"
               style={this.offsetY2Style(displayBgY)}
             >
               <div className="SpendIndex-display-bg-inner" />
@@ -479,7 +488,7 @@ let SpendIndex = React.createClass({
               </div>
             </div>
             <div
-              className="SpendIndex-charge-bg"
+              className="SpendIndex-charge-bg SpendIndex-offsetY"
               style={this.offsetY2Style(chargeBgY)}
             >
               <div className="SpendIndex-charge-bg-inner" />
@@ -503,7 +512,7 @@ let SpendIndex = React.createClass({
               </p>
             </div>
             <div
-              className="SpendIndex-physicalCards-bg"
+              className="SpendIndex-physicalCards-bg SpendIndex-offsetY"
               style={this.offsetY2Style(physicalCardsBgY)}
             >
               <div className="SpendIndex-physicalCards-bg-inner" />
@@ -515,7 +524,7 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-tech-bg">
               <div
-                className="SpendIndex-tech-bg-inner"
+                className="SpendIndex-tech-bg-inner SpendIndex-offsetY"
                 style={this.offsetY2Style(techBgY)} />
             </div>
             <div className="SpendIndex-tech-inner">
@@ -571,8 +580,9 @@ let SpendIndex = React.createClass({
               </div>
             </div>
             <div
-              className="SpendIndex-app-bg"
-              style={this.offsetY2Style(appBgY)}>
+              className="SpendIndex-app-bg SpendIndex-offsetY"
+              style={this.offsetY2Style(appBgY)}
+            >
               <div className="SpendIndex-app-bg-inner" />
             </div>
           </section>
@@ -594,7 +604,7 @@ let SpendIndex = React.createClass({
               </ImageBlock>
               <div className="SpendIndex-indiegogo-cta text-center">
                 <LinkBlock className="SpendIndex-indiegogo-cta-LinkBlock">
-                  <IndiegogoLink />
+                  <IndiegogoLink eventLabel="In Index Page Indiegogo Section" />
                 </LinkBlock>
                 <div className="SpendIndex-indiegogo-cta-info">
                   Shipping this Fall 2016
@@ -603,50 +613,20 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-indiegogo-bg">
               <div
-                className="SpendIndex-indiegogo-bg-inner"
+                className="SpendIndex-indiegogo-bg-inner SpendIndex-offsetY"
                 style={this.offsetY2Style(indiegogoBgY)} />
             </div>
           </section>
-          <footer className="SpendIndex-footer">
-            <div className="SpendIndex-footer-inner">
-              <div className="SpendIndex-footer-inner-inner">
-                <div className="SpendIndex-footer-Logo"><Logo /></div>
-                <ul
-                  className="SpendIndex-footer-link-items
-                    listUnstyled text-uppercase"
-                >
-                  <li className="SpendIndex-footer-link-item pull-left">
-                    <Link className="SpendIndex-footer-link" url="/about">About</Link>
-                  </li>
-                  <li className="SpendIndex-footer-link-item pull-left">
-                    <Link className="SpendIndex-footer-link" url="/faq">FAQ</Link>
-                  </li>
-                  <li className="SpendIndex-footer-link-item pull-left">
-                    <Link className="SpendIndex-footer-link" url="/jobs">Jobs</Link>
-                  </li>
-                  <li
-                    className="SpendIndex-footer-link-item
-                      SpendIndex-footer-link-item-last
-                      pull-left"
-                  >
-                    <Link className="SpendIndex-footer-link" url="/legal">Legal</Link>
-                  </li>
-                </ul>
-                <div className="SpendIndex-footer-copyrights">
-                  {`2015 ${BRAND}. All Rights Reserved. Patents Pending.`}
-                </div>
-                <SocialLinks
-                  className="SpendIndex-footer-SocialLinks"
-                  linkClassName="SpendIndex-footer-SocialLinks-link" />
-              </div>
-            </div>
-          </footer>
         </div>
       </div>
     );
   },
   renderSecurity() {
     const {securitySwipePos} = this.state;
+    let {
+      name: securitySwipeName
+    } = SpendIndex.SECURITY_FEATURES[securitySwipePos];
+
     return (
       <section className="SpendIndex-security">
         <div
@@ -657,7 +637,14 @@ let SpendIndex = React.createClass({
         >
           {this.renderSecurityFeatures(true)}
           <div className="SpendIndex-security-slider-buttons">
-            <PseudoButton onClick={this.handleSecuritySliderPrevClick}>
+            <PseudoButton
+              onClick={this.handleSecuritySliderPrevClick}
+              clickEvent={{
+                category: 'Slider',
+                action: 'prev',
+                label: `After Viewed "${securitySwipeName}"`
+              }}
+            >
               <span
                 className={classNames('SpendIndex-security-arrow SpendIndex-security-arrow-left text-hide', {
                   hidden: securitySwipePos <= 0
@@ -666,7 +653,14 @@ let SpendIndex = React.createClass({
                 Previous
               </span>
             </PseudoButton>
-            <PseudoButton onClick={this.handleSecuritySliderNextClick}>
+            <PseudoButton
+              onClick={this.handleSecuritySliderNextClick}
+              clickEvent={{
+                category: 'Slider',
+                action: 'next',
+                label: `After Viewed "${securitySwipeName}"`
+              }}
+            >
               <span
                 className={classNames('SpendIndex-security-arrow SpendIndex-security-arrow-right text-hide', {
                   hidden: securitySwipePos >= 2
@@ -692,43 +686,32 @@ let SpendIndex = React.createClass({
             'clearfix'
         ))}
       >
-        {[{
-          key: 'alert',
-          name: 'Proximity Alert',
-          description: 'Auto-lock when lost.\nSelf-destruction after time.'
-        }, {
-          key: 'passcode',
-          name: 'Security Passcode',
-          description: 'Protect your card and\nbank information'
-        }, {
-          key: 'encrypt',
-          name: 'Bank Level Encyrption',
-          description: '256 bit encryption\nfor card data'
-        }].map(({key, name, description}) => (
-          <li
-            className={classNames(`SpendIndex-security-feature SpendIndex-security-feature-${key} text-center`, (
-              isSlider ?
-                `SpendIndex-security-slider-feature SpendIndex-security-slider-feature-${key}` :
-                'pull-left'
-            ))}
-            key={key}
-          >
-            <div
-              className={classNames('SpendIndex-security-feature-name', {
-                'SpendIndex-security-slider-feature-name': isSlider
-              })}
+        {SpendIndex.SECURITY_FEATURES
+          .map(({key, name, description}) => (
+            <li
+              className={classNames(`SpendIndex-security-feature SpendIndex-security-feature-${key} text-center`, (
+                isSlider ?
+                  `SpendIndex-security-slider-feature SpendIndex-security-slider-feature-${key}` :
+                  'pull-left'
+              ))}
+              key={key}
             >
-              {name}
-            </div>
-            <Markdown
-              className={classNames('SpendIndex-security-feature-desc', {
-                'SpendIndex-security-slider-feature-desc': isSlider
-              })}
-            >
-              {description}
-            </Markdown>
-          </li>
-        ))}
+              <div
+                className={classNames('SpendIndex-security-feature-name', {
+                  'SpendIndex-security-slider-feature-name': isSlider
+                })}
+              >
+                {name}
+              </div>
+              <Markdown
+                className={classNames('SpendIndex-security-feature-desc', {
+                  'SpendIndex-security-slider-feature-desc': isSlider
+                })}
+              >
+                {description}
+              </Markdown>
+            </li>
+          ))}
       </ul>
     );
   }

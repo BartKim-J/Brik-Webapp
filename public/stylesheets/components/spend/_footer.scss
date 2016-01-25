@@ -1,0 +1,100 @@
+$SpendFooter-bg: #2d2d2d;
+$SpendFooter-Logo-color: #6e6e6e;
+$SpendFooter-link-color: #a6a6a6;
+$SpendFooter-copyrights-color: #919191;
+$SpendFooter-SocialLinks-link-color: #777;
+
+.SpendFooter {
+  background-color: $SpendFooter-bg;
+  line-height: 1;
+  text-align: center;
+}
+.SpendFooter-inner-inner {
+  padding: 70px 0 106px;
+}
+.SpendFooter-Logo {
+  margin-bottom: 36px;
+  color: $SpendFooter-Logo-color;
+  font-size: 35px;
+  line-height: 1.2;
+}
+.SpendFooter-link-items {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.8px;
+}
+.SpendFooter-link-item {
+  margin-right: 2em;
+}
+.SpendFooter-link-item-last {
+  margin-right: 0;
+}
+.SpendFooter-link {
+  color: $SpendFooter-link-color;
+}
+.SpendFooter-copyrights {
+  margin-top: 12px;
+  color: $SpendFooter-copyrights-color;
+  font-size: 9px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+.SpendFooter-SocialLinks {
+  display: inline-block;
+  margin-top: 37px;
+  font-size: 22px;
+}
+.SpendFooter-SocialLinks-link {
+  color: $SpendFooter-SocialLinks-link-color;
+}
+
+@media (min-width: $screen-md-min) {
+  .SpendFooter {
+    line-height: $line-height-base;
+    text-align: left;
+  }
+  .SpendFooter-index {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .SpendFooter-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .SpendFooter-index-inner {
+    max-width: none;
+    margin: 0;
+  }
+  .SpendFooter-inner-inner {
+    padding: 120px 6.588579795021962% 160px 6.881405563689604%;
+    @include clearfix;
+  }
+  .SpendFooter-Logo {
+    float: right;
+    margin: 15px 0 0;
+  }
+  .SpendFooter-link-items {
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: normal;
+  }
+  .SpendFooter-copyrights {
+    clear: left;
+    margin: 15px 0;
+    font-size: 13px;
+    letter-spacing: normal;
+  }
+  .SpendFooter-SocialLinks {
+    display: block;
+    margin-top: 15px;
+  }
+}

@@ -72,7 +72,7 @@ let SpendAbout = React.createClass({
               </div>
               <div className="col-md-4">
                 <LinkBlock className="SpendAbout-container-footer-LinkBlock">
-                  <Link className="SpendAbout-jobsLink" url="/jobs">View Openings</Link>
+                  <Link className="SpendAbout-jobsLink" url="/jobs" clickEvent={{category: 'View Openings'}}>View Openings</Link>
                 </LinkBlock>
               </div>
             </div>
@@ -122,9 +122,9 @@ let SpendAbout = React.createClass({
             <header className="SpendAbout-member-detail-overlay-header">
               <span className="SpendAbout-member-detail-name">{name}</span>
               {/* [['twitter', twitter], ['facebook', facebook]]
-                .filter(([name, data]) => data)
-                .map(([name, data]) => (
-                  <BlankLink className="SpendAbout-member-detail-link" href={data} key={name}><i className={`fa fa-${name}`} /></BlankLink>
+                .filter(([type, data]) => data)
+                .map(([type, data]) => (
+                  <BlankLink className="SpendAbout-member-detail-link" href={data} key={type} clickEvent={{category: 'Team Member', label: `name: "${name}", link type: ${type}`}}><i className={`fa fa-${type}`} /></BlankLink>
                 )) */}
             </header>
             <p

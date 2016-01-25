@@ -67,7 +67,9 @@ let SpendJobs = React.createClass({
                   </div>
                   <div className="col-md-6">
                     <div className="SpendJobs-section-openRoles-contact">
-                      <EmailLink email="contact@xengineering.co" />
+                      <EmailLink
+                        email="contact@xengineering.co"
+                        eventLabel="in: Jobs Page Open Roles" />
                     </div>
                   </div>
                 </div>
@@ -77,7 +79,9 @@ let SpendJobs = React.createClass({
                   .map(({category, desc}, i) => (
                     <Collapse key={i}>
                       <li className="SpendJobs-opening">
-                        <Collapse.Button>
+                        <Collapse.Button
+                          eventLabel={`in: Jobs Page Open Roles, label: "${category}"`}
+                        >
                           <div className="SpendJobs-opening-category">
                             {category}
                             <span className="SpendJobs-opening-category-arrow" />
@@ -98,6 +102,10 @@ let SpendJobs = React.createClass({
               We'd still love to hear from you! Email us at <EmailLink email="contact@xengineering.co" />
             </div>
           </div>
+          <footer className="SpendJobs-container-footer text-center">
+            Don't see the position you're looking for?<br className="visible-md-inline visible-lg-inline" />{' '}
+            We'd still love to hear from you! Email us at <EmailLink email="contact@xengineering.co" eventLabel="in: Jobs Page Footer" />
+          </footer>
         </div>
       );
     }
