@@ -33,15 +33,15 @@ let SpendIndex = React.createClass({
     SECURITY_FEATURES: [{
       key: 'alert',
       name: 'Proximity Alert',
-      description: 'Auto-lock when lost.\nSelf-destruction after time.'
+      description: 'Automatic lock &\nself-destruction when lost'
     }, {
       key: 'passcode',
       name: 'Security Passcode',
-      description: 'Protect your card and\nbank information'
+      description: 'Protect your card data\nwith passcode or fingerprint'
     }, {
       key: 'encrypt',
       name: 'Bank Level Encyrption',
-      description: '256 bit encryption\nfor card data'
+      description: '256 bit encryption\nfor all your personal data'
     }]
   },
 
