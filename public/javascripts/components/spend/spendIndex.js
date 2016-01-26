@@ -23,12 +23,13 @@ let SpendIndex = React.createClass({
     BG_OFFSET_Y_MAX: 25,
     DEFAULT_BG_Y_OFFSETS: Immutable({
       contactless: 0,
+      physicalCards: 0,
+      design: 0,
       display: 0,
       charge: 0,
-      physicalCards: 0,
       tech: 0,
       app: 0,
-      indiegogo: 0
+      preOrder: 0
     }),
     SECURITY_FEATURES: [{
       key: 'alert',
@@ -52,8 +53,8 @@ let SpendIndex = React.createClass({
   // Instance variables
   // - _formRef
   // - _indexVideoRef
-  // - _securitySliderRef
   // - _sideViewVideoRef
+  // - _securitySliderRef
   // - _isScreenMd
   // - _pageYOffset
   // - _securitySwipe
@@ -65,12 +66,13 @@ let SpendIndex = React.createClass({
       enteredClasses: Immutable({
         index: '',
         contactless: '',
+        physicalCards: '',
+        design: '',
         display: '',
         charge: '',
-        physicalCards: '',
         tech: '',
         app: '',
-        indiegogo: ''
+        preOrder: ''
       }),
       securitySwipePos: 0,
       subscriptionMsg: null
@@ -82,12 +84,13 @@ let SpendIndex = React.createClass({
       enteredClasses: Immutable({
         index: 'is-SpendIndex-index-entered-done',
         contactless: 'is-SpendIndex-contactless-entered-done',
+        physicalCards: 'is-SpendIndex-physicalCards-entered-done',
+        design: 'is-SpendIndex-design-entered-done',
         display: 'is-SpendIndex-display-entered-done',
         charge: 'is-SpendIndex-charge-entered-done',
-        physicalCards: 'is-SpendIndex-physicalCards-entered-done',
         tech: 'is-SpendIndex-tech-entered-done',
         app: 'is-SpendIndex-app-entered-done',
-        indiegogo: 'is-SpendIndex-indiegogo-entered-done'
+        preOrder: 'is-SpendIndex-preOrder-entered-done'
       })
     };
     if (some(this.state.bgYOffsets)) {
@@ -117,12 +120,13 @@ let SpendIndex = React.createClass({
     // (thresholds: 1/3s of section heights and vertical centers)
     let ranges = {
       contactless: [1015 - this._windowHeight, 1117.5 - halfHeight],
-      display: [2378 - this._windowHeight, 2476 - halfHeight],
-      charge: [2986 - this._windowHeight, 3093 - halfHeight],
-      physicalCards: [3612 - this._windowHeight, 3710 - halfHeight],
-      tech: [4287 - this._windowHeight, 4568],
-      app: [5735 - this._windowHeight, 5895 - halfHeight],
-      indiegogo: [6673 - this._windowHeight, 6972]
+      physicalCards: [1861 - this._windowHeight, 1982 - halfHeight],
+      design: [2559 - this._windowHeight, 2666 - halfHeight],
+      display: [3887 - this._windowHeight, 3993 - halfHeight],
+      charge: [4525 - this._windowHeight, 4633 - halfHeight],
+      tech: [5236 - this._windowHeight, 5518],
+      app: [6787 - this._windowHeight, 6907 - halfHeight],
+      preOrder: [7566 - this._windowHeight, 7865]
     };
 
     for (let key in ranges) {
@@ -140,6 +144,7 @@ let SpendIndex = React.createClass({
       }
 
       switch (key) {
+      case 'design':
       case 'charge':
         bgOffsetY = -bgOffsetY;
         break;
@@ -167,12 +172,13 @@ let SpendIndex = React.createClass({
     let ranges = {
       index: [0, 537],
       contactless: [1015 - this._windowHeight, 1225],
-      display: [2378 - this._windowHeight, 2574],
-      charge: [2986 - this._windowHeight, 3200],
-      physicalCards: [3612 - this._windowHeight, 3808],
-      tech: [4287 - this._windowHeight, 4568],
-      app: [5735 - this._windowHeight, 6055],
-      indiegogo: [6673 - this._windowHeight, 6972]
+      physicalCards: [1861 - this._windowHeight, 2103],
+      design: [2559 - this._windowHeight, 2773],
+      display: [3887 - this._windowHeight, 4099],
+      charge: [4525 - this._windowHeight, 4740],
+      tech: [5236 - this._windowHeight, 5518],
+      app: [6787 - this._windowHeight, 7027],
+      preOrder: [7566 - this._windowHeight, 7865]
     };
 
     for (let key in ranges) {
@@ -196,25 +202,28 @@ let SpendIndex = React.createClass({
     }
   },
   updateSideViewVideo() {
-      let {duration} = this._sideViewVideoRef;
+    /*
+    let {duration} = this._sideViewVideoRef;
 
-      if (!(Number.isNaN(duration)) && Modernizr.video) {
-          let time;
-          const TIME_MAX = Math.floor(duration);
+    if (!(Number.isNaN(duration)) && Modernizr.video) {
+      let time;
+      const TIME_MAX = Math.floor(duration);
 
-          // TEMP: hardcoded numbers (2/3 of height and page offset)
-          let min = 5227 - this._windowHeight;
-          let max = 4850;
+      // TEMP: hardcoded numbers (2/3 of height and page offset)
+      let min = 3446 - this._windowHeight;
+      let max = 2988;
 
-          if (this._pageYOffset <= min) {
-              time = 0;
-          } else if (this._pageYOffset < max) {
-              time = ((this._pageYOffset - min)/(max - min)) * TIME_MAX;
-          } else {
-              time = TIME_MAX;
-          }
-          this._sideViewVideoRef.currentTime = time;
+      if (this._pageYOffset <= min) {
+        time = 0;
+      } else if (this._pageYOffset < max) {
+        time = ((this._pageYOffset - min)/(max - min))*TIME_MAX;
+      } else {
+        time = TIME_MAX;
       }
+
+      this._sideViewVideoRef.currentTime = time;
+    }
+    */
   },
 
   offsetY2Style(offsetY) {
@@ -311,7 +320,9 @@ let SpendIndex = React.createClass({
     this._securitySwipe.next();
   },
   handleSideViewVideoLoadedMetadata(e) {
-    this.updateSideViewVideo();
+    // TEMP
+    this._sideViewVideoRef.currentTime = 0;
+    // this.updateSideViewVideo();
   },
   handleWindowResize({height}) {
     this._windowHeight = height;
@@ -330,22 +341,24 @@ let SpendIndex = React.createClass({
     } = this.state;
     const {
       contactless: contactlessBgY,
+      physicalCards: physicalCardsBgY,
+      design: designBgY,
       display: displayBgY,
       charge: chargeBgY,
-      physicalCards: physicalCardsBgY,
       tech: techBgY,
       app: appBgY,
-      indiegogo: indiegogoBgY
+      preOrder: preOrderBgY
     } = bgYOffsets;
     const {
       index: indexEnteredClass,
       contactless: contactlessEnteredClass,
+      physicalCards: physicalCardsEnteredClass,
+      design: designEnteredClass,
       display: displayEnteredClass,
       charge: chargeEnteredClass,
-      physicalCards: physicalCardsEnteredClass,
       tech: techEnteredClass,
       app: appEnteredClass,
-      indiegogo: indiegogoEnteredClass
+      preOrder: preOrderEnteredClass
     } = enteredClasses;
 
     let overflowStyle = this._isScreenMd ?
@@ -374,12 +387,12 @@ let SpendIndex = React.createClass({
                 </LinkBlock>
               </header>
               <div className="SpendIndex-index-content">
-                <div className="SpendIndex-videoLink-group">
-                  <h2 className="SpendIndex-videoLink-h2">
+                <div className="SpendIndex-link-video-group">
+                  <h2 className="SpendIndex-link-video-h2">
                     Spend everywhere with one device
                   </h2>
                   <LinkBlock className="SpendIndex-video-LinkBlock">
-                    <a className="SpendIndex-videoLink text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-videoLink-icon" /> VIDEO COMING SOON</a>
+                    <a className="SpendIndex-link SpendIndex-link-video text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-link-video-icon" /> Video Coming Soon</a>
                   </LinkBlock>
                 </div>
                 <div className="SpendIndex-Form-group">
@@ -445,7 +458,76 @@ let SpendIndex = React.createClass({
               <div className="SpendIndex-contactless-bg-inner" />
             </div>
           </section>
-          {this.renderSecurity()}
+          <section
+            className={classNames(
+              'SpendIndex-physicalCards', physicalCardsEnteredClass
+            )}
+            style={overflowStyle}
+          >
+            <div className="SpendIndex-physicalCards-inner">
+              <h2 className="SpendIndex-physicalCards-h2">
+                Born to replace your wallet, completely.
+              </h2>
+              <p
+                className="SpendIndex-physicalCards-p
+                  SpendIndex-physicalCards-p-last"
+              >
+                SpendWallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.
+              </p>
+            </div>
+            <div
+              className="SpendIndex-physicalCards-bg SpendIndex-offsetY"
+              style={this.offsetY2Style(physicalCardsBgY)}
+            >
+              <div className="SpendIndex-physicalCards-bg-inner" />
+            </div>
+          </section>
+          <section
+            className={classNames('SpendIndex-design', designEnteredClass)}
+            style={overflowStyle}
+          >
+            <div className="SpendIndex-design-inner">
+              <h2 className="SpendIndex-design-h2">
+                Splendid Design
+              </h2>
+              <p className="SpendIndex-design-p SpendIndex-design-p-last">
+                The frame is made of aluminum, one of the strongest and lightest materials on earth. This makes the device strong and durable enough for everyday use in your pocket. Plastic on the front and back cover finishes up the design with style. SpendWallet has been engineered to seamlessly work with your smooth payment experience.
+              </p>
+            </div>
+            <div
+              className="SpendIndex-design-bg SpendIndex-offsetY"
+              style={this.offsetY2Style(designBgY)}
+            >
+              <div className="SpendIndex-design-bg-inner" />
+            </div>
+          </section>
+          <section className="SpendIndex-measure text-center">
+            <h2 className="SpendIndex-measure-h2">
+              Slim. Solid.<br />
+              SpendWallet
+            </h2>
+            <div className="SpendIndex-measure-sideView">
+              <video
+                className="SpendIndex-measure-sideView-video"
+                width="1280" height="906"
+                poster="//dummyimage.com/640x453/ff/ff.png"
+                onLoadedMetadata={this.handleSideViewVideoLoadedMetadata}
+                ref={ref => {
+                  this._sideViewVideoRef = ref;
+                }}
+              >
+                <source src="/videos/sideview2_h.264.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="SpendIndex-measure-numbers">
+              <div className="SpendIndex-measure-numbers-big">
+                6.0mm / 65grams
+              </div>
+              <div className="SpendIndex-measure-numbers-more">
+                Thickness: 6.0mm Dimension: 60.5mm x 105mm
+              </div>
+            </div>
+          </section>
           <section
             className={classNames('SpendIndex-display', displayEnteredClass)}
             style={overflowStyle}
@@ -455,7 +537,7 @@ let SpendIndex = React.createClass({
                 Hidden LED Display
               </h2>
               <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use.  When necessary, it will show the card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
+                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use. When necessary, it will show the card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
               </p>
             </div>
             <div
@@ -495,30 +577,6 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames(
-              'SpendIndex-physicalCards', physicalCardsEnteredClass
-            )}
-            style={overflowStyle}
-          >
-            <div className="SpendIndex-physicalCards-inner">
-              <h2 className="SpendIndex-physicalCards-h2">
-              Born to replace your wallet, completely.
-              </h2>
-              <p
-                className="SpendIndex-physicalCards-p
-                  SpendIndex-physicalCards-p-last"
-              >
-              SpendWallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.
-              </p>
-            </div>
-            <div
-              className="SpendIndex-physicalCards-bg SpendIndex-offsetY"
-              style={this.offsetY2Style(physicalCardsBgY)}
-            >
-              <div className="SpendIndex-physicalCards-bg-inner" />
-            </div>
-          </section>
-          <section
             className={classNames('SpendIndex-tech', techEnteredClass)}
             style={overflowStyle}
           >
@@ -536,53 +594,11 @@ let SpendIndex = React.createClass({
               </p>
             </div>
           </section>
-          <section
-            className={classNames('SpendIndex-charge SpendIndex-design', chargeEnteredClass)}
-            style={overflowStyle}
-          >
-            <div className="SpendIndex-charge-inner SpendIndex-design-inner">
-              <div className="SpendIndex-charge-content SpendIndex-design-content">
-                <h2 className="SpendIndex-charge-h2">
-                  Splendid Design
-                </h2>
-                <p className="SpendIndex-charge-p">
-                  The frame is made of aluminum, one of the strongest and lightest materials on earth. This makes the device strong and durable enough for everyday use in your pocket. Plastic on the front and back cover finishes up the design with style. SpendWallet has been engineered to seamlessly work with your smooth payment experience.
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="SpendIndex-measure text-center">
-            <h2 className="SpendIndex-measure-h2">
-              Slim. Solid.<br />
-              SpendWallet
-            </h2>
-            <div className="SpendIndex-measure-sideView">
-              <video
-                className="SpendIndex-measure-sideView-video"
-                width="1280" height="906"
-                poster="//dummyimage.com/640x453/ff/ff.png"
-                onLoadedMetadata={this.handleSideViewVideoLoadedMetadata}
-                ref={ref => {
-                  this._sideViewVideoRef = ref;
-                }}
-              >
-                <source src="/videos/sideview2_h.264.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="SpendIndex-measure-numbers">
-              <div className="SpendIndex-measure-numbers-big">
-                6.0mm / 65grams
-              </div>
-              <div className="SpendIndex-measure-numbers-more">
-                Thickness: 6.0mm Dimension: 60.5mm x 105mm
-              </div>
-            </div>
-          </section>
+          {this.renderSecurity()}
           <section
             className={classNames('SpendIndex-app', appEnteredClass)}
             style={overflowStyle}
           >
-          <img className="SpendIndex-app-hand-background" src="images/hand_background.png"></img>
             <div className="SpendIndex-app-inner">
               <h2 className="SpendIndex-app-h2">
                 <Logo /> application
@@ -603,30 +619,28 @@ let SpendIndex = React.createClass({
           </section>
           <section
             className={classNames(
-              'SpendIndex-indiegogo', indiegogoEnteredClass
+              'SpendIndex-preOrder', preOrderEnteredClass
             )}
             style={overflowStyle}
           >
-            <div className="SpendIndex-indiegogo-inner">
-              <h2 className="SpendIndex-indiegogo-h2">
+            <div className="SpendIndex-preOrder-inner">
+              <h2 className="SpendIndex-preOrder-h2">
                 Worldwide Shipping<br />
-                <em className="SpendIndex-indiegogo-h2-em">Pre-Order Coming Soon</em>
+                <em className="SpendIndex-preOrder-h2-em">Pre-Order Coming Soon</em>
               </h2>
               <ImageBlock
-                className="SpendIndex-indiegogo-ImageBlock text-center"
+                className="SpendIndex-preOrder-ImageBlock text-center"
               >
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
-              <div className="SpendIndex-indiegogo-cta text-center">
-                <a className="SpendIndex-videoLink text-uppercase pre-order-link">PRE-ORDER COMING SOON</a>
-                <div className="SpendIndex-indiegogo-cta-info">
-                </div>
-              </div>
+              <LinkBlock className="SpendIndex-preOrder-LinkBlock">
+                <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">Pre-Order Coming Soon</a>
+              </LinkBlock>
             </div>
-            <div className="SpendIndex-indiegogo-bg">
+            <div className="SpendIndex-preOrder-bg">
               <div
-                className="SpendIndex-indiegogo-bg-inner SpendIndex-offsetY"
-                style={this.offsetY2Style(indiegogoBgY)} />
+                className="SpendIndex-preOrder-bg-inner SpendIndex-offsetY"
+                style={this.offsetY2Style(preOrderBgY)} />
             </div>
           </section>
         </div>
