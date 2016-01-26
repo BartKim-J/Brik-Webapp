@@ -20,7 +20,7 @@
 }
 
 @mixin r-background-image-update(
-  $url, $url-2x,
+  $url, $url-2x: null,
   $width: null, $height: null, $padding-bottom: null
 ) {
   @if not $padding-bottom {
@@ -31,7 +31,7 @@
   @include background-image($url, $url-2x);
 }
 @mixin r-background-image(
-  $url, $url-2x,
+  $url, $url-2x: null,
   $width: null, $height: null, $padding-bottom: null
 ) {
   height: 0;
