@@ -202,6 +202,7 @@ let SpendIndex = React.createClass({
     }
   },
   updateSideViewVideo() {
+    /*
     let {duration} = this._sideViewVideoRef;
 
     if (!(Number.isNaN(duration)) && Modernizr.video) {
@@ -222,6 +223,7 @@ let SpendIndex = React.createClass({
 
       this._sideViewVideoRef.currentTime = time;
     }
+    */
   },
 
   offsetY2Style(offsetY) {
@@ -318,7 +320,9 @@ let SpendIndex = React.createClass({
     this._securitySwipe.next();
   },
   handleSideViewVideoLoadedMetadata(e) {
-    this.updateSideViewVideo();
+    // TEMP
+    this._sideViewVideoRef.currentTime = 0;
+    // this.updateSideViewVideo();
   },
   handleWindowResize({height}) {
     this._windowHeight = height;
