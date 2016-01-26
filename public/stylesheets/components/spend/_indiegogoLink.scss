@@ -4,7 +4,7 @@ $SpendIndiegogoLink-color: #ffffff;
 
 .SpendIndiegogoLink {
     display: inline-block;
-    padding: 9px 32px 9px 21.5px;
+    padding: 9px 32px 9px 32px;
     border: 1px solid $SpendIndiegogoLink-border-color;
     border-radius: 30px;
     background-color: $SpendIndiegogoLink-bg;
@@ -18,10 +18,11 @@ $SpendIndiegogoLink-color: #ffffff;
 
 .SpendIndiegogoLink:hover,
 .SpendIndiegogoLink:active {
-  border-color: rgba($SpendIndiegogoLink-border-color, $clickable-opacity-active);
-  color: rgba($SpendIndiegogoLink-color, $clickable-opacity-active);
-  opacity: 1;
+    border-color: rgba($SpendIndiegogoLink-border-color, $clickable-opacity-active) !important;
+    color: rgba($SpendIndiegogoLink-color, $clickable-opacity-active) !important;
+    opacity: 1 !important;
 }
+
 .SpendIndiegogoLink-logo {
   @include image-replacement(
     "indiegogo.png", "indiegogo@2x.png", 114px, 28px
