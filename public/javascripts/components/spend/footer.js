@@ -52,7 +52,7 @@ let SpendFooter = React.createClass({
               ))}
             </ul>
             <div className="SpendFooter-copyrights">
-              {`2015 ${CONF.BRAND}. All Rights Reserved. Patents Pending.`}
+              {`2016 ${CONF.BRAND}. All Rights Reserved. Patents Pending.`}
             </div>
             <SocialLinks
               className="SpendFooter-SocialLinks"
