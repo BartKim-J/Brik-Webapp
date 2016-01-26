@@ -612,7 +612,6 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   );
   margin-right: 21.333333333333332%;
 }
-
 .SpendIndex-preOrder {
   padding: 60px 0 80px;
   background-color: $SpendIndex-preOrder-bg;
@@ -635,6 +634,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 }
 .SpendIndex-preOrder-LinkBlock {
   margin-top: 90px;
+  text-align: center;
 }
 .SpendIndex-preOrder-bg {
   display: none;
@@ -1079,7 +1079,18 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     right: 0;
     bottom: -20px;
     left: 0;
-    @include background-image("hand_background.png");
+    @include background-image("hand-background.png");
+    @include background-size(contain);
+    background-position: center bottom;
+  }
+  .SpendIndex-display:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -20px;
+    left: 0;
+    @include background-image("led-background.png");
     @include background-size(contain);
     background-position: center bottom;
   }
