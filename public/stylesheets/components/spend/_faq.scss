@@ -7,6 +7,7 @@ $SpendFaq-container-footer-h2-color: #3c3c3c;
 $SpendFaq-container-footer-h2-p-color: #828282;
 $SpendFaq-emailUsLink-border-color: #cecece;
 $SpendFaq-emailUsLink-color: #444444;
+$SpendFaq-h1p-color: #8B8484;
 
 .SpendFaq {
   @include background-image("faq/background.png");
@@ -98,6 +99,7 @@ $SpendFaq-emailUsLink-color: #444444;
 }
 .SpendFaq-container-footer-h2 {
   color: $SpendFaq-container-footer-h2-color;
+  font-weight: 400;
 }
 .SpendFaq-container-footer-h2-p {
   color: $SpendFaq-container-footer-h2-p-color;
@@ -139,6 +141,7 @@ $SpendFaq-emailUsLink-color: #444444;
   }
   .SpendFaq-h1-p {
     font-size: 34px;
+    color: $SpendFaq-h1p-color;
   }
 
   .SpendFaq-sections {
@@ -160,7 +163,7 @@ $SpendFaq-emailUsLink-color: #444444;
     line-height: 29px;
   }
   .SpendFaq-qna {
-    margin: 10px 0;
+    margin: 15px 0;
   }
   .SpendFaq-qna-last {
     margin-bottom: 0;
