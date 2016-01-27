@@ -239,7 +239,7 @@ let SpendMenu = React.createClass({
               <div className="SpendMenu-lists">
                 <ul className="SpendMenu-items listUnstyled text-uppercase">
                   {[
-                    {key: 'About', url: '/about'},
+                    {key: 'Team', url: '/team'},
                     {key: 'Jobs', url: '/jobs'},
                     {key: 'FAQ', url: '/faq'}
                   ].map(({key, url}) => (

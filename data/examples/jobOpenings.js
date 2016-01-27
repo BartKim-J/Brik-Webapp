@@ -8,7 +8,7 @@ module.exports = {
     desc: `*Firmware Developer(1 person)* - looking for an engineer who can program a core chip for SpendWallet. Experience in Bluetooth, C language, and KEIL would be welcomed.`
   }, {
     category: `Server`,
-    desc: `*Server Developer(1 person)* - looking or engineer who can manage a server and establish security system.`
+    desc: `*Server Developer(1 person)* - looking for an engineer who can manage a server and establish a security system.`
   }, {
     category: `Mobile`,
     desc: `*Android Developer(1 person)* - looking for an engineer who can develop Android mobile application. Experience in Bluetooth would be welcomed.

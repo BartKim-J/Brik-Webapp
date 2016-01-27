@@ -19,7 +19,7 @@ function makeRoute(data) {
   return ((req, res, next) => {
     let accept = req.accepts(['html', 'json']);
     switch (accept) {
-    case 'html':    
+    case 'html':
       csrfProtection(req, res, () => {
         res.renderApp(Immutable({data}));
       });
@@ -37,7 +37,7 @@ router.get('/', csrfProtection, (req, res, next) => {
   res.renderApp();
 });
 
-router.get('/about', makeRoute({team}));
+router.get('/team', makeRoute({team}));
 router.get('/jobs', makeRoute({jobOpenings}));
 router.get('/faq', makeRoute({faqSections}));
 router.get('/legal', makeRoute({legalDocs}));

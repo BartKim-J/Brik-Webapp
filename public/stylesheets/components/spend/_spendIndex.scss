@@ -648,18 +648,18 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     margin-left: auto;
     overflow: visible;
   }
-
+  .SpendIndex-preOrder-LinkBlock {
+    text-align: left;
+  }
   .SpendIndex-link {
     padding: 23px 46px;
     border-radius: 31.5px;
     font-size: 13.5px;
     line-height: 17px;
   }
-
   .SpendIndex-offsetY {
     transition: transform 450ms $CUBIC-BEZIER-OUT-SINE;
   }
-
   .SpendIndex-index {
     height: 806px;
   }
@@ -1125,7 +1125,7 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35%;
+    width: 50%;
     max-width: none;
     margin: 0;
   }
