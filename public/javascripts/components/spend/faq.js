@@ -66,7 +66,7 @@ let SpendFaq = React.createClass({
     }
   },
   renderSections() {
-    const {col1, col2} = this.props.sections;
+    const {col1, col2} = this.props.sections.data;
     return (
       <div className="SpendFaq-sections">
         <div className="row">

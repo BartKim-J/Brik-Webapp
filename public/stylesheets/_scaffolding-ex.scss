@@ -1,6 +1,7 @@
 html {
   position: relative;
   min-width: 320px;
+  min-height: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -19,6 +20,12 @@ html {
 
 body {
   font-weight: 300;
+}
+[lang="ko"] body {
+  font-family:
+    "Lato",
+    "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic",
+    sans-serif;
 }
 
 /*

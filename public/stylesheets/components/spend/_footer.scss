@@ -5,6 +5,10 @@ $SpendFooter-copyrights-color: #919191;
 $SpendFooter-SocialLinks-link-color: #777;
 
 .SpendFooter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: $SpendFooter-bg;
   line-height: 1;
   text-align: center;
@@ -56,10 +60,6 @@ $SpendFooter-SocialLinks-link-color: #777;
     text-align: left;
   }
   .SpendFooter-index {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     max-width: 1440px;
     margin: 0 auto;
   }

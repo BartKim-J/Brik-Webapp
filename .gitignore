@@ -32,3 +32,4 @@ npm-debug.log
 # Generated assets
 *.css
 public/javascripts/app.js
+public/javascripts/app.[0-9]*.js

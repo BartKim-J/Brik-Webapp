@@ -30,7 +30,7 @@ let SpendLegal = React.createClass({
   renderContainer() {
     const {docs} = this.props;
     if (docs) {
-      const {terms, privacy} = docs;
+      const {terms, privacy} = docs.data;
       return (
         <div className="container-fluid">
           <section>

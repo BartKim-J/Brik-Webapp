@@ -1,6 +1,7 @@
 let React = require('react');
 let classNames = require('classnames');
 let Helmet = require('react-helmet');
+let {intlShape} = require('react-intl');
 
 let size = require('lodash/collection/size');
 let some = require('lodash/collection/some');
@@ -8,6 +9,7 @@ let some = require('lodash/collection/some');
 let {Button, PseudoButton} = require('../buttons');
 let {Input, Form} = require('../forms');
 let {Image, RImage, ImageBlock} = require('../images');
+let {FormattedHTMLMessage} = require('../intl');
 let {LinkBlock} = require('../links');
 let Markdown = require('../markdown');
 let MessageBoard = require('../messageBoard');
@@ -48,6 +50,10 @@ let SpendIndex = React.createClass({
 
   propTypes: {
     onNewSubscription: React.PropTypes.func.isRequired
+  },
+
+  contextTypes: {
+    intl: intlShape.isRequired
   },
 
   // Instance variables
@@ -365,6 +371,8 @@ let SpendIndex = React.createClass({
       {overflow: 'hidden'} :
       null;
 
+    let {formatMessage} = this.context.intl;
+
     return (
       <div className="SpendIndex">
         <Helmet title={CONF.BRAND} />
@@ -403,14 +411,14 @@ let SpendIndex = React.createClass({
                       this._formRef = ref;
                     }}
                   >
-                    <Input className="SpendIndex-Form-email" type="email" name="email" placeholder="E-mail address" />
+                    <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
                     <Button className="SpendIndex-Form-submit" type="submit"><i className="fa fa-Spend-paper-plane SpendIndex-Form-submit-icon" /></Button>
                   </Form>
                   <MessageBoard
                     className="SpendIndex-Form-MessageBoard"
                     message={subscriptionMsg}
                   >
-                    Stay updated with our campaign
+                    {formatMessage({id: 'index.formMessageBoard'})}
                   </MessageBoard>
                 </div>
               </div>
@@ -436,20 +444,14 @@ let SpendIndex = React.createClass({
             style={overflowStyle}
           >
             <div className="SpendIndex-contactless-inner">
-              <header className="SpendIndex-contactless-header">
-                <h2 className="SpendIndex-contactless-h2">
-                  Contactless Payment, Anywhere.
-                </h2>
-                <p className="SpendIndex-contactless-h2-p">
-                  Tap to pay on existing card readers
-                </p>
-              </header>
-              <p
-                className="SpendIndex-contactless-p
-                  SpendIndex-contactless-p-last"
-              >
-                No NFC. Our self-developed Magnetic Flux Emulation (MFE) technology generates changing magnetic fields over a short period of time, which makes the card reader to respond as if a card has been swiped. So no more swiping. Just tap and finish your payment anywhere.
-              </p>
+              <FormattedHTMLMessage id="index.contactless.header">
+                <header className="SpendIndex-contactless-header" />
+              </FormattedHTMLMessage>
+              <article className="SpendIndex-contactless-article">
+                <Markdown>
+                  {formatMessage({id: 'index.contactless.paragraphs'})}
+                </Markdown>
+              </article>
             </div>
             <div
               className="SpendIndex-contactless-bg SpendIndex-offsetY"
@@ -464,17 +466,11 @@ let SpendIndex = React.createClass({
             )}
             style={overflowStyle}
           >
-            <div className="SpendIndex-physicalCards-inner">
-              <h2 className="SpendIndex-physicalCards-h2">
-                Born to replace your wallet, completely.
-              </h2>
-              <p
-                className="SpendIndex-physicalCards-p
-                  SpendIndex-physicalCards-p-last"
-              >
-                SpendWallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.
-              </p>
-            </div>
+            <article className="SpendIndex-physicalCards-article">
+              <Markdown>
+                {formatMessage({id: 'index.physicalCards.article'})}
+              </Markdown>
+            </article>
             <div
               className="SpendIndex-physicalCards-bg SpendIndex-offsetY"
               style={this.offsetY2Style(physicalCardsBgY)}

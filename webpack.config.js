@@ -9,7 +9,8 @@ module.exports = {
   entry: 'javascripts/app',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'javascripts/app.js'
+    filename: 'javascripts/app.js',
+    chunkFilename: 'javascripts/app.[name].js'
   },
   module: {
     loaders: [{
