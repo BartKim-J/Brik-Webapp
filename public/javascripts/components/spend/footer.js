@@ -9,7 +9,7 @@ let SocialLinks = require('./socialLinks');
 let SpendFooter = React.createClass({
   statics: {
     LINKS: [
-      {key: 'About', url: '/about'},
+      {key: 'Team', url: '/team'},
       {key: 'FAQ', url: '/faq'},
       {key: 'Jobs', url: '/jobs'},
       {key: 'Legal', url: '/legal'}

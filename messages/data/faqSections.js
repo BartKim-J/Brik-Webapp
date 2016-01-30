@@ -22,7 +22,7 @@ module.exports = Immutable({
       answer: `With the help of the SpendWallet's left and right button, select which card to use and make sure whether your card's nickname is correctly appeared on LED display.`
     }, {
       question: `How can I make a payment with SpendWallet?`,
-      answer: `After you make sure whether the right card was selected on LED display, you bring your SpendWallet near to the card reader. Then, press "SPEND" button on SpendWallet to make a payment.`
+      answer: `After making sure whether the right card was selected on LED display, bring your SpendWallet near to the card reader and press “SPEND” button on SpendWallet to make a payment.`
     }, {
       question: `How can I store my identification card on SpendWallet?`,
       answer: `You can store your identification card on backside slot of SpendWallet.`
@@ -44,13 +44,13 @@ module.exports = Immutable({
       answer: `The information stored on SpendWallet mobile application will be safely transferred to SpendWallet device through Bluetooth connection. As the communication is completed according to Bluetooth standard security standard, there is no such problem with security.`
     }, {
       question: `What happens when I lose SpendWallet?`,
-      answer: `When your smartphone and SpendWallet is connected via Bluetooth, you don't need to worry about losing your wallet. When the SpendWallet is 20m away from your smarthpone, you will be kindly notified that you left your SpendWallet behind. Even if you did not have a Bluetooth connection and lost your SpendWallet, the PIN code you first entered will safely protect SpendWallet from other's hands. In addition, when SpendWallet remains as lost mode for a certain period of time, then all the information stored on SpendWallet will be completely deleted. The SpendWallet is safer than any other wallet, credit card, and other payment service, and thus safely protect your card information.`
+      answer: `When your smartphone and SpendWallet is connected via Bluetooth, you don't need to worry about losing your wallet. When the SpendWallet is 20m away from your smarthpone, you will be kindly notified that you left your SpendWallet behind. Even if you did not have a Bluetooth connection and lost your SpendWallet, the PIN code you first entered will safely protect SpendWallet from other's hands. In addition, when SpendWallet remains as lost mode for a certain period of time, all the information stored on SpendWallet will be completely deleted. The SpendWallet is safer than any other wallet, credit card, and other payment service, and thus safely protect your card information.`
     }, {
       question: `How can I maintain SPEND's security without turning on Bluetooth on my phone?`,
       answer: `Even when you did not turn on Bluetooth on your phone, you can still use your SpendWallet. If you prefer to turn off Bluetooth, you can either enter PIN code for each transaction for security or simply turn off the security function.`
     }, {
       question: `What is PIN code and how do I set it up?`,
-      answer: `PIN code is the security equipment for you to safely protect your card information. You can set your PIN code when you first open the mobile application. Since the PIN code is set with the left and right button as well as spend button, the PIN code can be identically used on SpendWallet`
+      answer: `PIN code is the security equipment for you to safely protect your card information. You can set your PIN code when you first open the mobile application. Since the PIN code is set with the left and right button as well as SPEND button, the PIN code can be identically used on SpendWallet.`
     }, {
       question: `What if I forget the PIN code?`,
       answer: `When you forget the PIN code, you can reset your PIN code on your mobile application after verifying yourself.`
