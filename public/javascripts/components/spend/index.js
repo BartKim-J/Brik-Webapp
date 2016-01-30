@@ -7,7 +7,7 @@ let {Route} = Router;
 
 let Menu = require('./menu');
 let Index = require('./spendIndex');
-let About = require('./about');
+let Team = require('./team');
 let Jobs = require('./jobs');
 let Faq = require('./faq');
 let Legal = require('./legal');
@@ -101,7 +101,7 @@ let Spend = React.createClass({
       <Router
         map={{
           index: '/$',
-          about: '/about$',
+          team: '/team$',
           jobs: '/jobs$',
           faq: '/faq$',
           legal: '/legal$'
@@ -140,8 +140,8 @@ let Spend = React.createClass({
         <Route key="index" name="index">
           <Index onNewSubscription={postSubscription} />
         </Route>,
-        <Route key="about" name="about">
-          <About
+        <Route key="team" name="team">
+          <Team
             team={team}
             onEmpty={() => {
               fetchData('team');

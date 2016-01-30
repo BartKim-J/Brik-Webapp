@@ -36,15 +36,15 @@ let SpendIndex = React.createClass({
     SECURITY_FEATURES: [{
       key: 'alert',
       name: 'Proximity Alert',
-      description: 'Auto-lock when lost.\nSelf-destruction after time.'
+      description: 'Automatic lock &\nself-destruction when lost'
     }, {
       key: 'passcode',
       name: 'Security Passcode',
-      description: 'Protect your card and\nbank information'
+      description: 'Protect your card data\nwith passcode or fingerprint'
     }, {
       key: 'encrypt',
       name: 'Bank Level Encyrption',
-      description: '256 bit encryption\nfor card data'
+      description: '256 bit encryption\nfor all your personal data'
     }]
   },
 
@@ -533,7 +533,7 @@ let SpendIndex = React.createClass({
                 Hidden LED Display
               </h2>
               <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use. When necessary, it will show the card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
+                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use. When necessary, it will show which card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
               </p>
             </div>
             <div
@@ -586,7 +586,7 @@ let SpendIndex = React.createClass({
                 True Electronic Wallet
               </h2>
               <p className="SpendIndex-tech-p SpendIndex-tech-p-last">
-                Your heavy, thick traditional wallet should better evolve into a smart digital wallet. Finally, a real physical electronic wallet that consolidates all your cards.
+                Your heavy, thick traditional wallet should better evolve into a smart digital wallet - a real physical electronic wallet that consolidates all your cards.
               </p>
             </div>
           </section>

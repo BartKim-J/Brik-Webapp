@@ -29,7 +29,7 @@ function fetchData(key) {
     url = '/legal';
     break;
   case 'team':
-    url = '/about';
+    url = '/team';
     break;
   default:
     // TODO: error
