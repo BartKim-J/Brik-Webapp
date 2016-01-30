@@ -1,8 +1,8 @@
+let Immutable = require('seamless-immutable');
+
 // `entry.answer`: Markdown; support for paragraph checked
 
-module.exports = {
-  version: 1,
-
+module.exports = Immutable({
   col1: [{
     title: `General`,
     entries: [{
@@ -37,7 +37,6 @@ module.exports = {
       answer: `You can purchase SpendWallet at either our website(spendwallet.com) or Kickstarter.`
     }]
   }],
-
   col2: [{
     title: `Security`,
     entries: [{
@@ -66,4 +65,4 @@ module.exports = {
       answer: `We do ship internationally, but shipping cost will vary depending on countries.`
     }]
   }]
-};
+});

@@ -3,7 +3,7 @@ let Tooltip = require('rc-tooltip');
 let Helmet = require('react-helmet');
 
 let {RImage, ImageBlock} = require('../images');
-let {BlankLink, LinkBlock} = require('../links');
+let {LinkBlock} = require('../links');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
@@ -87,13 +87,10 @@ let SpendAbout = React.createClass({
       <div className="SpendAbout-team">
         <ul className="SpendAbout-team-list listUnstyled clearfix">
           {data.asMutable()
-            .map(({
-              name, role, image,
-              links, desc
-            }, i) => (
+            .map(({name, role, image, desc}, i) => (
               <li className="SpendAbout-member pull-left" key={i}>
                 <ImageBlock>
-                  {this.renderMemberImage({name, image, links, desc})}
+                  {this.renderMemberImage({name, image, desc})}
                 </ImageBlock>
                 <div className="SpendAbout-member-caption text-center">
                   <div className="SpendAbout-member-name">{name}</div>
@@ -105,10 +102,7 @@ let SpendAbout = React.createClass({
       </div>
     );
   },
-  renderMemberImage({
-    name, image,
-    desc
-  }) {
+  renderMemberImage({name, image, desc}) {
     let rImageEl = (
       <RImage
         className="SpendAbout-member-RImage"
@@ -119,13 +113,8 @@ let SpendAbout = React.createClass({
         overlayClassName="SpendAbout-member-detail"
         overlay={
           <div className="SpendAbout-member-detail-overlay">
-            <header className="SpendAbout-member-detail-overlay-header">
-              <span className="SpendAbout-member-detail-name">{name}</span>
-              {/* [['twitter', twitter], ['facebook', facebook]]
-                .filter(([type, data]) => data)
-                .map(([type, data]) => (
-                  <BlankLink className="SpendAbout-member-detail-link" href={data} key={type} clickEvent={{category: 'Team Member', label: `name: "${name}", link type: ${type}`}}><i className={`fa fa-${type}`} /></BlankLink>
-                )) */}
+            <header className="SpendAbout-member-detail-name">
+              {name}
             </header>
             <p
               className="SpendAbout-member-detail-p

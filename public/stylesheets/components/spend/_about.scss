@@ -180,20 +180,12 @@ $SpendAbout-member-detail-p-color: #919191;
     box-shadow: 0 2px 4px 4px $SpendAbout-member-detail-overlay-shadow-color;
     background-color: $SpendAbout-member-detail-overlay-bg;
   }
-  .SpendAbout-member-detail-overlay-header {
-    height: 30px;
-    margin-bottom: 17px;
-  }
   .SpendAbout-member-detail-name {
+    margin-bottom: 17px;
     color: $SpendAbout-member-detail-name-color;
     font-size: 25px;
     font-weight: 400;
     line-height: 1.2;
-  }
-  .SpendAbout-member-detail-link {
-    margin-left: 10px;
-    font-size: 21px;
-    line-height: 30px;
   }
   .SpendAbout-member-detail-p {
     margin: 17px 0;

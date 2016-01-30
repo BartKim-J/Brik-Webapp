@@ -2,6 +2,7 @@
 
 require('array.prototype.findindex');
 require('isomorphic-fetch');
+global.Intl = require('intl');
 
 require('./conf');
 
@@ -13,6 +14,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
+let lang = require('./middlewares/lang');
 let appRenderer = require('./middlewares/appRenderer');
 let serfSafe = require('./middlewares/serfSafe');
 
@@ -24,9 +26,12 @@ let app = express();
 let publicPath = path.join(__dirname, 'public');
 let isDev = (app.get('env') === 'development');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+
+if (!isDev) {
+  app.enable('trust proxy');
+}
 
 app.use(favicon(path.join(publicPath, 'favicon.ico')));
 app.use(logger('dev'));
@@ -35,6 +40,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(publicPath));
 
+// React Intl seems to make some requests erroneously.
+app.use((req, res, next) => {
+  switch (req.path) {
+  case '/javascripts/core.js.map':
+  case '/javascripts/es5.js.map':
+  case '/javascripts/main.js.map':
+    res.status(404).send('Page Not Found');
+    break;
+  default:
+    next();
+    break;
+  }
+});
+
+app.use(lang);
 app.use(appRenderer);
 if (isDev) {
   app.use(serfSafe);
@@ -60,11 +80,11 @@ app.use((err, req, res, next) => {
         {message}
     });
   } else {
-    res.renderError(
-      isDev ?
-        {title: message, detail: {status, stack}} :
-        {title: message}
-    );
+    if (isDev) {
+      res.renderError(message, {status, stack});
+    } else {
+      res.renderError(message);
+    }
   }
 });
 
