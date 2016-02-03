@@ -17,6 +17,20 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   right: 0;
   left: 0;
   z-index: $SpendMenu-z-index;
+}
+.is-SpendMenu-scrolling {
+  position: fixed;
+  transform: translate3d(0,-5px,0);
+}
+.is-SpendMenu-open {
+  transition: transform $SpendMenu-transitionDuration;
+}
+.is-SpendMenu-open-in {
+  position: fixed;
+  bottom: 0;
+  transform: translate3d(0,0,0);
+}
+.SpendMenu-inner {
   padding: 0 7% 0 8.5%;
   border-bottom: 1px solid $SAFE-TRANSPARENT;
   background-color: $SAFE-TRANSPARENT;
@@ -24,26 +38,20 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     border-bottom-color $SpendMenu-transitionDuration,
     background-color $SpendMenu-transitionDuration;
 }
-.is-SpendMenu-scrolling {
-  position: fixed;
-  transform: translate3d(0,-5px,0);
+.is-SpendMenu-scrolling .SpendMenu-inner {
   border-bottom-color: $SpendMenu-scrolling-border-color;
   background-color: $SpendMenu-scrolling-bg;
 }
-.is-SpendMenu-open {
-  transition:
-    transform $SpendMenu-transitionDuration,
-    border-bottom-color $SpendMenu-transitionDuration,
-    background-color $SpendMenu-transitionDuration;
-}
-.is-SpendMenu-open-in {
-  position: fixed;
+.is-SpendMenu-open-in .SpendMenu-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
-  transform: translate3d(0,0,0);
+  left: 0;
   border-bottom-color: $SAFE-TRANSPARENT;
   background-color: $SpendMenu-open-bg;
 }
-.SpendMenu-inner {
+.SpendMenu-inner-inner {
   padding: 16px 0;
 }
 .SpendMenu-Logo {
@@ -165,31 +173,22 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
 @media (min-width: $screen-md-min) {
   .SpendMenu {
     top: 27px;
-    padding: 0;
   }
   .is-SpendMenu-scrolling {
     top: 0;
     transform: translate3d(0,0,0);
   }
   .is-SpendMenu-open {
-    transition:
-      border-bottom-color $SpendMenu-transitionDuration,
-      background-color $SpendMenu-transitionDuration;
+    transition: none;
   }
   .is-SpendMenu-open-in {
     position: absolute;
     bottom: auto;
-    background-color: $SAFE-TRANSPARENT;
   }
   .is-SpendMenu-scrolling.is-SpendMenu-open-in {
     position: fixed;
-    border-bottom-color: $SpendMenu-scrolling-border-color;
-    background-color: $SpendMenu-scrolling-bg;
   }
-  @include enter("SpendMenu-index", $SpendMenu-index-md-anim) {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
+  @include enter("SpendMenu-index", $SpendMenu-index-md-anim);
   .SpendMenu-index.is-SpendMenu-scrolling,
   .SpendMenu-index.is-SpendMenu-open {
     visibility: visible;
@@ -199,11 +198,30 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     animation: none;
   }
   .SpendMenu-inner {
-    width: 87.11566617862371%;
-    max-width: 1190px;
-    margin: 0 auto;
+    padding: 0;
+  }
+  .is-SpendMenu-open-in .SpendMenu-inner {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    background-color: $SAFE-TRANSPARENT;
+  }
+  .is-SpendMenu-scrolling.is-SpendMenu-open-in .SpendMenu-inner {
+    border-bottom-color: $SpendMenu-scrolling-border-color;
+    background-color: $SpendMenu-scrolling-bg;
   }
   .SpendMenu-index-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .SpendMenu-inner-inner {
+    width: 87.11566617862371%;
+    max-width: 1254.4655929721814px;
+    margin: 0 auto;
+  }
+  .SpendMenu-index-inner-inner {
     max-width: none;
   }
   .SpendMenu-index-Logo {

@@ -35,29 +35,35 @@ let SpendFooter = React.createClass({
             'SpendFooter-index-inner': isRouteIndex
           })}
         >
-          <div className="SpendFooter-inner-inner">
-            <div className="SpendFooter-Logo"><Logo /></div>
-            <ul
-              className="SpendFooter-link-items listUnstyled text-uppercase"
-            >
-              {LINKS.map(({key, url}, i) => (
-                <li
-                  className={classNames('SpendFooter-link-item pull-left', {
-                    'SpendFooter-link-item-last': i === LINKS.length - 1
-                  })}
-                  key={key}
-                >
-                  <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}>{key}</Link>
-                </li>
-              ))}
-            </ul>
-            <div className="SpendFooter-copyrights">
-              {`2016 ${CONF.BRAND}. All Rights Reserved. Patents Pending.`}
+          <div
+            className={classNames('SpendFooter-inner-inner', {
+              'SpendFooter-index-inner-inner': isRouteIndex
+            })}
+          >
+            <div className="SpendFooter-inner-inner-inner">
+              <div className="SpendFooter-Logo"><Logo /></div>
+              <ul
+                className="SpendFooter-link-items listUnstyled text-uppercase"
+              >
+                {LINKS.map(({key, url}, i) => (
+                  <li
+                    className={classNames('SpendFooter-link-item pull-left', {
+                      'SpendFooter-link-item-last': i === LINKS.length - 1
+                    })}
+                    key={key}
+                  >
+                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}>{key}</Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="SpendFooter-copyrights">
+                {`2016 ${CONF.BRAND}. All Rights Reserved. Patents Pending.`}
+              </div>
+              <SocialLinks
+                className="SpendFooter-SocialLinks"
+                linkClassName="SpendFooter-SocialLinks-link"
+                eventCategory="Footer" />
             </div>
-            <SocialLinks
-              className="SpendFooter-SocialLinks"
-              linkClassName="SpendFooter-SocialLinks-link"
-              eventCategory="Footer" />
           </div>
         </div>
       </footer>

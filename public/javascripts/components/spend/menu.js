@@ -213,50 +213,56 @@ let SpendMenu = React.createClass({
           }} />
 
         <div
-          className={classNames('SpendMenu-inner clearfix', {
+          className={classNames('SpendMenu-inner', {
             'SpendMenu-index-inner': isRouteIndex
           })}
         >
           <div
-            className={classNames('SpendMenu-Logo pull-left', {
-              'SpendMenu-index-Logo': isRouteIndex
-            }, indexLogoClasses)}
-            ref={ref => {
-              this._logoRef = ref;
-            }}
+            className={classNames('SpendMenu-inner-inner clearfix', {
+              'SpendMenu-index-inner-inner': isRouteIndex
+            })}
           >
-            <Link className="SpendMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
-          </div>
-          <nav className="SpendMenu-nav">
-            <PseudoButton onClick={this.handleButtonClick}>
-              <div className="SpendMenu-button pull-right">
-                <span className="SpendMenu-button-bar SpendMenu-button-bar-1" />
-                <span className="SpendMenu-button-bar SpendMenu-button-bar-2" />
-                <span className="SpendMenu-button-bar SpendMenu-button-bar-3" />
-              </div>
-            </PseudoButton>
-            <div className="SpendMenu-nav-inner">
-              <div className="SpendMenu-lists">
-                <ul className="SpendMenu-items listUnstyled text-uppercase">
-                  {[
-                    {key: 'Team', url: '/team'},
-                    {key: 'Jobs', url: '/jobs'},
-                    {key: 'FAQ', url: '/faq'}
-                  ].map(({key, url}) => (
-                    <li className="SpendMenu-item" key={key}>
-                      <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{key}</Link>
-                    </li>
-                  ))}
-                </ul>
-                <SocialLinks
-                  className="SpendMenu-SocialLinks"
-                  eventCategory="Menu" />
-              </div>
-              <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
-                <IndiegogoLink className="SpendMenu-IndiegogoLink" eventLabel="In Menu" />
-              </LinkBlock>
+            <div
+              className={classNames('SpendMenu-Logo pull-left', {
+                'SpendMenu-index-Logo': isRouteIndex
+              }, indexLogoClasses)}
+              ref={ref => {
+                this._logoRef = ref;
+              }}
+            >
+              <Link className="SpendMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
             </div>
-          </nav>
+            <nav className="SpendMenu-nav">
+              <PseudoButton onClick={this.handleButtonClick}>
+                <div className="SpendMenu-button pull-right">
+                  <span className="SpendMenu-button-bar SpendMenu-button-bar-1" />
+                  <span className="SpendMenu-button-bar SpendMenu-button-bar-2" />
+                  <span className="SpendMenu-button-bar SpendMenu-button-bar-3" />
+                </div>
+              </PseudoButton>
+              <div className="SpendMenu-nav-inner">
+                <div className="SpendMenu-lists">
+                  <ul className="SpendMenu-items listUnstyled text-uppercase">
+                    {[
+                      {key: 'Team', url: '/team'},
+                      {key: 'Jobs', url: '/jobs'},
+                      {key: 'FAQ', url: '/faq'}
+                    ].map(({key, url}) => (
+                      <li className="SpendMenu-item" key={key}>
+                        <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{key}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <SocialLinks
+                    className="SpendMenu-SocialLinks"
+                    eventCategory="Menu" />
+                </div>
+                <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
+                  <IndiegogoLink className="SpendMenu-IndiegogoLink" eventLabel="In Menu" />
+                </LinkBlock>
+              </div>
+            </nav>
+          </div>
         </div>
       </header>
     );

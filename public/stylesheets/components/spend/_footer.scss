@@ -9,11 +9,13 @@ $SpendFooter-SocialLinks-link-color: #777;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: $SpendFooter-bg;
   line-height: 1;
   text-align: center;
 }
-.SpendFooter-inner-inner {
+.SpendFooter-inner {
+  background-color: $SpendFooter-bg;
+}
+.SpendFooter-inner-inner-inner {
   padding: 70px 0 106px;
 }
 .SpendFooter-Logo {
@@ -59,19 +61,19 @@ $SpendFooter-SocialLinks-link-color: #777;
     line-height: $line-height-base;
     text-align: left;
   }
-  .SpendFooter-index {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  .SpendFooter-inner {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
   .SpendFooter-index-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .SpendFooter-inner-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .SpendFooter-index-inner-inner {
     max-width: none;
     margin: 0;
   }
-  .SpendFooter-inner-inner {
+  .SpendFooter-inner-inner-inner {
     padding: 120px 6.588579795021962% 160px 6.881405563689604%;
     @include clearfix;
   }
