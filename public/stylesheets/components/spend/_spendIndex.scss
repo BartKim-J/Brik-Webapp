@@ -38,7 +38,7 @@ $SpendIndex-charge-h2-color: #595959;
 $SpendIndex-charge-p-color: #999;
 $SpendIndex-charge-battery-color: #595959;
 
-$SpendIndex-tech-bg: #fff;
+$SpendIndex-tech-bg: #e7f3f1;
 $SpendIndex-tech-h2-color: #424242;
 $SpendIndex-tech-p-color: #999;
 
@@ -58,6 +58,8 @@ $SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
 $SpendIndex-link-video-h2-md-anim: slideDown 1s 2s both;
 $SpendIndex-video-LinkBlock-md-anim: slideUp 1s 2s both;
 $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
+
+$SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 
 .SpendIndex-container {
   padding-right: 0;
@@ -430,35 +432,119 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 }
 
 .SpendIndex-tech {
-  padding: 50px 0 42px;
+  padding: 26px 0 42px;
   background-color: $SpendIndex-tech-bg;
 }
 .SpendIndex-tech-bg {
-  margin-bottom: 57px;
+  position: relative;
+  width: 89.33333333333333%;
+  max-width: 335px;
+  margin: 0 auto 62px;
 }
 .SpendIndex-tech-bg-inner {
-  @include image-replacement-core(
-    "board-3d-544.png", "board-3d-544@2x.png", 261px, 296px
+  @include r-background-image(
+    "board-3-d-544.png", "board-3-d-544@2x.png",
+    $padding-bottom: 86.08955223880596%
   );
-  margin: 0 auto;
+  margin-left: 20.895522388059703%;
+}
+.SpendIndex-tech-bg-caption-display {
+  position: absolute;
+  top: 28.408304498269896%;
+  left: 0;
+  width: 41.014925373134325%;
+}
+.SpendIndex-tech-bg-caption-display-inner {
+  @include r-background-image(
+    "LED-matrix-display.png", "LED-matrix-display@2x.png",
+    138, 13
+  );
+}
+.SpendIndex-tech-bg-caption-mfe {
+  position: absolute;
+  top: 44.29065743944636%;
+  left: 8.955223880597014%;
+  width: 40.59701492537314%;
+}
+.SpendIndex-tech-bg-caption-mfe-inner {
+  @include r-background-image(
+    "MFE-antenna.png", "MFE-antenna@2x.png", 135, 7
+  );
+}
+.SpendIndex-tech-bg-caption-battery {
+  position: absolute;
+  top: 52.24913494809689%;
+  left: 5.373134328358209%;
+  width: 35.52238805970149%;
+}
+.SpendIndex-tech-bg-caption-battery-inner {
+  @include r-background-image(
+    "rechargeable-battery.png", "rechargeable-battery@2x.png",
+    119, 9
+  );
+}
+.SpendIndex-tech-bg-caption-touch {
+  position: absolute;
+  top: 65.39792387543253%;
+  left: 7.7611940298507465%;
+  width: 45.67164179104478%;
+}
+.SpendIndex-tech-bg-caption-touch-inner {
+  @include r-background-image(
+    "touch-sensors.png", "touch-sensors@2x.png", 152, 12
+  );
+}
+.SpendIndex-tech-bg-caption-usb {
+  position: absolute;
+  top: 74.74048442906575%;
+  left: 11.044776119402986%;
+  width: 40.298507462686565%;
+}
+.SpendIndex-tech-bg-caption-usb-inner {
+  @include r-background-image(
+    "micro-USB.png", "micro-USB@2x.png", 135, 11
+  );
+}
+.SpendIndex-tech-bg-caption-vibration {
+  position: absolute;
+  top: 82.3529411764706%;
+  left: 14.029850746268657%;
+  width: 43.28358208955224%;
+}
+.SpendIndex-tech-bg-caption-vibration-inner {
+  @include r-background-image(
+    "vibration-feedback.png", "vibration-feedback@2x.png",
+    144, 8
+  );
+}
+.SpendIndex-tech-bg-caption-energy {
+  position: absolute;
+  top: 81.31487889273356%;
+  left: 16.71641791044776%;
+  width: 54.62686567164179%;
+}
+.SpendIndex-tech-bg-caption-energy-inner {
+  @include r-background-image(
+    "bluetooth-low-energy.png", "bluetooth-low-energy@2x.png",
+    182, 43
+  );
 }
 .SpendIndex-tech-inner {
-  width: 85.33333333333333%;
-  max-width: 320px;
-  margin: 57px auto 0;
+  width: 295px;
+  margin: 62px auto 0;
   text-align: center;
 }
 .SpendIndex-tech-h2 {
-  margin: 17px 0;
+  margin: 14px 0;
   color: $SpendIndex-tech-h2-color;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 23px;
+  line-height: 28px;
 }
 .SpendIndex-tech-p {
-  margin: 17px 0;
+  margin: 14px 0;
   color: $SpendIndex-tech-p-color;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 17px;
 }
 .SpendIndex-tech-p-last {
   margin-bottom: 0;
@@ -1012,45 +1098,117 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
   }
 
   .SpendIndex-tech {
-    position: relative;
-    height: 845px;
-    padding: 0;
+    padding: 128px 0 67px;
   }
   .SpendIndex-tech-bg {
-    position: absolute;
-    top: 60.543130990415335%;
-    left: 0;
-    transform: translateY(-63.59043920531746%);
-    width: 36.01756954612006%;
-    margin-bottom: 0;
+    width: 48.6090775988287%;
+    max-width: 664px;
+    margin-bottom: 134px;
   }
   .SpendIndex-tech-bg-inner {
-    width: auto;
-    @include r-background-image(
-      "board-3d-544-md.png", "board-3d-544-md@2x.png", 492, 696
+    @include r-background-image-update(
+      "board-3-d-v-4-1-7.png", "board-3-d-v-4-1-7@2x.png",
+      $padding-bottom: 38.403614457831324%
     );
-    margin: 0;
+    margin-left: 7.530120481927711%;
   }
   @include enter(
-    "SpendIndex-tech-inner", $SpendIndex-section-inner-md-anim,
+    "SpendIndex-tech-bg-captions",
+    $SpendIndex-tech-bg-captions-md-anim,
     "is-SpendIndex-tech-entered"
-  ) {
-    position: absolute;
-    top: 60.543130990415335%;
-    left: 44.436310395314784%;
-    transform: translateY(-60.543130990415335%);
-    width: 42.31332357247438%;
-    max-width: none;
-    margin: 0;
-    text-align: left;
+  );
+  .SpendIndex-tech-bg-caption-display {
+    top: 78.90196078431373%;
+    right: -31.77710843373494%;
+    left: auto;
+    width: 43.0722891566265%;
+  }
+  .SpendIndex-tech-bg-caption-display-inner {
+    @include r-background-image-update(
+      "LED-matrix-display-md.png", "LED-matrix-display-md@2x.png",
+      286, 15
+    );
+  }
+  .SpendIndex-tech-bg-caption-mfe {
+    top: auto;
+    right: 32.07831325301205%;
+    bottom: -21.647058823529413%;
+    left: auto;
+    width: 14.608433734939759%;
+  }
+  .SpendIndex-tech-bg-caption-mfe-inner {
+    @include r-background-image-update(
+      "MFE-antenna-md.png", "MFE-antenna-md@2x.png", 95, 115
+    );
+  }
+  .SpendIndex-tech-bg-caption-battery {
+    top: 51.84313725490196%;
+    right: -28.6144578313253%;
+    left: auto;
+    width: 47.74096385542169%;
+  }
+  .SpendIndex-tech-bg-caption-battery-inner {
+    @include r-background-image-update(
+      "rechargeable-battery-md.png",
+      "rechargeable-battery-md@2x.png",
+      317, 15
+    );
+  }
+  .SpendIndex-tech-bg-caption-touch {
+    top: 38.90196078431372%;
+    left: -31.626506024096386%;
+    width: 39.75903614457831%;
+  }
+  .SpendIndex-tech-bg-caption-touch-inner {
+    @include r-background-image-update(
+      "touch-sensors-md.png", "touch-sensors-md@2x.png", 264, 15
+    );
+  }
+  .SpendIndex-tech-bg-caption-usb {
+    top: auto;
+    bottom: -21.647058823529413%;
+    left: 19.27710843373494%;
+    width: 11.44578313253012%;
+  }
+  .SpendIndex-tech-bg-caption-usb-inner {
+    @include r-background-image-update(
+      "micro-USB-md.png", "micro-USB-md@2x.png", 74, 116
+    );
+  }
+  .SpendIndex-tech-bg-caption-vibration {
+    top: 53.411764705882355%;
+    left: -25.301204819277107%;
+    width: 41.86746987951807%;
+  }
+  .SpendIndex-tech-bg-caption-vibration-inner {
+    @include r-background-image-update(
+      "vibration-feedback-md.png", "vibration-feedback-md@2x.png",
+      278, 13
+    );
+  }
+  .SpendIndex-tech-bg-caption-energy {
+    top: 67.52941176470588%;
+    left: -23.49397590361446%;
+    width: 37.95180722891566%;
+  }
+  .SpendIndex-tech-bg-caption-energy-inner {
+    @include r-background-image-update(
+      "bluetooth-low-energy-md.png",
+      "bluetooth-low-energy-md@2x.png",
+      251, 17
+    );
+  }
+  .SpendIndex-tech-inner {
+    width: auto;
+    margin-top: 134px;
   }
   .SpendIndex-tech-h2 {
-    margin: 0 0 30px;
+    margin: 28px 0;
     font-size: 40px;
     line-height: 1.2;
   }
   .SpendIndex-tech-p {
-    margin: 30px 0;
+    margin: 28px 0;
     font-size: 19px;
     line-height: 35px;
   }
