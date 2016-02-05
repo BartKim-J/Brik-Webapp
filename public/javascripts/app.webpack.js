@@ -10,6 +10,16 @@ function withPromise() {
 
   Promise.all([
     new Promise((resolve, reject) => {
+      if (Number.isNaN) {
+        resolve();
+      } else {
+        require(['is-nan'], isNaN => {
+          Number.isNaN = isNaN;
+          resolve();
+        });
+      }
+    }),
+    new Promise((resolve, reject) => {
       if (Object.assign) {
         resolve();
       } else {
