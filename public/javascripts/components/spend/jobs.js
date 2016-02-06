@@ -39,7 +39,7 @@ let SpendJobs = React.createClass({
               Join <Logo /><span className="visible-md-inline visible-lg-inline"> Journey</span>
             </h1>
             <p className="SpendJobs-h1-p">
-              {`Working at ${BRAND} is more than a job`}
+              Working at {BRAND} is more than a job
             </p>
           </header>
           <div className="SpendJobs-sections">
