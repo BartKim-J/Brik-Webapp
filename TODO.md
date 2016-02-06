@@ -37,8 +37,9 @@ X-UA-Compatible: IE=edge
 
 ## Misc
 
-- Get window viewport size without scrollbars.
+- Get window viewport size without scrollbars. (<https://bugzilla.mozilla.org/show_bug.cgi?id=189112#c7>)
 - <https://github.com/github/fetch#obtaining-the-response-url>
+- Improve Markdown parser to generate non-English hash.
 
 ## Optimization
 
@@ -49,6 +50,7 @@ X-UA-Compatible: IE=edge
 - Remove Jade.
 - [Update Babel.](https://medium.com/@malyw/how-to-update-babel-5-x-6-x-d828c230ec53#.rb2186njw)
 - Use JPEG where possible.
+- Use stateless function component.
 
 ### Refactoring
 
