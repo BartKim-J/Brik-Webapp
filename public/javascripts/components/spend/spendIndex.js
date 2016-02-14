@@ -513,10 +513,10 @@ let SpendIndex = React.createClass({
               <div className="SpendIndex-index-content">
                 <div className="SpendIndex-link-video-group">
                   <h2 className="SpendIndex-link-video-h2">
-                    Spend everywhere with one device
+                    {formatMessage({id: 'index.heading'})}
                   </h2>
                   <LinkBlock className="SpendIndex-video-LinkBlock">
-                    <a className="SpendIndex-link SpendIndex-link-video text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-link-video-icon" /> Video Coming Soon</a>
+                    <a className="SpendIndex-link SpendIndex-link-video text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-link-video-icon" /> {formatMessage({id: 'index.button.video'})}</a>
                   </LinkBlock>
                 </div>
                 <div className="SpendIndex-Form-group">
@@ -603,10 +603,10 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-design-inner">
               <h2 className="SpendIndex-design-h2">
-                Splendid Design
+                {formatMessage({id: 'index.design.heading'})}
               </h2>
               <p className="SpendIndex-design-p SpendIndex-design-p-last">
-                The frame is made of aluminum, one of the strongest and lightest materials on earth. This makes the device strong and durable enough for everyday use in your pocket. Plastic on the front and back cover finishes up the design with style. SpendWallet has been engineered to seamlessly work with your smooth payment experience.
+                {formatMessage({id: 'index.design.description'})}
               </p>
             </div>
             <div
@@ -620,10 +620,10 @@ let SpendIndex = React.createClass({
             className="SpendIndex-measure text-center"
             ref={this.makeSectionRefsHandler('measure')}
           >
-            <h2 className="SpendIndex-measure-h2">
-              Slim. Solid.<br />
-              SpendWallet
-            </h2>
+
+              <FormattedHTMLMessage id="index.measure.heading">
+                <h2 className="SpendIndex-measure-h2" />
+              </FormattedHTMLMessage>
             <div className="SpendIndex-measure-sideView">
               <video
                 className="SpendIndex-measure-sideView-video"
@@ -639,10 +639,10 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-measure-numbers">
               <div className="SpendIndex-measure-numbers-big">
-                6.0mm / 65grams
+                {formatMessage({id: 'index.measure.dimensions'})}
               </div>
               <div className="SpendIndex-measure-numbers-more">
-                Thickness: 6.0mm Dimension: 60.5mm x 105mm
+                {formatMessage({id: 'index.measure.dimensions2'})}
               </div>
             </div>
           </section>
@@ -653,10 +653,10 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-display-inner">
               <h2 className="SpendIndex-display-h2">
-                Hidden LED Display
+                {formatMessage({id: 'index.display.heading'})}
               </h2>
               <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                The hidden LED display aboard SpendWallet will not be shown on the surface of the device when not in use. When necessary, it will show which card you’ve selected, whether it is correctly connected to your phone, and how low the battery is.
+                {formatMessage({id: 'index.display.description'})}
               </p>
             </div>
             <div
@@ -674,10 +674,10 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-charge-inner">
               <div className="SpendIndex-charge-content">
                 <h2 className="SpendIndex-charge-h2">
-                  Simply Rechargeable
+                  {formatMessage({id: 'index.charge.heading'})}
                 </h2>
                 <p className="SpendIndex-charge-p">
-                  SpendWallet has a rechargeable battery that generally lasts for a month. When you are notified of low battery, simply charge it with the included micro USB cable.
+                  {formatMessage({id: 'index.charge.description'})}
                 </p>
               </div>
               <ImageBlock className="SpendIndex-charge-ImageBlock">
@@ -686,7 +686,7 @@ let SpendIndex = React.createClass({
                   src="/images/usbcharge.png" width={291} height={221} />
               </ImageBlock>
               <div className="SpendIndex-charge-battery">
-                Up to 4 weeks of battery life
+                {formatMessage({id: 'index.charge.batterylife'})}
               </div>
             </div>
             <div
@@ -750,12 +750,11 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-tech-inner">
               <h2 className="SpendIndex-tech-h2">
-                True Electronic Wallet
+                {formatMessage({id: 'index.electronicwallet.heading'})}
               </h2>
-              <p className="SpendIndex-tech-p SpendIndex-tech-p-last">
-                Your heavy, thick traditional wallet should better evolve into a smart digital wallet.<br />
-                Finally, a real physical electronic wallet that consolidates all your cards.
-              </p>
+              <FormattedHTMLMessage id="index.electronicwallet.description">
+                <header className="SpendIndex-tech-p SpendIndex-tech-p-last" />
+              </FormattedHTMLMessage>
             </div>
           </section>
           {this.renderSecurity()}
@@ -766,10 +765,10 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-app-inner">
               <h2 className="SpendIndex-app-h2">
-                <Logo /> application
+                <Logo /> {formatMessage({id: 'index.application.heading'})}
               </h2>
               <p className="SpendIndex-app-p">
-                Meet the app that is all-in-one for your financial management. With this app, you can easily manage credit cards, save barcodes and coupons and see expenditure analysis. As much as we care about how much you spend, we put our most effort into how smart you spend.
+                {formatMessage({id: 'index.application.description'})}
               </p>
               <div className="SpendIndex-app-stores text-hide">
                 iOS Android
@@ -791,8 +790,8 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-preOrder-inner">
               <h2 className="SpendIndex-preOrder-h2">
-                Worldwide Shipping<br />
-                <em className="SpendIndex-preOrder-h2-em">Pre-Order Coming Soon</em>
+                {formatMessage({id: 'index.preorder.heading'})}<br />
+                <em className="SpendIndex-preOrder-h2-em">{formatMessage({id: 'index.preorder.description'})}</em>
               </h2>
               <ImageBlock
                 className="SpendIndex-preOrder-ImageBlock text-center"
@@ -800,7 +799,7 @@ let SpendIndex = React.createClass({
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
               <LinkBlock className="SpendIndex-preOrder-LinkBlock">
-                <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">Pre-Order Coming Soon</a>
+                <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">{formatMessage({id: 'index.button.preorder'})}</a>
               </LinkBlock>
             </div>
             <div className="SpendIndex-preOrder-bg">
@@ -873,6 +872,7 @@ let SpendIndex = React.createClass({
     );
   },
   renderSecurityFeatures(isSlider = false) {
+    let {formatMessage} = this.context.intl;
     return (
       <ul
         className={classNames('SpendIndex-security-features listUnstyled', (
@@ -896,14 +896,14 @@ let SpendIndex = React.createClass({
                   'SpendIndex-security-slider-feature-name': isSlider
                 })}
               >
-                {name}
+                {formatMessage({id: `index.security.${key}.name`})}
               </div>
               <Markdown
                 className={classNames('SpendIndex-security-feature-desc', {
                   'SpendIndex-security-slider-feature-desc': isSlider
                 })}
               >
-                {description}
+                {formatMessage({id: `index.security.${key}.description`})}
               </Markdown>
             </li>
           ))}

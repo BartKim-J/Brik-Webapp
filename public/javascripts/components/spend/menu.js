@@ -1,5 +1,6 @@
 let React = require('react');
 let classNames = require('classnames');
+let {intlShape} = require('react-intl');
 
 let TransitionMixin = require('../../mixins/transition');
 
@@ -8,6 +9,7 @@ let {LinkBlock} = require('../links');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
+let {FormattedHTMLMessage} = require('../intl');
 let IndiegogoLink = require('./indiegogoLink');
 let Logo = require('./logo');
 let SocialLinks = require('./socialLinks');
@@ -25,9 +27,9 @@ let SpendMenu = React.createClass({
       isOpen: false
     };
   },
-
   contextTypes: {
-    routeNames: React.PropTypes.array.isRequired
+    routeNames: React.PropTypes.array.isRequired,
+    intl: intlShape.isRequired
   },
 
   // Instance variables
@@ -193,6 +195,7 @@ let SpendMenu = React.createClass({
       openClasses, indexLogoClasses
     } = this.state;
     let isRouteIndex = this.isRouteIndex();
+    let {formatMessage} = this.context.intl;
 
     return (
       <header
@@ -244,12 +247,12 @@ let SpendMenu = React.createClass({
                 <div className="SpendMenu-lists">
                   <ul className="SpendMenu-items listUnstyled text-uppercase">
                     {[
-                      {key: 'Team', url: '/team'},
-                      {key: 'Jobs', url: '/jobs'},
-                      {key: 'FAQ', url: '/faq'}
+                      {key: 'team', url: '/team'},
+                      {key: 'jobs', url: '/jobs'},
+                      {key: 'faq', url: '/faq'}
                     ].map(({key, url}) => (
                       <li className="SpendMenu-item" key={key}>
-                        <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{key}</Link>
+                        <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{formatMessage({id: `menu.${key}`})}</Link>
                       </li>
                     ))}
                   </ul>

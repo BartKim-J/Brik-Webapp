@@ -5,12 +5,19 @@ let Collapse = require('../collapse');
 let {EmailLink} = require('../links');
 let Markdown = require('../markdown');
 let Logo = require('./logo');
+let {intlShape} = require('react-intl');
+
+let {FormattedHTMLMessage} = require('../intl');
 
 let SpendJobs = React.createClass({
   propTypes: {
     openings: React.PropTypes.object,
 
     onEmpty: React.PropTypes.func.isRequired
+  },
+
+  contextTypes: {
+    intl: intlShape.isRequired
   },
 
   componentDidMount() {
@@ -30,28 +37,29 @@ let SpendJobs = React.createClass({
   },
   renderContainer() {
     const {openings} = this.props;
+    let {formatMessage} = this.context.intl;
     if (openings) {
       const {BRAND} = CONF;
       return (
         <div className="container-fluid SpendJobs-container">
           <header className="SpendJobs-container-header text-center">
-            <h1 className="SpendJobs-h1">
-              Join <Logo /><span className="visible-md-inline visible-lg-inline"> Journey</span>
-            </h1>
+            <FormattedHTMLMessage id="jobs.title">
+              <h1 className="SpendJobs-h1" />
+            </FormattedHTMLMessage>
             <p className="SpendJobs-h1-p">
-              {`Working at ${BRAND} is more than a job`}
+              {formatMessage({id: 'jobs.description'})}
             </p>
           </header>
           <div className="SpendJobs-sections">
             <section className="SpendJobs-section">
-              <h2 className="SpendJobs-h2">
-                What is <Logo />?
-              </h2>
+              <FormattedHTMLMessage id="jobs.whatIsSpend">
+                <h2 className="SpendJobs-h2" />
+              </FormattedHTMLMessage>
               <p className="SpendJobs-p SpendJobs-h2-p">
-                {`We are developing SpendWallet that can be used not only online but also offline that comprises 90% of total commercial transaction. X Engineering believes that everyone stands to benefit from the advance of technology.`}
+                {formatMessage({id: 'jobs.whatIsSpendDescription'})}
               </p>
               <p className="SpendJobs-p">
-                {`We are looking for X Engineer who can join the journey of developing a valuable product with technology we create.`}
+                {formatMessage({id: 'jobs.weAreLooking'})}
               </p>
             </section>
             <section
@@ -62,7 +70,7 @@ let SpendJobs = React.createClass({
                 <div className="row">
                   <div className="col-md-6">
                     <h2 className="SpendJobs-h2 SpendJobs-section-openRoles-h2">
-                      Open Roles
+                      {formatMessage({id: 'jobs.openRoles'})}
                     </h2>
                   </div>
                   <div className="col-md-6">
@@ -98,8 +106,8 @@ let SpendJobs = React.createClass({
               </ul>
             </section>
             <div className="SpendJobs-container-footer text-center">
-              Don't see the position you're looking for?<br className="visible-md-inline visible-lg-inline" />{' '}
-              We'd still love to hear from you! Email us at <EmailLink email="recruit@xengineering.co" />
+              {formatMessage({id: 'jobs.additionalPositions'})}<br className="visible-md-inline visible-lg-inline" />{' '}
+              {formatMessage({id: 'jobs.hearFromYou'})}<EmailLink email="recruit@xengineering.co" />
             </div>
           </div>
         </div>

@@ -1,10 +1,13 @@
 let React = require('react');
 let classNames = require('classnames');
 let Helmet = require('react-helmet');
+let {intlShape} = require('react-intl');
 
 let Collapse = require('../collapse');
 let {EmailLink, LinkBlock} = require('../links');
 let Markdown = require('../markdown');
+
+let {FormattedHTMLMessage} = require('../intl');
 
 let SpendFaq = React.createClass({
   propTypes: {
@@ -20,6 +23,10 @@ let SpendFaq = React.createClass({
     }
   },
 
+  contextTypes: {
+    intl: intlShape.isRequired
+  },
+
   render() {
     return (
       <div className="SpendFaq">
@@ -30,14 +37,15 @@ let SpendFaq = React.createClass({
   },
   renderContainer() {
     if (this.props.sections) {
+      let {formatMessage} = this.context.intl;
       return (
         <div className="container-fluid SpendFaq-container">
           <header className="SpendFaq-container-header text-center">
-            <h1 className="SpendFaq-h1">
-              F<span className="visible-md-inline visible-lg-inline">requently </span>A<span className="visible-md-inline visible-lg-inline">sked </span>Q<span className="visible-md-inline visible-lg-inline">uestions</span>
-            </h1>
+            <FormattedHTMLMessage id="faq.title">
+              <h1 className="SpendFaq-h1" />
+            </FormattedHTMLMessage>
             <p className="SpendFaq-h1-p">
-              You can find some answers to commonly asked questions below.
+              {formatMessage({id: 'faq.description'})}
             </p>
           </header>
           {this.renderSections()}
@@ -46,18 +54,18 @@ let SpendFaq = React.createClass({
               <div className="col-md-6">
                 <div className="SpendFaq-container-footer-header">
                   <h2 className="SpendFaq-container-footer-h2">
-                    Do you need any further assistance?
+                    {formatMessage({id: 'faq.furtherAssistance'})}
                   </h2>
                   <p
                     className="SpendFaq-container-footer-h2-p
                       SpendFaq-container-footer-h2-p-last">
-                      Please do not hesitate to contact us.
+                      {formatMessage({id: 'faq.dontHesitate'})}
                   </p>
                 </div>
               </div>
               <div className="col-md-6">
                 <LinkBlock className="SpendFaq-container-footer-LinkBlock">
-                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co" eventLabel="label: Email Us, in: FAQ">Email Us</EmailLink>
+                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co" eventLabel="label: Email Us, in: FAQ">{formatMessage({id: 'faq.emailUs'})}</EmailLink>
                 </LinkBlock>
               </div>
             </div>

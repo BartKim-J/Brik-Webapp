@@ -6,6 +6,9 @@ let {RImage, ImageBlock} = require('../images');
 let {LinkBlock} = require('../links');
 let {Link} = require('../router');
 let WindowListener = require('../windowListener');
+let {intlShape} = require('react-intl');
+
+let {FormattedHTMLMessage} = require('../intl');
 
 let Logo = require('./logo');
 
@@ -20,6 +23,10 @@ let SpendTeam = React.createClass({
     return {
       isTooltip: false
     };
+  },
+
+  contextTypes: {
+    intl: intlShape.isRequired
   },
 
   componentDidMount() {
@@ -46,15 +53,16 @@ let SpendTeam = React.createClass({
     );
   },
   renderContainer() {
+    let {formatMessage} = this.context.intl;
     if (this.props.team) {
       return (
         <div className="container-fluid SpendTeam-container">
           <header className="SpendTeam-container-header text-center">
-            <h1 className="SpendTeam-h1">
-              Meet the team behind <Logo />
-            </h1>
+            <FormattedHTMLMessage id="team.title">
+              <h1 className="SpendTeam-h1" />
+            </FormattedHTMLMessage>
             <p className="SpendTeam-h1-p">
-              We dream about <span className="text-nowrap">incredible things</span>
+              {formatMessage({id: 'team.description'})}
             </p>
           </header>
           {this.renderTeam()}
@@ -63,16 +71,16 @@ let SpendTeam = React.createClass({
               <div className="col-md-8">
                 <div className="SpendTeam-container-footer-header">
                   <h2 className="SpendTeam-container-footer-h2">
-                    Join the Team
+                    {formatMessage({id: 'team.joinTheTeam'})}
                   </h2>
                   <p className="SpendTeam-container-footer-h2-p">
-                    We're hiring for a number of different positions
+                    {formatMessage({id: 'team.weAreHiring'})}
                   </p>
                 </div>
               </div>
               <div className="col-md-4">
                 <LinkBlock className="SpendTeam-container-footer-LinkBlock">
-                  <Link className="SpendTeam-jobsLink" url="/jobs" clickEvent={{category: 'View Openings'}}>View Openings</Link>
+                  <Link className="SpendTeam-jobsLink" url="/jobs" clickEvent={{category: 'View Openings'}}>{formatMessage({id: 'team.viewOpenings'})}</Link>
                 </LinkBlock>
               </div>
             </div>

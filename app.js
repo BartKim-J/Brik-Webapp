@@ -81,9 +81,9 @@ app.use((err, req, res, next) => {
     });
   } else {
     if (isDev) {
-      res.renderError(message, {status, stack});
+      console.log(message);
     } else {
-      res.renderError(message);
+      console.log(message);
     }
   }
 });

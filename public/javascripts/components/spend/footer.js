@@ -1,28 +1,32 @@
 let React = require('react');
 let classNames = require('classnames');
+let {intlShape} = require('react-intl');
 
 let {Link} = require('../router');
 
+let {FormattedHTMLMessage} = require('../intl');
 let Logo = require('./logo');
 let SocialLinks = require('./socialLinks');
 
 let SpendFooter = React.createClass({
   statics: {
     LINKS: [
-      {key: 'Team', url: '/team'},
-      {key: 'FAQ', url: '/faq'},
-      {key: 'Jobs', url: '/jobs'},
-      {key: 'Legal', url: '/legal'}
+      {key: 'team', url: '/team'},
+      {key: 'faq', url: '/faq'},
+      {key: 'jobs', url: '/jobs'},
+      {key: 'legal', url: '/legal'}
     ]
   },
 
   contextTypes: {
-    routeNames: React.PropTypes.array.isRequired
+    routeNames: React.PropTypes.array.isRequired,
+    intl: intlShape.isRequired
   },
 
   render() {
     const {LINKS} = SpendFooter;
     let isRouteIndex = (this.context.routeNames[0] === 'index');
+    let {formatMessage} = this.context.intl;
 
     return (
       <footer
@@ -52,12 +56,12 @@ let SpendFooter = React.createClass({
                     })}
                     key={key}
                   >
-                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}>{key}</Link>
+                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}>{formatMessage({id: `footer.${key}`})}</Link>
                   </li>
                 ))}
               </ul>
               <div className="SpendFooter-copyrights">
-                {`2016 ${CONF.BRAND}. All Rights Reserved. Patents Pending.`}
+                {formatMessage({id: `footer.copyrights`})}
               </div>
               <SocialLinks
                 className="SpendFooter-SocialLinks"
