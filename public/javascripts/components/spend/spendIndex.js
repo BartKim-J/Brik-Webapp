@@ -671,9 +671,9 @@ let SpendIndex = React.createClass({
                   <h2 className="SpendIndex-charge-h2">
                     {formatMessage({id: 'index.charge.heading'})}
                   </h2>
-                  <p className="SpendIndex-charge-p">
-                    {formatMessage({id: 'index.charge.description'})}
-                  </p>
+                  <FormattedHTMLMessage id="index.charge.description">
+                    <p className="SpendIndex-charge-p"/>
+                  </FormattedHTMLMessage>
                 </div>
                 <ImageBlock className="SpendIndex-charge-ImageBlock">
                   <RImage
