@@ -2,6 +2,7 @@ $SpendJobs-opening-border-color: #ECECEC;
 $SpendJobs-opening-color: #8c8c8c;
 $SpendJobs-opening-category-arrow-color: #e4e4e4;
 $SpendJobs-container-footer-color: #8c8c8c;
+$SpendJobs-h1p-color: #8B8484;
 
 .SpendJobs {
   @include background-image("jobs/background.png");
@@ -130,6 +131,7 @@ $SpendJobs-container-footer-color: #8c8c8c;
   }
   .SpendJobs-h1-p {
     font-size: 34px;
+    color: $SpendJobs-h1p-color;
   }
 
   .SpendJobs-section {

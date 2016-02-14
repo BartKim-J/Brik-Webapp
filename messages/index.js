@@ -60,7 +60,7 @@ SpendWallet is seductively designed to completely replace your existing wallet. 
   'jobs.weAreLooking': `We are looking for an X Engineer who can join the journey of developing a valuable product with technology we create.`,
   'jobs.whatIsSpendDescription': `We are developing SpendWallet that can be used not only online but also offline that comprises 90% of total commercial transaction. X Engineering believes that everyone stands to benefit from the advance of technology.`,
   'jobs.additionalPositions': `Don't see the position you're looking for?`,
-  'jobs.hearFromYou': `We'd still love to hear from you! Email us at `,
+  'jobs.hearFromYou': `We'd still love to hear from you! Email us at <a href="mailto:recruit@xengineering.co">recruit@xengineering.co</a>`,
   'jobs.openRoles': `Open Roles`,
 
   'team.title': `Meet the team behind <span class="SpendLogo">spend.</span>`,

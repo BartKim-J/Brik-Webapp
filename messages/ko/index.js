@@ -7,8 +7,8 @@ module.exports = messages.merge({
         어디서나 터치 한 번으로,<br>진정한 간편결제.
       </h2>`,
     'index.contactless.paragraphs': /* Markdown */ `NFC가 아닙니다. 스펜드월렛의 자체 개발된 MST 기술은 눈 깜짝할 사이에 자기장을 발생시켜 카드리더기에 결제신호를 송출합니다. 마치 일반카드로 긁는 것과 동일한 신호를 전달하기 때문에 모든 카드리더기에서 사용할 수 있습니다. 이제 어디서나 간편하게 터치로 결제하세요.`,
-    'index.formMessageBoard': `이메일 주소를 입력하여 지금 베타테스트를 신청하세요!`,
-    'index.physicalCards.article': /* Markdown */ `## 지갑, 그 본연의 역할에 충실한 스마트지갑.
+    'index.formMessageBoard': `지금 베타테스트를 신청하세요!`,
+    'index.physicalCards.article': /* Markdown */ `## 지갑, 그 본연의 역할에 충실한<br>스마트지갑.
 
   스펜드월렛은 당신을 더 멋있고 스마트하게 바꿔줄 진정한 전자지갑입니다. 보유하고 있는 모든 카드를 합칠 수 있고, 후면부에는 신분증, 명함 등을 담을 수 있는 포켓이  있습니다. 그 어떤 지갑보다 얇지만, 그 어떤 지갑보다 많은 신용카드를 수납할 수 있습니다.`,
 

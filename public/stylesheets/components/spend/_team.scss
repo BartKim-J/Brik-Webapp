@@ -7,6 +7,7 @@ $SpendTeam-member-detail-overlay-shadow-color: rgba(231,231,231, 0.5);
 $SpendTeam-member-detail-overlay-bg: #fff;
 $SpendTeam-member-detail-name-color: #777;
 $SpendTeam-member-detail-p-color: #919191;
+$SpendJobs-h1p-color: #8B8484;
 
 .SpendTeam {
   padding: 105px 0 65px;
@@ -116,6 +117,7 @@ $SpendTeam-member-detail-p-color: #919191;
   }
   .SpendTeam-h1-p {
     font-size: 34px;
+    color: $SpendJobs-h1p-color;
   }
 
   .SpendTeam-team {

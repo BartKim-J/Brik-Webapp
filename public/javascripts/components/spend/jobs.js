@@ -107,7 +107,9 @@ let SpendJobs = React.createClass({
             </section>
             <div className="SpendJobs-container-footer text-center">
               {formatMessage({id: 'jobs.additionalPositions'})}<br className="visible-md-inline visible-lg-inline" />{' '}
-              {formatMessage({id: 'jobs.hearFromYou'})}<EmailLink email="recruit@xengineering.co" />
+              <FormattedHTMLMessage id="jobs.hearFromYou">
+                <p/>
+              </FormattedHTMLMessage>
             </div>
           </div>
         </div>
