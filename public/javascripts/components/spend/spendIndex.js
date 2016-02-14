@@ -29,6 +29,7 @@ let SpendIndex = React.createClass({
       design: 0,
       display: 0,
       charge: 0,
+      tech: 0,
       app: 0,
       preOrder: 0
     }),
@@ -72,14 +73,7 @@ let SpendIndex = React.createClass({
       bgYOffsets: SpendIndex.DEFAULT_BG_Y_OFFSETS,
       enteredClasses: Immutable({
         index: '',
-        contactless: '',
-        physicalCards: '',
-        design: '',
-        display: '',
-        charge: '',
-        tech: '',
-        app: '',
-        preOrder: ''
+        tech: ''
       }),
       securitySwipePos: 0,
       subscriptionMsg: null
@@ -90,19 +84,14 @@ let SpendIndex = React.createClass({
     let state = {
       enteredClasses: Immutable({
         index: 'is-SpendIndex-index-entered-done',
-        contactless: 'is-SpendIndex-contactless-entered-done',
-        physicalCards: 'is-SpendIndex-physicalCards-entered-done',
-        design: 'is-SpendIndex-design-entered-done',
-        display: 'is-SpendIndex-display-entered-done',
-        charge: 'is-SpendIndex-charge-entered-done',
-        tech: 'is-SpendIndex-tech-entered-done',
-        app: 'is-SpendIndex-app-entered-done',
-        preOrder: 'is-SpendIndex-preOrder-entered-done'
+        tech: 'is-SpendIndex-tech-entered-done'
       })
     };
+
     if (some(this.state.bgYOffsets)) {
       state.bgYOffsets = SpendIndex.DEFAULT_BG_Y_OFFSETS;
     }
+
     this.setState(state);
   },
 
@@ -139,6 +128,9 @@ let SpendIndex = React.createClass({
       half: chargeHalf, oneThird: chargeAThird
     } = this._pageYOffsets.charge;
     let {
+      half: techHalf, twoThirds: techTwoThirds
+    } = this._pageYOffsets.tech;
+    let {
       half: appHalf, oneThird: appAThird
     } = this._pageYOffsets.app;
     let {
@@ -163,6 +155,9 @@ let SpendIndex = React.createClass({
       charge: [
         chargeAThird - this._windowHeight, chargeHalf - halfHeight
       ],
+      tech: [
+        techTwoThirds - this._windowHeight, techHalf - halfHeight
+      ],
       app: [appAThird - this._windowHeight, appHalf - halfHeight],
       preOrder: [
         preOrderAThird - this._windowHeight, preOrderTwoThirds
@@ -186,7 +181,11 @@ let SpendIndex = React.createClass({
       switch (key) {
       case 'design':
       case 'charge':
+      case 'tech':
         bgOffsetY = -bgOffsetY;
+        break;
+      case 'preOrder':
+        bgOffsetY = bgOffsetY*2 - BG_OFFSET_Y_MAX;
         break;
       default:
         break;
@@ -206,49 +205,12 @@ let SpendIndex = React.createClass({
     let newEnteredClasses = {};
 
     let {
-      oneThird: contactlessAThird, twoThirds: contactlessTwoThirds
-    } = this._pageYOffsets.contactless;
-    let {
-      oneThird: physicalCardsAThird, twoThirds: physicalCardsTwoThirds
-    } = this._pageYOffsets.physicalCards;
-    let {
-      oneThird: designAThird, twoThirds: designTwoThirds
-    } = this._pageYOffsets.design;
-    let {
-      oneThird: displayAThird, twoThirds: displayTwoThirds
-    } = this._pageYOffsets.display;
-    let {
-      oneThird: chargeAThird, twoThirds: chargeTwoThirds
-    } = this._pageYOffsets.charge;
-    let {
       oneThird: techAThird, twoThirds: techTwoThirds
     } = this._pageYOffsets.tech;
-    let {
-      oneThird: appAThird, twoThirds: appTwoThirds
-    } = this._pageYOffsets.app;
-    let {
-      oneThird: preOrderAThird, twoThirds: preOrderTwoThirds
-    } = this._pageYOffsets.preOrder;
 
     let ranges = {
       index: [0, this._pageYOffsets.index.twoThirds],
-      contactless: [
-        contactlessAThird - this._windowHeight, contactlessTwoThirds
-      ],
-      physicalCards: [
-        physicalCardsAThird - this._windowHeight,
-        physicalCardsTwoThirds
-      ],
-      design: [designAThird - this._windowHeight, designTwoThirds],
-      display: [
-        displayAThird - this._windowHeight, displayTwoThirds
-      ],
-      charge: [chargeAThird - this._windowHeight, chargeTwoThirds],
-      tech: [techAThird - this._windowHeight, techTwoThirds],
-      app: [appAThird - this._windowHeight, appTwoThirds],
-      preOrder: [
-        preOrderAThird - this._windowHeight, preOrderTwoThirds
-      ]
+      tech: [techAThird - this._windowHeight, techTwoThirds]
     };
 
     for (let key in ranges) {
@@ -299,14 +261,14 @@ let SpendIndex = React.createClass({
   calcPageYOffsets() {
     const KEYS = {
       index: ['twoThirds'],
-      contactless: ['half', 'oneThird', 'twoThirds'],
-      physicalCards: ['half', 'oneThird', 'twoThirds'],
+      contactless: ['half', 'oneThird'],
+      physicalCards: ['half', 'oneThird'],
       measure: ['start', 'twoThirds'],
-      design: ['half', 'oneThird', 'twoThirds'],
-      display: ['half', 'oneThird', 'twoThirds'],
-      charge: ['half', 'oneThird', 'twoThirds'],
-      tech: ['oneThird', 'twoThirds'],
-      app: ['half', 'oneThird', 'twoThirds'],
+      design: ['half', 'oneThird'],
+      display: ['half', 'oneThird'],
+      charge: ['half', 'oneThird'],
+      tech: ['half', 'oneThird', 'twoThirds'],
+      app: ['half', 'oneThird'],
       preOrder: ['oneThird', 'twoThirds']
     };
 
@@ -333,11 +295,21 @@ let SpendIndex = React.createClass({
       });
     }
   },
-  offsetY2Style(offsetY) {
-    return offsetY ? {
-      WebkitTransform: `translate3d(0,${offsetY}%,0)`,
-      transform: `translate3d(0,${offsetY}%,0)`
-    } : null;
+  offsetY2Style(offsetY, opacity = null) {
+    if (offsetY) {
+      let style = {
+        WebkitTransform: `translate3d(0,${offsetY}%,0)`,
+        transform: `translate3d(0,${offsetY}%,0)`
+      };
+
+      if (typeof opacity === 'number') {
+        style.opacity = opacity;
+      }
+
+      return style;
+    } else {
+      return null;
+    }
   },
   pauseIndexVideoAtTime(time) {
     if (Modernizr.video) {
@@ -466,26 +438,19 @@ let SpendIndex = React.createClass({
       design: designBgY,
       display: displayBgY,
       charge: chargeBgY,
+      tech: techBgY,
       app: appBgY,
       preOrder: preOrderBgY
     } = bgYOffsets;
     const {
-      index: indexEnteredClass,
-      contactless: contactlessEnteredClass,
-      physicalCards: physicalCardsEnteredClass,
-      design: designEnteredClass,
-      display: displayEnteredClass,
-      charge: chargeEnteredClass,
-      tech: techEnteredClass,
-      app: appEnteredClass,
-      preOrder: preOrderEnteredClass
+      index: indexEnteredClass, tech: techEnteredClass
     } = enteredClasses;
 
+    let {formatMessage} = this.context.intl;
     let overflowStyle = this._isScreenMd ?
       {overflow: 'hidden'} :
       null;
-
-    let {formatMessage} = this.context.intl;
+    const {BG_OFFSET_Y_MAX} = SpendIndex;
 
     return (
       <div className="SpendIndex">
@@ -554,21 +519,27 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames(
-              'SpendIndex-contactless', contactlessEnteredClass
-            )}
+            className="SpendIndex-contactless"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('contactless')}
           >
             <div className="SpendIndex-contactless-inner">
-              <FormattedHTMLMessage id="index.contactless.header">
-                <header className="SpendIndex-contactless-header" />
-              </FormattedHTMLMessage>
-              <article className="SpendIndex-contactless-article">
-                <Markdown>
-                  {formatMessage({id: 'index.contactless.paragraphs'})}
-                </Markdown>
-              </article>
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(contactlessBgY/2),
+                  (BG_OFFSET_Y_MAX - contactlessBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
+                <FormattedHTMLMessage id="index.contactless.header">
+                  <header className="SpendIndex-contactless-header" />
+                </FormattedHTMLMessage>
+                <article className="SpendIndex-contactless-article">
+                  <Markdown>
+                    {formatMessage({id: 'index.contactless.paragraphs'})}
+                  </Markdown>
+                </article>
+              </div>
             </div>
             <div
               className="SpendIndex-contactless-bg SpendIndex-offsetY"
@@ -578,14 +549,18 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames(
-              'SpendIndex-physicalCards', physicalCardsEnteredClass
-            )}
+            className="SpendIndex-physicalCards"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('physicalCards')}
           >
             <article className="SpendIndex-physicalCards-article">
-              <Markdown>
+              <Markdown
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(physicalCardsBgY/2),
+                  (BG_OFFSET_Y_MAX - physicalCardsBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
                 {formatMessage({id: 'index.physicalCards.article'})}
               </Markdown>
             </article>
@@ -597,17 +572,24 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames('SpendIndex-design', designEnteredClass)}
+            className="SpendIndex-design"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('design')}
           >
             <div className="SpendIndex-design-inner">
-              <h2 className="SpendIndex-design-h2">
-                {formatMessage({id: 'index.design.heading'})}
-              </h2>
-              <p className="SpendIndex-design-p SpendIndex-design-p-last">
-                {formatMessage({id: 'index.design.description'})}
-              </p>
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(designBgY/2), (BG_OFFSET_Y_MAX + designBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
+                <h2 className="SpendIndex-design-h2">
+                  {formatMessage({id: 'index.design.heading'})}
+                </h2>
+                <p className="SpendIndex-design-p SpendIndex-design-p-last">
+                  {formatMessage({id: 'index.design.description'})}
+                </p>
+              </div>
             </div>
             <div
               className="SpendIndex-design-bg SpendIndex-offsetY"
@@ -647,17 +629,24 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames('SpendIndex-display', displayEnteredClass)}
+            className="SpendIndex-display"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('display')}
           >
             <div className="SpendIndex-display-inner">
-              <h2 className="SpendIndex-display-h2">
-                {formatMessage({id: 'index.display.heading'})}
-              </h2>
-              <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                {formatMessage({id: 'index.display.description'})}
-              </p>
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(displayBgY/2), (BG_OFFSET_Y_MAX - displayBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
+                <h2 className="SpendIndex-display-h2">
+                  {formatMessage({id: 'index.display.heading'})}
+                </h2>
+                <p className="SpendIndex-display-p SpendIndex-display-p-last">
+                  {formatMessage({id: 'index.display.description'})}
+                </p>
+              </div>
             </div>
             <div
               className="SpendIndex-display-bg SpendIndex-offsetY"
@@ -667,26 +656,33 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames('SpendIndex-charge', chargeEnteredClass)}
+            className="SpendIndex-charge"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('charge')}
           >
             <div className="SpendIndex-charge-inner">
-              <div className="SpendIndex-charge-content">
-                <h2 className="SpendIndex-charge-h2">
-                  {formatMessage({id: 'index.charge.heading'})}
-                </h2>
-                <p className="SpendIndex-charge-p">
-                  {formatMessage({id: 'index.charge.description'})}
-                </p>
-              </div>
-              <ImageBlock className="SpendIndex-charge-ImageBlock">
-                <RImage
-                  className="SpendIndex-charge-RImage"
-                  src="/images/usbcharge.png" width={291} height={221} />
-              </ImageBlock>
-              <div className="SpendIndex-charge-battery">
-                {formatMessage({id: 'index.charge.batterylife'})}
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(chargeBgY/2), (BG_OFFSET_Y_MAX + chargeBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
+                <div className="SpendIndex-charge-content">
+                  <h2 className="SpendIndex-charge-h2">
+                    {formatMessage({id: 'index.charge.heading'})}
+                  </h2>
+                  <p className="SpendIndex-charge-p">
+                    {formatMessage({id: 'index.charge.description'})}
+                  </p>
+                </div>
+                <ImageBlock className="SpendIndex-charge-ImageBlock">
+                  <RImage
+                    className="SpendIndex-charge-RImage"
+                    src="/images/usbcharge.png" width={291} height={221} />
+                </ImageBlock>
+                <div className="SpendIndex-charge-battery">
+                  {formatMessage({id: 'index.charge.batterylife'})}
+                </div>
               </div>
             </div>
             <div
@@ -748,7 +744,12 @@ let SpendIndex = React.createClass({
                 </div>
               </div>
             </div>
-            <div className="SpendIndex-tech-inner">
+            <div
+              className="SpendIndex-tech-inner SpendIndex-offsetY-opacity"
+              style={this.offsetY2Style(
+                -(techBgY/2), (BG_OFFSET_Y_MAX + techBgY)/BG_OFFSET_Y_MAX
+              )}
+            >
               <h2 className="SpendIndex-tech-h2">
                 {formatMessage({id: 'index.electronicwallet.heading'})}
               </h2>
@@ -759,19 +760,26 @@ let SpendIndex = React.createClass({
           </section>
           {this.renderSecurity()}
           <section
-            className={classNames('SpendIndex-app', appEnteredClass)}
+            className="SpendIndex-app"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('app')}
           >
             <div className="SpendIndex-app-inner">
-              <h2 className="SpendIndex-app-h2">
-                <Logo /> {formatMessage({id: 'index.application.heading'})}
-              </h2>
-              <p className="SpendIndex-app-p">
-                {formatMessage({id: 'index.application.description'})}
-              </p>
-              <div className="SpendIndex-app-stores text-hide">
-                iOS Android
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  -(appBgY/2), (BG_OFFSET_Y_MAX - appBgY)/BG_OFFSET_Y_MAX
+                )}
+              >
+                <h2 className="SpendIndex-app-h2">
+                  <Logo /> {formatMessage({id: 'index.application.heading'})}
+                </h2>
+                <p className="SpendIndex-app-p">
+                  {formatMessage({id: 'index.application.description'})}
+                </p>
+                <div className="SpendIndex-app-stores text-hide">
+                  iOS Android
+                </div>
               </div>
             </div>
             <div
@@ -782,25 +790,31 @@ let SpendIndex = React.createClass({
             </div>
           </section>
           <section
-            className={classNames(
-              'SpendIndex-preOrder', preOrderEnteredClass
-            )}
+            className="SpendIndex-preOrder"
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('preOrder')}
           >
             <div className="SpendIndex-preOrder-inner">
-              <h2 className="SpendIndex-preOrder-h2">
-                {formatMessage({id: 'index.preorder.heading'})}<br />
-                <em className="SpendIndex-preOrder-h2-em">{formatMessage({id: 'index.preorder.description'})}</em>
-              </h2>
-              <ImageBlock
-                className="SpendIndex-preOrder-ImageBlock text-center"
+              <div
+                className="SpendIndex-offsetY-opacity"
+                style={this.offsetY2Style(
+                  Math.min(-(preOrderBgY/2), 0),
+                  (BG_OFFSET_Y_MAX - preOrderBgY)/BG_OFFSET_Y_MAX
+                )}
               >
-                <Image src="/images/fin-spend-2.png" width={293} height={235} />
-              </ImageBlock>
-              <LinkBlock className="SpendIndex-preOrder-LinkBlock">
-                <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">{formatMessage({id: 'index.button.preorder'})}</a>
-              </LinkBlock>
+                <h2 className="SpendIndex-preOrder-h2">
+                  {formatMessage({id: 'index.preorder.heading'})}<br />
+                  <em className="SpendIndex-preOrder-h2-em">{formatMessage({id: 'index.preorder.description'})}</em>
+                </h2>
+                <ImageBlock
+                  className="SpendIndex-preOrder-ImageBlock text-center"
+                >
+                  <Image src="/images/fin-spend-2.png" width={293} height={235} />
+                </ImageBlock>
+                <LinkBlock className="SpendIndex-preOrder-LinkBlock">
+                  <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">{formatMessage({id: 'index.button.preorder'})}</a>
+                </LinkBlock>
+              </div>
             </div>
             <div className="SpendIndex-preOrder-bg">
               <div

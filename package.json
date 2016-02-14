@@ -24,6 +24,7 @@
     "express": "~4.13.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "intl": "^1.0.1",
+    "is-nan": "^1.2.1",
     "isomorphic-fetch": "^2.2.0",
     "jade": "~1.11.0",
     "lodash": "^3.10.1",
