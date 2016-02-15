@@ -2,8 +2,6 @@ $SpendIndex-link-bg: #242424;
 $SpendIndex-link-color: #d3d3d3;
 $SpendIndex-link-preOrder-bg: #4487ff;
 $SpendIndex-link-preOrder-color: #f7f7f7;
-$SpendIndex-offsetY-md-transitionDuration: 450ms;
-$SpendIndex-offsetY-md-transition: transform $SpendIndex-offsetY-md-transitionDuration $CUBIC-BEZIER-OUT-SINE;
 
 $SpendIndex-index-bg: #fff;
 $SpendIndex-h1-Logo-color: #3a3a3a;
@@ -55,10 +53,13 @@ $SpendIndex-app-p-color: #767676;
 $SpendIndex-preOrder-bg: #fff;
 $SpendIndex-preOrder-h2-color: #5a5a5a;
 
+$SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
+
 $SpendIndex-link-video-h2-md-anim: slideDown 1s 2s both;
 $SpendIndex-video-LinkBlock-md-anim: slideUp 1s 2s both;
 $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
-$SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
+
+$SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 
 .SpendIndex-container {
   padding-right: 0;
@@ -733,23 +734,18 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     margin-left: auto;
     overflow: visible;
   }
-
+  .SpendIndex-preOrder-LinkBlock {
+    text-align: left;
+  }
   .SpendIndex-link {
     padding: 23px 46px;
     border-radius: 31.5px;
     font-size: 13.5px;
     line-height: 17px;
   }
-
   .SpendIndex-offsetY {
-    transition: $SpendIndex-offsetY-md-transition;
+    transition: transform 450ms $CUBIC-BEZIER-OUT-SINE;
   }
-  .SpendIndex-offsetY-opacity {
-    transition:
-      $SpendIndex-offsetY-md-transition,
-      opacity $SpendIndex-offsetY-md-transitionDuration $CUBIC-BEZIER-OUT-SINE;
-  }
-
   .SpendIndex-index {
     height: 806px;
   }
@@ -821,7 +817,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     height: 628px;
     padding-top: 0;
   }
-  .SpendIndex-contactless-inner {
+  @include enter(
+    "SpendIndex-contactless-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-contactless-entered"
+  ) {
     position: absolute;
     top: 45.45454545454545%;
     left: 6.44216691068814%;
@@ -874,7 +873,11 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     height: 724px;
     padding-top: 0;
   }
-  .SpendIndex-physicalCards-article {
+  @include enter(
+    "SpendIndex-physicalCards-article",
+    $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-physicalCards-entered"
+  ) {
     position: absolute;
     top: 57.081545064377686%;
     right: 9.5900439238653%;
@@ -914,7 +917,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     @include background-size(auto);
     background-repeat: repeat;
   }
-  .SpendIndex-design-inner {
+  @include enter(
+    "SpendIndex-design-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-design-entered"
+  ) {
     position: absolute;
     top: 74.62915601023018%;
     right: 8.711566617862372%;
@@ -1006,18 +1012,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     height: 635px;
     padding-top: 0;
   }
-  .SpendIndex-display:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: -20px;
-    left: 0;
-    @include background-image("led-background.png");
-    @include background-size(contain);
-    background-position: center bottom;
-  }
-  .SpendIndex-display-inner {
+  @include enter(
+    "SpendIndex-display-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-display-entered"
+  ) {
     position: absolute;
     top: 50.260416666666664%;
     left: 9.224011713030746%;
@@ -1051,7 +1049,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     height: 644px;
     padding: 0;
   }
-  .SpendIndex-charge-inner {
+  @include enter(
+    "SpendIndex-charge-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-charge-entered"
+  ) {
     position: absolute;
     top: 52.38095238095238%;
     right: 8.199121522693996%;
@@ -1111,6 +1112,7 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     );
     margin-left: 7.530120481927711%;
   }
+
   @include enter(
     "SpendIndex-tech-bg-captions",
     $SpendIndex-tech-bg-captions-md-anim,
@@ -1197,7 +1199,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
       251, 17
     );
   }
-  .SpendIndex-tech-inner {
+  @include enter(
+    "SpendIndex-tech-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-tech-entered"
+  ) {
     width: auto;
     margin-top: 134px;
   }
@@ -1239,7 +1244,21 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     @include background-size(contain);
     background-position: center bottom;
   }
-  .SpendIndex-app-inner {
+  .SpendIndex-display:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -20px;
+    left: 0;
+    @include background-image("led-background.png");
+    @include background-size(contain);
+    background-position: center bottom;
+  }
+  @include enter(
+    "SpendIndex-app-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-app-entered"
+  ) {
     position: absolute;
     top: 44.832605531295485%;
     right: 10.61493411420205%;
@@ -1284,7 +1303,10 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
     height: 897px;
     padding: 0;
   }
-  .SpendIndex-preOrder-inner {
+  @include enter(
+    "SpendIndex-preOrder-inner", $SpendIndex-section-inner-md-anim,
+    "is-SpendIndex-preOrder-entered"
+  ) {
     position: absolute;
     top: 43.159609120521175%;
     left: 11.273792093704246%;
@@ -1305,7 +1327,6 @@ $SpendIndex-tech-bg-captions-md-anim: fadeIn 500ms 500ms both;
   }
   .SpendIndex-preOrder-LinkBlock {
     margin-top: 100px;
-    text-align: left;
   }
   .SpendIndex-preOrder-bg {
     display: block;

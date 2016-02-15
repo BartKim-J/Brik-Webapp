@@ -61,7 +61,7 @@ let SpendTeam = React.createClass({
             <FormattedHTMLMessage id="team.title">
               <h1 className="SpendTeam-h1" />
             </FormattedHTMLMessage>
-            <p className="SpendTeam-h1-p">
+            <p className="SpendTeam-h1-p visible-md-inline visible-lg-inline">
               {formatMessage({id: 'team.description'})}
             </p>
           </header>

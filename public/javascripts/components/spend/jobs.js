@@ -46,7 +46,7 @@ let SpendJobs = React.createClass({
             <FormattedHTMLMessage id="jobs.title">
               <h1 className="SpendJobs-h1" />
             </FormattedHTMLMessage>
-            <p className="SpendJobs-h1-p">
+            <p className="SpendJobs-h1-p visible-md-inline visible-lg-inline">
               {formatMessage({id: 'jobs.description'})}
             </p>
           </header>

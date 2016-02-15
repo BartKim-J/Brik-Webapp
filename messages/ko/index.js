@@ -49,7 +49,7 @@ module.exports = messages.merge({
     'faq.emailUs': `이메일 보내기`,
 
     'jobs.title': `<span class="SpendLogo">spend.</span> <span class="visible-md-inline visible-lg-inline">의 가족이 되어주세요.</span>`,
-    'jobs.description': `일 그 이상의 가치를 선사합니다.`,
+    'jobs.description': ` `,
     'jobs.whatIsSpend': `<span class="SpendLogo">spend.</span>와 함께하면 어떨까요?`,
     'jobs.weAreLooking': `즐거운 도전에 함께하고 싶으신 분이라면 주저말고 연락주세요.`,
     'jobs.whatIsSpendDescription': `좋은 기술을 만들어 많은 사람들의 삶을 보다 더 가치있게 만드는 것, 그것이 우리가 존재하는 이유이자 목표입니다. 직접 만드는 서비스와 제품이 사람들의 손에서 편리함으로 변할 때 진정한 성취감을 느낍니다.`,
@@ -58,7 +58,7 @@ module.exports = messages.merge({
     'jobs.openRoles': `채용정보`,
 
     'team.title': `<span class="SpendLogo">spend.</span>팀을 만나보세요.`,
-    'team.description': `우리는 기술기반 IoT 스타트업입니다.`,
+    'team.description': ` `,
     'team.joinTheTeam': `Join the Team`,
     'team.weAreHiring': `함께할 가족을 찾습니다.`,
     'team.viewOpenings': `채용정보 보기`,

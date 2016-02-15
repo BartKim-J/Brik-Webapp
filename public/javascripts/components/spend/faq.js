@@ -44,7 +44,7 @@ let SpendFaq = React.createClass({
             <FormattedHTMLMessage id="faq.title">
               <h1 className="SpendFaq-h1" />
             </FormattedHTMLMessage>
-            <p className="SpendFaq-h1-p">
+            <p className="SpendFaq-h1-p visible-md-inline visible-lg-inline">
               {formatMessage({id: 'faq.description'})}
             </p>
           </header>
