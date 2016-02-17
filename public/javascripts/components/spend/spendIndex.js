@@ -620,22 +620,11 @@ let SpendIndex = React.createClass({
             className="SpendIndex-measure text-center"
             ref={this.makeSectionRefsHandler('measure')}
           >
-
-              <FormattedHTMLMessage id="index.measure.heading">
-                <h2 className="SpendIndex-measure-h2" />
-              </FormattedHTMLMessage>
+            <FormattedHTMLMessage id="index.measure.heading">
+              <h2 className="SpendIndex-measure-h2" />
+            </FormattedHTMLMessage>
             <div className="SpendIndex-measure-sideView">
-              <video
-                className="SpendIndex-measure-sideView-video"
-                width="1280" height="906"
-                poster="//dummyimage.com/640x453/ff/ff.png"
-                onLoadedMetadata={this.handleSideViewVideoLoadedMetadata}
-                ref={ref => {
-                  this._sideViewVideoRef = ref;
-                }}
-              >
-                <source src="/videos/sideview2_h.264.mp4" type="video/mp4" />
-              </video>
+                <img src="/images/side_view.png" className="SpendIndex-measure-sideView-video"/>
             </div>
             <div className="SpendIndex-measure-numbers">
               <div className="SpendIndex-measure-numbers-big">
@@ -790,8 +779,8 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-preOrder-inner">
               <h2 className="SpendIndex-preOrder-h2">
-                Worldwide Shipping<br />
-                <em className="SpendIndex-preOrder-h2-em">Pre-Order Coming Soon</em>
+                {formatMessage({id: 'index.preorder.heading'})}<br />
+                <em className="SpendIndex-preOrder-h2-em">{formatMessage({id: 'index.preorder.description'})}</em>
               </h2>
               <ImageBlock
                 className="SpendIndex-preOrder-ImageBlock text-center"

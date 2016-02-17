@@ -8,7 +8,7 @@ module.exports = messages.merge({
       </h2>`,
     'index.contactless.paragraphs': /* Markdown */ `NFC가 아닙니다. 스펜드월렛의 자체 개발된 MST 기술은 눈 깜짝할 사이에 자기장을 발생시켜 카드리더기에 결제신호를 송출합니다. 마치 일반카드로 긁는 것과 동일한 신호를 전달하기 때문에 모든 카드리더기에서 사용할 수 있습니다. 이제 어디서나 간편하게 터치로 결제하세요.`,
     'index.formMessageBoard': `지금 베타테스트를 신청하세요!`,
-    'index.physicalCards.article': /* Markdown */ `## 지갑, 그 본연의 역할에 충실한<br>스마트지갑.
+    'index.physicalCards.article': /* Markdown */ `## 지갑, 그 본연의 역할에 충실한 스마트지갑.
 
   스펜드월렛은 당신을 더 멋있고 스마트하게 바꿔줄 진정한 전자지갑입니다. 보유하고 있는 모든 카드를 합칠 수 있고, 후면부에는 신분증, 명함 등을 담을 수 있는 포켓이  있습니다. 그 어떤 지갑보다 얇지만, 그 어떤 지갑보다 많은 신용카드를 수납할 수 있습니다.`,
 
@@ -21,7 +21,7 @@ module.exports = messages.merge({
     'index.display.heading': `감춰진 LED 디스플레이.`,
     'index.display.description': `사용하지 않을 때엔 보이지 않는 디스플레이가 당신이 필요로할 때 아름다운 폰트로 선택된 카드와 상태를 보여줍니다.`,
     'index.charge.heading': `충전은 간단하게.`,
-    'index.charge.description': `스펜드월렛의 배터리는 일상적인 사용 시 최대 4주까지 지속됩니다.<br />충전이 필요할 땐 제공된 마이크로USB 케이블을 사용해 충전해주세요.`,
+    'index.charge.description': `스펜드월렛의 배터리는 일상적인 사용 시 최대 4주까지 지속됩니다. 충전이 필요할 땐 제공된 마이크로USB 케이블을 사용해 충전해주세요.`,
     'index.charge.batterylife': `최대 4주의 배터리 사용량`,
     'index.electronicwallet.heading': `진정한 전자지갑의 모습.`,
     'index.electronicwallet.description': `기존의 무겁고 두꺼웠던 지갑 대신, 스마트한 전자지갑의 시대가 열립니다.<br />스펜드월렛은 당신의 모든 카드를 통합해줄 진정한 전자지갑입니다.`,
@@ -71,6 +71,6 @@ module.exports = messages.merge({
     'footer.jobs': `Jobs`,
     'footer.faq': `FAQ`,
     'footer.legal': `Legal`,
-    'footer.copyrights': `2016 X Lab Inc. All Rights Reserved.`
+    'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`
 
 });
