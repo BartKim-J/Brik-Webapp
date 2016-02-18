@@ -69,7 +69,6 @@ app.use((req, res, next) => {
 });
 
 // non-404 error handlers
-
 app.use((err, req, res, next) => {
   let {status, message, stack} = err;
   res.status(status || 500);

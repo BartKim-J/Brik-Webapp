@@ -8,7 +8,7 @@ module.exports = Immutable({
 
 #### 1. Purpose
 
-These Terms of Use are created and maintained by The X Engineering Company (referred to below as “X Engineering,” “we,” and “us”) in order to prescribe that your use of our site(http://www.spendwallet.com), SpendWallet mobile application as well as SpendWallet, which is a physical electronic wallet that combines all types of cards, is subject to these Terms of Use and all applicable laws, rules and regulations.
+These Terms of Use are created and maintained by The X Engineering Company (referred to below as “X Engineering,” “we,” and “us”) in order to prescribe that your use of our site(http://www.spendwallet.com), Spendwallet mobile application as well as Spendwallet, which is a physical electronic wallet that combines all types of cards, is subject to these Terms of Use and all applicable laws, rules and regulations.
 
 ##### 2. Definition
 1. The definition of terminology used in this term is following:
@@ -17,25 +17,25 @@ These Terms of Use are created and maintained by The X Engineering Company (refe
         - www.spendwallet.com 
         - any other sites we provide in the future after notification
   1. We sell the following products
-    - SpendWallet (offline electronic payment device)
+    - Spendwallet (offline electronic payment device)
     - any other products we provide in the future after notification
   1. A product status of Pre-Order means that the product is currently in production, or the process of being created. It can be reserved or pre-ordered but will not ship out to you until it arrives into our warehouse.
-  1. Member means a person who signs up as a Member by creating an account at SpendWallet website or mobile application and accepting these Terms of Use and Privacy Policy.
-  1. Buyer means a Member who buys SpendWallet made available for sale on the Sites and retail shops.
+  1. Member means a person who signs up as a Member by creating an account at Spendwallet website or mobile application and accepting these Terms of Use and Privacy Policy.
+  1. Buyer means a Member who buys Spendwallet made available for sale on the Sites and retail shops.
   1. Email means electronic mail address that member enrolled and we approved for the purpose of identifying the member and using the service and product.
-  1. SpendWallet, which is developed by X Engineering, is the offline electronic payment device through which buyers can store the magnetic striped cards, make a payment, and accumulate points.
-  1. Card reader, one of products that is delivered along with SpendWallet, is a device used for storing the magnetic cards on SpendWallet.
+  1. Spendwallet, which is developed by X Engineering, is the offline electronic payment device through which buyers can store the magnetic striped cards, make a payment, and accumulate points.
+  1. Card reader, one of products that is delivered along with Spendwallet, is a device used for storing the magnetic cards on Spendwallet.
   1. A payment terminal, also known as a point of sale terminal, is a device which interfaces with payment cards to make electronic funds transfers.
-  1. A mobile communication device is wireless computing device that can install SpendWallet mobile application.
+  1. A mobile communication device is wireless computing device that can install Spendwallet mobile application.
   1. Bluetooth is a wireless technology for exchanging data over short distances.
-  1. Card registration is a process to store the magnetic striped cards on SpendWallet through  card reader.
-  1. Payment is a service to make a payment with the cards registered on SpendWallet.
+  1. Card registration is a process to store the magnetic striped cards on Spendwallet through  card reader.
+  1. Payment is a service to make a payment with the cards registered on Spendwallet.
   1. Accumulation is a service to earn points or mileage for rewards.
-  1. Barcode Service is a mobile card service for payment and accumulation not through SpendWallet but through SpendWallet mobile application.
-  1. Charging is to recharge battery for the use of SpendWallet.
-  1. Malfunctioning product means SpendWallet that is not in working order. It can be divided in two parts.
-    - Inferior product means SpendWallet that is not in working order due to its functional problem.
-    - Damaged product means SpendWallet that is broken, cracked, or scratched due to buyer's intention or negligence.
+  1. Barcode Service is a mobile card service for payment and accumulation not through Spendwallet but through Spendwallet mobile application.
+  1. Charging is to recharge battery for the use of Spendwallet.
+  1. Malfunctioning product means Spendwallet that is not in working order. It can be divided in two parts.
+    - Inferior product means Spendwallet that is not in working order due to its functional problem.
+    - Damaged product means Spendwallet that is broken, cracked, or scratched due to buyer's intention or negligence.
   1. Location information means information, which is collected according to Framework Act on Telecommunication, about the location where objects with mobility or individual stayed for a certain period of time
 1. The terminology that is not defined here will follow related statute.
 
@@ -48,14 +48,14 @@ These Terms of Use are created and maintained by The X Engineering Company (refe
 
 #### 4. Service
 We provide following services:
-1. Payment Service: Buyer can store the magnetic striped cards, make a payment and accumulate points with SpendWallet - an offline electronic device - that is purchased at SpendWallet website or approved stores.
-1. Mobile Card Service: Through SpendWallet mobile application, buyer can use the mobile card service with which buyer can make a barcode card payment and accumulation.
+1. Payment Service: Buyer can store the magnetic striped cards, make a payment and accumulate points with Spendwallet - an offline electronic device - that is purchased at Spendwallet website or approved stores.
+1. Mobile Card Service: Through Spendwallet mobile application, buyer can use the mobile card service with which buyer can make a barcode card payment and accumulation.
 
 ### 2. SPENDWALLET PRODUCT AND SERVICE
 
 #### 5. Service Use Contract
-1. Buyer can buy SpendWallet either at our website or at approved stores. In case the use of SpendWallet is restricted due to technical issue, we notify customer of the issue via our website or email.
-1. SpendWallet purchased at affiliated company follows the terms established by the affiliated company. Thus, you are entitled to the service provided not only by us but also by the affiliated company.
+1. Buyer can buy Spendwallet either at our website or at approved stores. In case the use of Spendwallet is restricted due to technical issue, we notify customer of the issue via our website or email.
+1. Spendwallet purchased at affiliated company follows the terms established by the affiliated company. Thus, you are entitled to the service provided not only by us but also by the affiliated company.
 
 #### 6. Registration
 1. By registering here and creating your account, you can access different services that are offered by us without having to register for each service separately. If a service you wish to subscribe to has additional terms and conditions, you will be asked to accept these separately.
@@ -66,18 +66,18 @@ We provide following services:
 1. You can update your personal details by accessing your account and making any necessary changes; this will update your details across all services that you have subscribed to. You are responsible for any disadvantages occurred by personal details that are not accurately updated.
 
 #### 7. Purchase
-1. When you purchase a Product, an item sold by SpendWallet, Inc. or any other SpendWallet entity that sells products, clicking the “Complete Order” button constitutes an offer to buy the Products. Your purchase is not complete until we email you to confirm the transaction. We reserve the right to reject your offer and not conclude a contract with you.
+1. When you purchase a Product, an item sold by Spendwallet, Inc. or any other Spendwallet entity that sells products, clicking the “Complete Order” button constitutes an offer to buy the Products. Your purchase is not complete until we email you to confirm the transaction. We reserve the right to reject your offer and not conclude a contract with you.
 1. You are responsible for any disadvantages occurred by personal details you entered in regard to payment.
 1. If you wish to cancel your order before delivery or change the quantity of the Products purchased or the delivery address, please contact us as soon as possible. Once that window closes, we cannot make changes to your order, although you may be eligible to make returns as outlined in these Terms.
 
 #### 8. Returns
 1. Most Products may be returned to us, but certain Products are final sale and may not be returned unless defective, as set forth in the Return Policy and the offer’s deal terms.
-SpendWallet takes legal title to returned Products only after the Products arrive and are processed at the designated returns destination. SpendWallet reserves the right, but has no obligation, to issue a refund without requiring a return. In this situation, SpendWallet does not take title to the returned Products.
-1. For purchases that qualify for a refund, SpendWallet  will issue a refund within 14 days after processing of a properly returned shipment. If stated, applicable shipping charges and restocking fees may be deducted from your refund.
-1. We reserve the right to refuse to issue a refund and to recover the cost of the return delivery from you in the event that any Products you return: (i) are not eligible for return, in accordance with the SpendWallet Return Policy or the offer’s deal terms, or (ii) are found to have suffered damage after delivery to you or have been misused or used other than in accordance with the Product directions or instructions
+Spendwallet takes legal title to returned Products only after the Products arrive and are processed at the designated returns destination. Spendwallet reserves the right, but has no obligation, to issue a refund without requiring a return. In this situation, Spendwallet does not take title to the returned Products.
+1. For purchases that qualify for a refund, Spendwallet  will issue a refund within 14 days after processing of a properly returned shipment. If stated, applicable shipping charges and restocking fees may be deducted from your refund.
+1. We reserve the right to refuse to issue a refund and to recover the cost of the return delivery from you in the event that any Products you return: (i) are not eligible for return, in accordance with the Spendwallet Return Policy or the offer’s deal terms, or (ii) are found to have suffered damage after delivery to you or have been misused or used other than in accordance with the Product directions or instructions
 
 #### 9. Card Registration
-1. You can store following cards on SpendWallet
+1. You can store following cards on Spendwallet
   1. Credit card
   1. Debit card
   1. Point card
@@ -85,26 +85,26 @@ SpendWallet takes legal title to returned Products only after the Products arriv
   1. Barcode type of card
   1. Any magnetic striped card
 1. You can store cards by following steps below
-  1. Install SpendWallet mobile application on smartphone
-  1. Connect Smartphone and SpendWallet via Bluetooth
-  1. Connect SpendWallet reader to smartphone's headphone jack
-  1. Swipe magnetic striped cards through SpendWallet reader
+  1. Install Spendwallet mobile application on smartphone
+  1. Connect Smartphone and Spendwallet via Bluetooth
+  1. Connect Spendwallet reader to smartphone's headphone jack
+  1. Swipe magnetic striped cards through Spendwallet reader
 1. You cannot enroll a card that is not magnetic striped type.
 
 #### 10. Usage Restriction
 In addition to other restrictions set forth in these Terms of Use, You agree that:
-1. We reserve the right at all times (but will not have an obligation) to remove or refuse to suspend or terminate users. We also reserve the right to access, read, preserve, and disclose any information as we reasonably believe is necessary to (i) satisfy any applicable law, regulation, legal process or governmental request, (ii) enforce the Terms, including investigation of potential violations hereof, (iii) detect, prevent, or otherwise address fraud, security or technical issues, (iv) respond to user support requests, or (v) protect the rights, property or safety of SpendWallet, its users and the public.
-1. You may not do any of the following while accessing or using the Products and the Services: (i) fraudulent use of your SpendWallet after intentionally enrolling other’s credit or debit card; (ii) improper use of other’s SpendWallet (iii) interfere with, or disrupt, (or attempt to do so), the access of any user, host or network, including, without limitation, sending a virus, overloading, flooding, spamming, mail-bombing the Services, or by scripting the creation of Content in such a manner as to interfere with or create an undue burden on the Services.
+1. We reserve the right at all times (but will not have an obligation) to remove or refuse to suspend or terminate users. We also reserve the right to access, read, preserve, and disclose any information as we reasonably believe is necessary to (i) satisfy any applicable law, regulation, legal process or governmental request, (ii) enforce the Terms, including investigation of potential violations hereof, (iii) detect, prevent, or otherwise address fraud, security or technical issues, (iv) respond to user support requests, or (v) protect the rights, property or safety of Spendwallet, its users and the public.
+1. You may not do any of the following while accessing or using the Products and the Services: (i) fraudulent use of your Spendwallet after intentionally enrolling other’s credit or debit card; (ii) improper use of other’s Spendwallet (iii) interfere with, or disrupt, (or attempt to do so), the access of any user, host or network, including, without limitation, sending a virus, overloading, flooding, spamming, mail-bombing the Services, or by scripting the creation of Content in such a manner as to interfere with or create an undue burden on the Services.
 
-#### 11. SpendWallet Payment/Accumulation
-1. As you bring your SpendWallet near to the POS and push SPEND logo button, you can make a payment or accumulate points.
-1. With the help of the LED display as well as the left and right button, you may select your preferred card on SpendWallet and make a payment or accumulate points.
+#### 11. Spendwallet Payment/Accumulation
+1. As you bring your Spendwallet near to the POS and push SPEND logo button, you can make a payment or accumulate points.
+1. With the help of the LED display as well as the left and right button, you may select your preferred card on Spendwallet and make a payment or accumulate points.
 
 #### 12. Recharge
-1. When SpendWallet’s battery goes below 10%, the LED display on SpendWallet will inform you of the need for recharging.
-1. When sign for recharging is displayed, start recharging by connecting micro 5-pin USB cable to SpendWallet.
+1. When Spendwallet’s battery goes below 10%, the LED display on Spendwallet will inform you of the need for recharging.
+1. When sign for recharging is displayed, start recharging by connecting micro 5-pin USB cable to Spendwallet.
 1. During recharge, the status is shown on LED display.
-1. When recharge is completed, LED display is turned off and SpendWallet is ready to be used.
+1. When recharge is completed, LED display is turned off and Spendwallet is ready to be used.
 
 ### 3. MISCELLANEOUS
 

@@ -2,7 +2,7 @@ let satelize = require('satelize');
 
 function lang(req, res, next) {
   let {ip, query} = req;
-  console.log('hej2 ' + ip);
+
   if (process.env.NODE_ENV !== 'production' && query.lang) {
     res.lang = query.lang;
     next();

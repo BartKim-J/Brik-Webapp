@@ -4,7 +4,7 @@ let Immutable = require('seamless-immutable');
 
 module.exports = Immutable([{
   category: `Hardware`,
-  desc: `*Firmware Developer(1 person)* - looking for an engineer who can program a core chip for SpendWallet. Experience in Bluetooth, C language, and KEIL would be welcomed.`
+  desc: `*Firmware Developer(1 person)* - looking for an engineer who can program a core chip for Spendwallet. Experience in Bluetooth, C language, and KEIL would be welcomed.`
 }, {
   category: `Server`,
   desc: `*Server Developer(1 person)* - looking for an engineer who can manage a server and establish a security system.`

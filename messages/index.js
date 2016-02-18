@@ -21,7 +21,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.heading': `Spend everywhere with one device`,
   'index.design.heading': `Splendid Design`,
   'index.design.description': `The frame and body is made out of aluminum and plastic. This makes the device strong and durable enough for everyday use in your pocket. Spendwallet has been engineered to seamlessly work with your smooth payment experience.`,
-  'index.measure.heading': `Slim. Solid.<br /> SpendWallet`,
+  'index.measure.heading': `Slim. Solid.<br /> Spendwallet`,
   'index.measure.dimensions': `6.0mm / 65grams`,
   'index.measure.dimensions2': `Thickness: 6.0mm Dimension: 60.5mm x 105mm`,
   'index.display.heading': `Hidden LED Display`,
