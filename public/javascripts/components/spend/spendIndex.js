@@ -42,7 +42,7 @@ let SpendIndex = React.createClass({
       description: 'Protect your card data\nwith passcode or fingerprint'
     }, {
       key: 'encrypt',
-      name: 'Bank Level Encyrption',
+      name: 'Bank Level Encryption',
       description: '256 bit encryption\nfor all your personal data'
     }]
   },

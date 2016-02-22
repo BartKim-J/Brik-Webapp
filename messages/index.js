@@ -35,7 +35,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.security.alert.description': `Automatic lock &\nself-destruction when lost`,
   'index.security.passcode.name': `Security Passcode`,
   'index.security.passcode.description': `Protect your card data\nwith passcode or fingerprint`,
-  'index.security.encrypt.name': `Bank Level Encyrption`,
+  'index.security.encrypt.name': `Bank Level Encryption`,
   'index.security.encrypt.description': `256 bit encryption\nfor all your personal data`,
   'index.application.heading': `application`,
   'index.application.description': `Manage credit cards, save barcodes & coupons, and see expenditure analysis on your smartphone through Spend mobile application.`,

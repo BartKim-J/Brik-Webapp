@@ -460,7 +460,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-display-inner {
   @include r-background-image(
-    "LED-matrix-display.png", "LED-matrix-display@2x.png",
+    "LED-matrix-display.png",
+    "LED-matrix-display.png",
     138, 13
   );
 }
@@ -472,7 +473,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-mfe-inner {
   @include r-background-image(
-    "MFE-antenna.png", "MFE-antenna@2x.png", 135, 7
+    "MFE-antenna.png",
+    "MFE-antenna.png", 135, 7
   );
 }
 .SpendIndex-tech-bg-caption-battery {
@@ -483,7 +485,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-battery-inner {
   @include r-background-image(
-    "rechargeable-battery.png", "rechargeable-battery@2x.png",
+    "rechargeable-battery.png",
+    "rechargeable-battery.png",
     119, 9
   );
 }
@@ -495,7 +498,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-touch-inner {
   @include r-background-image(
-    "touch-sensors.png", "touch-sensors@2x.png", 152, 12
+    "touch-sensors.png",
+    "touch-sensors.png", 152, 12
   );
 }
 .SpendIndex-tech-bg-caption-usb {
@@ -506,7 +510,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-usb-inner {
   @include r-background-image(
-    "micro-USB.png", "micro-USB@2x.png", 135, 11
+    "micro-USB.png",
+    "micro-USB.png", 135, 11
   );
 }
 .SpendIndex-tech-bg-caption-vibration {
@@ -517,7 +522,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-vibration-inner {
   @include r-background-image(
-    "vibration-feedback.png", "vibration-feedback@2x.png",
+    "vibration-feedback.png",
+    "vibration-feedback.png",
     144, 8
   );
 }
@@ -529,7 +535,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-energy-inner {
   @include r-background-image(
-    "bluetooth-low-energy.png", "bluetooth-low-energy@2x.png",
+    "bluetooth-low-energy.png",
+    "bluetooth-low-energy.png",
     182, 43
   );
 }
@@ -1130,7 +1137,8 @@ h1, h2, p {
   }
   .SpendIndex-tech-bg-caption-display-inner {
     @include r-background-image-update(
-      "LED-matrix-display-md.png", "LED-matrix-display-md@2x.png",
+      "LED-matrix-display-md.png",
+      "LED-matrix-display-md.png",
       286, 15
     );
   }
@@ -1143,7 +1151,8 @@ h1, h2, p {
   }
   .SpendIndex-tech-bg-caption-mfe-inner {
     @include r-background-image-update(
-      "MFE-antenna-md.png", "MFE-antenna-md@2x.png", 95, 115
+      "MFE-antenna-md.png",
+      "MFE-antenna-md.png", 95, 115
     );
   }
   .SpendIndex-tech-bg-caption-battery {
@@ -1155,7 +1164,7 @@ h1, h2, p {
   .SpendIndex-tech-bg-caption-battery-inner {
     @include r-background-image-update(
       "rechargeable-battery-md.png",
-      "rechargeable-battery-md@2x.png",
+      "rechargeable-battery-md.png",
       317, 15
     );
   }
@@ -1166,7 +1175,8 @@ h1, h2, p {
   }
   .SpendIndex-tech-bg-caption-touch-inner {
     @include r-background-image-update(
-      "touch-sensors-md.png", "touch-sensors-md@2x.png", 264, 15
+      "touch-sensors-md.png",
+      "touch-sensors-md.png", 264, 15
     );
   }
   .SpendIndex-tech-bg-caption-usb {
@@ -1177,7 +1187,8 @@ h1, h2, p {
   }
   .SpendIndex-tech-bg-caption-usb-inner {
     @include r-background-image-update(
-      "micro-USB-md.png", "micro-USB-md@2x.png", 74, 116
+      "micro-USB-md.png",
+      "micro-USB-md.png", 74, 116
     );
   }
   .SpendIndex-tech-bg-caption-vibration {
@@ -1187,7 +1198,8 @@ h1, h2, p {
   }
   .SpendIndex-tech-bg-caption-vibration-inner {
     @include r-background-image-update(
-      "vibration-feedback-md.png", "vibration-feedback-md@2x.png",
+      "vibration-feedback-md.png",
+      "vibration-feedback-md.png",
       278, 13
     );
   }
@@ -1199,7 +1211,7 @@ h1, h2, p {
   .SpendIndex-tech-bg-caption-energy-inner {
     @include r-background-image-update(
       "bluetooth-low-energy-md.png",
-      "bluetooth-low-energy-md@2x.png",
+      "bluetooth-low-energy-md.png",
       251, 17
     );
   }

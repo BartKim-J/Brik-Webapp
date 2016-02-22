@@ -10,7 +10,7 @@ module.exports = Immutable({
 
 These Terms of Use are created and maintained by The X Engineering Company (referred to below as “X Engineering,” “we,” and “us”) in order to prescribe that your use of our site(http://www.spendwallet.com), Spendwallet mobile application as well as Spendwallet, which is a physical electronic wallet that combines all types of cards, is subject to these Terms of Use and all applicable laws, rules and regulations.
 
-##### 2. Definition
+#### 2. Definition
 1. The definition of terminology used in this term is following:
   1. We operate the following sites
     - www.xengineering.co 

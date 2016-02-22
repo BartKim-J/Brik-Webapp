@@ -59,7 +59,7 @@ module.exports = Immutable({
     title: `Shipment`,
     entries: [{
       question: `When will I get my Spendwallet?`,
-      answer: `You will receive Spendwallet within 3 months. Though, we will try our best to ship the product to you as soon as possible.`
+      answer: `You will receive Spendwallet within 3 months. Though, we will try our best to ship the product to you as soon as possible. -> We estimate shipping no later than by April 2016.`
     }, {
       question: `Do you ship internationally?`,
       answer: `We do ship internationally, but shipping cost will vary depending on countries.`
