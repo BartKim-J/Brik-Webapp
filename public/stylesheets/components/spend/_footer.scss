@@ -4,6 +4,18 @@ $SpendFooter-link-color: #a6a6a6;
 $SpendFooter-copyrights-color: #919191;
 $SpendFooter-SocialLinks-link-color: #777;
 
+.SpendFooter-LangButton {
+    background-color: transparent;
+    width: 151px;
+    height: 37px;
+    border: solid 1px #474747;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #878787;
+    margin-top: 25px;
+}
+
 .SpendFooter {
   position: absolute;
   right: 0;
@@ -48,8 +60,7 @@ $SpendFooter-SocialLinks-link-color: #777;
   letter-spacing: 0.3px;
 }
 .SpendFooter-SocialLinks {
-  display: inline-block;
-  margin-top: 37px;
+  margin-top: 25px;
   font-size: 22px;
 }
 .SpendFooter-SocialLinks-link {
@@ -97,6 +108,6 @@ $SpendFooter-SocialLinks-link-color: #777;
   }
   .SpendFooter-SocialLinks {
     display: block;
-    margin-top: 15px;
+    margin-top: 25px;
   }
 }

@@ -41,6 +41,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.application.description': `Manage credit cards, save barcodes & coupons, and see expenditure analysis on your smartphone through Spend mobile application.`,
   'index.button.video': `Video coming soon`,
   'index.button.preorder': `Pre-Order Coming Soon`,
+  'index.button.language': `언어: 한국어`,
   'index.preorder.heading': `Worldwide Shipping`,
   'index.preorder.description': `Pre-Order Coming Soon`,
 

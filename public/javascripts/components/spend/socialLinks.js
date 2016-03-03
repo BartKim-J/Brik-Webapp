@@ -32,7 +32,7 @@ let SpendSocialLinks = React.createClass({
         {SpendSocialLinks.data
           .map(([name, url, displayName = capitalize(name)], i, array) => (
             <li
-              className={classNames('SpendSocialLinks-item pull-left', {
+              className={classNames('SpendSocialLinks-item', {
                 'SpendSocialLinks-item-last': i === array.length - 1
               })}
               key={name}

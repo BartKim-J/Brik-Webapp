@@ -24,7 +24,6 @@ function appRenderer(req, res, next) {
       let {lang} = res;
       let nonDataMessages = messages.lang(lang).getNonData();
       let csrfToken = req.csrfToken();
-
       state = state.merge({route: {pathname: req.path}});
       store = createStore(spendReducer, state);
       content = ReactDOMServer.renderToString(

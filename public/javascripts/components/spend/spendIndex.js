@@ -760,7 +760,8 @@ let SpendIndex = React.createClass({
                 {formatMessage({id: 'index.application.description'})}
               </p>
               <div className="SpendIndex-app-stores text-hide">
-                iOS Android
+                <image src="/images/app-stores.png" />
+                <image src="/images/google-play.png"/>
               </div>
             </div>
             <div

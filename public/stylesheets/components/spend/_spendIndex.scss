@@ -693,10 +693,15 @@ h1, h2, p {
   letter-spacing: 0.5px;
 }
 .SpendIndex-app-stores {
-  @include image-replacement-core(
-    "app-stores.png", "app-stores@2x.png", 54px, 21px
-  );
+  display: inline;
   margin: 30px auto;
+}
+.SpendIndex-app-stores img {
+  width: 70px;
+  height: 24px;
+}
+.SpendIndex-app-stores img:first-child {
+    margin-right: 16px;
 }
 .SpendIndex-app-bg {
   max-width: 375px;
@@ -1294,10 +1299,14 @@ h1, h2, p {
     line-height: 28px;
   }
   .SpendIndex-app-stores {
-    @include image-replacement-core(
-      "app-stores-md.png", "app-stores-md@2x.png", 90px, 34px
-    );
-    margin: 44px 0 0;
+    display: inline;
+  }
+  .SpendIndex-app-stores img {
+    width: 140px;
+    height: 48px;
+  }
+  .SpendIndex-app-stores img:first-child {
+      margin-right: 32px;
   }
   .SpendIndex-app-bg {
     position: absolute;
@@ -1325,11 +1334,14 @@ h1, h2, p {
   ) {
     position: absolute;
     top: 43.159609120521175%;
-    left: 11.273792093704246%;
+    left: 0%;
     transform: translateY(-43.159609120521175%);
+    @include background-image("map.png");
+    background-size: cover;
+    padding: 100px;
   }
   .SpendIndex-preOrder-h2 {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     font-size: 35px;
     line-height: 1.3;
     text-align: left;
@@ -1342,7 +1354,7 @@ h1, h2, p {
     display: none;
   }
   .SpendIndex-preOrder-LinkBlock {
-    margin-top: 100px;
+    margin-top: 40px;
   }
   .SpendIndex-preOrder-bg {
     display: block;

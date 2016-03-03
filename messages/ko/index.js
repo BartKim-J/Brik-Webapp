@@ -35,6 +35,8 @@ module.exports = messages.merge({
     'index.application.description': `스펜드 모바일앱으로 신용카드와 바코드 멤버십카드를 관리하고, 간단하게 사용 내역도 확인하세요.`,
     'index.button.video': `Video coming soon`,
     'index.button.preorder': `Pre-Order Coming Soon`,
+    'index.button.language': `Language: English`,
+
     'index.preorder.heading': `전세계 배송`,
     'index.preorder.description': `곧 예약주문이 시작됩니다.`,
 

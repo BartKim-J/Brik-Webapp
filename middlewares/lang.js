@@ -1,17 +1,22 @@
 let satelize = require('satelize');
+let cookieParser = require('cookie-parser');
 
 function lang(req, res, next) {
   let {ip, query} = req;
 
-  if (process.env.NODE_ENV !== 'production' && query.lang) {
+  if (query.lang) {
     res.lang = query.lang;
+    res.cookie('lang', query.lang);
+    next();
+  } else if (req.cookies.lang) {
+    res.lang = req.cookies.lang;
     next();
   } else {
-    // TODO: use cookie/session to speed up
     satelize.satelize({ip}, (err, payload) => {
       res.lang = (!err && payload && payload.country_code === 'KR') ?
         'ko' :
         'en';
+      res.cookie('lang', res.lang);
       next();
     });
   }

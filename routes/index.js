@@ -10,6 +10,8 @@ let dataModule = require('../data');
 let StatusError = require('../errors/StatusError');
 let messages = require('../messages');
 
+var cookieParser = require('cookie-parser')
+
 let csrfProtection = csrf({
   cookie: {
     httpOnly: true
@@ -47,6 +49,15 @@ function makeRoute(dataKey) {
 
 router.get('/', csrfProtection, (req, res, next) => {
   res.renderApp();
+});
+
+router.get('/swaplang', (req, res, next) => {
+  if (req.cookies.lang == 'ko') {
+      res.cookie('lang', 'en');
+  } else if (req.cookies.lang == 'en') {
+      res.cookie('lang', 'ko');
+  }
+  res.redirect('back');
 });
 
 router.get('/jobs', makeRoute('jobOpenings'));

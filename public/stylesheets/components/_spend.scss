@@ -18,8 +18,9 @@
 @import "spend/spendIndex";
 
 .SpendFaq,
-.SpendJobs {
-  padding: 105px 0 50px;
+.SpendJobs,
+.SpendTeam {
+  padding: 105px 0 50px !important;
 }
 .SpendFaq-container-header,
 .SpendJobs-container-header,
@@ -40,8 +41,9 @@
   line-height: 1.2;
 }
 .SpendFaq-container-footer,
-.SpendTeam-container-footer {
-  margin-top: 75px;
+.SpendTeam-container-footer,
+.SpendJobs-container-footer {
+  margin: 50px 0 50px 0;
 }
 
 @import "spend/faq";

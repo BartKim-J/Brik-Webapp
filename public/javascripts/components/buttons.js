@@ -2,6 +2,7 @@ let React = require('react');
 
 let ExtendChildMixin = require('../mixins/extendChild');
 let TrackClickMixin = require('../mixins/trackClick');
+let {intlShape} = require('react-intl');
 
 let Button = React.createClass({
   propTypes: {
@@ -51,6 +52,21 @@ let PseudoButton = React.createClass({
   }
 });
 
+var LanguageButton = React.createClass({
+  setLanguage: function() {
+      window.location.assign("/swaplang")
+  },
+  contextTypes: {
+    intl: intlShape.isRequired
+  },
+  render: function(){
+    let {formatMessage} = this.context.intl;
+    return (
+        <button type="button" className="SpendFooter-LangButton" onClick={this.setLanguage}>{formatMessage({id: `index.button.language`})}</button>
+    );
+  }
+});
+
 module.exports = {
-  Button, PseudoButton
+  Button, PseudoButton, LanguageButton
 };

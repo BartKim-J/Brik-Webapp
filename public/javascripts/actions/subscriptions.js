@@ -48,6 +48,5 @@ function postSubscription(email) {
 
 module.exports = {
   TYPES,
-
   postSubscription
 };

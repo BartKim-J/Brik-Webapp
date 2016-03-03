@@ -1,6 +1,7 @@
 let React = require('react');
 let classNames = require('classnames');
 let {intlShape} = require('react-intl');
+let {LanguageButton} = require('../buttons');
 
 let {Link} = require('../router');
 
@@ -67,6 +68,7 @@ let SpendFooter = React.createClass({
                 className="SpendFooter-SocialLinks"
                 linkClassName="SpendFooter-SocialLinks-link"
                 eventCategory="Footer" />
+                <LanguageButton/>
             </div>
           </div>
         </div>
