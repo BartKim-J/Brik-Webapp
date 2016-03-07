@@ -33,10 +33,10 @@ function makeRoute(dataKey) {
     };
 
     switch (accept) {
-    case 'html':
-      csrfProtection(req, res, () => {
-        res.renderApp(Immutable({data}));
-      });
+      case 'html':
+        csrfProtection(req, res, () => {
+          res.renderApp(Immutable({data}));
+        });
       break;
     case 'json':
       res.json({data});

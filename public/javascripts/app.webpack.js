@@ -96,6 +96,8 @@ function withPromise() {
         gaTimingVar = init.method;
       }
 
+      init.credentials = 'same-origin';
+
       return fetch(input, init).then(response => {
         ga(
           'send', 'timing',
