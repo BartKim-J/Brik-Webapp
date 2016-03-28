@@ -356,7 +356,7 @@ let SpendIndex = React.createClass({
     });
   },
   componentDidUpdate(prevProps, prevState) {
-    if (Modernizr.video) {
+    /*if (Modernizr.video) {
       const indexEntered = this.state.enteredClasses.index;
       if (prevState.enteredClasses.index !== indexEntered) {
         let indexVideoDuration = this._indexVideoRef.duration;
@@ -377,7 +377,7 @@ let SpendIndex = React.createClass({
           break;
         }
       }
-    }
+    }*/
   },
 
   handleIndexVideoLoadedMetadata(e) {
@@ -512,46 +512,37 @@ let SpendIndex = React.createClass({
               </header>
               <div className="SpendIndex-index-content">
                 <div className="SpendIndex-link-video-group">
-                  <h2 className="SpendIndex-link-video-h2">
-                    {formatMessage({id: 'index.heading'})}
-                  </h2>
-                  <LinkBlock className="SpendIndex-video-LinkBlock">
-                    <a className="SpendIndex-link SpendIndex-link-video text-uppercase"><i className="fa fa-Spend-caret-right SpendIndex-link-video-icon" /> {formatMessage({id: 'index.button.video'})}</a>
-                  </LinkBlock>
-                </div>
-                <div className="SpendIndex-Form-group">
-                  <Form
-                    className="SpendIndex-Form"
-                    action="/subscriptions" onSubmit={this.handleNewSubscription}
-                    ref={ref => {
-                      this._formRef = ref;
-                    }}
-                  >
-                    <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
-                    <Button className="SpendIndex-Form-submit" type="submit"><i className="fa fa-Spend-paper-plane SpendIndex-Form-submit-icon" /></Button>
-                  </Form>
-                  <MessageBoard
-                    className="SpendIndex-Form-MessageBoard"
-                    message={subscriptionMsg}
-                  >
-                    {formatMessage({id: 'index.formMessageBoard'})}
-                  </MessageBoard>
+                  <FormattedHTMLMessage id="index.heading">
+                    <h2 className="SpendIndex-link-video-h2" />
+                  </FormattedHTMLMessage>
+                  <FormattedHTMLMessage id="index.description">
+                    <p className="SpendIndex-link-video-p" />
+                  </FormattedHTMLMessage>
                 </div>
               </div>
             </div>
-            <div className="SpendIndex-index-bg">
-              <video
-                className="SpendIndex-index-bg-video"
-                width="1440" height="806"
-                poster="//dummyimage.com/683x403/ff/ff.png"
-                onLoadedMetadata={this.handleIndexVideoLoadedMetadata}
-                ref={ref => {
-                  this._indexVideoRef = ref;
-                }}
-              >
-                <source src="/videos/Main4_h.264.mp4" type="video/mp4" />
-              </video>
+          </section>
+          <section className={classNames('SpendIndex-newsletter')}>
+            <div className="SpendIndex-newsletter-inner">
+              <p className="SpendIndex-newsletter-h3">{formatMessage({id: 'index.newsletter.heading'})}</p>
+              <p className="SpendIndex-newsletter-p">{formatMessage({id: 'index.newsletter.description'})}</p>
             </div>
+
+            <div className="SpendIndex-newsletter-bg">
+              <div className="SpendIndex-Form-group">
+                <Form
+                  className="SpendIndex-Form"
+                  action="/subscriptions" onSubmit={this.handleNewSubscription}
+                  ref={ref => {
+                    this._formRef = ref;
+                  }}
+                >
+                  <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
+                  <Button className="SpendIndex-Form-submit" type="submit"><span>SIGN UP</span></Button>
+                </Form>
+              </div>
+            </div>
+
           </section>
           <section
             className={classNames(

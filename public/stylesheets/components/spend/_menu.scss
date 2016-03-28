@@ -42,6 +42,15 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   border-bottom-color: $SpendMenu-scrolling-border-color;
   background-color: $SpendMenu-scrolling-bg;
 }
+.is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
+  border: solid 2px $SpendMenu-item-link-md-color;
+}
+.is-SpendMenu-scrolling .SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
+  color: $SpendMenu-Logo-color;
+}
+.is-SpendMenu-scrolling .SpendMenu-item-link {
+  color: $SpendMenu-item-link-md-color;
+}
 .is-SpendMenu-open-in .SpendMenu-inner {
   position: absolute;
   top: 0;
@@ -77,7 +86,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   transition: none;
 }
 .SpendMenu-Logo-link {
-  color: $SpendMenu-Logo-color;
+  color: white;
 }
 .SpendMenu-nav {
   float: right;
@@ -98,8 +107,11 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   display: inline-block;
   width: 28px;
   height: 3px;
-  background-color: $SpendMenu-button-color;
+  background-color: white;
   transition-duration: 500ms;
+}
+.is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
+  background-color: $SpendMenu-button-color;
 }
 .SpendMenu-button-bar-1,
 .SpendMenu-button-bar-2,
@@ -138,9 +150,8 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
 }
 .SpendMenu-lists {
   margin-right: 19px;
-}
-.SpendMenu-items {
-  margin-bottom: 32px;
+  height: 30px;
+  line-height: 30px;
 }
 .SpendMenu-item {
   border-bottom: 1px solid $SpendMenu-item-border-color;
@@ -162,12 +173,26 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   right: 8.5%;
   bottom: 16px;
   left: 8.5%;
+  text-align: center;
 }
 .SpendMenu-IndiegogoLink {
   display: block;
   padding-right: 0;
   padding-left: 0;
   text-align: center;
+}
+
+.SpendMenu-indiegogo-button {
+  height: 30px !important;
+  padding: 0px 20px 0px 20px;
+}
+
+.SpendMenu-indiegogo-button img {
+  height: 30px !important;
+  border: solid 2px #ffffff;
+  padding: 5px 30px 5px 30px;
+  border-radius: 44px;
+  width: 170px;
 }
 
 @media (min-width: $screen-md-min) {
@@ -231,9 +256,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     opacity: 1;
     transition: none;
   }
-  .SpendMenu-nav {
-    height: auto;
-  }
+
   .is-SpendMenu-open-in .SpendMenu-nav {
     float: right;
     height: auto;
@@ -244,6 +267,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu-nav-inner {
     display: block;
     float: left;
+    margin: 11px 0 0;
   }
   .is-SpendMenu-open-in .SpendMenu-nav-inner {
     clear: none;
@@ -255,7 +279,6 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   }
   .SpendMenu-items {
     float: left;
-    margin: 11px 0 0;
   }
   .SpendMenu-item {
     float: left;
@@ -265,7 +288,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu-item-link {
     display: inline;
     padding: 0;
-    color: $SpendMenu-item-link-md-color;
+    color: white;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.1875;
@@ -279,8 +302,6 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
     bottom: auto;
     left: auto;
     float: left;
-    margin-top: 3px;
-    margin-right: 20px;
   }
   .SpendMenu-IndiegogoLink {
     display: inline-block;
