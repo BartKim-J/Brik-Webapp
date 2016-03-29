@@ -18,7 +18,7 @@ let messages = Immutable({
 
 Spendwallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.`,
 
-  'index.heading': `Thinnest electronic wallet that consolidate all your cards`,
+  'index.heading': `Thinnest electronic wallet,<br> that consolidates all your cards`,
   'index.description': `Spendwallet is a cutting-edge smart wallet that digitally consolidates credit, debit and gift cards securely into one device.`,
   'index.newsletter.heading': `Sign up now to access the early-bird pricing and win a free Spendwallet`,
   'index.newsletter.description': `1200 invites only`,

@@ -12,7 +12,7 @@ module.exports = messages.merge({
 
   스펜드월렛은 당신을 더 멋있고 스마트하게 바꿔줄 진정한 전자지갑입니다. 보유하고 있는 모든 카드를 합칠 수 있고, 후면부에는 신분증, 명함 등을 담을 수 있는 포켓이  있습니다. 그 어떤 지갑보다 얇지만, 그 어떤 지갑보다 많은 신용카드를 수납할 수 있습니다.`,
 
-    'index.heading': `Thinnest electronic wallet that consolidate all your cards`,
+    'index.heading': `Thinnest electronic wallet,<br>that consolidates all your cards`,
     'index.description': `Spendwallet is a cutting-edge smart wallet that digitally consolidates credit, debit and gift cards securely into one device.`,
     'index.newsletter.heading': `Sign up now to access the early-bird pricing and win a free Spendwallet`,
     'index.newsletter.description': `1200 invites only`,
