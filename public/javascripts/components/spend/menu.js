@@ -137,7 +137,7 @@ let SpendMenu = React.createClass({
           (!prevOpenClasses && openClasses))
         {
           this.setState({
-            indexEnteredClass: 'is-SpendMenu-index-entered-done'
+            indexEnteredClass: 'is-SpendMenu-index-entered-done',
           });
         }
       }
@@ -194,6 +194,7 @@ let SpendMenu = React.createClass({
       isScrolling, indexEnteredClass,
       openClasses, indexLogoClasses
     } = this.state;
+
     let isRouteIndex = this.isRouteIndex();
     let {formatMessage} = this.context.intl;
 

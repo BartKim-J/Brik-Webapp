@@ -43,13 +43,13 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   background-color: $SpendMenu-scrolling-bg;
 }
 .is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
-  border: solid 2px $SpendMenu-item-link-md-color;
+  border: solid 2px $SpendMenu-item-link-md-color !important;
 }
 .is-SpendMenu-scrolling .SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
-  color: $SpendMenu-Logo-color;
+  color: $SpendMenu-Logo-color !important;
 }
 .is-SpendMenu-scrolling .SpendMenu-item-link {
-  color: $SpendMenu-item-link-md-color;
+  color: $SpendMenu-item-link-md-color !important;
 }
 .is-SpendMenu-open-in .SpendMenu-inner {
   position: absolute;
@@ -67,9 +67,6 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   font-size: 33px;
   line-height: 40px;
 }
-.SpendMenu-index-Logo {
-  display: none;
-}
 .is-SpendMenu-index-Logo-forceShown {
   display: block;
   opacity: 0;
@@ -86,7 +83,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   transition: none;
 }
 .SpendMenu-Logo-link {
-  color: white;
+  color: black;
 }
 .SpendMenu-nav {
   float: right;
@@ -107,7 +104,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   display: inline-block;
   width: 28px;
   height: 3px;
-  background-color: white;
+  background-color: black;
   transition-duration: 500ms;
 }
 .is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
@@ -199,6 +196,12 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu {
     top: 27px;
   }
+  .SpendMenu-index .SpendMenu-Logo-link, .SpendMenu-index .SpendMenu-item-link {
+    color: white;
+  }
+  .SpendMenu-button-bar {
+    background-color: white;
+  }
   .is-SpendMenu-scrolling {
     top: 0;
     transform: translate3d(0,0,0);
@@ -249,9 +252,6 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu-index-inner-inner {
     max-width: none;
   }
-  .SpendMenu-index-Logo {
-    display: block;
-  }
   .is-SpendMenu-index-Logo-forceShown {
     opacity: 1;
     transition: none;
@@ -288,7 +288,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu-item-link {
     display: inline;
     padding: 0;
-    color: white;
+    color: #171717;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.1875;

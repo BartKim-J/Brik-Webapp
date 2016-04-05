@@ -81,18 +81,18 @@ let MessageBoard = React.createClass({
     const {activeMessage, fadingClasses} = this.state;
 
     return (
-      <p
+      <img
         className={classNames(
           'MessageBoard', className,
           activeMessage ? activeMessage.className : null,
           fadingClasses
         )}
+        src={activeMessage ? activeMessage.content : children}
         ref={ref => {
           this._ref = ref;
         }}
       >
-        {activeMessage ? activeMessage.content : children}
-      </p>
+      </img>
     );
   }
 });

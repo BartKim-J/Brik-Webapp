@@ -27,7 +27,6 @@ let SpendIndex = React.createClass({
       contactless: 0,
       physicalCards: 0,
       design: 0,
-      display: 0,
       charge: 0,
       app: 0,
       preOrder: 0
@@ -75,7 +74,6 @@ let SpendIndex = React.createClass({
         contactless: '',
         physicalCards: '',
         design: '',
-        display: '',
         charge: '',
         tech: '',
         app: '',
@@ -93,7 +91,6 @@ let SpendIndex = React.createClass({
         contactless: 'is-SpendIndex-contactless-entered-done',
         physicalCards: 'is-SpendIndex-physicalCards-entered-done',
         design: 'is-SpendIndex-design-entered-done',
-        display: 'is-SpendIndex-display-entered-done',
         charge: 'is-SpendIndex-charge-entered-done',
         tech: 'is-SpendIndex-tech-entered-done',
         app: 'is-SpendIndex-app-entered-done',
@@ -133,9 +130,6 @@ let SpendIndex = React.createClass({
       half: designHalf, oneThird: designAThird
     } = this._pageYOffsets.design;
     let {
-      half: displayHalf, oneThird: displayAThird
-    } = this._pageYOffsets.display;
-    let {
       half: chargeHalf, oneThird: chargeAThird
     } = this._pageYOffsets.charge;
     let {
@@ -156,9 +150,6 @@ let SpendIndex = React.createClass({
       ],
       design: [
         designAThird - this._windowHeight, designHalf - halfHeight
-      ],
-      display: [
-        displayAThird - this._windowHeight, displayHalf - halfHeight
       ],
       charge: [
         chargeAThird - this._windowHeight, chargeHalf - halfHeight
@@ -215,9 +206,6 @@ let SpendIndex = React.createClass({
       oneThird: designAThird, twoThirds: designTwoThirds
     } = this._pageYOffsets.design;
     let {
-      oneThird: displayAThird, twoThirds: displayTwoThirds
-    } = this._pageYOffsets.display;
-    let {
       oneThird: chargeAThird, twoThirds: chargeTwoThirds
     } = this._pageYOffsets.charge;
     let {
@@ -240,9 +228,6 @@ let SpendIndex = React.createClass({
         physicalCardsTwoThirds
       ],
       design: [designAThird - this._windowHeight, designTwoThirds],
-      display: [
-        displayAThird - this._windowHeight, displayTwoThirds
-      ],
       charge: [chargeAThird - this._windowHeight, chargeTwoThirds],
       tech: [techAThird - this._windowHeight, techTwoThirds],
       app: [appAThird - this._windowHeight, appTwoThirds],
@@ -301,9 +286,7 @@ let SpendIndex = React.createClass({
       index: ['twoThirds'],
       contactless: ['half', 'oneThird', 'twoThirds'],
       physicalCards: ['half', 'oneThird', 'twoThirds'],
-      measure: ['start', 'twoThirds'],
       design: ['half', 'oneThird', 'twoThirds'],
-      display: ['half', 'oneThird', 'twoThirds'],
       charge: ['half', 'oneThird', 'twoThirds'],
       tech: ['oneThird', 'twoThirds'],
       app: ['half', 'oneThird', 'twoThirds'],
@@ -347,7 +330,6 @@ let SpendIndex = React.createClass({
       }
     }
   },
-
   componentDidMount() {
     this._securitySwipe = new Swipe(this._securitySliderRef, {
       callback: (index, el) => {
@@ -379,7 +361,6 @@ let SpendIndex = React.createClass({
       }
     }*/
   },
-
   handleIndexVideoLoadedMetadata(e) {
     if (this.state.enteredClasses.index === 'is-SpendIndex-index-entered-done') {
       this.pauseIndexVideoAtTime(
@@ -393,7 +374,7 @@ let SpendIndex = React.createClass({
         this.setState({
           subscriptionMsg: Immutable({
             className: 'SpendIndex-Form-MessageBoard-success',
-            content: 'Thank you for your subscription.',
+            content: '/images/check.png',
             isFading: true
           })
         });
@@ -402,7 +383,7 @@ let SpendIndex = React.createClass({
         this.setState({
           subscriptionMsg: Immutable({
             className: 'SpendIndex-Form-MessageBoard-error',
-            content: error.message,
+            content: '/images/plane@2x.png',
             isFading: false
           })
         });
@@ -453,7 +434,6 @@ let SpendIndex = React.createClass({
       this._sectionRefs[name] = ref;
     });
   },
-
   render() {
     const {
       bgYOffsets,
@@ -464,7 +444,6 @@ let SpendIndex = React.createClass({
       contactless: contactlessBgY,
       physicalCards: physicalCardsBgY,
       design: designBgY,
-      display: displayBgY,
       charge: chargeBgY,
       app: appBgY,
       preOrder: preOrderBgY
@@ -474,7 +453,6 @@ let SpendIndex = React.createClass({
       contactless: contactlessEnteredClass,
       physicalCards: physicalCardsEnteredClass,
       design: designEnteredClass,
-      display: displayEnteredClass,
       charge: chargeEnteredClass,
       tech: techEnteredClass,
       app: appEnteredClass,
@@ -502,14 +480,6 @@ let SpendIndex = React.createClass({
             ref={this.makeSectionRefsHandler('index')}
           >
             <div className="SpendIndex-index-inner">
-              <header className="SpendIndex-index-header text-center">
-                <h1 className="SpendIndex-h1">
-                  <Logo className="SpendIndex-h1-Logo" />
-                </h1>
-                <LinkBlock className="SpendIndex-h1-LinkBlock">
-                  <IndiegogoLink eventLabel="In Index Page Index Section" />
-                </LinkBlock>
-              </header>
               <div className="SpendIndex-index-content">
                 <div className="SpendIndex-link-video-group">
                   <FormattedHTMLMessage id="index.heading">
@@ -524,10 +494,11 @@ let SpendIndex = React.createClass({
           </section>
           <section className={classNames('SpendIndex-newsletter')}>
             <div className="SpendIndex-newsletter-inner">
-              <p className="SpendIndex-newsletter-h3">{formatMessage({id: 'index.newsletter.heading'})}</p>
+              <h1 className="SpendIndex-Form-MessageBoard">
+                {formatMessage({id: 'index.newsletter.heading'})}
+              </h1>
               <p className="SpendIndex-newsletter-p">{formatMessage({id: 'index.newsletter.description'})}</p>
             </div>
-
             <div className="SpendIndex-newsletter-bg">
               <div className="SpendIndex-Form-group">
                 <Form
@@ -538,11 +509,41 @@ let SpendIndex = React.createClass({
                   }}
                 >
                   <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
-                  <Button className="SpendIndex-Form-submit" type="submit"><span>SIGN UP</span></Button>
+                  <Button className="SpendIndex-Form-submit" type="submit">
+                    <MessageBoard className="SpendIndex-Form-MessageBoard" message={subscriptionMsg}>
+                      /images/plane@2x.png
+                    </MessageBoard>
+                  </Button>
                 </Form>
               </div>
             </div>
-
+          </section>
+          <section
+            className={classNames('SpendIndex-charge', chargeEnteredClass)}
+            style={overflowStyle}
+            ref={this.makeSectionRefsHandler('charge')}
+          >
+            <div className="SpendIndex-charge-inner">
+              <div className="SpendIndex-charge-content">
+                <h2 className="SpendIndex-charge-h2">
+                  {formatMessage({id: 'index.charge.heading'})}
+                </h2>
+                <FormattedHTMLMessage id="index.charge.description">
+                  <p className="SpendIndex-charge-p"/>
+                </FormattedHTMLMessage>
+              </div>
+              <ImageBlock className="SpendIndex-charge-ImageBlock">
+                <RImage
+                  className="SpendIndex-charge-RImage"
+                  src="/images/device.png" width={291} height={221} />
+              </ImageBlock>
+            </div>
+            <div
+              className="SpendIndex-charge-bg SpendIndex-offsetY"
+              style={this.offsetY2Style(chargeBgY)}
+            >
+              <div className="SpendIndex-charge-bg-inner" />
+            </div>
           </section>
           <section
             className={classNames(
@@ -587,100 +588,16 @@ let SpendIndex = React.createClass({
               <div className="SpendIndex-physicalCards-bg-inner" />
             </div>
           </section>
-          <section
-            className={classNames('SpendIndex-design', designEnteredClass)}
-            style={overflowStyle}
-            ref={this.makeSectionRefsHandler('design')}
-          >
-            <div className="SpendIndex-design-inner">
-              <h2 className="SpendIndex-design-h2">
-                {formatMessage({id: 'index.design.heading'})}
-              </h2>
-              <p className="SpendIndex-design-p SpendIndex-design-p-last">
-                {formatMessage({id: 'index.design.description'})}
-              </p>
-            </div>
-            <div
-              className="SpendIndex-design-bg SpendIndex-offsetY"
-              style={this.offsetY2Style(designBgY)}
-            >
-              <div className="SpendIndex-design-bg-inner" />
-            </div>
-          </section>
-          <section
-            className="SpendIndex-measure text-center"
-            ref={this.makeSectionRefsHandler('measure')}
-          >
-            <FormattedHTMLMessage id="index.measure.heading">
-              <h2 className="SpendIndex-measure-h2" />
-            </FormattedHTMLMessage>
-            <div className="SpendIndex-measure-sideView">
-                <img src="/images/side_view.png" className="SpendIndex-measure-sideView-video"/>
-            </div>
-            <div className="SpendIndex-measure-numbers">
-              <div className="SpendIndex-measure-numbers-big">
-                {formatMessage({id: 'index.measure.dimensions'})}
-              </div>
-              <div className="SpendIndex-measure-numbers-more">
-                {formatMessage({id: 'index.measure.dimensions2'})}
-              </div>
-            </div>
-          </section>
-          <section
-            className={classNames('SpendIndex-display', displayEnteredClass)}
-            style={overflowStyle}
-            ref={this.makeSectionRefsHandler('display')}
-          >
-            <div className="SpendIndex-display-inner">
-              <h2 className="SpendIndex-display-h2">
-                {formatMessage({id: 'index.display.heading'})}
-              </h2>
-              <p className="SpendIndex-display-p SpendIndex-display-p-last">
-                {formatMessage({id: 'index.display.description'})}
-              </p>
-            </div>
-            <div
-              className="SpendIndex-display-bg SpendIndex-offsetY"
-              style={this.offsetY2Style(displayBgY)}
-            >
-              <div className="SpendIndex-display-bg-inner" />
-            </div>
-          </section>
-          <section
-            className={classNames('SpendIndex-charge', chargeEnteredClass)}
-            style={overflowStyle}
-            ref={this.makeSectionRefsHandler('charge')}
-          >
-            <div className="SpendIndex-charge-inner">
-              <div className="SpendIndex-charge-content">
-                <h2 className="SpendIndex-charge-h2">
-                  {formatMessage({id: 'index.charge.heading'})}
-                </h2>
-                <FormattedHTMLMessage id="index.charge.description">
-                  <p className="SpendIndex-charge-p"/>
-                </FormattedHTMLMessage>
-              </div>
-              <ImageBlock className="SpendIndex-charge-ImageBlock">
-                <RImage
-                  className="SpendIndex-charge-RImage"
-                  src="/images/usbcharge.png" width={291} height={221} />
-              </ImageBlock>
-              <div className="SpendIndex-charge-battery">
-                {formatMessage({id: 'index.charge.batterylife'})}
-              </div>
-            </div>
-            <div
-              className="SpendIndex-charge-bg SpendIndex-offsetY"
-              style={this.offsetY2Style(chargeBgY)}
-            >
-              <div className="SpendIndex-charge-bg-inner" />
-            </div>
-          </section>
+          {this.renderSecurity()}
           <section
             className={classNames('SpendIndex-tech', techEnteredClass)}
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('tech')}
           >
+          <div className="SpendIndex-section-heading">
+            <h1>Tech Specifications</h1>
+              <p>The thinnest electronic wallet youll ever own</p>
+            </div>
             <div className="SpendIndex-tech-bg">
               <div className="SpendIndex-tech-bg-inner" />
               <div className="SpendIndex-tech-bg-captions">
@@ -728,16 +645,60 @@ let SpendIndex = React.createClass({
                 </div>
               </div>
             </div>
+            <div className="SpendIndex-measure-numbers">
+              <div className="SpendIndex-measure-numbers-big">
+                {formatMessage({id: 'index.measure.dimensions'})}
+              </div>
+              <div className="SpendIndex-measure-numbers-more">
+                {formatMessage({id: 'index.measure.dimensions2'})}
+              </div>
+            </div>
             <div className="SpendIndex-tech-inner">
-              <h2 className="SpendIndex-tech-h2">
-                {formatMessage({id: 'index.electronicwallet.heading'})}
+              <div className="SpendIndex-tech-inner-icon-group">
+                <image src="/images/touch_icon.png" />
+                <FormattedHTMLMessage id="index.tech.touch.title"><h2/></FormattedHTMLMessage>
+                <p>{formatMessage({id: 'index.tech.touch.description'})}</p>
+              </div>
+              <div className="SpendIndex-tech-inner-icon-group">
+                <image src="/images/battery_icon.png" />
+                <FormattedHTMLMessage id="index.tech.battery.title"><h2/></FormattedHTMLMessage>
+                <p>{formatMessage({id: 'index.tech.battery.description'})}</p>
+              </div>
+              <div className="SpendIndex-tech-inner-icon-group">
+                <image src="/images/led_icon.png" />
+                <FormattedHTMLMessage id="index.tech.led.title"><h2/></FormattedHTMLMessage>
+                <p>{formatMessage({id: 'index.tech.led.description'})}</p>
+              </div>
+            </div>
+          </section>
+          <section
+            className={classNames('SpendIndex-design', designEnteredClass)}
+            style={overflowStyle}
+            ref={this.makeSectionRefsHandler('design')}
+          >
+            <div className="SpendIndex-design-inner">
+              <h2 className="SpendIndex-design-h2">
+                {formatMessage({id: 'index.design.heading'})}
               </h2>
-              <FormattedHTMLMessage id="index.electronicwallet.description">
+              <FormattedHTMLMessage id="index.design.description">
                 <header className="SpendIndex-tech-p SpendIndex-tech-p-last" />
               </FormattedHTMLMessage>
             </div>
+            <div
+              className="SpendIndex-design-bg SpendIndex-offsetY"
+              style={this.offsetY2Style(designBgY)}
+            >
+              <div className="SpendIndex-design-bg-inner" />
+            </div>
           </section>
-          {this.renderSecurity()}
+
+          <section className={classNames('SpendIndex-design-gallery')}>
+            <div className="SpendIndex-design-gallery-left">
+            </div>
+            <div className="SpendIndex-design-gallery-right">
+            </div>
+          </section>
+
           <section
             className={classNames('SpendIndex-app', appEnteredClass)}
             style={overflowStyle}
@@ -780,13 +741,40 @@ let SpendIndex = React.createClass({
                 <Image src="/images/fin-spend-2.png" width={293} height={235} />
               </ImageBlock>
               <LinkBlock className="SpendIndex-preOrder-LinkBlock">
-                <a className="SpendIndex-link SpendIndex-link-preOrder text-uppercase">{formatMessage({id: 'index.button.preorder'})}</a>
+                <a className="SpendIndex-link SpendIndex-link-preOrder">{formatMessage({id: 'index.button.preorder'})} <img src="images/indiegogo_white.png" alt="Indiegogo"></img></a>
               </LinkBlock>
             </div>
             <div className="SpendIndex-preOrder-bg">
               <div
                 className="SpendIndex-preOrder-bg-inner SpendIndex-offsetY"
                 style={this.offsetY2Style(preOrderBgY)} />
+            </div>
+          </section>
+          <section className={classNames('SpendIndex-newsletter bottom')}>
+          <div className="SpendIndex-newsletter-inner">
+            <h1 className="SpendIndex-Form-MessageBoard">
+              {formatMessage({id: 'index.newsletter.heading'})}
+            </h1>
+            <p className="SpendIndex-newsletter-p">{formatMessage({id: 'index.newsletter.description'})}</p>
+          </div>
+
+            <div className="SpendIndex-newsletter-bg">
+              <div className="SpendIndex-Form-group">
+              <Form
+                className="SpendIndex-Form"
+                action="/subscriptions" onSubmit={this.handleNewSubscription}
+                ref={ref => {
+                  this._formRef = ref;
+                }}
+              >
+                <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
+                <Button className="SpendIndex-Form-submit" type="submit">
+                  <MessageBoard className="SpendIndex-Form-MessageBoard" message={subscriptionMsg}>
+                    /images/plane@2x.png
+                  </MessageBoard>
+                </Button>
+              </Form>
+              </div>
             </div>
           </section>
         </div>
@@ -804,6 +792,10 @@ let SpendIndex = React.createClass({
         className="SpendIndex-security"
         ref={this.makeSectionRefsHandler('security')}
       >
+        <div className="SpendIndex-section-heading">
+          <h1>Security</h1>
+          <p>Forget about your wallet and live your present.</p>
+        </div>
         <div
           className="SpendIndex-security-slider invisible"
           ref={ref => {

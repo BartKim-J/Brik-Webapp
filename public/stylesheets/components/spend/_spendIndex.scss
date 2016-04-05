@@ -1,6 +1,6 @@
 $SpendIndex-link-bg: #242424;
 $SpendIndex-link-color: #d3d3d3;
-$SpendIndex-link-preOrder-bg: #4487ff;
+$SpendIndex-link-preOrder-bg: #ff2169;
 $SpendIndex-link-preOrder-color: #f7f7f7;
 
 $SpendIndex-index-bg: #fff;
@@ -11,7 +11,7 @@ $SpendIndex-Form-MessageBoard-color: #636363;
 $SpendIndex-Form-MessageBoard-success-color: #5692ff;
 $SpendIndex-Form-MessageBoard-error-color: #e85353;
 
-$SpendIndex-contactless-bg: #f3f3f3;
+$SpendIndex-contactless-bg: #fff;
 $SpendIndex-contactless-h2-color: #686d6b;
 $SpendIndex-contactless-h2-p-color: #999;
 $SpendIndex-contactless-article-color: #5b6964;
@@ -20,7 +20,7 @@ $SpendIndex-physicalCards-bg: #fff;
 $SpendIndex-physicalCards-article-color: #737373;
 
 $SpendIndex-design-bg: #000;
-$SpendIndex-design-h2-color: #595959;
+$SpendIndex-design-h2-color: white;
 $SpendIndex-design-p-color: #999;
 
 $SpendIndex-measure-bg: #fff;
@@ -34,15 +34,15 @@ $SpendIndex-display-h2-color: #595959;
 $SpendIndex-display-p-color: #737373;
 
 $SpendIndex-charge-bg: #fff;
-$SpendIndex-charge-h2-color: #595959;
+$SpendIndex-charge-h2-color: black;
 $SpendIndex-charge-p-color: #999;
 $SpendIndex-charge-battery-color: #595959;
 
-$SpendIndex-tech-bg: #e7f3f1;
+$SpendIndex-tech-bg: white;
 $SpendIndex-tech-h2-color: #424242;
 $SpendIndex-tech-p-color: #999;
 
-$SpendIndex-security-bg: #fff;
+$SpendIndex-security-bg: #f9f9f9;
 $SpendIndex-security-feature-name-color: #060606;
 $SpendIndex-security-feature-desc-color: #969696;
 $SpendIndex-security-arrow-color: #d1d1d1;
@@ -80,24 +80,31 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
   padding-right: 0;
   padding-left: 0;
   overflow: hidden;
+  line-height: 0;
 }
 
 .SpendIndex-link {
   display: inline-block;
   padding: 17px 33.5px;
-  border-radius: 23px;
+  border-radius: 26px;
   background-color: $SpendIndex-link-bg;
   color: $SpendIndex-link-color;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 16px;
   letter-spacing: 1.4px;
   transition: color $clickable-transitionDuration;
+  text-transform: initial;
+}
+.SpendIndex-link img {
+  height: 16px;
+}
+.SpendIndex-link span {
+  vertical-align: bottom;
 }
 .SpendIndex-link:hover,
 .SpendIndex-link:active {
-  color: rgba($SpendIndex-link-color, $clickable-opacity-active);
-  opacity: 1;
+  opacity: $clickable-opacity-active;
 }
 .SpendIndex-link-preOrder {
   background-color: $SpendIndex-link-preOrder-bg;
@@ -105,7 +112,11 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 }
 .SpendIndex-link-preOrder:hover,
 .SpendIndex-link-preOrder:active {
-  color: rgba($SpendIndex-link-preOrder-color, $clickable-opacity-active);
+  //opacity: $clickable-opacity-active;
+  opacity: 1 !important;
+}
+.SpendMenu-indiegogo-button:hover {
+  opacity: 1 !important;
 }
 .SpendIndex-link-video-icon {
   margin-right: 1em;
@@ -119,12 +130,13 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 h1, h2, p {
     word-break: keep-all;
 }
-
 .SpendIndex-index {
   position: relative;
   height: 588px;
-  background-image: url("../images/mainpage.png");
-  background-size: cover;
+  background-image: url("../images/fin-spend-2.png");
+  background-repeat: no-repeat;
+  background-size: 280px;
+  background-position: center;
 }
 .SpendIndex-index-header {
   position: absolute;
@@ -139,7 +151,7 @@ h1, h2, p {
   line-height: 40px;
 }
 .SpendIndex-h1-Logo {
-  color: white;
+  color: black;
 }
 .SpendIndex-h1-LinkBlock {
   margin-top: 16px;
@@ -150,14 +162,15 @@ h1, h2, p {
   bottom: 0;
   left: 0;
   z-index: 1;
-  padding: 0 10px 180px 10px;
+  padding: 0 10px 35px 10px;
   text-align: center;
 }
 .SpendIndex-link-video-p {
   display: none;
 }
 .SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
-  color: white;
+  color: #595959;
+  font-size: 23px;
 }
 .SpendIndex-video-LinkBlock {
   margin-bottom: 52px;
@@ -169,6 +182,7 @@ h1, h2, p {
 .SpendIndex-Form-email {
   width: 70%;
   border: 0;
+  height: 49px;
   padding: 15px 40px;
   border-radius: 30px 0 0 30px;
   font-size: 16px;
@@ -196,6 +210,9 @@ h1, h2, p {
   padding: 0;
   vertical-align: middle;
 }
+.SpendIndex-Form-submit img {
+  height: 25px;
+}
 .SpendIndex-Form-submit span {
   font-size: 14px;
   letter-spacing: 0.9px;
@@ -204,10 +221,13 @@ h1, h2, p {
   font-size: normal;
 }
 .SpendIndex-Form-MessageBoard {
-  margin: 5px 0 0;
-  color: $SpendIndex-Form-MessageBoard-color;
-  font-size: 13.5px;
-  line-height: 16.5px;
+  font-size: 18px;
+	line-height: 1.8;
+	letter-spacing: -0.1px;
+	color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+  margin: 0 20px;
 }
 .SpendIndex-Form-MessageBoard-success,
 .SpendIndex-Form-MessageBoard-error {
@@ -246,14 +266,6 @@ h1, h2, p {
 .SpendIndex-newsletter-inner, .SpendIndex-newsletter-bg {
   margin-bottom: 10px;
 }
-.SpendIndex-newsletter-h3 {
-  font-size: 22px;
-	line-height: 1.8;
-	letter-spacing: -0.1px;
-	color: #ffffff;
-  margin: 0;
-  font-weight: 500;
-}
 .SpendIndex-newsletter-p {
   font-size: 22px;
 	line-height: 1.8;
@@ -264,7 +276,7 @@ h1, h2, p {
 }
 
 .SpendIndex-contactless {
-  padding-top: 73px;
+  padding-top: 69px;
   background-color: $SpendIndex-contactless-bg;
 }
 .SpendIndex-contactless-inner {
@@ -275,14 +287,12 @@ h1, h2, p {
 .SpendIndex-contactless-header {
   margin-bottom: 21px;
 }
-.SpendIndex-contactless-h2 {
-  margin: 0 0 3px;
-  color: $SpendIndex-contactless-h2-color;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 34px;
+
+.SpendIndex-tech .SpendIndex-section-heading p {
+  padding-bottom: 40px;
 }
-.SpendIndex-contactless-h2-p {
+
+.SpendIndex-contactless-h2-p, .SpendIndex-section-heading p {
   margin: 3px 0;
   color: $SpendIndex-contactless-h2-p-color;
   font-size: 22px;
@@ -307,6 +317,7 @@ h1, h2, p {
     $padding-bottom: 59.2%
   );
   margin-left: 7.733333333333333%;
+  background-position: center;
 }
 
 .SpendIndex-physicalCards {
@@ -321,36 +332,60 @@ h1, h2, p {
   line-height: 20px;
   text-align: center;
 }
-.SpendIndex-physicalCards-article h2 {
-  margin: 0 0 22px;
-  font-size: 23px;
-  font-weight: 400;
-  line-height: 28px;
-}
 .SpendIndex-physicalCards-article p {
   margin: 22px 0;
 }
 .SpendIndex-physicalCards-bg {
-  max-width: 375px;
+  max-width: 280px;
   margin: 85px auto 0;
 }
 .SpendIndex-physicalCards-bg-inner {
   @include r-background-image(
-    "untitled-35.png", "untitled-35@2x.png",
+    "backside.png", "backside.png",
     $padding-bottom: 74.3385490754%
   );
   margin-left: 8.4375%;
 }
-
+.SpendIndex-design-gallery {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+}
+.SpendIndex-design-gallery-right {
+  @include r-background-image(
+    "slim@2x.png", "slim@2x.png", 652, 454
+  );
+  border-bottom: solid 1px #e8e8e8;
+  width: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 150px;
+  padding-bottom: 0;
+}
+.SpendIndex-design-gallery-left {
+  @include r-background-image(
+    "device.gif", "device.gif", 652, 454
+  );
+  width: 100%;
+  border-bottom: solid 1px #e8e8e8;
+  background-size: 157px 197px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 250px;
+  padding-bottom: 0;
+}
 .SpendIndex-design {
-  padding: 252px 0 100px;
+  padding: 200px 0 100px;
   background-color: $SpendIndex-design-bg;
   @include background-image("spend_black.png");
   @include background-size(90%);
   background-repeat: no-repeat;
 }
 .SpendIndex-design-inner {
-  max-width: 340px;
+  width: 276px;
   margin: 0 auto;
   text-align: center;
 }
@@ -359,6 +394,7 @@ h1, h2, p {
   color: $SpendIndex-design-h2-color;
   font-size: 24px;
   line-height: 29px;
+  font-weight: bold;
 }
 .SpendIndex-design-p {
   margin: 16px 0;
@@ -368,9 +404,6 @@ h1, h2, p {
 }
 .SpendIndex-design-p-last {
   margin-bottom: 0;
-}
-.SpendIndex-design-bg {
-  display: none;
 }
 
 .SpendIndex-measure {
@@ -395,15 +428,15 @@ h1, h2, p {
 }
 .SpendIndex-measure-numbers {
   margin-top: 49px;
+  text-align: center;
 }
 .SpendIndex-measure-numbers-big {
-  margin: 13px 0;
+  margin: 8px 0;
   color: $SpendIndex-measure-numbers-big-color;
-  font-size: 27px;
-  line-height: 33px;
+  font-size: 24px;
+  line-height: 29px;
 }
 .SpendIndex-measure-numbers-more {
-  margin-top: 13px;
   color: $SpendIndex-measure-numbers-more-color;
   font-size: 14.5px;
   line-height: 17px;
@@ -443,6 +476,11 @@ h1, h2, p {
   );
 }
 
+.SpendIndex-section-heading, .SpendIndex-measure-numbers-more {
+  text-align: center;
+  margin: 0 20px;
+}
+
 .SpendIndex-charge {
   padding: 52px 0 80px;
   background-color: $SpendIndex-charge-bg;
@@ -452,11 +490,12 @@ h1, h2, p {
   margin: 0 auto 60px;
   text-align: center;
 }
-.SpendIndex-charge-h2 {
-  margin: 0 0 16px;
+.SpendIndex-charge-h2, .SpendIndex-contactless-h2, .SpendIndex-physicalCards-article h2, .SpendIndex-section-heading h1 {
+  margin: 0 0 8px;
   color: $SpendIndex-charge-h2-color;
   font-size: 24px;
   line-height: 29px;
+  font-weight: bold;
 }
 .SpendIndex-charge-p {
   margin: 16px 0;
@@ -467,9 +506,10 @@ h1, h2, p {
 .SpendIndex-charge-ImageBlock {
   max-width: 375px;
   margin: 60px auto;
+  text-align: center;
 }
 .SpendIndex-charge-RImage {
-  margin-right: 22.4%;
+  width: 160px !important;
 }
 .SpendIndex-charge-battery {
   padding-top: 51px;
@@ -488,7 +528,7 @@ h1, h2, p {
   display: none;
 }
 .SpendIndex-tech {
-  padding: 26px 0 42px;
+  padding: 69px 0 42px;
   background-color: $SpendIndex-tech-bg;
 }
 .SpendIndex-tech-bg {
@@ -615,6 +655,7 @@ h1, h2, p {
 
 .SpendIndex-security {
   background-color: $SpendIndex-security-bg;
+  padding: 69px 0 0 0;
 }
 .SpendIndex-security-slider {
   position: relative;
@@ -725,7 +766,7 @@ h1, h2, p {
 
 .SpendIndex-app {
   padding-top: 43px;
-  background-color: $SpendIndex-app-bg;
+  background-color: white;
 }
 .SpendIndex-app-inner {
   width: 276px;
@@ -749,8 +790,8 @@ h1, h2, p {
   margin: 30px auto;
 }
 .SpendIndex-app-stores img {
-  width: 70px;
-  height: 24px;
+  width: 113px;
+  height: 39px;
 }
 .SpendIndex-app-stores img:first-child {
     margin-right: 16px;
@@ -794,8 +835,44 @@ h1, h2, p {
 .SpendIndex-preOrder-bg {
   display: none;
 }
+.SpendIndex-tech-inner-icon-group img {
+  width: 80px;
+}
+.SpendIndex-tech-inner-icon-group h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
 
 @media (min-width: $screen-md-min) {
+  .SpendIndex-index {
+    position: relative;
+    height: 588px;
+    background-image: url("../images/mainpage.png");
+    background-size: cover;
+    background-position: right;
+  }
+  .SpendIndex-Form-MessageBoard {
+    font-size: 22px;
+    margin: 0;
+  }
+  .SpendIndex-h1-Logo {
+    color: white;
+  }
+  .SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
+    color: white;
+  }
+  .SpendIndex-section-heading {
+    padding-bottom: 150px;
+  }
+  .SpendIndex-section-heading h1 {
+    height: 48px;
+  	font-size: 40px;
+    line-height: 40px;
+  }
+  .SpendIndex-section-heading p {
+    height: 30px;
+  	font-size: 25px;
+  }
   .SpendIndex-container {
     max-width: 1440px;
     margin-right: auto;
@@ -808,8 +885,14 @@ h1, h2, p {
   .SpendIndex-link {
     padding: 23px 46px;
     border-radius: 31.5px;
-    font-size: 13.5px;
+    font-size: 18px;
     line-height: 17px;
+  }
+  .SpendIndex-link img {
+    height: 18px;
+  }
+  .SpendIndex-link span {
+    vertical-align: bottom;
   }
   .SpendIndex-Form-group {
     width: 350px;
@@ -871,11 +954,6 @@ h1, h2, p {
   .SpendIndex-newsletter-bg {
     float: right;
   }
-  .SpendIndex-Form-MessageBoard {
-    font-size: 15px;
-    line-height: 18.5px;
-    text-align: center;
-  }
   .SpendIndex-index-bg {
     background-image: none;
     @include background-size(auto);
@@ -890,7 +968,6 @@ h1, h2, p {
     transform: translateX(-35%);
     width: auto;
   }
-
   .SpendIndex-contactless {
     position: relative;
     height: 628px;
@@ -969,7 +1046,7 @@ h1, h2, p {
   }
   .SpendIndex-physicalCards-article h2 {
     font-size: 40px;
-    font-weight: 300;
+    font-weight: bold;
     line-height: 1.2;
   }
   .SpendIndex-physicalCards-article p:last-child {
@@ -977,20 +1054,57 @@ h1, h2, p {
   }
   .SpendIndex-physicalCards-bg {
     position: absolute;
-    bottom: 0;
-    left: 4.465592972181552%;
-    width: 45.534407027818446%;
+    bottom: -5%;
+    left: 5%;
+    width: 38%;
     max-width: none;
     margin: 0;
   }
   .SpendIndex-physicalCards-bg-inner {
+    @include r-background-image(
+      "backside.png", "backside.png",
+      $padding-bottom: 74.3385490754%
+    );
     padding-bottom: 89.4159317212%;
     margin-left: 0;
   }
-
-  .SpendIndex-design {
+  .SpendIndex-design-gallery {
     position: relative;
-    height: 644px;
+    height: 500px;
+    width: 100%;
+    padding: 0;
+    background-color: white;
+    border-bottom: solid 1px #e8e8e8;
+  }
+  .SpendIndex-design-gallery-right {
+    @include r-background-image(
+      "slim@2x.png", "slim@2x.png", 652, 454
+    );
+    border-left: solid 1px #e8e8e8;
+    width: 50%;
+    float: left;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 500px;
+    padding-bottom: 0;
+  }
+  .SpendIndex-design-gallery-left {
+    @include r-background-image(
+      "device.gif", "device.gif", 652, 454
+    );
+    width: 50%;
+    float: left;
+    background-size: 305px 394px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 500px;
+    padding-bottom: 0;
+  }
+  .SpendIndex-design {
+    padding: 150px 0 100px;
+    position: relative;
+    height: 700px;
     padding: 0;
     background-image: none;
     @include background-size(auto);
@@ -1001,7 +1115,7 @@ h1, h2, p {
     "is-SpendIndex-design-entered"
   ) {
     position: absolute;
-    top: 74.62915601023018%;
+    top: 65%;
     right: 8.711566617862372%;
     z-index: 1;
     transform: translateY(-74.62915601023018%);
@@ -1010,8 +1124,9 @@ h1, h2, p {
     margin: 0;
     text-align: left;
   }
+
   .SpendIndex-design-h2 {
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     font-size: 40px;
     line-height: 1.2;
   }
@@ -1023,19 +1138,12 @@ h1, h2, p {
   .SpendIndex-design-p-last {
     margin-bottom: 0;
   }
-  .SpendIndex-design-bg {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 75%;
-  }
   .SpendIndex-design-bg-inner {
     @include r-background-image(
       "spend_black.png", $width: 1013, $height: 397
     );
+    background-size: 65%;
   }
-
   .SpendIndex-measure {
     padding: 200px 0 200px;
   }
@@ -1073,56 +1181,17 @@ h1, h2, p {
     height: 608.71875px;
   }
   .SpendIndex-measure-numbers {
-    margin-top: 50px;
+    margin-top: 175px;
+    margin-bottom: 120px;
   }
   .SpendIndex-measure-numbers-big {
-    margin: 15px 0;
     font-size: 35px;
     line-height: 1.2;
   }
   .SpendIndex-measure-numbers-more {
-    margin-top: 15px;
-    font-size: 23px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 24px;
   }
-
-  .SpendIndex-display {
-    position: relative;
-    height: 635px;
-    padding-top: 0;
-  }
-  @include enter(
-    "SpendIndex-display-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-display-entered"
-  ) {
-    position: absolute;
-    top: 50.260416666666664%;
-    left: 9.224011713030746%;
-    transform: translateY(-50.260416666666664%);
-    width: 36.896046852122986%;
-    margin: 0;
-    text-align: left;
-  }
-  .SpendIndex-display-h2 {
-    margin-bottom: 27px;
-    font-size: 40px;
-  }
-  .SpendIndex-display-p {
-    margin: 27px 0;
-    font-size: 19px;
-    line-height: 35px;
-  }
-  .SpendIndex-display-p-last {
-    margin-bottom: 0;
-  }
-  .SpendIndex-display-bg {
-    position: absolute;
-    right: 6.171303074670571%;
-    bottom: -1px;
-    width: 43.850658857979504%;
-    margin: 0;
-  }
-
   .SpendIndex-charge {
     position: relative;
     height: 644px;
@@ -1136,7 +1205,7 @@ h1, h2, p {
     top: 52.38095238095238%;
     right: 8.199121522693996%;
     transform: translateY(-52.38095238095238%);
-    width: 36.16398243045388%;
+    width: 50%;
   }
   .SpendIndex-charge-content {
     width: auto;
@@ -1146,6 +1215,7 @@ h1, h2, p {
   .SpendIndex-charge-h2 {
     margin-bottom: 27px;
     font-size: 40px;
+    font-weight: bold;
     line-height: 1.2;
   }
   .SpendIndex-charge-p {
@@ -1167,16 +1237,18 @@ h1, h2, p {
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 47.73060029282577%;
+    left: 5%;
+    width: 45%;
+    margin-top: 120px;
   }
   .SpendIndex-charge-bg-inner {
     @include r-background-image(
-      "usbcharge-md.png", "usbcharge-md@2x.png", 652, 454
+      "device.png", "device@2x.png", 652, 454
     );
+    background-position-x: 20%;
   }
-  .SpendIndex-tech {
-    padding: 128px 0 67px;
+  .SpendIndex-tech, .SpendIndex-security {
+    padding: 80px 0;
   }
   .SpendIndex-tech-bg {
     width: 48.6090775988287%;
@@ -1188,7 +1260,7 @@ h1, h2, p {
       "board-3-d-v-4-1-7.png", "board-3-d-v-4-1-7@2x.png",
       $padding-bottom: 38.403614457831324%
     );
-    margin-left: 7.530120481927711%;
+    margin-left: 5.530120481927711%;
   }
 
   @include enter(
@@ -1286,8 +1358,23 @@ h1, h2, p {
     "SpendIndex-tech-inner", $SpendIndex-section-inner-md-anim,
     "is-SpendIndex-tech-entered"
   ) {
-    width: auto;
-    margin-top: 134px;
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .SpendIndex-tech-inner-icon-group {
+    width: 33%;
+    float: left;
+  }
+  .SpendIndex-tech-inner-icon-group h2 {
+    font-weight: lighter;
+    font-size: 25px;
+    color: #595959;
+  }
+  .SpendIndex-tech-inner-icon-group p {
+    font-weight: lighter;
+    font-size: 18.6px;
+    color: #757575;
   }
   .SpendIndex-tech-h2 {
     margin: 28px 0;
@@ -1308,13 +1395,11 @@ h1, h2, p {
   }
   .SpendIndex-security-flatten {
     display: block;
-    padding: 196px 0 162px;
   }
 
   .SpendIndex-app {
     position: relative;
-    height: 720px;
-    padding-top: 0;
+    height: 950px;
   }
   .SpendIndex-app:before {
     content: "";
@@ -1364,8 +1449,8 @@ h1, h2, p {
     display: inline;
   }
   .SpendIndex-app-stores img {
-    width: 140px;
-    height: 48px;
+    width: 162px;
+    height: 56px;
   }
   .SpendIndex-app-stores img:first-child {
       margin-right: 32px;
