@@ -485,9 +485,6 @@ let SpendIndex = React.createClass({
                   <FormattedHTMLMessage id="index.heading">
                     <h2 className="SpendIndex-link-video-h2" />
                   </FormattedHTMLMessage>
-                  <FormattedHTMLMessage id="index.description">
-                    <p className="SpendIndex-link-video-p" />
-                  </FormattedHTMLMessage>
                 </div>
               </div>
             </div>
@@ -594,9 +591,9 @@ let SpendIndex = React.createClass({
             style={overflowStyle}
             ref={this.makeSectionRefsHandler('tech')}
           >
-          <div className="SpendIndex-section-heading">
-            <h1>Tech Specifications</h1>
-              <p>The thinnest electronic wallet youll ever own</p>
+            <div className="SpendIndex-section-heading">
+              <h1>{formatMessage({id: 'index.tech.section.heading'})}</h1>
+              <p>{formatMessage({id: 'index.tech.section.description'})}</p>
             </div>
             <div className="SpendIndex-tech-bg">
               <div className="SpendIndex-tech-bg-inner" />
@@ -787,14 +784,16 @@ let SpendIndex = React.createClass({
       name: securitySwipeName
     } = SpendIndex.SECURITY_FEATURES[securitySwipePos];
 
+    let {formatMessage} = this.context.intl;
+
     return (
       <section
         className="SpendIndex-security"
         ref={this.makeSectionRefsHandler('security')}
       >
         <div className="SpendIndex-section-heading">
-          <h1>Security</h1>
-          <p>Forget about your wallet and live your present.</p>
+          <h1>{formatMessage({id: 'index.security.section.heading'})}</h1>
+          <p>{formatMessage({id: 'index.security.section.description'})}</p>
         </div>
         <div
           className="SpendIndex-security-slider invisible"
