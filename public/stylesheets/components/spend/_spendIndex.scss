@@ -128,6 +128,9 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 h1, h2, p {
     word-break: keep-all;
 }
+.SpendIndex-link-video-h2.fat {
+  font-weight: bold;
+}
 .SpendIndex-index {
   position: relative;
   height: 588px;
@@ -167,8 +170,8 @@ h1, h2, p {
   display: none;
 }
 .SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
-  color: #595959;
-  font-size: 23px;
+  color: $SpendIndex-security-feature-name-color;
+  font-size: 22px;
 }
 .SpendIndex-video-LinkBlock {
   margin-bottom: 52px;
@@ -917,12 +920,13 @@ h1, h2, p {
   .SpendIndex-link-video-group {
     margin-bottom: 125px;
   }
+
   @include enter(
     "SpendIndex-link-video-h2", $SpendIndex-link-video-h2-md-anim,
     "is-SpendIndex-index-entered"
   ) {
     display: block;
-    margin: 0 0 25px;
+    margin: 0 0 15px;
     font-size: 38px;
     line-height: 46px;
   }
@@ -1356,7 +1360,6 @@ h1, h2, p {
     float: left;
   }
   .SpendIndex-tech-inner-icon-group h2 {
-    font-weight: lighter;
     font-size: 25px;
     color: #595959;
   }

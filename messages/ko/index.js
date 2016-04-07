@@ -11,7 +11,7 @@ module.exports = messages.merge({
 
   스펜드월렛은 당신을 더 멋있고 스마트하게 바꿔줄 진정한 전자지갑입니다. 보유하고 있는 모든 카드를 통합할 수 있고, 후면부에는 신분증, 명함 등을 담을 수 있는 포켓이  있습니다. 그 어떤 지갑보다 얇지만, 그 어떤 지갑보다 많은 신용카드를 수납할 수 있습니다.`,
 
-    'index.heading': `Thinnest electronic wallet<br>that consolidates all your cards`,
+    'index.heading': `당신의 모든 카드를 통합해줄<br>가장 가벼운 전자지갑, 스펜드월렛.`,
     'index.newsletter.heading': `이메일주소 등록 후 43% 할인된 가격 혹은 무료로 Spendwallet을 경험하세요.`,
     'index.newsletter.description': `1200명 한정.`,
     'index.design.heading': `견고한 재질, 심플한 디자인.`,
@@ -41,7 +41,7 @@ module.exports = messages.merge({
     'index.application.heading': `모바일 앱`,
     'index.application.description': `스펜드 모바일앱으로 신용카드와 바코드 멤버십카드를 관리하고, 사용내역 또한 간단하게 확인하세요.`,
     'index.button.video': `Video coming soon`,
-    'index.button.preorder': `Coming soon at `,
+    'index.button.preorder': `Coming soon on `,
     'index.button.language': `Language: English`,
 
     'index.preorder.heading': `전세계 배송`,
