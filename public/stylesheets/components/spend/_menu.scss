@@ -9,7 +9,7 @@ $SpendMenu-item-border-color: #d5d5d5;
 $SpendMenu-item-link-color: #383838;
 $SpendMenu-item-link-md-color: #707070;
 
-$SpendMenu-index-md-anim: slideDown 1s 1750ms both;
+$SpendMenu-index-md-anim: slideDown 1s 575ms both;
 
 .SpendMenu {
   position: absolute;
@@ -271,7 +271,7 @@ $SpendMenu-index-md-anim: slideDown 1s 1750ms both;
   .SpendMenu-nav-inner {
     display: block;
     float: left;
-    margin: 7px 0 0;
+    margin: 5px 0 0;
   }
   .is-SpendMenu-open-in .SpendMenu-nav-inner {
     clear: none;

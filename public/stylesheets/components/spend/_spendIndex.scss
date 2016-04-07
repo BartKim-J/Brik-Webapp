@@ -55,9 +55,8 @@ $SpendIndex-preOrder-h2-color: #5a5a5a;
 
 $SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
 
-$SpendIndex-link-video-h2-md-anim: slideDown 1s 2s both;
-$SpendIndex-link-video-p-md-anim: slideDown 1s 2s both;
-$SpendIndex-video-LinkBlock-md-anim: slideUp 1s 2s both;
+$SpendIndex-link-video-h2-md-anim: slideDown 1s 0.7s both;
+$SpendIndex-video-LinkBlock-md-anim: slideUp 1s 0.7s both;
 $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 
 $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
@@ -926,16 +925,6 @@ h1, h2, p {
     margin: 0 0 25px;
     font-size: 38px;
     line-height: 46px;
-  }
-
-  @include enter(
-    "SpendIndex-link-video-p", $SpendIndex-link-video-p-md-anim,
-    "is-SpendIndex-index-entered"
-  ) {
-    display: block;
-    font-size: 20px;
-    line-height: 25px;
-    width: 600px;
   }
 
   @include enter(
