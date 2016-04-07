@@ -482,7 +482,7 @@ let SpendIndex = React.createClass({
             <div className="SpendIndex-index-inner">
               <div className="SpendIndex-index-content">
                 <div className="SpendIndex-link-video-group">
-                  <h2 className="SpendIndex-link-video-h2 fat">Meet Spendwallet</h2>
+                  <h2 className="SpendIndex-link-video-h2 fat">{formatMessage({id: 'index.heading.fat'})}</h2>
                   <FormattedHTMLMessage id="index.heading">
                     <h2 className="SpendIndex-link-video-h2" />
                   </FormattedHTMLMessage>

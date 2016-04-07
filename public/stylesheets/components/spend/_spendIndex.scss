@@ -128,7 +128,7 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 h1, h2, p {
     word-break: keep-all;
 }
-.SpendIndex-link-video-h2.fat {
+.SpendIndex-link-video-h2.fat, .SpendIndex-link-video-h2 span {
   font-weight: bold;
 }
 .SpendIndex-index {
@@ -263,9 +263,6 @@ h1, h2, p {
 .SpendIndex-newsletter-inner {
   width: auto;
   float: left;
-}
-.SpendIndex-newsletter-inner, .SpendIndex-newsletter-bg {
-  margin-bottom: 10px;
 }
 .SpendIndex-newsletter-p {
   font-size: 22px;
