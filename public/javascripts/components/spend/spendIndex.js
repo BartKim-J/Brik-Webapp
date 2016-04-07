@@ -593,7 +593,6 @@ let SpendIndex = React.createClass({
           >
             <div className="SpendIndex-section-heading">
               <h1>{formatMessage({id: 'index.tech.section.heading'})}</h1>
-              <p>{formatMessage({id: 'index.tech.section.description'})}</p>
             </div>
             <div className="SpendIndex-tech-bg">
               <div className="SpendIndex-tech-bg-inner" />
