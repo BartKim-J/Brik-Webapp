@@ -191,6 +191,7 @@ h1, h2, p {
   background-color: rgba(255, 255, 255, 0.67);
   text-align: left;
   vertical-align: middle;
+  margin: 11px 0;
 }
 .SpendIndex-Form-email:focus {
   outline: 0;
@@ -842,6 +843,9 @@ h1, h2, p {
 }
 
 @media (min-width: $screen-md-min) {
+  .SpendIndex-Form-email {
+    margin: auto;
+  }
   .SpendIndex-index {
     position: relative;
     height: 588px;
