@@ -75,6 +75,74 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
   color: white; opacity:1;
 }
 
+//Consolidation start
+
+.label {
+  font-size: 20px;
+  margin: 10px;
+  display: inline-block;
+  font: 'Arial Black', Arial;
+  font-weight: bold;
+  float: right;
+}
+
+.spend .label {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 90px;
+}
+
+.card-container {
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+}
+
+.card-container > div {
+  display: block;
+  position: absolute;
+  border-radius: 20px;
+  width: 175px;
+  height: 380px;
+}
+
+.card {
+  background-size: cover;
+}
+.spend {
+    background-image: url('http://i64.tinypic.com/121g4nt.png');
+}
+.atm {
+    background-image: url('http://i67.tinypic.com/2cgof3o.png');
+}
+.credit {
+    background-image: url('http://i68.tinypic.com/rlcob8.png');
+}
+.debit {
+    background-image: url('http://i64.tinypic.com/339llhe.png');
+}
+.gift {
+    background-image: url('http://i67.tinypic.com/b6x0kn.png');
+}
+.loyalty {
+    background-image: url('http://i65.tinypic.com/30vf1oj.png');
+}
+.membership {
+    background-image: url('http://i68.tinypic.com/1tl91v.png');
+}
+.rewards {
+    background-image: url('http://i65.tinypic.com/288rzhx.png');
+}
+
+.spend div {
+  display: block;
+  width:  100%;
+  height: 100%;
+}
+
+//Consolidation end
+
 .SpendIndex-container {
   padding-right: 0;
   padding-left: 0;
@@ -1234,12 +1302,6 @@ h1, h2, p {
     left: 5%;
     width: 45%;
     margin-top: 120px;
-  }
-  .SpendIndex-charge-bg-inner {
-    @include r-background-image(
-      "device.png", "device@2x.png", 652, 454
-    );
-    background-position-x: 20%;
   }
   .SpendIndex-tech, .SpendIndex-security {
     padding: 80px 0;

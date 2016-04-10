@@ -17,6 +17,7 @@ let WindowListener = require('../windowListener');
 
 let IndiegogoLink = require('./indiegogoLink');
 let Logo = require('./logo');
+let Consolidation = require('./consolidation');
 
 let Immutable = require('seamless-immutable');
 
@@ -540,7 +541,7 @@ let SpendIndex = React.createClass({
               className="SpendIndex-charge-bg SpendIndex-offsetY"
               style={this.offsetY2Style(chargeBgY)}
             >
-              <div className="SpendIndex-charge-bg-inner" />
+              <Consolidation/>
             </div>
           </section>
           <section
