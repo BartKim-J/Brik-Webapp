@@ -3,6 +3,8 @@ $SpendIndex-link-color: #d3d3d3;
 $SpendIndex-link-preOrder-bg: #ff2169;
 $SpendIndex-link-preOrder-color: #f7f7f7;
 
+$SpendIndex-gallery-border: #1D1D1D;
+
 $SpendIndex-index-bg: #fff;
 $SpendIndex-h1-Logo-color: #3a3a3a;
 $SpendIndex-Form-border-color: #d8d8d8;
@@ -439,8 +441,8 @@ h1, h2, p {
   background-position: bottom;
   height: 250px;
   padding-bottom: 0;
-  border-top: solid 1px #484848;
-  border-bottom: solid 1px #484848;
+  border-top: solid 1px $SpendIndex-gallery-border;
+  border-bottom: solid 1px $SpendIndex-gallery-border;
 }
 .SpendIndex-design {
   padding: 200px 0 100px;
@@ -1131,8 +1133,8 @@ h1, h2, p {
     border-bottom: solid 1px #e8e8e8;
   }
   .SpendIndex-design-gallery-right {
-    border-top: solid 1px #484848;
-    border-bottom: solid 1px #484848;
+    border-top: solid 1px $SpendIndex-gallery-border;
+    border-bottom: solid 1px $SpendIndex-gallery-border;
     width: 50%;
     float: left;
     background-size: 80%;
@@ -1142,8 +1144,8 @@ h1, h2, p {
     padding-bottom: 0;
   }
   .SpendIndex-design-gallery-left {
-    border-right: solid 1px #484848;
-    border-top: solid 1px #484848;
+    border-right: solid 1px $SpendIndex-gallery-border;
+    border-top: solid 1px $SpendIndex-gallery-border;
     width: 50%;
     float: left;
     background-size: 305px 394px;
