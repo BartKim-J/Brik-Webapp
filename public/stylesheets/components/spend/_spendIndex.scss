@@ -421,10 +421,8 @@ h1, h2, p {
   background-color: white;
 }
 .SpendIndex-design-gallery-right {
-  @include r-background-image(
-    "slim@2x.png", "slim@2x.png", 652, 454
-  );
-  border-bottom: solid 1px #e8e8e8;
+  background-color: black;
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/slim.jpg");
   width: 100%;
   background-size: 80%;
   background-repeat: no-repeat;
@@ -433,16 +431,16 @@ h1, h2, p {
   padding-bottom: 0;
 }
 .SpendIndex-design-gallery-left {
-  @include r-background-image(
-    "device.gif", "device.gif", 652, 454
-  );
+  background-color: black;
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/spend_led.gif");
   width: 100%;
-  border-bottom: solid 1px #e8e8e8;
   background-size: 157px 197px;
   background-repeat: no-repeat;
   background-position: bottom;
   height: 250px;
   padding-bottom: 0;
+  border-top: solid 1px #484848;
+  border-bottom: solid 1px #484848;
 }
 .SpendIndex-design {
   padding: 200px 0 100px;
@@ -483,12 +481,6 @@ h1, h2, p {
   color: $SpendIndex-measure-h2-color;
   font-size: 24px;
   line-height: 29px;
-}
-.SpendIndex-measure-sideView {
-  @include image-replacement-core(
-    "slim.png", "slim@2x.png", 299px, 18px
-  );
-  margin: 44px auto;
 }
 .SpendIndex-measure-sideView-video {
   display: none;
@@ -1139,10 +1131,8 @@ h1, h2, p {
     border-bottom: solid 1px #e8e8e8;
   }
   .SpendIndex-design-gallery-right {
-    @include r-background-image(
-      "slim@2x.png", "slim@2x.png", 652, 454
-    );
-    border-left: solid 1px #e8e8e8;
+    border-top: solid 1px #484848;
+    border-bottom: solid 1px #484848;
     width: 50%;
     float: left;
     background-size: 80%;
@@ -1152,9 +1142,8 @@ h1, h2, p {
     padding-bottom: 0;
   }
   .SpendIndex-design-gallery-left {
-    @include r-background-image(
-      "device.gif", "device.gif", 652, 454
-    );
+    border-right: solid 1px #484848;
+    border-top: solid 1px #484848;
     width: 50%;
     float: left;
     background-size: 305px 394px;

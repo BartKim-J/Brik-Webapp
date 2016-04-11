@@ -4,23 +4,22 @@ let classNames = require('classnames');
 let Consolitation = React.createClass({
   componentDidMount() {
     var _containerHeight = 1000;
-    var _width, _height, _scrollHeight;
-    var letters = document.getElementsByTagName('span');
+    var _width, _height;
     var _movingElements = [];
     var _scrollPercent = 0;
     var pre = prefix();
     var _jsPrefix  = pre.lowercase;
     if(_jsPrefix == 'moz') _jsPrefix = 'Moz'
     var _cssPrefix = pre.css;
-    var endPercent = 10;
-    var startPercent = 6;
-    var endX = 0.07;
+    var endPercent = 12;
+    var startPercent = 8;
+    var endX = 0.05;
     var endY = 0.05;
     var _positions = [
       {
         name: 'spend',
         start: {
-          percent: startPercent, x: 0.05, y: 0.1
+          percent: startPercent, x: 0.03, y: 0.1
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -29,7 +28,7 @@ let Consolitation = React.createClass({
       {
         name: 'rewards',
         start: {
-          percent: startPercent, x: 0.06, y: 0.085
+          percent: startPercent, x: 0.04, y: 0.08
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -38,7 +37,7 @@ let Consolitation = React.createClass({
       {
         name: 'membership',
         start: {
-          percent: startPercent, x: 0.07, y: 0.07
+          percent: startPercent, x: 0.05, y: 0.06
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -47,7 +46,7 @@ let Consolitation = React.createClass({
       {
         name: 'gift',
         start: {
-          percent: startPercent, x: 0.08, y: 0.055
+          percent: startPercent, x: 0.06, y: 0.04
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -56,7 +55,7 @@ let Consolitation = React.createClass({
       {
         name: 'debit',
         start: {
-          percent: startPercent, x: 0.09, y: 0.04
+          percent: startPercent, x: 0.07, y: 0.02
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -65,7 +64,7 @@ let Consolitation = React.createClass({
       {
         name: 'credit',
         start: {
-          percent: startPercent, x: 0.1, y: 0.025
+          percent: startPercent, x: 0.08, y: 0.00
         },
         end: {
           percent: endPercent, x: endX, y: endY
@@ -90,10 +89,10 @@ let Consolitation = React.createClass({
     function resize() {
       _width = window.innerWidth;
       _height = window.innerHeight;
-      _scrollHeight = _containerHeight-_height;
     }
 
     function updateElements() {
+      console.log(_scrollPercent);
       for (var i = 0; i < _movingElements.length; i++) {
         var p = _positions[i];
         if(_scrollPercent <= p.start.percent) {
@@ -120,24 +119,17 @@ let Consolitation = React.createClass({
       }
     }
 
-    function getScrollTop(){
-      if(typeof pageYOffset!= 'undefined'){
-        //most browsers except IE before #9
-        return pageYOffset;
-      }
-      else{
-        var B= document.body; //IE 'quirks'
-        var D= document.documentElement; //IE with doctype
-        D= (D.clientHeight)? D: B;
-        return D.scrollTop;
-      }
+    function getScrollPercent() {
+      var h = document.documentElement,
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight';
+      return h[st]||b[st] / ((h[sh]||b[sh]) - h.clientHeight) * 100;
     }
 
     function loop() {
-      var _scrollOffset = window.pageYOffset || window.scrollTop;
-      _scrollPercent = _scrollOffset/_scrollHeight || 0;
+      _scrollPercent = getScrollPercent();
       updateElements();
-
       requestAnimationFrame(loop);
     }
 

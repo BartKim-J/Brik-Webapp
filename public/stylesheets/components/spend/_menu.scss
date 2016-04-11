@@ -42,9 +42,6 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   border-bottom-color: $SpendMenu-scrolling-border-color;
   background-color: $SpendMenu-scrolling-bg;
 }
-.is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
-  border: solid 2px $SpendMenu-item-link-md-color !important;
-}
 .is-SpendMenu-scrolling .SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
   color: $SpendMenu-Logo-color !important;
 }
@@ -184,15 +181,11 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   padding: 0px 20px 0px 20px;
 }
 
-.SpendMenu-index .SpendMenu-indiegogo-button img {
-  border: solid 2px #ffffff;
-}
-
 .SpendMenu-indiegogo-button img {
   height: 30px !important;
-  border: solid 2px #171717;
   padding: 5px 30px 5px 30px;
   border-radius: 44px;
+  background-color: #ff2169;
   width: 170px;
 }
 
