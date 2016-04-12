@@ -107,6 +107,12 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 .is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
   background-color: $SpendMenu-button-color;
 }
+.SpendMenu-index .SpendMenu-indiegogo-button img {
+  border: solid 2px #ffffff;
+}
+.is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
+  border: solid 2px $SpendMenu-item-link-md-color !important;
+}
 .SpendMenu-button-bar-1,
 .SpendMenu-button-bar-2,
 .SpendMenu-button-bar-3 {
@@ -185,8 +191,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   height: 30px !important;
   padding: 5px 30px 5px 30px;
   border-radius: 44px;
-  background-color: #ff2169;
-  width: 170px;
+  border: solid 2px #171717;
 }
 
 @media (min-width: $screen-md-min) {

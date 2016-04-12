@@ -262,7 +262,7 @@ let SpendMenu = React.createClass({
                     eventCategory="Menu" />
                 </div>
                 <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
-                  <a className="SpendMenu-indiegogo-button"><img src="images/indiegogo_white.png" alt="Indiegogo"></img></a>
+                  <a className="SpendMenu-indiegogo-button"><img src="images/indiegogo_pink.png" alt="Indiegogo"></img></a>
                 </LinkBlock>
               </div>
             </nav>
