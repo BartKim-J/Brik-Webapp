@@ -14,5 +14,9 @@ module.exports = {
   team: {
     version: 1,
     messageId: 'team'
+  },
+  contest: {
+    version: 1,
+    messageId: 'contest'
   }
 };

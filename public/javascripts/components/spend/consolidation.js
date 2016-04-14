@@ -92,7 +92,6 @@ let Consolitation = React.createClass({
     }
 
     function updateElements() {
-      console.log(_scrollPercent);
       for (var i = 0; i < _movingElements.length; i++) {
         var p = _positions[i];
         if(_scrollPercent <= p.start.percent) {

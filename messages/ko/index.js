@@ -71,11 +71,12 @@ module.exports = messages.merge({
     'team.description': ` `,
     'team.joinTheTeam': `Join the Team`,
     'team.weAreHiring': `함께할 가족을 찾습니다.`,
-    'team.viewOpenings': `채용정보 보기`,
+    'team.viewOpenings': `채용정보 보기`
 
     'menu.team': `Team`,
     'menu.jobs': `Jobs`,
     'menu.faq': `FAQ`,
+    'menu.contest': `Contest`,
 
     'footer.team': `Team`,
     'footer.jobs': `Jobs`,

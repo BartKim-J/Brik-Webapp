@@ -63,6 +63,12 @@ $SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
 
 $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 
+#contestForm {
+  margin: auto;
+  display: flex;
+  min-height: 1000px;
+  min-width: 800px;
+}
 
 .SpendIndex-Form-email::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: white; opacity:1;
