@@ -16,6 +16,9 @@ function postSubscription(email) {
     content_name: 'Email Subscription',
     value: email
   });
+
+  window.location =  "/contest";
+
   return (dispatch => {
     dispatch(requestNewSubscription(email));
     ga('send', 'event', 'Email Subscription', 'create', email);
