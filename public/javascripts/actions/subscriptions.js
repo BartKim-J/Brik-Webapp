@@ -12,6 +12,10 @@ function receiveNewSubscription(status, error = null) {
 }
 
 function postSubscription(email) {
+  fbq('track', 'Lead', {
+    content_name: 'Email Subscription',
+    value: email
+  });
   return (dispatch => {
     dispatch(requestNewSubscription(email));
     ga('send', 'event', 'Email Subscription', 'create', email);
