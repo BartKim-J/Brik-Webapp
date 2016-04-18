@@ -20,6 +20,11 @@ $SpendFooter-SocialLinks-link-color: #777;
   line-height: 1;
   text-align: center;
 }
+
+.SpendFooter-mail-link {
+  color: $SpendFooter-copyrights-color;
+}
+
 .SpendFooter-inner {
   background-color: $SpendFooter-bg;
 }

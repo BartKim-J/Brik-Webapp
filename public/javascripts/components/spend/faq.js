@@ -65,7 +65,7 @@ let SpendFaq = React.createClass({
               </div>
               <div className="col-md-6">
                 <LinkBlock className="SpendFaq-container-footer-LinkBlock">
-                  <EmailLink className="SpendFaq-emailUsLink" email="contact@xengineering.co" eventLabel="label: Email Us, in: FAQ">{formatMessage({id: 'faq.emailUs'})}</EmailLink>
+                  <EmailLink className="SpendFaq-emailUsLink" email="hey@spendwallet.com" eventLabel="label: Email Us, in: FAQ">{formatMessage({id: 'faq.emailUs'})}</EmailLink>
                 </LinkBlock>
               </div>
             </div>

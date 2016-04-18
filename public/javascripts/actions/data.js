@@ -31,8 +31,8 @@ function fetchData(key) {
   case 'team':
     url = '/team';
     break;
-  case 'event':
-    url = '/event';
+  case 'promotion':
+    url = '/promotion';
     break;
   default:
     // TODO: error

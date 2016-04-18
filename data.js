@@ -15,8 +15,8 @@ module.exports = {
     version: 1,
     messageId: 'team'
   },
-  event: {
+  promotion: {
     version: 1,
-    messageId: 'event'
+    messageId: 'promotion'
   }
 };

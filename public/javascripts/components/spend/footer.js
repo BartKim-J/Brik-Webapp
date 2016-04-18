@@ -16,7 +16,7 @@ let SpendFooter = React.createClass({
       {key: 'faq', url: '/faq'},
       {key: 'jobs', url: '/jobs'},
       {key: 'legal', url: '/legal'},
-      {key: 'event', url: '/event'}
+      {key: 'promotion', url: '/promotion'}
     ]
   },
 
@@ -63,7 +63,8 @@ let SpendFooter = React.createClass({
                 ))}
               </ul>
               <div className="SpendFooter-copyrights">
-                {formatMessage({id: `footer.copyrights`})}
+                {formatMessage({id: `footer.copyrights`})} <br/>
+                <a className="SpendFooter-mail-link" href="mailto:hey@spendwallet.com"> {formatMessage({id: `footer.email`})} </a>
               </div>
               <SocialLinks
                 className="SpendFooter-SocialLinks"
