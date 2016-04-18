@@ -10,7 +10,7 @@ let Index = require('./spendIndex');
 let Team = require('./team');
 let Jobs = require('./jobs');
 let Faq = require('./faq');
-let Contest = require('./contest');
+let Event = require('./event');
 let Legal = require('./legal');
 let Footer = require('./footer');
 
@@ -106,7 +106,7 @@ let Spend = React.createClass({
           jobs: '/jobs$',
           faq: '/faq$',
           legal: '/legal$',
-          contest: '/contest$'
+          event: '/event$'
         }}
         route={route}
         onPushRoute={pushRoute} onPopRoute={popRoute}
@@ -170,8 +170,8 @@ let Spend = React.createClass({
               fetchData('legalDocs');
             }} />
         </Route>,
-        <Route key="contest" name="contest">
-          <Contest/>
+        <Route key="event" name="event">
+          <Event/>
         </Route>,
         <Route key="pageNotFound">
           <PageNotFound />

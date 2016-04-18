@@ -12,16 +12,14 @@ function receiveNewSubscription(status, error = null) {
 }
 
 function postSubscription(email) {
-  fbq('track', 'Lead', {
-    content_name: 'Email Subscription',
-    value: email
-  });
-
-  window.location =  "/contest";
-
   return (dispatch => {
     dispatch(requestNewSubscription(email));
     ga('send', 'event', 'Email Subscription', 'create', email);
+
+    fbq('track', 'Lead', {
+      content_name: 'Email Subscription',
+      value: email
+    });
 
     return fetchWithGa('/subscriptions', {
       method: 'post',
@@ -35,6 +33,7 @@ function postSubscription(email) {
         response.json().then(json => ({response, json}))
     ).then(({response, json: {error = null}}) => {
       if (response.ok) {
+        window.location =  "/event";
         dispatch(receiveNewSubscription('success'));
         return Promise.resolve();
       } else {

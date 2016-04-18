@@ -76,8 +76,13 @@ module.exports = messages.merge({
     'menu.team': `Team`,
     'menu.jobs': `Jobs`,
     'menu.faq': `FAQ`,
-    'menu.contest': `Contest`,
 
+    'event.title': `Thank you for signing up!`,
+    'event.description': `Spendwallet’s launch date is just around the corner. We  will update you as soon as we are ready for sale, so you can take advantage of our super early bird price.`,
+    'event.descriptionSecond': `And for signing up early, you now have a chance to win a free Spendwallet.`,
+    'event.callToAction': `Check out the event below`,
+
+    'footer.event': `Event`,
     'footer.team': `Team`,
     'footer.jobs': `Jobs`,
     'footer.faq': `FAQ`,

@@ -250,8 +250,7 @@ let SpendMenu = React.createClass({
                     {[
                       {key: 'team', url: '/team'},
                       {key: 'jobs', url: '/jobs'},
-                      {key: 'faq', url: '/faq'},
-                      {key: 'contest', url: '/contest'}
+                      {key: 'faq', url: '/faq'}                      
                     ].map(({key, url}) => (
                       <li className="SpendMenu-item" key={key}>
                         <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{formatMessage({id: `menu.${key}`})}</Link>

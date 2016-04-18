@@ -81,13 +81,18 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'menu.team': `Team`,
   'menu.jobs': `Jobs`,
   'menu.faq': `FAQ`,
-  'menu.contest': `Contest`,
 
+  'footer.event': `Event`,
   'footer.team': `Team`,
   'footer.jobs': `Jobs`,
   'footer.faq': `FAQ`,
   'footer.legal': `Legal`,
   'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
+
+  'event.title': `Thank you for signing up!`,
+  'event.description': `Spendwallet’s launch date is just around the corner. We  will update you as soon as we are ready for sale, so you can take advantage of our super early bird price.`,
+  'event.descriptionSecond': `And for signing up early, you now have a chance to win a free Spendwallet.`,
+  'event.callToAction': `Check out the event below`,
 
   getNonData() {
     return Immutable(
