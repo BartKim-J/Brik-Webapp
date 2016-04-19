@@ -19,9 +19,12 @@ let Promotion = React.createClass({
   },
 
   componentDidMount: function() {
+    var frame = document.getElementById('SpendPromotionIframe');
     var params = window.location.search.match(new RegExp('(?:[\?\&]email=)([^&]+)'));
     var email = params ? params[1] : "";
-    document.getElementById('SpendPromotionIframe').src = "https://gleam.io/KL1Df/win-a-free-spendwallet-every-week?email="+email
+    var lastheight;
+
+    frame.src = "https://gleam.io/KL1Df/win-a-free-spendwallet-every-week?email="+email;
   },
 
   render() {

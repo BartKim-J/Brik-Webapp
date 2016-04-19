@@ -23,8 +23,8 @@
 
 .SpendPromotion {
   background-color: white;
-  background-image: linear-gradient(bottom, #F8F8F8, #F8F8F8 50%, transparent 50%, transparent 100%);
-  background-image: -webkit-linear-gradient(bottom, #F8F8F8, #F8F8F8 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(bottom, #F8F8F8, #F8F8F8 48.5%, transparent 48.5%, transparent 100%);
+  background-image: -webkit-linear-gradient(bottom, #F8F8F8, #F8F8F8 48.5%, transparent 48.5%, transparent 100%);
   padding: 105px 0 50px !important;
 }
 
@@ -37,19 +37,15 @@
 .SpendPromotion-iframe {
   margin: auto;
   display: flex;
-  min-height: 630px;
+  min-height: 580px;
   min-width: 320px;
   box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: $screen-md-min) {
   .SpendPromotion-iframe {
-    min-height: 645px;
+    min-height: 595px;
     min-width: 540px;
-  }
-  .SpendPromotion {
-    background-image: linear-gradient(bottom, #F8F8F8, #F8F8F8 50.5%, transparent 50.5%, transparent 100%);
-    background-image: -webkit-linear-gradient(bottom, #F8F8F8, #F8F8F8 50.5%, transparent 50.5%, transparent 100%);
   }
   .SpendPromotion-h1 {
     margin-top: 100px;
