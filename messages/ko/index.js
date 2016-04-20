@@ -76,6 +76,7 @@ module.exports = messages.merge({
     'menu.team': `Team`,
     'menu.jobs': `Jobs`,
     'menu.faq': `FAQ`,
+    'menu.promotion': `Promotion`,
 
     'promotion.title': `감사합니다!`,
     'promotion.description': `스펜드월렛의 출시일이 코앞으로 다가왔습니다. 출시 당일 슈퍼얼리버드 가격으로 구매하실 수 있도록 등록해주신 주소로 알려드리겠습니다.`,

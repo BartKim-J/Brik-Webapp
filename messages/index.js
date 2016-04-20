@@ -81,6 +81,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'menu.team': `Team`,
   'menu.jobs': `Jobs`,
   'menu.faq': `FAQ`,
+  'menu.promotion': `Promotion`,
 
   'footer.promotion': `Promotion`,
   'footer.team': `Team`,
