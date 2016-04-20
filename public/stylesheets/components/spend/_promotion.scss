@@ -37,14 +37,13 @@
 .SpendPromotion-iframe {
   margin: auto;
   display: flex;
-  min-height: 580px;
+  min-height: 720px;
   min-width: 320px;
   box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: $screen-md-min) {
   .SpendPromotion-iframe {
-    min-height: 595px;
     min-width: 540px;
   }
   .SpendPromotion-h1 {
