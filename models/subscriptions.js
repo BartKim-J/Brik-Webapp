@@ -1,4 +1,5 @@
 let {db} = require('./index');
+
 var MailChimpAPI = require('mailchimp').MailChimpAPI;
 
 db.on('open', () => {
@@ -13,7 +14,7 @@ db.on('open', () => {
     );
 });
 
-function create(email) {
+function create(email, lang) {
     return new Promise((resolve, reject) => {
         db.run(
             'INSERT INTO subscriptions VALUES (?)', email,
@@ -27,7 +28,7 @@ function create(email) {
                         )
                     );
                 } else {
-                    subscribeToMailChimp(email);
+                    subscribeToMailChimp(email, lang);
                     resolve(email);
                 }
             }
@@ -35,7 +36,7 @@ function create(email) {
     });
 }
 
-function subscribeToMailChimp(submittedEmail) {
+function subscribeToMailChimp(submittedEmail, lang) {
 
     var merge_vars = [
         { EMAIL: submittedEmail },
@@ -45,17 +46,32 @@ function subscribeToMailChimp(submittedEmail) {
 
     try {
         var api = new MailChimpAPI(CONF.MAILCHIMP_API_KEY, { version : '2.0' });
-        api.call('lists', 'subscribe', {
-          id: '7d31ccc315',
-          email: {email: submittedEmail},
-          merge_vars: merge_vars,
-          double_optin: false,
-          update_existing: true
-      }, function() {
-          console.log("Subscribed user to mailing list");
-      }, function(error) {
-          console.log("Subscribing user to mailing list failed " + error);
-      });
+
+        if (lang == 'ko') {
+          api.call('lists', 'subscribe', {
+            id: '4956ec09b5',
+            email: {email: submittedEmail},
+            merge_vars: merge_vars,
+            double_optin: false,
+            update_existing: true
+          }, function() {
+            console.log("Subscribed user to korean mailing list");
+          }, function(error) {
+            console.log("Subscribing user to korean mailing list failed " + error);
+          });
+        } else {
+          api.call('lists', 'subscribe', {
+            id: '7d31ccc315',
+            email: {email: submittedEmail},
+            merge_vars: merge_vars,
+            double_optin: false,
+            update_existing: true
+          }, function() {
+            console.log("Subscribed user to english mailing list");
+          }, function(error) {
+            console.log("Subscribing user to english mailing list failed " + error);
+          });
+        }
     } catch (error) {
         console.log(error.message);
     }

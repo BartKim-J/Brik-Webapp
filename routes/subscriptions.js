@@ -12,7 +12,7 @@ router.post('/', (req, res, next) => {
     if (!(validator.isEmail(email))) {
       throw new StatusError(400, 'Invalid Email');
     }
-    subscriptions.create(email)
+    subscriptions.create(email, res.lang)
       .then(email => {
         res.json({});
       }, error => {

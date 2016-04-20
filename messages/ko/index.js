@@ -13,8 +13,8 @@ module.exports = messages.merge({
 
     'index.heading.fat': ` `,
     'index.heading': `모든 카드를 단 하나에<br>가장 가볍고 스마트한 지갑, <span>스펜드월렛</span>`,
-    'index.newsletter.heading': `1200분의 사전예약자는 무료베타테스트 참여 또는 43% 할인혜택을 받으실 수 있습니다.`,
-    'index.newsletter.description': `이메일 주소만으로 간단히 예약가능합니다.`,
+    'index.newsletter.heading': `사전예약자는 무료베타테스트 참여 또는 43% 할인혜택을 받으실 수 있습니다.`,
+    'index.newsletter.description': `이메일주소로 간단히 예약가능합니다.`,
     'index.design.heading': `견고한 재질, 심플한 디자인.`,
     'index.design.description': `단단하고 가벼운 알루미늄 소재의 프레임과 내구성이 뛰어난 플라스틱으로 만들어진 스펜드월렛은 일상생활에서 사용하기에 충분한 내구성을 자랑합니다.`,
     'index.measure.heading': `가볍다. 얇다.<br /> 스펜드월렛.`,
@@ -77,9 +77,9 @@ module.exports = messages.merge({
     'menu.jobs': `Jobs`,
     'menu.faq': `FAQ`,
 
-    'promotion.title': `이메일 등록해주셔서 감사합니다!`,
-    'promotion.description': `스펜드월렛의 출시일이 코앞으로 다가왔습니다. 출시 당일 슈퍼얼리버드 가격으로 구매하실 수 있도록 등록해주신 주소로 알림 메일 전달해드리도록 하겠습니다.`,
-    'promotion.descriptionSecond': `그리고 이메일 등록해주신 분들에 한해 스펜드월렛을 무료로 드리는 프로모션을 진행 중입니다.`,
+    'promotion.title': `감사합니다!`,
+    'promotion.description': `스펜드월렛의 출시일이 코앞으로 다가왔습니다. 출시 당일 슈퍼얼리버드 가격으로 구매하실 수 있도록 등록해주신 주소로 알려드리겠습니다.`,
+    'promotion.descriptionSecond': `출시전까지 스펜드월렛을 무료로 드리는 프로모션을 진행 중입니다.`,
     'promotion.callToAction': `하단 미션을 수행해주세요!`,
 
     'footer.promotion': `Promotion`,
