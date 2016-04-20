@@ -26,7 +26,7 @@ module.exports = Immutable([{
   name: `Anton`,
   role: `VP of Hardware Engineering`,
   image: '/images/data/team/profile-anton.png',
-  desc: `Anton, who considers himself as a hobbyist maker, is in charge of electrical engineering on the team. He has experiences from semiconductor vendor ST-Erisson and Qualcomm before. He creates things; some of which are beautiful and interesting.`
+  desc: `Anton, who considers himself as a hobbyist maker, is in charge of electrical engineering on the team. He has experiences from semiconductor vendor ST-Ericsson and Qualcomm before. He creates things; some of which are beautiful and interesting.`
 }, {
   name: `Andy`,
   role: `VP of Operations`,

@@ -31,7 +31,7 @@ module.exports = Immutable([{
   name: `Andy`,
   role: `VP of Operations`,
   image: '/images/data/team/profile-andy.png',
-  desc: `Andy를 한 단어로 표현하자면, 그는 얼리어덥터입니다. 뉴스와 소식에 빠르고, 다양한 분야에 모르는 것이 없을 정도로 박식합니다. 팀의 운영을 책임지는 Andy를 팀원들은 엄마라고 부릅니다.`
+  desc: `Andy를 한 단어로 표현하자면, 그는 얼리어답터입니다. 뉴스와 소식에 빠르고, 다양한 분야에 모르는 것이 없을 정도로 박식합니다. 팀의 운영을 책임지는 Andy를 팀원들은 엄마라고 부릅니다.`
 }, {
   name: `Nicklas`,
   role: `Software Engineer`,
@@ -56,5 +56,5 @@ module.exports = Immutable([{
   name: `Allie`,
   role: `Designer`,
   image: '/images/data/team/profile-allie.png',
-  desc: `Allie는 팀에서 제품과 UI를 디자인합니다. 모바일UI와 제품을 결합한 프로젝트를 주로 진행해왔습니다. 조금 더 흥이 넘지는 세상을 위한 디자인을 하겠다는 꿈을 가지고 있습니다.`
+  desc: `Allie는 팀에서 제품과 UI를 디자인합니다. 모바일UI와 제품을 결합한 프로젝트를 주로 진행해왔습니다. 조금 더 흥이 넘치는 세상을 위한 디자인을 하겠다는 꿈을 가지고 있습니다. 참고로 미녀입니다.`
 }]);
