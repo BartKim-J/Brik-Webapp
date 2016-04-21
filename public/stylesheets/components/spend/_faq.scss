@@ -10,7 +10,7 @@ $SpendFaq-emailUsLink-color: #444444;
 $SpendFaq-h1p-color: #8B8484;
 
 .SpendFaq {
-  @include background-image("faq/background.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_faq.png");
   background-position: center top;
   background-size: 1440px !important;
   background-repeat: no-repeat;

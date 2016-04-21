@@ -710,8 +710,8 @@ let SpendIndex = React.createClass({
                 {formatMessage({id: 'index.application.description'})}
               </p>
               <div className="SpendIndex-app-stores text-hide">
-                <image src="/images/app-stores.png" />
-                <image src="/images/google-play.png"/>
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_IOS.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_GOOGLE.png"/>
               </div>
             </div>
             <div
@@ -736,10 +736,10 @@ let SpendIndex = React.createClass({
               <ImageBlock
                 className="SpendIndex-preOrder-ImageBlock text-center"
               >
-                <Image src="/images/fin-spend-2.png" width={293} height={235} />
+                <Image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_mobile.png" width={293} height={235} />
               </ImageBlock>
               <LinkBlock className="SpendIndex-preOrder-LinkBlock">
-                <a className="SpendIndex-link SpendIndex-link-preOrder">{formatMessage({id: 'index.button.preorder'})} <img src="images/indiegogo_white.png" alt="Indiegogo"></img></a>
+                <a className="SpendIndex-link SpendIndex-link-preOrder">{formatMessage({id: 'index.button.preorder'})} <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></a>
               </LinkBlock>
             </div>
             <div className="SpendIndex-preOrder-bg">

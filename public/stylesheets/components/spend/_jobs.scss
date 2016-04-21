@@ -5,7 +5,7 @@ $SpendJobs-container-footer-color: #8c8c8c;
 $SpendJobs-h1p-color: #8B8484;
 
 .SpendJobs {
-  @include background-image("jobs/background.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_jobs.png");
   background-position: center top;
   background-size: 1440px !important;
   background-repeat: no-repeat;

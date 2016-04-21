@@ -11,7 +11,7 @@ $SpendJobs-h1p-color: #8B8484;
 
 .SpendTeam {
   padding: 105px 0 65px;
-  @include background-image("team/background.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_team.png");
   background-position: center top;
   background-size: 1440px !important;
   background-repeat: no-repeat;

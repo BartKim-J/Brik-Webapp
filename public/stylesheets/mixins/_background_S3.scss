@@ -1,0 +1,9 @@
+@mixin r-background-image-s3($url, $width: null, $height: null, $padding-bottom: null) {
+  @if not $padding-bottom {
+    $padding-bottom: #{($height/$width)*100}%
+  }
+  background-image: url("#{$url}");
+  padding-bottom: $padding-bottom;
+  background-repeat: no-repeat;
+  height: 0;
+}
