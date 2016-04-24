@@ -375,7 +375,7 @@ let SpendIndex = React.createClass({
         this.setState({
           subscriptionMsg: Immutable({
             className: 'SpendIndex-Form-MessageBoard-success',
-            content: '/images/check.png',
+            content: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/email_check.png',
             isFading: true
           })
         });
@@ -384,7 +384,7 @@ let SpendIndex = React.createClass({
         this.setState({
           subscriptionMsg: Immutable({
             className: 'SpendIndex-Form-MessageBoard-error',
-            content: '/images/plane@2x.png',
+            content: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/email_plane.png',
             isFading: false
           })
         });
@@ -510,7 +510,7 @@ let SpendIndex = React.createClass({
                   <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
                   <Button className="SpendIndex-Form-submit" type="submit">
                     <MessageBoard className="SpendIndex-Form-MessageBoard" message={subscriptionMsg}>
-                      /images/plane@2x.png
+                      https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/email_plane.png
                     </MessageBoard>
                   </Button>
                 </Form>
@@ -534,7 +534,7 @@ let SpendIndex = React.createClass({
               <ImageBlock className="SpendIndex-charge-ImageBlock">
                 <RImage
                   className="SpendIndex-charge-RImage"
-                  src="/images/device.png" width={291} height={221} />
+                  src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/device.png" width={291} height={221} />
               </ImageBlock>
             </div>
             <div
@@ -653,17 +653,17 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-tech-inner">
               <div className="SpendIndex-tech-inner-icon-group">
-                <image src="/images/touch_icon.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_battery.png" />
                 <FormattedHTMLMessage id="index.tech.touch.title"><h2/></FormattedHTMLMessage>
                 <p>{formatMessage({id: 'index.tech.touch.description'})}</p>
               </div>
               <div className="SpendIndex-tech-inner-icon-group">
-                <image src="/images/battery_icon.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_touch.png" />
                 <FormattedHTMLMessage id="index.tech.battery.title"><h2/></FormattedHTMLMessage>
                 <p>{formatMessage({id: 'index.tech.battery.description'})}</p>
               </div>
               <div className="SpendIndex-tech-inner-icon-group">
-                <image src="/images/led_icon.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_led.png" />
                 <FormattedHTMLMessage id="index.tech.led.title"><h2/></FormattedHTMLMessage>
                 <p>{formatMessage({id: 'index.tech.led.description'})}</p>
               </div>
@@ -768,7 +768,7 @@ let SpendIndex = React.createClass({
                 <Input className="SpendIndex-Form-email" type="email" name="email" placeholder={formatMessage({id: 'emailPlaceholder'})} />
                 <Button className="SpendIndex-Form-submit" type="submit">
                   <MessageBoard className="SpendIndex-Form-MessageBoard" message={subscriptionMsg}>
-                    /images/plane@2x.png
+                    https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/email_plane.png
                   </MessageBoard>
                 </Button>
               </Form>

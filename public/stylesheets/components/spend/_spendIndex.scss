@@ -30,11 +30,6 @@ $SpendIndex-measure-h2-color: #73787b;
 $SpendIndex-measure-numbers-big-color: #73787b;
 $SpendIndex-measure-numbers-more-color: #73787b;
 
-$SpendIndex-display-bg: #f8fafe;
-$SpendIndex-display-border-color: #e8e8e8;
-$SpendIndex-display-h2-color: #595959;
-$SpendIndex-display-p-color: #737373;
-
 $SpendIndex-charge-bg: #fff;
 $SpendIndex-charge-h2-color: black;
 $SpendIndex-charge-p-color: #999;
@@ -373,10 +368,11 @@ h1, h2, p {
   margin: 90px auto 0;
 }
 .SpendIndex-contactless-bg-inner {
-  @include r-background-image(
-    "pos-web.png", "pos-web@2x.png",
+  @include r-background-image-s3(
+    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_pos_mobile.png",
     $padding-bottom: 59.2%
   );
+  background-size: contain;
   margin-left: 7.733333333333333%;
   background-position: center;
 }
@@ -498,38 +494,6 @@ h1, h2, p {
   word-spacing: 0.25em;
 }
 
-.SpendIndex-display {
-  padding-top: 62px;
-  border-bottom: 1px solid $SpendIndex-display-border-color;
-  background-color: $SpendIndex-display-bg;
-}
-.SpendIndex-display-inner {
-  width: 261px;
-  margin: 0 auto 73px;
-  text-align: center;
-}
-.SpendIndex-display-h2 {
-  margin: 0 0 49px;
-  color: $SpendIndex-display-h2-color;
-  font-size: 35px;
-  line-height: 1.2;
-}
-.SpendIndex-display-p {
-  margin: 49px 0;
-  color: $SpendIndex-display-p-color;
-  font-size: 13px;
-  line-height: 20px;
-}
-.SpendIndex-display-bg {
-  width: 210px;
-  margin: 73px auto 0;
-}
-.SpendIndex-display-bg-inner {
-  @include r-background-image(
-    "led-new-231.png", "led-new-231@2x.png", 599, 496
-  );
-}
-
 .SpendIndex-section-heading, .SpendIndex-measure-numbers-more {
   text-align: center;
   margin: 0 20px;
@@ -565,19 +529,7 @@ h1, h2, p {
 .SpendIndex-charge-RImage {
   width: 160px !important;
 }
-.SpendIndex-charge-battery {
-  padding-top: 51px;
-  margin-top: 90px;
-  @include background-image(
-    "calendar.png", "calendar@2x.png", 46px, 38px
-  );
-  background-position: center top;
-  background-repeat: no-repeat;
-  color: $SpendIndex-charge-battery-color;
-  font-size: 22px;
-  line-height: 27px;
-  text-align: center;
-}
+
 .SpendIndex-charge-bg {
   display: none;
 }
@@ -592,10 +544,11 @@ h1, h2, p {
   margin: 0 auto 62px;
 }
 .SpendIndex-tech-bg-inner {
-  @include r-background-image(
-    "board-3-d-544.png", "board-3-d-544@2x.png",
+  @include r-background-image-s3(
+    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/tech_mobile.png",
     $padding-bottom: 86.08955223880596%
   );
+  background-size: contain;
   margin-left: 20.895522388059703%;
 }
 .SpendIndex-tech-bg-caption-display {
@@ -746,13 +699,13 @@ h1, h2, p {
   background-repeat: no-repeat;
 }
 .SpendIndex-security-feature-alert {
-  @include background-image("security/alarm.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_alarm.png");
 }
 .SpendIndex-security-feature-passcode {
-  @include background-image("security/fingerprint.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_fingerprint.png");
 }
 .SpendIndex-security-feature-encrypt {
-  @include background-image("security/encrypt.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_encrypt.png");
 }
 .SpendIndex-security-slider-feature-alert,
 .SpendIndex-security-slider-feature-passcode,
@@ -905,7 +858,7 @@ h1, h2, p {
   .SpendIndex-index {
     position: relative;
     height: 588px;
-    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/mainpage.png");
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage.png");
     background-size: cover;
     background-position: right;
   }
@@ -1435,7 +1388,6 @@ h1, h2, p {
   .SpendIndex-security-flatten {
     display: block;
   }
-
   .SpendIndex-app {
     position: relative;
     height: 950px;
@@ -1447,21 +1399,11 @@ h1, h2, p {
     right: 0;
     bottom: -20px;
     left: 0;
-    @include background-image("hand-background.png");
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_app.png");
     @include background-size(contain);
     background-position: center bottom;
   }
-  .SpendIndex-display:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: -20px;
-    left: 0;
-    @include background-image("led-background.png");
-    @include background-size(contain);
-    background-position: center bottom;
-  }
+
   @include enter(
     "SpendIndex-app-inner", $SpendIndex-section-inner-md-anim,
     "is-SpendIndex-app-entered"
@@ -1522,7 +1464,7 @@ h1, h2, p {
     top: 43.159609120521175%;
     left: 0%;
     transform: translateY(-43.159609120521175%);
-    @include background-image("map.png");
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_map.png");
     background-size: cover;
     padding: 100px;
   }
