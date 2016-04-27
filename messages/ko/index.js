@@ -44,6 +44,7 @@ module.exports = messages.merge({
     'index.button.video': `Video coming soon`,
     'index.button.preorder': `Coming soon on `,
     'index.button.language': `Language: English`,
+    'index.button.scroll': `무료 스펜드월렛 이벤트`,
 
     'index.preorder.heading': `전세계 배송`,
     'index.preorder.description': `곧 예약주문이 시작됩니다.`,
@@ -88,6 +89,7 @@ module.exports = messages.merge({
     'footer.jobs': `Jobs`,
     'footer.faq': `FAQ`,
     'footer.legal': `Legal`,
+    'footer.presskit': `Press Kit`,
     'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
     'footer.email': `hey@spendwallet.com`
 

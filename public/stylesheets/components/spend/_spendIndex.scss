@@ -71,6 +71,37 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
   color: white; opacity:1;
 }
 
+@-webkit-keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0.5;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+
+.SpendIndex-newsletter.first {
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+}
+
 //Consolidation start
 
 .label {
@@ -132,6 +163,10 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 }
 
 //Consolidation end
+
+.SpendIndex-scroll-link {
+  display: none;
+}
 
 .SpendIndex-container {
   padding-right: 0;
@@ -928,7 +963,32 @@ h1, h2, p {
     text-align: left;
   }
   .SpendIndex-link-video-group {
-    margin-bottom: 125px;
+    margin-bottom: 50px;
+  }
+
+  @include enter(
+    "SpendIndex-scroll-link", $SpendIndex-link-video-h2-md-anim,
+    "is-SpendIndex-index-entered"
+  ) {
+    display: inline-block;
+    padding: 15px 30px 15px 30px;
+    color: black;
+    border-radius: 44px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    width: 270px;
+    text-align: center;
+  }
+
+  .SpendIndex-scroll-link:hover {
+    cursor: pointer;
+  }
+
+  .SpendIndex-scroll-link img {
+    height: 14px;
+    float: right;
   }
 
   @include enter(
@@ -1066,7 +1126,7 @@ h1, h2, p {
   }
   .SpendIndex-physicalCards-bg-inner {
     @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_backside.png", $width: 616 , $height: 543 ,$padding-bottom: 89.4159317212%
+      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_backside.png", $width: 616 , $height: 543 ,$padding-bottom: 85%
     );
     margin-left: 0;
   }
@@ -1496,6 +1556,7 @@ h1, h2, p {
     @include r-background-image-s3(
       "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_desktop.png", 569, 581
     );
+    background-position-x: right;
   }
 
   .SpendFaq-container, .SpendTeam-container, .SpendJobs-container {

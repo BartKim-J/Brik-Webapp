@@ -50,6 +50,8 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.button.video': `Video coming soon`,
   'index.button.preorder': `Coming soon on `,
   'index.button.language': `언어: 한국어`,
+  'index.button.scroll': `WIN A FREE SPENDWALLET`,
+
   'index.preorder.heading': `Worldwide Shipping`,
   'index.preorder.description': `Pre-Order Coming Soon`,
 
@@ -90,6 +92,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'footer.legal': `Legal`,
   'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
   'footer.email': `hey@spendwallet.com`,
+  'footer.presskit': `Press Kit`,
 
   'promotion.title': `Thank you for signing up!`,
   'promotion.description': `Spendwallet’s launch date is just around the corner. We  will update you as soon as we are ready for sale, so you can take advantage of our super early bird price.`,

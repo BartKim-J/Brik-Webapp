@@ -11,6 +11,8 @@ let {Input, Form} = require('../forms');
 let {Image, RImage, ImageBlock} = require('../images');
 let {FormattedHTMLMessage} = require('../intl');
 let {LinkBlock} = require('../links');
+let {Link} = require('../router');
+let {ScrollLink} = require('../links');
 let Markdown = require('../markdown');
 let MessageBoard = require('../messageBoard');
 let WindowListener = require('../windowListener');
@@ -488,10 +490,11 @@ let SpendIndex = React.createClass({
                     <h2 className="SpendIndex-link-video-h2" />
                   </FormattedHTMLMessage>
                 </div>
+                <ScrollLink className="SpendIndex-scroll-link" clickEventScrollToID="SpendIndex-newsletter">{formatMessage({id: 'index.button.scroll'})}<img src="/images/down.svg" alt=""></img></ScrollLink>
               </div>
             </div>
           </section>
-          <section className={classNames('SpendIndex-newsletter')}>
+          <section className={classNames('SpendIndex-newsletter first')}>
             <div className="SpendIndex-newsletter-inner">
               <h1 className="SpendIndex-Form-MessageBoard">
                 {formatMessage({id: 'index.newsletter.heading'})}
