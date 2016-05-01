@@ -24,8 +24,8 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.design.heading': `Splendid Design`,
   'index.design.description': `The frame and body is made out of aluminum and plastic. This makes the device strong and durable enough for everyday use in your pocket. Spendwallet has been engineered to seamlessly work with your smooth payment experience.`,
   'index.measure.heading': `Slim. Solid.<br /> Spendwallet`,
-  'index.measure.dimensions': `6.0mm / 65grams`,
-  'index.measure.dimensions2': `Thickness: 6.0mm Dimension: 60.5mm x 105mm`,
+  'index.measure.dimensions': `5.8mm / 65grams`,
+  'index.measure.dimensions2': `Thickness: 5.8mm Dimension: 60.5mm x 105mm`,
   'index.charge.heading': `Introducing True Electronic wallet.`,
   'index.charge.description': `Your heavy, thick traditional wallet should better evolve into a smart digital wallet. Finally, a real physical electronic wallet that consolidates all your credit, debit, and gift cards.`,
   'index.tech.section.heading': `Tech Specifications`,
@@ -40,7 +40,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.security.section.heading': `Security`,
   'index.security.section.description': `Meet the world’s most secure wallet.`,
   'index.security.alert.name': `Proximity Alert`,
-  'index.security.alert.description': `Automatic lock &\nself-destruction when lost`,
+  'index.security.alert.description': `When lost, automatic lock &\nself-destruction of data`,
   'index.security.passcode.name': `Security Passcode`,
   'index.security.passcode.description': `Protect your card data\nwith passcode or fingerprint`,
   'index.security.encrypt.name': `Bank Level Encryption`,
@@ -94,10 +94,10 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'footer.email': `hey@spendwallet.com`,
   'footer.presskit': `Press Kit`,
 
-  'promotion.title': `Thank you for signing up!`,
-  'promotion.description': `Spendwallet’s launch date is just around the corner. We  will update you as soon as we are ready for sale, so you can take advantage of our super early bird price.`,
-  'promotion.descriptionSecond': `And for signing up early, you now have a chance to win a free Spendwallet.`,
-  'promotion.callToAction': `Check out the promotion below`,
+  'promotion.title': `Thank you!`,
+  'promotion.description': `Spendwallet’s launch date is just around the corner. We'll make sure to keep you posted and to provide an access to EXCLUSIVE sales!`,
+  'promotion.descriptionSecond': `Enter the free Spendwallet lottery below by completing each task. More tasks you do, more entries you get. You start with one entry. Complete one more and double your chance of winning. Though, why stop there? Go get them all!`,
+  'promotion.callToAction': `Best of luck to you.`,
 
   getNonData() {
     return Immutable(

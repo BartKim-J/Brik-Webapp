@@ -262,9 +262,9 @@ let SpendMenu = React.createClass({
                     className="SpendMenu-SocialLinks"
                     eventCategory="Menu" />
                 </div>
-                <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
-                  <a className="SpendMenu-indiegogo-button"><img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_pink.png" alt="Indiegogo"></img></a>
-                </LinkBlock>
+                {/* <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
+                <a className="SpendMenu-indiegogo-button"><img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_pink.png" alt="Indiegogo"></img></a>
+                </LinkBlock>*/}
               </div>
             </nav>
           </div>
