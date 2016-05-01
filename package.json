@@ -5,7 +5,8 @@
   "scripts": {
     "postinstall": "webpack --progress",
     "start": "node ./bin/www",
-    "production": "NODE_ENV=production SEAGULL_SQLITE_FILE=/usr/src/app/spendwallet.sqlite npm start",
+    "production": "NODE_ENV=production SEAGULL_SQLITE_FILE=/usr/src/app/spendwallet.sqlite npm start //OBS OLD PRODUCTION SCRIPT",
+    "build:production": "NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors",
     "develop": "webpack --watch & DEBUG=seagull npm start"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "isomorphic-fetch": "^2.2.0",
     "jade": "~1.11.0",
     "lodash": "^3.10.1",
+    "loose-envify": "^1.1.0",
     "mailchimp": "^1.1.4",
     "marked": "^0.3.5",
     "morgan": "~1.6.1",
