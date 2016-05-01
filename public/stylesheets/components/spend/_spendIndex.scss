@@ -223,6 +223,9 @@ h1, h2, p {
 }
 .SpendIndex-link-video-h2.fat, .SpendIndex-link-video-h2 span {
   font-weight: bold;
+  font-size: 38px;
+  line-height: 1.2;
+  color: black;
 }
 .SpendIndex-index {
   position: relative;
@@ -230,7 +233,7 @@ h1, h2, p {
   background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_mobile.png");
   background-repeat: no-repeat;
   background-size: 280px;
-  background-position: center;
+  background-position: center 120px;
 }
 .SpendIndex-index-header {
   position: absolute;
@@ -893,7 +896,7 @@ h1, h2, p {
   .SpendIndex-index {
     position: relative;
     height: 588px;
-    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage.png");
+    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage2.png");
     background-size: cover;
     background-position: right;
   }
@@ -971,8 +974,8 @@ h1, h2, p {
     "is-SpendIndex-index-entered"
   ) {
     display: inline-block;
-    padding: 15px 30px 15px 30px;
-    color: black;
+    padding: 17px 30px 17px 30px;
+    color: #5e5e5e;
     border-radius: 44px;
     background-color: white;
     font-size: 14px;
@@ -980,6 +983,7 @@ h1, h2, p {
     line-height: 1;
     width: 270px;
     text-align: center;
+    box-shadow: 0 2px 23px 0 #DEDCDC;
   }
 
   .SpendIndex-scroll-link:hover {
@@ -997,8 +1001,8 @@ h1, h2, p {
   ) {
     display: block;
     margin: 0 0 15px;
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 32.6px;
+    color: #434343;
   }
 
   @include enter(
@@ -1557,6 +1561,7 @@ h1, h2, p {
       "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_desktop.png", 569, 581
     );
     background-position-x: right;
+    background-size: cover;
   }
 
   .SpendFaq-container, .SpendTeam-container, .SpendJobs-container {

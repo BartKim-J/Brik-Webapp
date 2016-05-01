@@ -7,7 +7,7 @@ $SpendMenu-Logo-color: #3a3a3a;
 $SpendMenu-button-color: #3a3a3a;
 $SpendMenu-item-border-color: #d5d5d5;
 $SpendMenu-item-link-color: #383838;
-$SpendMenu-item-link-md-color: #707070;
+$SpendMenu-item-link-md-color: #000000;
 
 $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 
@@ -42,11 +42,21 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   border-bottom-color: $SpendMenu-scrolling-border-color;
   background-color: $SpendMenu-scrolling-bg;
 }
-.is-SpendMenu-scrolling .SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
+.SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
   color: $SpendMenu-Logo-color !important;
 }
-.is-SpendMenu-scrolling .SpendMenu-item-link {
+.SpendMenu-item-link {
   color: $SpendMenu-item-link-md-color !important;
+}
+.SpendMenu-items li:last-child > a {
+  width: 166px;
+  height: 32px;
+  border-radius: 44px;
+  background-color: #496dff;
+  box-shadow: 0 2px 13px 0 rgba(72, 108, 255, 0.41);
+  padding: 10px 35px;
+  color: white !important;
+  letter-spacing: 1px;
 }
 .is-SpendMenu-open-in .SpendMenu-inner {
   position: absolute;
@@ -106,9 +116,6 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 }
 .is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
   background-color: $SpendMenu-button-color;
-}
-.SpendMenu-index .SpendMenu-indiegogo-button img {
-  border: solid 2px #ffffff;
 }
 .is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
   border: solid 2px $SpendMenu-item-link-md-color !important;
