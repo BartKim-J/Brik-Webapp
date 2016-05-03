@@ -59,7 +59,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   letter-spacing: 1px;
 }
 .SpendMenu-items li:last-child {
-  visibility: hidden;
+  display: none;
 }
 .is-SpendMenu-open-in .SpendMenu-inner {
   position: absolute;
@@ -206,7 +206,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 
 @media (min-width: $screen-md-min) {
   .SpendMenu-items li:last-child {
-    visibility: visible;
+    display: block;
   }
   .SpendMenu {
     top: 27px;

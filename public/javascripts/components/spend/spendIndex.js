@@ -656,12 +656,12 @@ let SpendIndex = React.createClass({
             </div>
             <div className="SpendIndex-tech-inner">
               <div className="SpendIndex-tech-inner-icon-group">
-                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_battery.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_touch.png" />
                 <FormattedHTMLMessage id="index.tech.touch.title"><h2/></FormattedHTMLMessage>
                 <p>{formatMessage({id: 'index.tech.touch.description'})}</p>
               </div>
               <div className="SpendIndex-tech-inner-icon-group">
-                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_touch.png" />
+                <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_battery.png" />
                 <FormattedHTMLMessage id="index.tech.battery.title"><h2/></FormattedHTMLMessage>
                 <p>{formatMessage({id: 'index.tech.battery.description'})}</p>
               </div>

@@ -5,8 +5,7 @@
   "scripts": {
     "postinstall": "webpack --progress",
     "start": "node ./bin/www",
-    "production": "NODE_ENV=production SEAGULL_SQLITE_FILE=/usr/src/app/spendwallet.sqlite npm start //OBS OLD PRODUCTION SCRIPT",
-    "build:production": "NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors",
+    "production": "webpack --config webpack.config.prod.js --progress --colors & NODE_ENV=production npm start",
     "develop": "webpack --watch & DEBUG=seagull npm start"
   },
   "dependencies": {
