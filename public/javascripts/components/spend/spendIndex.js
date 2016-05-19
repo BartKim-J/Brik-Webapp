@@ -334,6 +334,7 @@ let SpendIndex = React.createClass({
     }
   },
   componentDidMount() {
+    //window.location.href = "http://igg.me/at/spendwallet"
     this._securitySwipe = new Swipe(this._securitySliderRef, {
       callback: (index, el) => {
         this.setState({securitySwipePos: index});
@@ -490,7 +491,7 @@ let SpendIndex = React.createClass({
                     <h2 className="SpendIndex-link-video-h2" />
                   </FormattedHTMLMessage>
                 </div>
-                <ScrollLink className="SpendIndex-scroll-link" clickEventScrollToID="SpendIndex-newsletter">{formatMessage({id: 'index.button.scroll'})}<img src="/images/down.svg" alt=""></img></ScrollLink>
+                <ScrollLink className="SpendIndex-scroll-link" clickEventScrollToID="SpendIndex-newsletter">Purchase on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></ScrollLink>
               </div>
             </div>
           </section>
@@ -644,6 +645,12 @@ let SpendIndex = React.createClass({
                 >
                   <div className="SpendIndex-tech-bg-caption-energy-inner" />
                 </div>
+                <div
+                  className="SpendIndex-tech-bg-caption
+                    SpendIndex-tech-bg-caption-secure-element"
+                >
+                  <div className="SpendIndex-tech-bg-caption-secure-element-inner" />
+                </div>
               </div>
             </div>
             <div className="SpendIndex-measure-numbers">
@@ -742,7 +749,7 @@ let SpendIndex = React.createClass({
                 <Image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_mobile.png" width={293} height={235} />
               </ImageBlock>
               <LinkBlock className="SpendIndex-preOrder-LinkBlock">
-                <a className="SpendIndex-link SpendIndex-link-preOrder">{formatMessage({id: 'index.button.preorder'})} <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></a>
+                <a className="SpendIndex-link SpendIndex-link-preOrder" href="http://igg.me/at/spendwallet" target="_blank">{formatMessage({id: 'index.button.preorder'})} <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></a>
               </LinkBlock>
             </div>
             <div className="SpendIndex-preOrder-bg">

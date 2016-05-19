@@ -33,7 +33,7 @@ function postSubscription(email) {
         response.json().then(json => ({response, json}))
     ).then(({response, json: {error = null}}) => {
       if (response.ok) {
-        window.location =  "/promotion?email="+email;
+        window.location =  "/success?email="+email;
         dispatch(receiveNewSubscription('success'));
         return Promise.resolve();
       } else {

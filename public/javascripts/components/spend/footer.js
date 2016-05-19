@@ -16,7 +16,7 @@ let SpendFooter = React.createClass({
       {key: 'faq', url: '/faq'},
       {key: 'jobs', url: '/jobs'},
       {key: 'legal', url: '/legal'},
-      {key: 'promotion', url: '/promotion'}
+      {key: 'presskit', url: '/presskit'}
     ]
   },
 

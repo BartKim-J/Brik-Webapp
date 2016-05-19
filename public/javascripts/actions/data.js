@@ -34,6 +34,12 @@ function fetchData(key) {
   case 'promotion':
     url = '/promotion';
     break;
+  case 'success':
+    url = '/success';
+    break;
+  case 'presskit':
+    url = '/presskit';
+    break;
   default:
     // TODO: error
     break;

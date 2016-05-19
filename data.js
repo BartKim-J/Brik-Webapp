@@ -18,5 +18,13 @@ module.exports = {
   promotion: {
     version: 1,
     messageId: 'promotion'
+  },
+  presskit: {
+    version: 1,
+    messageId: 'presskit'
+  },
+  success: {
+    version: 1,
+    messageId: 'success'
   }
 };

@@ -13,8 +13,8 @@ module.exports = messages.merge({
 
     'index.heading.fat': `스펜드월렛을 소개합니다`,
     'index.heading': `모든 카드를 통합해주는<br>가장 가볍고 스마트한 지갑`,
-    'index.newsletter.heading': `사전예약자는 무료 또는 43% 할인혜택을 받으실 수 있습니다.`,
-    'index.newsletter.description': `이메일주소로 간단히 예약가능합니다.`,
+    'index.newsletter.heading': `이메일을 등록하여 스펜드월렛에 대해 더 알아보세요.`,
+    'index.newsletter.description': `관련 소식과 혜택, 업데이트를 보내드립니다.`,
     'index.design.heading': `견고한 재질, 심플한 디자인.`,
     'index.design.description': `단단하고 가벼운 알루미늄 소재의 프레임과 내구성이 뛰어난 플라스틱으로 만들어진 스펜드월렛은 일상생활에서 사용하기에 충분한 내구성을 자랑합니다.`,
     'index.measure.heading': `가볍다. 얇다.<br /> 스펜드월렛.`,
@@ -42,12 +42,12 @@ module.exports = messages.merge({
     'index.application.heading': `모바일 앱`,
     'index.application.description': `스펜드 모바일앱으로 신용카드와 바코드 멤버십카드를 관리하고, 사용내역 또한 간단하게 확인하세요.`,
     'index.button.video': `Video coming soon`,
-    'index.button.preorder': `Coming soon on `,
+    'index.button.preorder': `Purchase on `,
     'index.button.language': `Language: English`,
-    'index.button.scroll': `무료 스펜드월렛 이벤트`,
+    'index.button.scroll': `이메일 등록하기`,
 
     'index.preorder.heading': `전세계 배송`,
-    'index.preorder.description': `곧 예약주문이 시작됩니다.`,
+    'index.preorder.description': `5월 17일 예약주문이 시작됩니다.`,
 
     jobOpenings: require('./data/jobOpenings'),
     legalDocs: require('./data/legalDocs'),
@@ -84,12 +84,34 @@ module.exports = messages.merge({
     'promotion.descriptionSecond': `선주문이 시작되기 전까지 매일 1명을 추첨하여 스펜드월렛을 무료로 드리는 프로모션을 진행 중입니다. 아래의 각 미션을 수행할 때마다 1점이 추가되며, 매일 참여할 수록 당첨확률이 높아집니다. 행운을 놓치지 마세요!`,
     'promotion.callToAction': `지인분들께 초대 메일을 발송하시면, 당첨확률을 극대화할 수 있습니다.`,
 
-    'footer.promotion': `Promotion`,
+    'success.title': `감사합니다!`,
+    'success.description': `이메일 등록이 성공적으로 완료되었습니다 <br> 곧 발송될 이메일에서 더 많은 정보와 혜택을 받아보실 수 있습니다`,
+    'success.callToAction': `홈으로 돌아가기`,
+
+    'presskit.title': `Press Kit`,
+    'presskit.description': `제품 및 회사에 대한 추가적인 사항은 pr@spendwallet.com 으로 문의 부탁드립니다.`,
+
+    'presskit.message.title': `보도자료`,
+    'presskit.message.date': `최종수정 2016년 5월 15일`,
+    'presskit.message': `
+      <p><b>카드저장하고 결제가능한 스마트지갑, 스펜드월렛 공식 출시</b></p>
+      <p><i>신용카드, 체크카드 등 최대 20장 저장가능하고, 마그네틱을 지원하는 진정한 스마트지갑 스펜드월렛, 미국 크라우드펀딩 통해 글로벌 진출 출사표.</i></p>
+      <p><br>신용카드, 체크카드 등 최대 20장의 카드를 저장하고, 결제 할 수 있는 IoT스마트지갑 ‘스펜드월렛’(Spendwallet)이 글로벌 크라우드펀딩 플랫폼 ‘인디고고’(http://igg.me/at/spendwallet)에서 크라우드펀딩을 시작하였다.</p>
+      <p>스펜드월렛은 최대 20장의 신용카드와 체크카드, 포인트카드 등을 저장하고, 자체개발된 자기장결제기술(MFE: Magnetic Flux Emulation)을 통해 모든 카드리더기에서 결제 할 수 있는 스마트 전자 지갑이다.</p>
+      <p>스펜드월렛을 개발한 엑스엔지니어링은 생활 속에서 많이 사용되는 지갑에 사물인터넷(IoT) 기술을 적용한 하드웨어 스타트업이다. 제품을 위해 자기장 결제기술인 MFE를 자체 개발하였으며 관련 특허를 출원중이다.</p>
+      <p>엑스엔지니어링 강민구 대표는 “지갑은 뚜렷한 불편함이 있었음에도 불구하고, 바뀌지 않은 몇 안되는 아이템 중 하나이다. 사물인터넷(IoT) 기술을 적용하여 기존 지갑의 불편함을 없애고, 편의성과 보안을 더했으며, 범용성 높은 결제 기능을 위해 자기장 결제기술(MFE)을 자체개발하였다. 인디고고 크라우드펀딩을 시작으로 해외시장의 반응을 볼 것이” 라고 포부를 밝혔다.</p>
+      <p>스펜드월렛은 카드정보를 디지털화하여 저장하기 때문에 기존 지갑의 물리적인 제약이 없다. 때문에 최대 20장의 신용카드와 체크카드, 포인트카드등을 저장할 수 있다. 또한 마그네틱 카드리더기에서 작동가능한 자기장 결제기술(MFE)을 제품에 적용하여 대부분의 카드 결제 단말기에서 사용가능하다는 장점이 있다.</p>
+      <p>인디고고를 통해 선주문되는 스펜드월렛은 가장 먼저 주문하는 슈퍼얼리버드(Super Early Bird) 75명에 한하여 39% 할인된 가격으로 제품을 제공한다. 스펜드월렛은 인디고고에서 5월 17일부터 30일간 크라우드펀딩을 진행한다.<br>&nbsp;</p>
+      <b>[회사소개]</b>
+      <p>엑스엔지니어링은 네오플라이(네오위즈게임즈)의 인큐베이팅을 받은 국내 IoT스타트업이다. 현재는 IBK기업은행의 핀테크 스타트업으로 선정되어 지원받고 있다. LG전자, 시스코, 퀄컴 출신의 창업자들로 구성되어 있으며, 기술 관련 특허를 3건 출원중이다. 지난 해 12월에 미래창조과학부와 한국인터넷진흥원으로부터 우수 핀테크 스타트업으로 선정된 바 있으며, 올 해 2월엔 바르셀로나에서 열린 Mobile World Congress 2016에 부스를 내고 참가하였다.</p>
+
+    `,
+
     'footer.team': `Team`,
     'footer.jobs': `Jobs`,
     'footer.faq': `FAQ`,
     'footer.legal': `Legal`,
-    'footer.presskit': `Press Kit`,
+    'footer.presskit': `Press`,
     'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
     'footer.email': `hey@spendwallet.com`
 

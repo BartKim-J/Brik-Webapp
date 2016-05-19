@@ -52,9 +52,9 @@ let ScrollLink = React.createClass({
   mixins: [TrackClickMixin],
 
   handleClick(e) {
-    const {clickEventScrollToID} = this.props;
+    //const {clickEventScrollToID} = this.props;
     //scroll.To(clickEventScrollToID);
-    $(".SpendIndex-newsletter.first").velocity("scroll", {
+    /*$(".SpendIndex-newsletter.first").velocity("scroll", {
       duration: 400,
       offset: -403,
       easing: [400, 32],
@@ -63,7 +63,8 @@ let ScrollLink = React.createClass({
           $(".SpendIndex-newsletter.first").addClass("animated flash")
         }
       }
-    });
+    });*/
+    window.location = "http://igg.me/at/spendwallet";
   },
 
   render() {

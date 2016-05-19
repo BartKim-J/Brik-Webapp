@@ -1,7 +1,7 @@
 $SpendIndex-link-bg: #242424;
 $SpendIndex-link-color: #d3d3d3;
-$SpendIndex-link-preOrder-bg: #ff2169;
-$SpendIndex-link-preOrder-color: #f7f7f7;
+$SpendIndex-link-preOrder-bg: #FF3B8F;
+$SpendIndex-link-preOrder-color: white;
 
 $SpendIndex-gallery-border: #1D1D1D;
 
@@ -164,10 +164,6 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 
 //Consolidation end
 
-.SpendIndex-scroll-link {
-  display: none;
-}
-
 .SpendIndex-container {
   padding-right: 0;
   padding-left: 0;
@@ -192,6 +188,7 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 }
 .SpendIndex-link span {
   vertical-align: bottom;
+  font-weight: 400;
 }
 .SpendIndex-link:hover,
 .SpendIndex-link:active {
@@ -200,13 +197,15 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 .SpendIndex-link-preOrder {
   background-color: $SpendIndex-link-preOrder-bg;
   color: $SpendIndex-link-preOrder-color;
+  font-weight: lighter;
 }
 .SpendIndex-link-preOrder:hover,
 .SpendIndex-link-preOrder:active {
-  //opacity: $clickable-opacity-active;
+  background-color: #FF2282 !important;
   opacity: 1 !important;
 }
 .SpendMenu-indiegogo-button:hover {
+  background-color: #FF2282 !important;
   opacity: 1 !important;
 }
 .SpendIndex-link-video-icon {
@@ -223,17 +222,18 @@ h1, h2, p {
 }
 .SpendIndex-link-video-h2.fat, .SpendIndex-link-video-h2 span {
   font-weight: bold;
-  font-size: 38px;
+  font-size: 32px;
   line-height: 1.2;
   color: black;
 }
 .SpendIndex-index {
   position: relative;
   height: 588px;
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_mobile.png");
+  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage2.png");
   background-repeat: no-repeat;
-  background-size: 280px;
-  background-position: center 120px;
+  background-size: 550px;
+  background-position: bottom right;
+  background-color: white;
 }
 .SpendIndex-index-header {
   position: absolute;
@@ -256,7 +256,7 @@ h1, h2, p {
 .SpendIndex-index-content {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 70px;
   left: 0;
   z-index: 1;
   padding: 0 10px 35px 10px;
@@ -267,7 +267,7 @@ h1, h2, p {
 }
 .SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
   color: $SpendIndex-security-feature-name-color;
-  font-size: 22px;
+  font-size: 20px;
 }
 .SpendIndex-video-LinkBlock {
   margin-bottom: 52px;
@@ -629,8 +629,8 @@ h1, h2, p {
 }
 .SpendIndex-tech-bg-caption-touch {
   position: absolute;
-  top: 65.39792387543253%;
-  left: 7.7611940298507465%;
+  top: 60.39792387543253%;
+  left: 5%;
   width: 45.67164179104478%;
 }
 .SpendIndex-tech-bg-caption-touch-inner {
@@ -677,6 +677,21 @@ h1, h2, p {
     182, 43
   );
 }
+
+.SpendIndex-tech-bg-caption-secure-element {
+  position: absolute;
+  top: 67.31487889273356%;
+  left: 10.71641791044776%;
+  width: 40.62686567164179%;
+}
+.SpendIndex-tech-bg-caption-secure-element-inner {
+  @include r-background-image(
+    "secure-element.png",
+    "secure-element.png",
+    182, 43
+  );
+}
+
 .SpendIndex-tech-inner {
   width: 295px;
   margin: 62px auto 0;
@@ -889,6 +904,40 @@ h1, h2, p {
   font-size: 20px;
 }
 
+@include enter(
+  "SpendIndex-scroll-link", $SpendIndex-link-video-h2-md-anim,
+  "is-SpendIndex-index-entered"
+) {
+  display: inline-block;
+  padding: 17px 33.5px;
+  color: white;
+  border-radius: 44px;
+  background-color: #FF3B8F;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 2px 23px 0 #DEDCDC;
+  margin-top: 14px;
+}
+
+.SpendMenu-indiegogo-button:hover, .SpendIndex-scroll-link:hover {
+  cursor: pointer;
+  background-color: #FF2282 !important;
+}
+
+.SpendIndex-scroll-link img {
+    float: right;
+    height: 16px;
+    padding-left: 5px;
+}
+
+@media (min-width: 500px) {
+  .SpendIndex-index {
+    height: 800px;
+    background-size: 1000px;
+  }
+}
 @media (min-width: $screen-md-min) {
   .SpendIndex-Form-email {
     margin: auto;
@@ -967,32 +1016,6 @@ h1, h2, p {
   }
   .SpendIndex-link-video-group {
     margin-bottom: 50px;
-  }
-
-  @include enter(
-    "SpendIndex-scroll-link", $SpendIndex-link-video-h2-md-anim,
-    "is-SpendIndex-index-entered"
-  ) {
-    display: inline-block;
-    padding: 17px 30px 17px 30px;
-    color: #5e5e5e;
-    border-radius: 44px;
-    background-color: white;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    width: 270px;
-    text-align: center;
-    box-shadow: 0 2px 23px 0 #DEDCDC;
-  }
-
-  .SpendIndex-scroll-link:hover {
-    cursor: pointer;
-  }
-
-  .SpendIndex-scroll-link img {
-    height: 14px;
-    float: right;
   }
 
   @include enter(
@@ -1409,6 +1432,20 @@ h1, h2, p {
       "bluetooth-low-energy-md.png",
       "bluetooth-low-energy-md.png",
       251, 17
+    );
+  }
+  .SpendIndex-tech-bg-caption-secure-element {
+    position: absolute;
+    top: 64.84313725490196%;
+    right: -28.6144578313253%;
+    left: auto;
+    width: 46%;
+  }
+  .SpendIndex-tech-bg-caption-secure-element-inner {
+    @include r-background-image(
+      "secure-element-md.png",
+      "secure-element-md.png",
+      182, 43
     );
   }
   @include enter(

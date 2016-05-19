@@ -20,7 +20,7 @@ $SpendIndiegogoLink-color: #ffffff;
 .SpendIndiegogoLink:active {
     border-color: rgba($SpendIndiegogoLink-border-color, $clickable-opacity-active) !important;
     color: rgba($SpendIndiegogoLink-color, $clickable-opacity-active) !important;
-    opacity: 1 !important;
+    background-color: #FF2282 !important;
 }
 
 .SpendIndiegogoLink-logo {

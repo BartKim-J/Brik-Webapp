@@ -64,7 +64,9 @@ router.get('/jobs', makeRoute('jobOpenings'));
 router.get('/faq', makeRoute('faqSections'));
 router.get('/legal', makeRoute('legalDocs'));
 router.get('/team', makeRoute('team'));
+router.get('/success', makeRoute('success'));
 router.get('/promotion', makeRoute('promotion'));
+router.get('/presskit', makeRoute('presskit'));
 
 router.csrfProtection = csrfProtection;
 

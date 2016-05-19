@@ -48,19 +48,6 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 .SpendMenu-item-link {
   color: $SpendMenu-item-link-md-color !important;
 }
-.SpendMenu-items li:last-child > a {
-  width: 166px;
-  height: 32px;
-  border-radius: 44px;
-  background-color: #496dff;
-  box-shadow: 0 2px 13px 0 rgba(72, 108, 255, 0.41);
-  padding: 10px 35px;
-  color: white !important;
-  letter-spacing: 1px;
-}
-.SpendMenu-items li:last-child {
-  display: none;
-}
 .is-SpendMenu-open-in .SpendMenu-inner {
   position: absolute;
   top: 0;
@@ -119,9 +106,6 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 }
 .is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
   background-color: $SpendMenu-button-color;
-}
-.is-SpendMenu-scrolling .SpendMenu-indiegogo-button img, .is-SpendMenu-open .SpendMenu-indiegogo-button img {
-  border: solid 2px $SpendMenu-item-link-md-color !important;
 }
 .SpendMenu-button-bar-1,
 .SpendMenu-button-bar-2,
@@ -193,16 +177,36 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 }
 
 .SpendMenu-indiegogo-button {
-  height: 30px !important;
-  padding: 0px 20px 0px 20px;
+  color: white !important;
+  border-radius: 44px;
+  background-color: #FF3B8F;
+  box-shadow: 0 2px 13px 0 rgba(100, 23, 56, 0.41);
+  padding: 7px 20px;
+  vertical-align: bottom;
 }
 
+.SpendMenu-indiegogo-button span {
+  vertical-align: middle !important;
+  padding-right: 5px;
+  font-weight: 400;
+}
+
+
 .SpendMenu-indiegogo-button img {
-  height: 30px !important;
+  /*height: 30px !important;
   padding: 5px 30px 5px 30px;
   border-radius: 44px;
-  border: solid 2px #171717;
+  border: solid 2px #171717;*/
+  height: 15px !important;
+  letter-spacing: 1px;
 }
+
+/*.SpendMenu-items li:last-child > a {
+
+}
+.SpendMenu-items li:last-child {
+  display: none;
+}*/
 
 @media (min-width: $screen-md-min) {
   .SpendMenu-items li:last-child {
