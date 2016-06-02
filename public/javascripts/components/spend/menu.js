@@ -264,7 +264,7 @@ let SpendMenu = React.createClass({
                 </div>
                 <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
                   <a className="SpendMenu-indiegogo-button" href="http://igg.me/at/spendwallet" target="_blank">
-                    Purchase on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img>
+                    Pre-order on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img>
                   </a>
                 </LinkBlock>
               </div>

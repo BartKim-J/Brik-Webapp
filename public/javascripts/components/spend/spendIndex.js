@@ -491,7 +491,7 @@ let SpendIndex = React.createClass({
                     <h2 className="SpendIndex-link-video-h2" />
                   </FormattedHTMLMessage>
                 </div>
-                <ScrollLink className="SpendIndex-scroll-link" clickEventScrollToID="SpendIndex-newsletter">Purchase on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></ScrollLink>
+                <ScrollLink className="SpendIndex-scroll-link" clickEventScrollToID="SpendIndex-newsletter">Pre-order on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_white.png" alt="Indiegogo"></img></ScrollLink>
               </div>
             </div>
           </section>
