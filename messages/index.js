@@ -12,7 +12,7 @@ let messages = Immutable({
       Tap to pay on existing card readers
     </p>
   `,
-  'index.contactless.paragraphs': /* Markdown */ `It's not NFC. Our self-developed Magnetic Flux Emulation (MFE) technology generates magnetic field, which makes the card reader to respond as if a card has been swiped. So no more swiping. Just tap and finish your payment anywhere.`,
+  'index.contactless.paragraphs': /* Markdown */ `It's more than NFC. With our self-developed Magnetic Flux Emulation (MFE) technology, Spendwallet allows you to tap to pay on regular card swiping terminal as well as NFC terminal.`,
   'index.physicalCards.article': /* Markdown */ `## Born to replace your wallet, completely.
 
 Spendwallet is seductively designed to completely replace your existing wallet. The backside pocket is for your ID, cash, or anything that cannot be stored digitally on the device.`,
