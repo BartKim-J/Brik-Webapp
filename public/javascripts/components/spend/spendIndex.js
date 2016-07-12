@@ -563,6 +563,10 @@ let SpendIndex = React.createClass({
                 <Markdown>
                   {formatMessage({id: 'index.contactless.paragraphs'})}
                 </Markdown>
+                <div className="SpendIndex-contactless-icon-group">
+                  <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_MFE.png" />
+                  <image src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/icon_NFC.png" />
+                </div>
               </article>
             </div>
             <div

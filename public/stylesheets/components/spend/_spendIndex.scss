@@ -932,6 +932,18 @@ h1, h2, p {
     padding-left: 5px;
 }
 
+.SpendIndex-contactless-icon-group {
+  margin-top: 15px;
+  text-align: center;
+}
+.SpendIndex-contactless-icon-group img {
+  width: 100px;
+  margin-right: 7px;
+}
+.SpendIndex-contactless-icon-group h2 {
+  font-size: 20px;
+}
+
 @media (min-width: 500px) {
   .SpendIndex-index {
     height: 800px;
@@ -939,6 +951,17 @@ h1, h2, p {
   }
 }
 @media (min-width: $screen-md-min) {
+  .SpendIndex-contactless-icon-group {
+    margin-top: 30px;
+  }
+  .SpendIndex-contactless-icon-group img {
+    width: 160px;
+    margin-right: 15px;
+    float: left;
+  }
+  .SpendIndex-contactless-icon-group h2 {
+    font-size: 20px;
+  }
   .SpendIndex-Form-email {
     margin: auto;
   }
