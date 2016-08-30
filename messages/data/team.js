@@ -28,10 +28,10 @@ module.exports = Immutable([{
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anton.png',
   desc: `Anton, who considers himself as a hobbyist maker, is in charge of electrical engineering on the team. He has experiences from semiconductor vendor ST-Ericsson and Qualcomm before. He creates things; some of which are beautiful and interesting.`
 }, {
-  name: `Andy`,
-  role: `VP of Operations`,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-andy.png',
-  desc: `The world’s earliest adopter Andy is very fast in news and media. His primary interest lies within the technology that can improve his daily activity. As he takes care of the team’s overall operation, we often refer to him as.. Mom.`
+  name: `Jay`,
+  role: `Head of Business Development `,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
+  desc: `Jay majored in Industrial Engineering and Management Science, but he once was a trainee to become a K-Pop star. In short, he is a bold person of various talents. Jay is in charge of overall operation and business development in the US.`
 }, {
   name: `Nicklas`,
   role: `Software Engineer`,
@@ -57,4 +57,9 @@ module.exports = Immutable([{
   role: `Designer`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-allie.png',
   desc: `Allie is the product & UI designer of the team. Before she joined the team, she always participated in the projects that combine mobile UI with the product. She dreams to design a better world with more fun.`
+}, {
+  name: `Anakin`,
+  role: `Marketer`,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anakin.png',
+  desc: `Anakin has majored in Marketing and Communications and is currently producing marketing contents for his team. He endlessly desires for other people to show reaction to the contents that he makes. If a man is not making a creation, he is nothing but a prodigal`
 }]);

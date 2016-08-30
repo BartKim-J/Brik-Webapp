@@ -28,10 +28,10 @@ module.exports = Immutable([{
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anton.png',
   desc: `Anton은 메이커입니다. 취미로 전자공작을 하고 가구도 만듭니다. 퀄컴과 ST-Ericsson에서의 경험을 바탕으로 현재 팀의 하드웨어 엔지니어링을 리드하고 있습니다. 팀의 목소리도 담당하고 있습니다.`
 }, {
-  name: `Andy`,
-  role: `VP of Operations`,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-andy.png',
-  desc: `Andy를 한 단어로 표현하자면, 그는 얼리어답터입니다. 뉴스와 소식에 빠르고, 다양한 분야에 모르는 것이 없을 정도로 박식합니다. 팀의 운영을 책임지는 Andy를 팀원들은 엄마라고 부릅니다.`
+  name: `Jay`,
+  role: `Head of Business Development `,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
+  desc: `Jay는 대학교에서 산업공학과 경영과학을 전공하였지만, 한때는 연습생으로 엔터테인먼트 필드에 몸을 담궜을 정도로 과감하고 다양한 재능을 가지고 있습니다. 팀에서는 미국에서의 운영과 사업 개발을 담당하고 있습니다.`
 }, {
   name: `Nicklas`,
   role: `Software Engineer`,
@@ -57,4 +57,9 @@ module.exports = Immutable([{
   role: `Designer`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-allie.png',
   desc: `Allie는 팀에서 제품과 UI를 디자인합니다. 모바일UI와 제품을 결합한 프로젝트를 주로 진행해왔습니다. 조금 더 흥이 넘치는 세상을 위한 디자인을 하겠다는 꿈을 가지고 있습니다. 참고로 미녀입니다.`
+}, {
+  name: `Anakin`,
+  role: `Marketer`,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anakin.png',
+  desc: `Anakin은 마케팅과 커뮤니케이션을 전공했고, 팀에서 마케팅 콘텐츠를 만들고 있습니다. 본인이 만든 콘텐츠에 사람들이 반응하기를 끊임없이 갈망합니다. 무언가를 만들고 있지 않는다면, 한량에 불과합니다.`
 }]);

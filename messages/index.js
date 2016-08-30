@@ -24,7 +24,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.design.heading': `Splendid Design`,
   'index.design.description': `The frame and body is made out of aluminum and plastic. This makes the device strong and durable enough for everyday use in your pocket. Spendwallet has been engineered to seamlessly work with your smooth payment experience.`,
   'index.measure.heading': `Slim. Solid.<br /> Spendwallet`,
-  'index.measure.dimensions': `5.8mm / 65grams`,
+  'index.measure.dimensions': `5.8mm / 54grams`,
   'index.measure.dimensions2': `Thickness: 5.8mm Dimensions: 60.5mm x 105mm`,
   'index.charge.heading': `Introducing True Electronic wallet.`,
   'index.charge.description': `Your heavy, thick traditional wallet should better evolve into a smart digital wallet. Finally, a real physical electronic wallet that consolidates all your credit, debit, and gift cards.`,
@@ -53,7 +53,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.button.scroll': `SUBSCRIBE TO OUR NEWS`,
 
   'index.preorder.heading': `Worldwide Shipping`,
-  'index.preorder.description': `Pre-Order Starts May 17`,
+  'index.preorder.description': `Ships October 2016`,
 
   jobOpenings: require('./data/jobOpenings'),
   legalDocs: require('./data/legalDocs'),

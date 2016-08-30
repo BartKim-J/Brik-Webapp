@@ -18,7 +18,7 @@ module.exports = messages.merge({
     'index.design.heading': `견고한 재질, 심플한 디자인.`,
     'index.design.description': `단단하고 가벼운 알루미늄 소재의 프레임과 내구성이 뛰어난 플라스틱으로 만들어진 스펜드월렛은 일상생활에서 사용하기에 충분한 내구성을 자랑합니다.`,
     'index.measure.heading': `가볍다. 얇다.<br /> 스펜드월렛.`,
-    'index.measure.dimensions': `5.8mm / 65grams`,
+    'index.measure.dimensions': `5.8mm / 54grams`,
     'index.measure.dimensions2': `두께: 5.8mm 크기: 60.5mm x 105mm`,
     'index.charge.heading': `지갑과 기술이 만나다. 스펜드월렛.`,
     'index.charge.description': `수납과 결제, 그리고 패션. 더 이상 무거운 지갑을 들고다닐 필요 없습니다. 암호화된 카드정보만 저장하는 스펜드월렛은 몇 장의 카드를 저장하더라도 여러분의 패션을 방해하지 않습니다.`,
@@ -47,7 +47,7 @@ module.exports = messages.merge({
     'index.button.scroll': `이메일 등록하기`,
 
     'index.preorder.heading': `전세계 배송`,
-    'index.preorder.description': `5월 17일 예약주문이 시작됩니다.`,
+    'index.preorder.description': `2016년 10월 배송예정`,
 
     jobOpenings: require('./data/jobOpenings'),
     legalDocs: require('./data/legalDocs'),
