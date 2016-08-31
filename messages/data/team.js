@@ -44,7 +44,7 @@ module.exports = Immutable([{
   desc: `Bart is a programming prodigy. He first joined the team at the age of 17, and now he takes full responsibility of firmware programming. He is the best gamer on the team, and he enjoys working/gaming overnight at the office.`
 }, {
   name: `SY`,
-  role: `Business Developer`,
+  role: `Head of Marketing`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-sy.png',
   desc: `SY has gone through ups and downs in startups since 2013. As a business developer, she endures sitting and writing business proposals despite the fact that she likes to gallop around as a fitness fanatic.`
 }, {

@@ -44,7 +44,7 @@ module.exports = Immutable([{
   desc: `Bart는 프로그래밍 신동입니다. 19살 어린 나이에 회사에 합류하여 현재 회사의 펌웨어 프로그래밍을 담당하고 있습니다. 장거리 출퇴근에 특화되어 있으나, 종종 사무실에서 밤을새기도 합니다.`
 }, {
   name: `SY`,
-  role: `Business Developer`,
+  role: `Head of Marketing`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-sy.png',
   desc: `SY는 2013년부터 스타트업의 희노애락을 함께해왔습니다. 그녀는 팀의 사업개발을 위해 흥을 누르고 또 누르며 책상 앞에 앉아 제안서를 씁니다.`
 }, {
