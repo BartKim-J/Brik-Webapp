@@ -89,7 +89,7 @@ module.exports = Immutable({
       answer: `You can purchase Spendwallet at our Indiegogo page(http://igg.me/at/spendwallet) starting on May 17.`
     }, {
       question: `When will I get my Spendwallet?`,
-      answer: `We estimate to ship the product no later than by October 2016.`
+      answer: `Spendwallet will be delivered sequentially from the end of December 2016.`
     }, {
       question: `Do you ship internationally?`,
       answer: `We do ship internationally, but shipping cost will vary depending on countries.`
