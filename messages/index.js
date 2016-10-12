@@ -53,7 +53,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.button.scroll': `SUBSCRIBE TO OUR NEWS`,
 
   'index.preorder.heading': `Worldwide Shipping`,
-  'index.preorder.description': `Ships October 2016`,
+  'index.preorder.description': `Ships December 2016`,
 
   jobOpenings: require('./data/jobOpenings'),
   legalDocs: require('./data/legalDocs'),

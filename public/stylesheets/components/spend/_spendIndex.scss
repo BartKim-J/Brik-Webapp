@@ -1,6 +1,7 @@
 $SpendIndex-link-bg: #242424;
 $SpendIndex-link-color: #d3d3d3;
-$SpendIndex-link-preOrder-bg: #FF3B8F;
+$SpendIndex-link-preOrder-bg: black;
+$SpendIndex-link-preOrder-bg-hover: black;
 $SpendIndex-link-preOrder-color: white;
 
 $SpendIndex-gallery-border: #1D1D1D;
@@ -201,11 +202,11 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
 }
 .SpendIndex-link-preOrder:hover,
 .SpendIndex-link-preOrder:active {
-  background-color: #FF2282 !important;
+  background-color: $SpendIndex-link-preOrder-bg-hover !important;
   opacity: 1 !important;
 }
 .SpendMenu-indiegogo-button:hover {
-  background-color: #FF2282 !important;
+  background-color: #E8E8E8 !important;
   opacity: 1 !important;
 }
 .SpendIndex-link-video-icon {
@@ -912,7 +913,7 @@ h1, h2, p {
   padding: 17px 33.5px;
   color: white;
   border-radius: 44px;
-  background-color: #FF3B8F;
+  background-color: black;
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
@@ -921,9 +922,14 @@ h1, h2, p {
   margin-top: 14px;
 }
 
-.SpendMenu-indiegogo-button:hover, .SpendIndex-scroll-link:hover {
+.SpendMenu-indiegogo-button:hover {
   cursor: pointer;
-  background-color: #FF2282 !important;
+  background-color: #E8E8E8 !important;
+}
+
+.SpendIndex-scroll-link:hover {
+  cursor: pointer;
+  background-color: black !important;
 }
 
 .SpendIndex-scroll-link img {
