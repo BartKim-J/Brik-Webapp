@@ -53,7 +53,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'index.button.scroll': `SUBSCRIBE TO OUR NEWS`,
 
   'index.preorder.heading': `Worldwide Shipping`,
-  'index.preorder.description': `Ships December 2016`,
+  'index.preorder.description': `Ships April 2017`,
 
   jobOpenings: require('./data/jobOpenings'),
   legalDocs: require('./data/legalDocs'),
@@ -89,7 +89,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'footer.jobs': `Jobs`,
   'footer.faq': `FAQ`,
   'footer.legal': `Legal`,
-  'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
+  'footer.copyrights': `2017 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
   'footer.email': `hey@spendwallet.com`,
   'footer.presskit': `Press`,
 

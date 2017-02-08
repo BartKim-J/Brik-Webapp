@@ -47,7 +47,7 @@ module.exports = messages.merge({
     'index.button.scroll': `이메일 등록하기`,
 
     'index.preorder.heading': `전세계 배송`,
-    'index.preorder.description': `2016년 12월 배송예정`,
+    'index.preorder.description': `2017년 4월 배송예정`,
 
     jobOpenings: require('./data/jobOpenings'),
     legalDocs: require('./data/legalDocs'),
@@ -112,7 +112,7 @@ module.exports = messages.merge({
     'footer.faq': `FAQ`,
     'footer.legal': `Legal`,
     'footer.presskit': `Press`,
-    'footer.copyrights': `2016 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
+    'footer.copyrights': `2017 X Lab Inc. Newport Beach, California. All Rights Reserved.`,
     'footer.email': `hey@spendwallet.com`
 
 });
