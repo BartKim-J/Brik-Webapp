@@ -47,7 +47,7 @@ module.exports = messages.merge({
     'index.button.scroll': `이메일 등록하기`,
 
     'index.preorder.heading': `전세계 배송`,
-    'index.preorder.description': `2017년 4월 배송예정`,
+    'index.preorder.description': `2017년 8월 배송예정`,
 
     jobOpenings: require('./data/jobOpenings'),
     legalDocs: require('./data/legalDocs'),
