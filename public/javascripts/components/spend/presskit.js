@@ -81,6 +81,22 @@ let Presskit = React.createClass({
               </FormattedHTMLMessage>
               <div className="SpendPresskit-logo"><Logo /></div>
           </section>
+          <section className="SpendPresskit-section press-release">
+              <h2>{formatMessage({id: 'presskit2.message.title'})}</h2>
+              <h3>{formatMessage({id: 'presskit2.message.date'})}</h3>
+              <FormattedHTMLMessage id="presskit2.message">
+                <div className="SpendPresskit-message" />
+              </FormattedHTMLMessage>
+              <div className="SpendPresskit-logo"><Logo /></div>
+          </section>
+          <section className="SpendPresskit-section press-release">
+              <h2>{formatMessage({id: 'presskit3.message.title'})}</h2>
+              <h3>{formatMessage({id: 'presskit3.message.date'})}</h3>
+              <FormattedHTMLMessage id="presskit3.message">
+                <div className="SpendPresskit-message" />
+              </FormattedHTMLMessage>
+              <div className="SpendPresskit-logo"><Logo /></div>
+          </section>
         </div>
       </div>
     );
