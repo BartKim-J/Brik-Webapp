@@ -91,9 +91,9 @@ module.exports = messages.merge({
     'presskit.title': `Press Kit`,
     'presskit.description': `제품 및 회사에 대한 추가적인 사항은 pr@spendwallet.com 으로 문의 부탁드립니다.`,
 
-    'presskit.message.title': `보도자료`,
-    'presskit.message.date': `최종수정 2016년 5월 15일`,
-    'presskit.message': `
+    'presskit3.message.title': `보도자료`,
+    'presskit3.message.date': `최종수정 2016년 5월 15일`,
+    'presskit3.message': `
       <p><b>카드저장하고 결제가능한 스마트지갑, 스펜드월렛 공식 출시</b></p>
       <p><i>신용카드, 체크카드 등 최대 20장 저장가능하고, 마그네틱을 지원하는 진정한 스마트지갑 스펜드월렛, 미국 크라우드펀딩 통해 글로벌 진출 출사표.</i></p>
       <p><br>신용카드, 체크카드 등 최대 20장의 카드를 저장하고, 결제 할 수 있는 IoT스마트지갑 ‘스펜드월렛’(Spendwallet)이 글로벌 크라우드펀딩 플랫폼 ‘인디고고’(http://igg.me/at/spendwallet)에서 크라우드펀딩을 시작하였다.</p>
