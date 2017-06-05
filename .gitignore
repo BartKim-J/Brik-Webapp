@@ -34,4 +34,4 @@ npm-debug.log
 public/javascripts/app.js
 public/javascripts/app.[0-9]*.js
 
-*.gz
+*.gzip
