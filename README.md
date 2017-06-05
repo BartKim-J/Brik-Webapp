@@ -17,6 +17,7 @@ Tutorial:
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/  
 
 Workflow:  
+
 1. Install docker toolbox from https://www.docker.com/products/docker-toolbox  
 
 2. Login and create a repository on https://hub.docker.com  
@@ -25,7 +26,7 @@ Workflow:
 
 4. Make changes  
 
-5. `cd into project folder`  
+5. Cd into project folder 
 
 6. Create the image and specify the repository on docker hub by: `$ docker build -t <your username>/<webapp-name> .`  
 
