@@ -8,27 +8,46 @@ Docker is good to ensure that the website runs independent of operating system a
 The project has a docker file in the root path. It contains general instructions for Docker on how to run and install the project.  
 
 Useful commands:  
-`docker ps`		     list all running container instances  
-`docker ps -a`		     list all containers
-`docker images`              lists all images downloaded to the server
-`docker rmi container_id`    remove container to free up space. Sometimes server runs out.
+`docker ps`		     : list all running container instances  
 
-Tutorial:  
+`docker ps -a`		     : list all containers  
+
+`docker images`              : lists all images downloaded to the server  
+
+`docker rmi container_id`    : remove container to free up space. Sometimes server runs out.  
+
+
+Tutorial I used to learn this:  
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/  
 
-Workflow:  
+Workflow for updating the website:  
+
 1. Install docker toolbox from https://www.docker.com/products/docker-toolbox  
-2. Login and create a repository on https://hub.docker.com
+
+2. Login and create a repository on https://hub.docker.com  
+
 3. Pull down website code from bitbucket, run project with: `$ npm install && npm run develop`  
+
 4. Make changes  
-5. `cd into project folder`  
-6. `$ docker build -t <your username>/<webapp-name> .` // Creates the image and specifies the repository from docker hub
-7. `$ docker push <your username>/<webapp-name>`       // Push image to repository at docker hub  
+
+5. Cd into project folder 
+
+6. Create the image and specify the repository on docker hub by: `$ docker build -t <your username>/<webapp-name> .`  
+
+7. Push image to repository at docker hub by typing `$ docker push <your username>/<webapp-name>`  
+
 8. SSH into server and make yourself root to see running containers.  
+
 9. `$ docker pull <your username>/<webapp-name>`  
+
 10. `$ docker ps`  
+
 11. `$ docker stop spend_webapp`  
+
 12. `$ docker rm spend_webapp`  
+
 13. `$ docker run -d -p 3000:3000 --name spend_webapp <your username>/<webapp-name>`  
+
 14. The app is now safely deployed to the server.  
+
 15. confirm by `$ docker ps`
