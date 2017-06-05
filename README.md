@@ -22,8 +22,8 @@ Workflow:
 3. Pull down website code from bitbucket, run project with: `$ npm install && npm run develop`  
 4. Make changes  
 5. `cd into project folder`  
-6. `$ docker build -t <your username>/<webapp-name> .` // Creates the image and specifies the repository from docker hub
-7. `$ docker push <your username>/<webapp-name>`       // Push image to repository at docker hub  
+6. `$ docker build -t <your username>/<webapp-name> .` Creates the image and specifies the repository from docker hub
+7. `$ docker push <your username>/<webapp-name>`       Push image to repository at docker hub  
 8. SSH into server and make yourself root to see running containers.  
 9. `$ docker pull <your username>/<webapp-name>`  
 10. `$ docker ps`  
