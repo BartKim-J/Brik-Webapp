@@ -8,13 +8,13 @@ Docker is good to ensure that the website runs independent of operating system a
 The project has a docker file in the root path. It contains general instructions for Docker on how to run and install the project.  
 
 Useful commands:  
-`docker ps`		     list all running container instances  
+`docker ps`		     : list all running container instances  
 
-`docker ps -a`		     list all containers  
+`docker ps -a`		     : list all containers  
 
-`docker images`              lists all images downloaded to the server  
+`docker images`              : lists all images downloaded to the server  
 
-`docker rmi container_id`    remove container to free up space. Sometimes server runs out.  
+`docker rmi container_id`    : remove container to free up space. Sometimes server runs out.  
 
 
 Tutorial I used to learn this:  
