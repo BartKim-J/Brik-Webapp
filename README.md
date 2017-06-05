@@ -17,10 +17,10 @@ Useful commands:
 `docker rmi container_id`    : remove container to free up space. Sometimes server runs out.  
 
 
-Tutorial I used to learn this:  
+Tutorial for deploying a node app with docker:  
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/  
 
-Workflow for updating the website:  
+Workflow for deploying an updating to the website:  
 
 1. Install docker toolbox from https://www.docker.com/products/docker-toolbox  
 
