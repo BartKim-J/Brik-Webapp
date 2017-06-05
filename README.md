@@ -9,9 +9,13 @@ The project has a docker file in the root path. It contains general instructions
 
 Useful commands:  
 `docker ps`		     list all running container instances  
-`docker ps -a`		     list all containers
-`docker images`              lists all images downloaded to the server
-`docker rmi container_id`    remove container to free up space. Sometimes server runs out.
+
+`docker ps -a`		     list all containers  
+
+`docker images`              lists all images downloaded to the server  
+
+`docker rmi container_id`    remove container to free up space. Sometimes server runs out.  
+
 
 Tutorial I used to learn this:  
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/  
