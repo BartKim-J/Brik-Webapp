@@ -13,10 +13,10 @@ Useful commands:
 `docker images`              lists all images downloaded to the server
 `docker rmi container_id`    remove container to free up space. Sometimes server runs out.
 
-Tutorial:  
+Tutorial I used to learn this:  
 https://nodejs.org/en/docs/guides/nodejs-docker-webapp/  
 
-Workflow:  
+Workflow for updating the website:  
 
 1. Install docker toolbox from https://www.docker.com/products/docker-toolbox  
 
