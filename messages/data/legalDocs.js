@@ -208,8 +208,8 @@ The Company has the right to amend or modify this Policy from time to time and, 
 
 The Company designates the following department and person in charge of personal information in order to protect personal information of customers and deal with complaints from customers:
 Department responsible for privacy protection and customer service:
-Name: Andy Mo
-E-mail: andy@xengineering.co
-Phone: 82-8517-9912
+Name: Sam Jeon
+E-mail: hey@spendwallet.com
+Phone: 070-8252-4295
 The latest update date: 16th December 2015`
 });

@@ -276,8 +276,8 @@ module.exports = legalDocs.merge({
 
 개인정보관리책임자
 
-- 성명 : 운영/관리 총괄 모영진 이사
-- 이메일 : [andy@xengineering.co](mailto:andy@xengineering.co)
+- 성명 : 운영/관리 총괄 전세훈 팀장
+- 이메일 : [hey@spendwallet.com](mailto:hey@spendwallet.com)
 
 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.
 
