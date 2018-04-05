@@ -1,13 +1,15 @@
-const BRAND = 'Spend';
+const BRAND = 'ASTERA';
 const TITLE_SUFFIX = ` – ${BRAND}`;
 
-const FACEBOOK_URL = 'https://www.facebook.com/spendwallet';
-const TWITTER_URL = 'https://twitter.com/spendwallet';
+const FACEBOOK_URL = null;
+const TWITTER_URL = null;
 const LINKEDIN_URL = null;
 
 const INDIEGOGO_URL = null;
 
-const MAILCHIMP_API_KEY = '3ce0f12ad629ac6ca4236c405cdf646c-us12'
+const MAILCHIMP_API_KEY = 'e673ea4041cb728a90271e326ccb7659-us18'
+
+const MAILCHAMP_API_LIST_KEY = '1063c251f8'
 
 global.CONF = {
   BRAND, TITLE_SUFFIX,

@@ -12,7 +12,7 @@ let SpendSocialLinks = React.createClass({
     data: [
       ['facebook', FACEBOOK_URL],
       ['twitter', TWITTER_URL],
-      ['linkedin', LINKEDIN_URL, 'LinkedIn']
+      ['linkedin', LINKEDIN_URL]
     ].filter(([name, url]) => url)
   },
 

@@ -1,15 +1,8 @@
-$SpendIndex-link-bg: #242424;
-$SpendIndex-link-color: #d3d3d3;
-$SpendIndex-link-preOrder-bg: black;
-$SpendIndex-link-preOrder-bg-hover: black;
-$SpendIndex-link-preOrder-color: white;
-
 $SpendIndex-gallery-border: #1D1D1D;
 
-$SpendIndex-index-bg: #fff;
 $SpendIndex-h1-Logo-color: #3a3a3a;
 $SpendIndex-Form-border-color: #d8d8d8;
-$SpendIndex-Form-email-placeholder-color: #afafaf;
+$AsteraIndex-Form-email-placeholder-color: #363636;
 $SpendIndex-Form-MessageBoard-color: #636363;
 $SpendIndex-Form-MessageBoard-success-color: #5692ff;
 $SpendIndex-Form-MessageBoard-error-color: #e85353;
@@ -31,45 +24,17 @@ $SpendIndex-measure-h2-color: #73787b;
 $SpendIndex-measure-numbers-big-color: #73787b;
 $SpendIndex-measure-numbers-more-color: #73787b;
 
-$SpendIndex-charge-bg: #fff;
-$SpendIndex-charge-h2-color: black;
-$SpendIndex-charge-p-color: #999;
-$SpendIndex-charge-battery-color: #595959;
-
-$SpendIndex-tech-bg: white;
-$SpendIndex-tech-h2-color: #424242;
-$SpendIndex-tech-p-color: #999;
-
-$SpendIndex-security-bg: #f9f9f9;
-$SpendIndex-security-feature-name-color: #060606;
-$SpendIndex-security-feature-desc-color: #969696;
-$SpendIndex-security-arrow-color: #d1d1d1;
-
-$SpendIndex-app-bg: #f4ebe0;
-$SpendIndex-app-p-color: #767676;
-
-$SpendIndex-preOrder-bg: #fff;
-$SpendIndex-preOrder-h2-color: #5a5a5a;
-
-$SpendIndex-section-inner-md-anim: fadeIn 500ms 500ms both;
-
-$SpendIndex-link-video-h2-md-anim: slideDown 1s 0.7s both;
-$SpendIndex-video-LinkBlock-md-anim: slideUp 1s 0.7s both;
-$SpendIndex-Form-group-md-anim: fadeIn 500ms 2750ms both;
-
-$SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
-
-.SpendIndex-Form-email::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: white; opacity:1;
+.AsteraIndex-Form-email::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #363636; opacity:0.8;
 }
-.SpendIndex-Form-email:-moz-placeholder, textarea:-moz-placeholder {
-  color: white; opacity:1;
+.AsteraIndex-Form-email:-moz-placeholder, textarea:-moz-placeholder {
+  color: #363636; opacity:0.8;
 }
-.SpendIndex-Form-email::-moz-placeholder, textarea::-moz-placeholder {
-  color: white; opacity:1;
+.AsteraIndex-Form-email::-moz-placeholder, textarea::-moz-placeholder {
+  color: #363636; opacity:0.8;
 }
-.SpendIndex-Form-email:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: white; opacity:1;
+.AsteraIndex-Form-email:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #363636; opacity:0.8;
 }
 
 @-webkit-keyframes flash {
@@ -97,74 +62,6 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
   animation-name: flash;
 }
 
-
-.SpendIndex-newsletter.first {
-  -webkit-animation-duration: 1.2s;
-  animation-duration: 1.2s;
-}
-
-//Consolidation start
-
-.label {
-  font-size: 20px;
-  margin: 10px;
-  display: inline-block;
-  font: 'Arial Black', Arial;
-  font-weight: bold;
-  float: right;
-}
-
-.spend .label {
-  position: absolute;
-  color: white;
-  bottom: 10px;
-  left: 90px;
-}
-
-.card-container {
-  width: 100%;
-  height: 1000px;
-  position: absolute;
-}
-
-.card-container > div {
-  display: block;
-  position: absolute;
-  border-radius: 20px;
-  width: 175px;
-  height: 380px;
-}
-
-.card {
-  background-size: cover;
-}
-.spend {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_spend.png');
-}
-.credit {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_credit.jpg');
-}
-.debit {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_debit.jpg');
-}
-.gift {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_gift.jpg');
-}
-.membership {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_membership.jpg');
-}
-.rewards {
-    background-image: url('https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/consolidation_rewards.jpg');
-}
-
-.spend div {
-  display: block;
-  width:  100%;
-  height: 100%;
-}
-
-//Consolidation end
-
 .SpendIndex-container {
   padding-right: 0;
   padding-left: 0;
@@ -172,162 +69,157 @@ $SpendIndex-tech-bg-captions-md-anim: $SpendIndex-section-inner-md-anim;
   line-height: 0;
 }
 
-.SpendIndex-link {
-  display: inline-block;
-  padding: 17px 33.5px;
-  border-radius: 26px;
-  background-color: $SpendIndex-link-bg;
-  color: $SpendIndex-link-color;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 16px;
-  transition: color $clickable-transitionDuration;
-  text-transform: initial;
-}
-.SpendIndex-link img {
-  height: 16px;
-}
-.SpendIndex-link span {
-  vertical-align: bottom;
-  font-weight: 400;
-}
-.SpendIndex-link:hover,
-.SpendIndex-link:active {
-  opacity: $clickable-opacity-active;
-}
-.SpendIndex-link-preOrder {
-  background-color: $SpendIndex-link-preOrder-bg;
-  color: $SpendIndex-link-preOrder-color;
-  font-weight: lighter;
-}
-.SpendIndex-link-preOrder:hover,
-.SpendIndex-link-preOrder:active {
-  background-color: $SpendIndex-link-preOrder-bg-hover !important;
-  opacity: 1 !important;
-}
-.SpendMenu-indiegogo-button:hover {
-  background-color: #E8E8E8 !important;
-  opacity: 1 !important;
-}
-.SpendIndex-link-video-icon {
-  margin-right: 1em;
-  transition: opacity $clickable-transitionDuration;
-}
-.SpendIndex-link-video:hover .SpendIndex-link-video-icon,
-.SpendIndex-link-video:active .SpendIndex-link-video-icon {
-  opacity: $clickable-opacity-active;
+.AsteraIndex-text-h1 {
+  font-family: CircularStd;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: normal;
+  color: black;
+  padding-top:30px;
+  position: relative;
 }
 
-h1, h2, p {
-    word-break: keep-all;
-}
-.SpendIndex-link-video-h2.fat, .SpendIndex-link-video-h2 span {
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 1.2;
+.AsteraIndex-text-p {
+  font-family: CircularStd;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1.26;
   color: black;
-}
-.SpendIndex-index {
   position: relative;
-  height: 588px;
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage2.png");
-  background-repeat: no-repeat;
-  background-size: 550px;
-  background-position: bottom right;
+}
+
+.Astera-Main-Header-p-Oval {
+  width: 594.0253295898438px;
+  height: 53px;
+  opacity: 0.1843636775362319;
+  background-color: #f8e71c;
+  border-radius: 50%;
+}
+
+.AsteraIndex-Main {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  height: 910px;
   background-color: white;
 }
-.SpendIndex-index-header {
+
+.AsteraIndex-Main-Circle {
+  position:absolute;
+  top: 10%;
+  right: 0%;
+  display:inline-block;
+  z-index: -1;
+}
+.AsteraIndex-Main-Circle img {
+    width: 600px;
+}
+
+.AsteraIndex-descrip {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  height: 1211px;
+  background-color: #e7f4f4;
+  padding-top: 1px;
+}
+
+.AsteraIndex-inner {
+
+}
+
+.AsteraIndex-content {
   position: absolute;
-  top: 43px;
   right: 0;
-  left: 0;
-  z-index: 1;
-}
-.SpendIndex-h1 {
-  margin: 0 0 16px;
-  font-size: 33px;
-  line-height: 40px;
-}
-.SpendIndex-h1-Logo {
-  color: black;
-}
-.SpendIndex-h1-LinkBlock {
-  margin-top: 16px;
-}
-.SpendIndex-index-content {
-  position: absolute;
-  right: 0;
-  top: 70px;
-  left: 0;
-  z-index: 1;
-  padding: 0 10px 35px 10px;
-  text-align: center;
-}
-.SpendIndex-link-video-p {
-  display: none;
-}
-.SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
-  color: $SpendIndex-security-feature-name-color;
-  font-size: 20px;
-}
-.SpendIndex-video-LinkBlock {
-  margin-bottom: 52px;
-}
-.SpendIndex-Form-group {
-  width: 262px;
-  margin: auto;
-}
-.SpendIndex-Form-email {
-  width: 70%;
-  border: 0;
-  height: 49px;
-  padding: 0px 30px;
-  border-radius: 30px 0 0 30px;
-  font-size: 16px;
-  line-height: 1;
-  background-color: rgba(255, 255, 255, 0.67);
+  top: 160px;
+  left: 7.5%;
+  z-index: 10;
   text-align: left;
-  vertical-align: middle;
-  margin: 11px 0;
 }
-.SpendIndex-Form-email:focus {
+
+.AsteraIndex-text-group {
+  position: relative;
+}
+
+.AsteraIndex-Form-group {
+  width: 600px;
+  position: relative;
+  top: 45px;
+}
+
+.AsteraIndex-descrip-text-group {
+  text-align: center;
+  margin-top: 450px;
+}
+
+.AsteraIndex-descrip-hardware {
+    position: relative;
+    display: inline-block;
+}
+.AsteraIndex-descrip-hardware img {
+    width: 1000px;
+}
+
+.AsteraIndex-subscrib-text-group {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.AsteraIndex-Form-group.center {
+  width: 600px;
+  margin: 0 auto;
+}
+.AsteraIndex-Form {
+  border-radius: 17px;
+  box-shadow: 0 19px 37px 0 rgba(0, 0, 0, 0.05);
+}
+
+.AsteraIndex-Form-email {
+  text-align: left;
+  width: 75%;
+  height: 88px;
+  padding: 0px 37px;
+
+  font-family: CircularStd;
+  font-weight: 500;
+  color: #363636;
+  font-size: 23px;
+
+  border: solid 1px #f3f3f3;
+  border-radius: 17px 0 0 17px;
+  background-color: #ffffff;
+
+  line-height: 1.5;
+}
+
+.AsteraIndex-Form-email:focus {
   outline: 0;
 }
-.SpendIndex-Form-email::-moz-placeholder,
-.SpendIndex-Form-email:-ms-input-placeholder,
-.SpendIndex-Form-email::-webkit-input-placeholder {
-  color: $SpendIndex-Form-email-placeholder-color;
+.AsteraIndex-Form-email::-moz-placeholder,
+.AsteraIndex-Form-email:-ms-input-placeholder,
+.AsteraIndex-Form-email::-webkit-input-placeholder {
+  color: $AsteraIndex-Form-email-placeholder-color;
+  opacity: 0.8;
 }
-.SpendIndex-Form-submit {
-  height: 49px;
+
+.AsteraIndex-Form-submit {
+  width: 25%;
+  height: 88px;
   line-height: 49px;
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 17px 17px 0;
+  background-color: rgba(63,78,132,.1);
+  vertical-align: top;
   border: 0;
-  margin: 0;
-  background-color: white;
-  width: 30%;
-  padding: 0;
-  vertical-align: middle;
 }
-.SpendIndex-Form-submit img {
-  height: 25px;
-}
-.SpendIndex-Form-submit span {
-  font-size: 14px;
-  letter-spacing: 0.9px;
-  color: #5068ca;
-  font-weight: 900;
-  font-size: normal;
-}
-.SpendIndex-Form-MessageBoard {
-  font-size: 18px;
-	line-height: 1.8;
-	letter-spacing: -0.1px;
-	color: #ffffff;
-  margin: 0;
+
+.AsteraIndex-Form-submit-text {
+  font-family: CircularStd;
+  font-size: 25px;
   font-weight: 500;
-  margin: 0 20px;
+  text-align: center;
+  color: #000000;
 }
+
 .SpendIndex-Form-MessageBoard-success,
 .SpendIndex-Form-MessageBoard-error {
   font-weight: 400;
@@ -338,588 +230,42 @@ h1, h2, p {
 .SpendIndex-Form-MessageBoard-error {
   color: $SpendIndex-Form-MessageBoard-error-color;
 }
-.SpendIndex-index-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  @include background-image("fin-spend.png");
-  @include background-size(cover);
-  background-position: center;
-}
-.SpendIndex-index-bg-video {
-  display: none;
-}
-.SpendIndex-newsletter {
-  background-color: #496dff;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  padding: 20px;
-}
-.SpendIndex-newsletter-inner {
-  width: auto;
-}
-.SpendIndex-newsletter-p {
-  font-size: 22px;
-	line-height: 1.8;
-	letter-spacing: -0.1px;
-	color: #ffffff;
-  font-weight: lighter;
-  margin: 0;
-}
 
-.SpendIndex-contactless {
-  padding-top: 69px;
-  background-color: $SpendIndex-contactless-bg;
-}
-.SpendIndex-contactless-inner {
-  width: 300px;
+.AsteraIndex-subscrib {
+  max-width: 1600px;
   margin: 0 auto;
-  text-align: center;
-}
-.SpendIndex-contactless-header {
-  margin-bottom: 21px;
-}
-
-.SpendIndex-tech .SpendIndex-section-heading p {
-  padding-bottom: 40px;
-}
-
-.SpendIndex-contactless-h2-p, .SpendIndex-section-heading p {
-  margin: 3px 0;
-  color: $SpendIndex-contactless-h2-p-color;
-  font-size: 22px;
-  line-height: 26px;
-  letter-spacing: -0.02em;
-}
-.SpendIndex-contactless-article {
-  color: $SpendIndex-contactless-article-color;
-  font-size: 12px;
-  line-height: 17px;
-}
-.SpendIndex-contactless-article p {
-  margin: 21px 0;
-}
-.SpendIndex-contactless-bg {
-  max-width: 375px;
-  margin: 90px auto 0;
-}
-.SpendIndex-contactless-bg-inner {
-  @include r-background-image-s3(
-    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_pos_mobile.png",
-    $padding-bottom: 59.2%
-  );
-  background-size: contain;
-  margin-left: 7.733333333333333%;
-  background-position: center;
-}
-
-.SpendIndex-physicalCards {
-  padding-top: 69px;
-  background-color: $SpendIndex-physicalCards-bg;
-}
-.SpendIndex-physicalCards-article {
-  width: 300px;
-  margin: 0 auto 85px;
-  color: $SpendIndex-physicalCards-article-color;
-  font-size: 13px;
-  line-height: 20px;
-  text-align: center;
-}
-.SpendIndex-physicalCards-article p {
-  margin: 22px 0;
-}
-.SpendIndex-physicalCards-bg {
-  max-width: 280px;
-  margin: 85px auto 0;
-}
-.SpendIndex-physicalCards-bg-inner {
-  @include r-background-image-s3(
-    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_backside.png",
-    $padding-bottom: 74.3385490754%
-  );
-  background-size: cover;
-  margin-left: 8.4375%;
-}
-.SpendIndex-design-gallery {
   position: relative;
   height: 400px;
-  width: 100%;
-  padding: 0;
-  background-color: white;
+  background-color: #ffffff;
+  padding: 20px;
 }
-.SpendIndex-design-gallery-right {
-  background-color: black;
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/slim.jpg");
-  width: 100%;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 150px;
-  padding-bottom: 0;
-}
-.SpendIndex-design-gallery-left {
-  background-color: black;
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/spend_led.gif");
-  width: 100%;
-  background-size: 157px 197px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  height: 250px;
-  padding-bottom: 0;
-  border-top: solid 1px $SpendIndex-gallery-border;
-  border-bottom: solid 1px $SpendIndex-gallery-border;
-}
-.SpendIndex-design {
-  padding: 200px 0 100px;
-  background-color: $SpendIndex-design-bg;
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_design_spend.png");
-  @include background-size(90%);
-  background-repeat: no-repeat;
-}
-.SpendIndex-design-inner {
-  width: 276px;
-  margin: 0 auto;
-  text-align: center;
-}
-.SpendIndex-design-h2 {
-  margin: 0 0 16px;
-  color: $SpendIndex-design-h2-color;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: bold;
-}
-.SpendIndex-design-p {
-  margin: 16px 0;
-  color: $SpendIndex-design-p-color;
-  font-size: 13px;
-  line-height: 20px;
-}
-.SpendIndex-design-p-last {
-  margin-bottom: 0;
+.AsteraIndex-subscrib-inner {
+  top: 100px;
 }
 
-.SpendIndex-measure {
-  padding: 68px 0 75px;
-  background-color: $SpendIndex-measure-bg;
+.AsteraIndex-descrip-text-h1 {
+      font-family: CircularStd;
+      font-size: 70px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.3142857142857143;
+      letter-spacing: normal;
+      color: #3a3a3a;
+      opacity: 0.6296988224637681;
 }
-.SpendIndex-measure-h2 {
-  width: 212px;
-  margin: 0 auto 44px;
-  color: $SpendIndex-measure-h2-color;
-  font-size: 24px;
-  line-height: 29px;
-}
-.SpendIndex-measure-sideView-video {
-  display: none;
-}
-.SpendIndex-measure-numbers {
-  margin-top: 49px;
-  text-align: center;
-}
-.SpendIndex-measure-numbers-big {
-  margin: 8px 0;
-  color: $SpendIndex-measure-numbers-big-color;
-  font-size: 24px;
-  line-height: 29px;
-}
-.SpendIndex-measure-numbers-more {
-  color: $SpendIndex-measure-numbers-more-color;
-  font-size: 14.5px;
-  line-height: 17px;
-  letter-spacing: -0.01em;
-  word-spacing: 0.25em;
+
+.AsteraIndex-subscrib-h1 {
+    font-family: CircularStd;
+    font-size: 42px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 30px;
 }
 
 .SpendIndex-section-heading, .SpendIndex-measure-numbers-more {
   text-align: center;
   margin: 0 20px;
-}
-
-.SpendIndex-charge {
-  padding: 52px 0 80px;
-  background-color: $SpendIndex-charge-bg;
-}
-.SpendIndex-charge-content {
-  width: 297px;
-  margin: 0 auto 60px;
-  text-align: center;
-}
-.SpendIndex-charge-h2, .SpendIndex-contactless-h2, .SpendIndex-physicalCards-article h2, .SpendIndex-section-heading h1 {
-  margin: 0 0 8px;
-  color: $SpendIndex-charge-h2-color;
-  font-size: 24px;
-  line-height: 29px;
-  font-weight: bold;
-}
-.SpendIndex-charge-p {
-  margin: 16px 0;
-  color: $SpendIndex-charge-p-color;
-  font-size: 13px;
-  line-height: 20px;
-}
-.SpendIndex-charge-ImageBlock {
-  max-width: 375px;
-  margin: 60px auto;
-  text-align: center;
-}
-.SpendIndex-charge-RImage {
-  width: 160px !important;
-}
-
-.SpendIndex-charge-bg {
-  display: none;
-}
-.SpendIndex-tech {
-  padding: 69px 0 42px;
-  background-color: $SpendIndex-tech-bg;
-}
-.SpendIndex-tech-bg {
-  position: relative;
-  width: 89.33333333333333%;
-  max-width: 335px;
-  margin: 0 auto 62px;
-}
-.SpendIndex-tech-bg-inner {
-  @include r-background-image-s3(
-    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/tech_mobile.png",
-    $padding-bottom: 86.08955223880596%
-  );
-  background-size: contain;
-  margin-left: 20.895522388059703%;
-}
-.SpendIndex-tech-bg-caption-display {
-  position: absolute;
-  top: 28.408304498269896%;
-  left: 0;
-  width: 41.014925373134325%;
-}
-.SpendIndex-tech-bg-caption-display-inner {
-  @include r-background-image(
-    "LED-matrix-display.png",
-    "LED-matrix-display.png",
-    138, 13
-  );
-}
-.SpendIndex-tech-bg-caption-mfe {
-  position: absolute;
-  top: 44.29065743944636%;
-  left: 8.955223880597014%;
-  width: 40.59701492537314%;
-}
-.SpendIndex-tech-bg-caption-mfe-inner {
-  @include r-background-image(
-    "MFE-antenna.png",
-    "MFE-antenna.png", 135, 7
-  );
-}
-.SpendIndex-tech-bg-caption-battery {
-  position: absolute;
-  top: 52.24913494809689%;
-  left: 5.373134328358209%;
-  width: 35.52238805970149%;
-}
-.SpendIndex-tech-bg-caption-battery-inner {
-  @include r-background-image(
-    "rechargeable-battery.png",
-    "rechargeable-battery.png",
-    119, 9
-  );
-}
-.SpendIndex-tech-bg-caption-touch {
-  position: absolute;
-  top: 60.39792387543253%;
-  left: 5%;
-  width: 45.67164179104478%;
-}
-.SpendIndex-tech-bg-caption-touch-inner {
-  @include r-background-image(
-    "touch-sensors.png",
-    "touch-sensors.png", 152, 12
-  );
-}
-.SpendIndex-tech-bg-caption-usb {
-  position: absolute;
-  top: 74.74048442906575%;
-  left: 11.044776119402986%;
-  width: 40.298507462686565%;
-}
-.SpendIndex-tech-bg-caption-usb-inner {
-  @include r-background-image(
-    "micro-USB.png",
-    "micro-USB.png", 135, 11
-  );
-}
-.SpendIndex-tech-bg-caption-vibration {
-  position: absolute;
-  top: 82.3529411764706%;
-  left: 14.029850746268657%;
-  width: 43.28358208955224%;
-}
-.SpendIndex-tech-bg-caption-vibration-inner {
-  @include r-background-image(
-    "vibration-feedback.png",
-    "vibration-feedback.png",
-    144, 8
-  );
-}
-.SpendIndex-tech-bg-caption-energy {
-  position: absolute;
-  top: 81.31487889273356%;
-  left: 16.71641791044776%;
-  width: 54.62686567164179%;
-}
-.SpendIndex-tech-bg-caption-energy-inner {
-  @include r-background-image(
-    "bluetooth-low-energy.png",
-    "bluetooth-low-energy.png",
-    182, 43
-  );
-}
-
-.SpendIndex-tech-bg-caption-secure-element {
-  position: absolute;
-  top: 67.31487889273356%;
-  left: 10.71641791044776%;
-  width: 40.62686567164179%;
-}
-.SpendIndex-tech-bg-caption-secure-element-inner {
-  @include r-background-image(
-    "secure-element.png",
-    "secure-element.png",
-    182, 43
-  );
-}
-
-.SpendIndex-tech-inner {
-  width: 295px;
-  margin: 62px auto 0;
-  text-align: center;
-}
-.SpendIndex-tech-h2 {
-  margin: 14px 0;
-  color: $SpendIndex-tech-h2-color;
-  font-size: 23px;
-  line-height: 28px;
-}
-.SpendIndex-tech-p {
-  margin: 14px 0;
-  color: $SpendIndex-tech-p-color;
-  font-size: 13px;
-  line-height: 17px;
-}
-.SpendIndex-tech-p-last {
-  margin-bottom: 0;
-}
-
-.SpendIndex-security {
-  background-color: $SpendIndex-security-bg;
-  padding: 69px 0 0 0;
-}
-.SpendIndex-security-slider {
-  position: relative;
-  overflow: hidden;
-}
-.SpendIndex-security-flatten {
-  display: none;
-}
-.SpendIndex-security-features {
-  width: 87.18887262079063%;
-  margin: 0 auto;
-}
-.SpendIndex-security-slider-features {
-  position: relative;
-  width: auto;
-  margin: 0;
-  overflow: hidden;
-}
-.SpendIndex-security-feature {
-  width: 33.333333333333336%;
-  padding-top: 300px;
-}
-.SpendIndex-security-slider-feature {
-  position: relative;
-  float: left;
-  width: 100%;
-  padding: 281px 0 72px;
-}
-.SpendIndex-security-feature-alert,
-.SpendIndex-security-feature-passcode,
-.SpendIndex-security-feature-encrypt {
-  @include background-size(172px 298px);
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-.SpendIndex-security-feature-alert {
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_alarm.png");
-}
-.SpendIndex-security-feature-passcode {
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_fingerprint.png");
-}
-.SpendIndex-security-feature-encrypt {
-  background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/security_encrypt.png");
-}
-.SpendIndex-security-slider-feature-alert,
-.SpendIndex-security-slider-feature-passcode,
-.SpendIndex-security-slider-feature-encrypt {
-  @include background-size(122px 211px);
-  background-position-y: 70px;
-}
-.SpendIndex-security-feature-name {
-  margin-bottom: 15px;
-  color: $SpendIndex-security-feature-name-color;
-  font-size: 23px;
-  line-height: 28px;
-}
-.SpendIndex-security-slider-feature-name {
-  margin-bottom: 11.5px;
-  font-size: 16px;
-  line-height: 1.15625;
-  letter-spacing: 0.5px;
-}
-.SpendIndex-security-feature-desc {
-  margin-top: 15px;
-  color: $SpendIndex-security-feature-desc-color;
-  font-size: 19px;
-  line-height: 23px;
-}
-.SpendIndex-security-slider-feature-desc {
-  margin-top: 11.5px;
-  font-size: 13.5px;
-  line-height: 16.5px;
-}
-.SpendIndex-security-feature-desc p {
-  margin: 0;
-}
-.SpendIndex-security-arrow {
-  border: 18px solid transparent;
-}
-.SpendIndex-security-arrow-left,
-.SpendIndex-security-arrow-right {
-  position: absolute;
-  top: 172px;
-}
-.SpendIndex-security-arrow-left {
-  left: 2px;
-  border-right-color: $SpendIndex-security-arrow-color;
-}
-.SpendIndex-security-arrow-right {
-  right: 2px;
-  border-left-color: $SpendIndex-security-arrow-color;
-}
-.SpendIndex-security-arrow-left:after,
-.SpendIndex-security-arrow-right:after {
-  content: "";
-  position: absolute;
-  top: -17px;
-  border: 17px solid transparent;
-}
-.SpendIndex-security-arrow-left:after {
-  right: -18px;
-  border-right-color: $SpendIndex-security-bg;
-}
-.SpendIndex-security-arrow-right:after {
-  left: -18px;
-  border-left-color: $SpendIndex-security-bg;
-}
-
-.SpendIndex-app {
-  padding-top: 43px;
-  background-color: white;
-}
-.SpendIndex-app-inner {
-  width: 276px;
-  margin: 0 auto;
-  text-align: center;
-}
-.SpendIndex-app-h2 {
-  margin: 0 0 30px;
-  font-size: 30px;
-  line-height: 1.2;
-}
-.SpendIndex-app-p {
-  margin: 30px 0;
-  color: $SpendIndex-app-p-color;
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 0.5px;
-}
-.SpendIndex-app-stores {
-  display: inline;
-  margin: 30px auto;
-}
-.SpendIndex-app-stores img {
-  width: 113px;
-  height: 39px;
-}
-.SpendIndex-app-stores img:first-child {
-    margin-right: 16px;
-}
-.SpendIndex-app-bg {
-  max-width: 375px;
-  margin: 42px auto 0;
-}
-.SpendIndex-app-bg-inner {
-  @include r-background-image-s3(
-    "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_hand.png",
-    $padding-bottom: 103.73333333333333%
-  );
-  background-size: contain;
-  margin-right: 21.333333333333332%;
-}
-
-.SpendIndex-preOrder {
-  padding: 60px 0 80px;
-  background-color: $SpendIndex-preOrder-bg;
-}
-.SpendIndex-preOrder-h2 {
-  margin: 0 0 80px;
-  color: $SpendIndex-preOrder-h2-color;
-  font-size: 26px;
-  line-height: 1.4;
-  text-align: center;
-}
-.SpendIndex-preOrder-h2-em {
-  font-size: 30px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.3px;
-}
-.SpendIndex-preOrder-ImageBlock {
-  margin: 80px 0;
-}
-.SpendIndex-preOrder-LinkBlock {
-  margin-top: 90px;
-  text-align: center;
-}
-.SpendIndex-preOrder-bg {
-  display: none;
-}
-.SpendIndex-tech-inner-icon-group img {
-  width: 80px;
-}
-.SpendIndex-tech-inner-icon-group h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-@include enter(
-  "SpendIndex-scroll-link", $SpendIndex-link-video-h2-md-anim,
-  "is-SpendIndex-index-entered"
-) {
-  display: inline-block;
-  padding: 17px 33.5px;
-  color: white;
-  border-radius: 44px;
-  background-color: black;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  text-align: center;
-  box-shadow: 0 2px 23px 0 #DEDCDC;
-  margin-top: 14px;
 }
 
 .SpendMenu-indiegogo-button:hover {
@@ -938,56 +284,124 @@ h1, h2, p {
     padding-left: 5px;
 }
 
-.SpendIndex-contactless-icon-group {
-  margin-top: 15px;
-  text-align: center;
-}
-.SpendIndex-contactless-icon-group img {
-  width: 100px;
-  margin-right: 7px;
-}
-.SpendIndex-contactless-icon-group h2 {
-  font-size: 20px;
+.AsteraIndex-index {
+  height: 1211px;
+  background-color: #e7f4f4;
 }
 
-@media (min-width: 500px) {
-  .SpendIndex-index {
-    height: 800px;
-    background-size: 1000px;
+
+.AsteraIndex-Index-Inder {
+}
+
+@media (max-width: $screen-md-min) {
+  .AsteraIndex-Main {
+    height: 600px;
+  }
+  .AsteraIndex-descrip {
+    height: 608px;
+  }
+  .AsteraIndex-text-h1 {
+    font-size: 35px;
+  }
+
+  .AsteraIndex-text-p {
+    font-size: 24px;
+  }
+
+  .AsteraIndex-Main-Circle {
+    top:0%;
+  }
+
+  .AsteraIndex-Main-Circle img {
+    width: 300px;
+  }
+  .AsteraIndex-descrip-hardware {
+
+  }
+  .AsteraIndex-descrip-hardware img {
+    width: 500px;
+  }
+  .AsteraIndex-Form {
+    border-radius: 6px;
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .AsteraIndex-Form-group {
+    top: 21px;
+    width: 400px;
+  }
+  .AsteraIndex-Form-email {
+    height: 52px;
+    padding: 0px 14px;
+    font-size: 9px;
+    border: solid 1px #f3f3f3;
+    border-radius: 6px 0 0 6px;
+  }
+
+  .AsteraIndex-Form-submit {
+    height: 52px;
+    line-height: 20px;
+    border-radius: 0 6px 6px 0;
+  }
+  .AsteraIndex-Form-email {
+
+  }
+  .AsteraIndex-Form-submit-text {
+     font-size: 9.7px;
+  }
+  .AsteraIndex-descrip-text-h1 {
+    font-size: 31.4px;
+  }
+  .AsteraIndex-descrip-text-group {
+    margin-top: 150px;
   }
 }
-@media (min-width: $screen-md-min) {
-  .SpendIndex-contactless-icon-group {
-    margin-top: 30px;
+
+@media (max-width: $screen-sm-min) {
+  .AsteraIndex-Main {
+    height: 300px;
   }
-  .SpendIndex-contactless-icon-group img {
-    width: 134px;
-    margin-right: 15px;
-    float: left;
+
+  .AsteraIndex-descrip {
+    height: 408px;
   }
-  .SpendIndex-contactless-icon-group h2 {
-    font-size: 20px;
+
+  .AsteraIndex-content {
+      left: 8.5%;
+      top: 45px;
   }
-  .SpendIndex-Form-email {
-    margin: auto;
+
+  .AsteraIndex-text-group {
+
   }
-  .SpendIndex-index {
-    position: relative;
-    height: 588px;
-    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_mainpage2.png");
-    background-size: cover;
-    background-position: right;
+
+  .AsteraIndex-Main-Circle {
+    display:none;
   }
-  .SpendIndex-Form-MessageBoard {
-    font-size: 22px;
-    margin: 0;
+
+  .AsteraIndex-descrip-hardware {
+
   }
-  .SpendIndex-h1-Logo {
-    color: white;
+  .AsteraIndex-descrip-hardware img {
+    width: 300px;
   }
-  .SpendIndex-link-video-p, .SpendIndex-link-video-h2 {
-    color: white;
+
+  .AsteraIndex-text-h1 {
+    font-size: 19.2px;
   }
+
+  .AsteraIndex-text-p {
+    font-size: 13.6px;
+  }
+
+  .AsteraIndex-descrip-text-h1 {
+    font-size: 22.4px;
+  }
+  .AsteraIndex-subscrib-h1 {
+    font-size: 18.9px;
+    margin-bottom: 0px;
+  }
+
   .SpendIndex-section-heading {
     padding-bottom: 150px;
   }
@@ -1006,628 +420,55 @@ h1, h2, p {
     margin-left: auto;
     overflow: visible;
   }
-  .SpendIndex-preOrder-LinkBlock {
-    text-align: left;
-  }
-  .SpendIndex-link {
-    padding: 23px 46px;
-    border-radius: 31.5px;
-    font-size: 18px;
-    line-height: 17px;
-  }
-  .SpendIndex-link img {
-    height: 18px;
-  }
-  .SpendIndex-link span {
-    vertical-align: bottom;
-  }
-  .SpendIndex-Form-group {
-    width: 350px;
-    margin: 15px auto;
-  }
-  .SpendIndex-offsetY {
-    transition: transform 450ms $CUBIC-BEZIER-OUT-SINE;
-  }
-  .SpendIndex-index {
-    height: 806px;
-  }
-  .SpendIndex-index-header {
-    display: none;
-  }
-  .SpendIndex-index-content {
-    top: 319px;
-    right: auto;
-    bottom: auto;
-    left: 6.44216691068814%;
-    padding-bottom: 0;
-    background-image: none;
-    text-align: left;
-  }
-  .SpendIndex-link-video-group {
-    margin-bottom: 50px;
+
+  .AsteraIndex-Form {
+    border-radius: 6px;
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
   }
 
-  @include enter(
-    "SpendIndex-link-video-h2", $SpendIndex-link-video-h2-md-anim,
-    "is-SpendIndex-index-entered"
-  ) {
-    display: block;
-    margin: 0 0 15px;
-    font-size: 32.6px;
-    color: #434343;
+  .AsteraIndex-Form-group {
+    top: 21px;
+    width: 240px;
   }
 
-  @include enter(
-    "SpendIndex-video-LinkBlock", $SpendIndex-video-LinkBlock-md-anim,
-    "is-SpendIndex-index-entered"
-  ) {
-    margin: 47px 0;
-  }
-  .SpendIndex-newsletter {
-    padding: 15px 50px;
-  }
-  .SpendIndex-newsletter-inner {
-    text-align: left;
-    float: left;
-  }
-  .SpendIndex-newsletter-bg {
-    float: right;
-  }
-  .SpendIndex-index-bg {
-    background-image: none;
-    @include background-size(auto);
-    background-position: 0;
-    overflow: hidden;
-  }
-  .SpendIndex-index-bg-video {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 35%;
-    transform: translateX(-35%);
-    width: auto;
-  }
-  .SpendIndex-contactless {
-    position: relative;
-    height: 628px;
-    padding-top: 0;
-  }
-  @include enter(
-    "SpendIndex-contactless-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-contactless-entered"
-  ) {
-    position: absolute;
-    top: 45.45454545454545%;
-    left: 6.44216691068814%;
-    transform: translateY(-45.45454545454545%);
-    width: 40.849194729136165%;
-    margin: 0;
-    text-align: left;
-  }
-  .SpendIndex-contactless-header {
-    margin-bottom: 45px;
-  }
-  .SpendIndex-contactless-h2 {
-    margin-bottom: 11px;
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  .SpendIndex-contactless-h2-p {
-    margin: 11px 0;
-    font-size: 35px;
-    line-height: 1.2;
-    letter-spacing: normal;
-  }
-  .SpendIndex-contactless-article {
-    font-size: 19px;
-    line-height: 35px;
-  }
-  .SpendIndex-contactless-article p {
-    margin: 45px 0;
-  }
-  .SpendIndex-contactless-article p:last-child {
-    margin-bottom: 0;
-  }
-  .SpendIndex-contactless-bg {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    max-width: none;
-    margin: 0;
-  }
-  .SpendIndex-contactless-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_pos.png", $width: 1228 , $height: 1245
-    );
-    margin-left: 0;
-    margin-bottom: 40px;
+  .AsteraIndex-Form-group.center {
+    width: 240px;
+    margin: 0 auto;
   }
 
-  .SpendIndex-physicalCards {
-    position: relative;
-    height: 724px;
-    padding-top: 0;
-  }
-  @include enter(
-    "SpendIndex-physicalCards-article",
-    $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-physicalCards-entered"
-  ) {
-    position: absolute;
-    top: 57.081545064377686%;
-    right: 9.5900439238653%;
-    transform: translateY(-57.081545064377686%);
-    width: 34.69985358711567%;
-    margin: 0;
-    font-size: 19px;
-    line-height: 35px;
-    text-align: left;
-  }
-  .SpendIndex-physicalCards-article h2 {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  .SpendIndex-physicalCards-article p:last-child {
-    margin-bottom: 0;
-  }
-  .SpendIndex-physicalCards-bg {
-    position: absolute;
-    bottom: -5%;
-    left: 5%;
-    width: 38%;
-    max-width: none;
-    margin: 0;
-  }
-  .SpendIndex-physicalCards-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_backside.png", $width: 616 , $height: 543 ,$padding-bottom: 85%
-    );
-    margin-left: 0;
-  }
-  .SpendIndex-design-gallery {
-    position: relative;
-    height: 500px;
-    width: 100%;
-    padding: 0;
-    background-color: white;
-    border-bottom: solid 1px #e8e8e8;
-  }
-  .SpendIndex-design-gallery-right {
-    border-top: solid 1px $SpendIndex-gallery-border;
-    border-bottom: solid 1px $SpendIndex-gallery-border;
-    width: 50%;
-    float: left;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: right;
-    height: 500px;
-    padding-bottom: 0;
-  }
-  .SpendIndex-design-gallery-left {
-    border-right: solid 1px $SpendIndex-gallery-border;
-    border-top: solid 1px $SpendIndex-gallery-border;
-    width: 50%;
-    float: left;
-    background-size: 305px 394px;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    height: 500px;
-    padding-bottom: 0;
-  }
-  .SpendIndex-design {
-    padding: 150px 0 100px;
-    position: relative;
-    height: 700px;
-    padding: 0;
-    background-image: none;
-    @include background-size(auto);
-    background-repeat: repeat;
-  }
-  @include enter(
-    "SpendIndex-design-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-design-entered"
-  ) {
-    position: absolute;
-    top: 65%;
-    right: 8.711566617862372%;
-    z-index: 1;
-    transform: translateY(-74.62915601023018%);
-    width: 36.16398243045388%;
-    max-width: none;
-    margin: 0;
-    text-align: left;
+  .AsteraIndex-subscrib-text-group {
+    margin-top: 0px;
   }
 
-  .SpendIndex-design-h2 {
-    margin-bottom: 30px;
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  .SpendIndex-design-p {
-    margin: 27px 0;
-    font-size: 19px;
-    line-height: 35px;
-  }
-  .SpendIndex-design-p-last {
-    margin-bottom: 0;
-  }
-  .SpendIndex-design-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_design_spend.png", $width: 1013, $height: 397
-    );
-    background-size: 65%;
-  }
-  .SpendIndex-measure {
-    padding: 200px 0 200px;
-  }
-  .SpendIndex-measure-h2,
-  .SpendIndex-measure-numbers {
-    position: relative;
-    z-index: 1;
-  }
-  .SpendIndex-measure-h2 {
-    width: 310px;
-    margin-bottom: 26px;
-    font-size: 35px;
-    line-height: 43px;
-  }
-  .SpendIndex-measure-sideView {
-    position: relative;
-    width: 858px;
-    height: 606.71875px;
-    background-image: none;
-    margin-top: -252px;
-    margin-bottom: -314px;
-    overflow: hidden;
-    @include media-2x {
-      @include background-size(auto);
-    }
-  }
-  .SpendIndex-measure-sideView-video {
-    display: block;
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    bottom: -1px;
-    left: -1px;
-    width: 860px;
-    height: 608.71875px;
-  }
-  .SpendIndex-measure-numbers {
-    margin-top: 175px;
-    margin-bottom: 120px;
-  }
-  .SpendIndex-measure-numbers-big {
-    font-size: 35px;
-    line-height: 1.2;
-  }
-  .SpendIndex-measure-numbers-more {
-    font-size: 22px;
-    line-height: 24px;
-  }
-  .SpendIndex-charge {
-    position: relative;
-    height: 644px;
-    padding: 0;
-  }
-  @include enter(
-    "SpendIndex-charge-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-charge-entered"
-  ) {
-    position: absolute;
-    top: 52.38095238095238%;
-    right: 8.199121522693996%;
-    transform: translateY(-52.38095238095238%);
-    width: 50%;
-  }
-  .SpendIndex-charge-content {
-    width: auto;
-    margin: 0;
-    text-align: left;
-  }
-  .SpendIndex-charge-h2 {
-    margin-bottom: 27px;
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  .SpendIndex-charge-p {
-    margin: 27px 0;
-    font-size: 19px;
-    line-height: 35px;
-  }
-  .SpendIndex-charge-ImageBlock {
-    display: none;
-  }
-  .SpendIndex-charge-battery {
-    padding: 0 0 0 73px;
-    margin-top: 28px;
-    background-position-x: 8px;
-    line-height: 38px;
-    text-align: left;
-  }
-  .SpendIndex-charge-bg {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 5%;
-    width: 45%;
-    margin-top: 120px;
-  }
-  .SpendIndex-tech, .SpendIndex-security {
-    padding: 80px 0;
-  }
-  .SpendIndex-tech-bg {
-    width: 48.6090775988287%;
-    max-width: 664px;
-    margin-bottom: 134px;
-  }
-  .SpendIndex-tech-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_tech_desktop.png",
-      $padding-bottom: 38.403614457831324%
-    );
-    margin-left: 5.530120481927711%;
+  .AsteraIndex-descrip-text-group {
+      margin-top: 160px;
   }
 
-  @include enter(
-    "SpendIndex-tech-bg-captions",
-    $SpendIndex-tech-bg-captions-md-anim,
-    "is-SpendIndex-tech-entered"
-  );
-  .SpendIndex-tech-bg-caption-display {
-    top: 78.90196078431373%;
-    right: -31.77710843373494%;
-    left: auto;
-    width: 43.0722891566265%;
-  }
-  .SpendIndex-tech-bg-caption-display-inner {
-    @include r-background-image-update(
-      "LED-matrix-display-md.png",
-      "LED-matrix-display-md.png",
-      286, 15
-    );
-  }
-  .SpendIndex-tech-bg-caption-mfe {
-    top: auto;
-    right: 32.07831325301205%;
-    bottom: -21.647058823529413%;
-    left: auto;
-    width: 14.608433734939759%;
-  }
-  .SpendIndex-tech-bg-caption-mfe-inner {
-    @include r-background-image-update(
-      "MFE-antenna-md.png",
-      "MFE-antenna-md.png", 95, 115
-    );
-  }
-  .SpendIndex-tech-bg-caption-battery {
-    top: 51.84313725490196%;
-    right: -28.6144578313253%;
-    left: auto;
-    width: 47.74096385542169%;
-  }
-  .SpendIndex-tech-bg-caption-battery-inner {
-    @include r-background-image-update(
-      "rechargeable-battery-md.png",
-      "rechargeable-battery-md.png",
-      317, 15
-    );
-  }
-  .SpendIndex-tech-bg-caption-touch {
-    top: 38.90196078431372%;
-    left: -31.626506024096386%;
-    width: 39.75903614457831%;
-  }
-  .SpendIndex-tech-bg-caption-touch-inner {
-    @include r-background-image-update(
-      "touch-sensors-md.png",
-      "touch-sensors-md.png", 264, 15
-    );
-  }
-  .SpendIndex-tech-bg-caption-usb {
-    top: auto;
-    bottom: -21.647058823529413%;
-    left: 19.27710843373494%;
-    width: 11.44578313253012%;
-  }
-  .SpendIndex-tech-bg-caption-usb-inner {
-    @include r-background-image-update(
-      "micro-USB-md.png",
-      "micro-USB-md.png", 74, 116
-    );
-  }
-  .SpendIndex-tech-bg-caption-vibration {
-    top: 53.411764705882355%;
-    left: -25.301204819277107%;
-    width: 41.86746987951807%;
-  }
-  .SpendIndex-tech-bg-caption-vibration-inner {
-    @include r-background-image-update(
-      "vibration-feedback-md.png",
-      "vibration-feedback-md.png",
-      278, 13
-    );
-  }
-  .SpendIndex-tech-bg-caption-energy {
-    top: 67.52941176470588%;
-    left: -23.49397590361446%;
-    width: 37.95180722891566%;
-  }
-  .SpendIndex-tech-bg-caption-energy-inner {
-    @include r-background-image-update(
-      "bluetooth-low-energy-md.png",
-      "bluetooth-low-energy-md.png",
-      251, 17
-    );
-  }
-  .SpendIndex-tech-bg-caption-secure-element {
-    position: absolute;
-    top: 64.84313725490196%;
-    right: -28.6144578313253%;
-    left: auto;
-    width: 46%;
-  }
-  .SpendIndex-tech-bg-caption-secure-element-inner {
-    @include r-background-image(
-      "secure-element-md.png",
-      "secure-element-md.png",
-      182, 43
-    );
-  }
-  @include enter(
-    "SpendIndex-tech-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-tech-entered"
-  ) {
-    width: 100%;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  .SpendIndex-tech-inner-icon-group {
-    width: 33%;
-    float: left;
-  }
-  .SpendIndex-tech-inner-icon-group h2 {
-    font-size: 25px;
-    color: #595959;
-  }
-  .SpendIndex-tech-inner-icon-group p {
-    font-weight: lighter;
-    font-size: 18.6px;
-    color: #757575;
-  }
-  .SpendIndex-tech-h2 {
-    margin: 28px 0;
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  .SpendIndex-tech-p {
-    margin: 28px 0;
-    font-size: 19px;
-    line-height: 35px;
-  }
-  .SpendIndex-tech-p-last {
-    margin-bottom: 0;
+  .AsteraIndex-Form-email {
+    height: 34.3px;
+    padding: 0px 14px;
+    font-size: 9px;
+    border: solid 1px #f3f3f3;
+    border-radius: 6px 0 0 6px;
   }
 
-  .SpendIndex-security-slider {
-    display: none;
+  .AsteraIndex-Form-submit {
+    height: 34.3px;
+    line-height: 20px;
+    border-radius: 0 6px 6px 0;
   }
-  .SpendIndex-security-flatten {
-    display: block;
+  .AsteraIndex-Form-email {
+
   }
-  .SpendIndex-app {
-    position: relative;
-    height: 950px;
-  }
-  .SpendIndex-app:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: -20px;
-    left: 0;
-    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_app.png");
-    @include background-size(contain);
-    background-position: center bottom;
+  .AsteraIndex-Form-submit-text {
+     font-size: 9.7px;
   }
 
-  @include enter(
-    "SpendIndex-app-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-app-entered"
-  ) {
-    position: absolute;
-    top: 44.832605531295485%;
-    right: 10.61493411420205%;
-    transform: translateY(-44.832605531295485%);
-    width: 34.18740849194729%;
-    margin: 0;
-    text-align: left;
+  .AsteraIndex-subscrib {
+    height: 200px;
   }
-  .SpendIndex-app-h2 {
-    margin-bottom: 32px;
-    font-size: 40px;
-    line-height: 49px;
-  }
-  .SpendIndex-app-p {
-    margin: 32px 0;
-    font-size: 19px;
-    line-height: 28px;
-  }
-  .SpendIndex-app-stores {
-    display: inline;
-  }
-  .SpendIndex-app-stores img {
-    width: 162px;
-    height: 56px;
-  }
-  .SpendIndex-app-stores img:first-child {
-      margin-right: 32px;
-  }
-  .SpendIndex-app-bg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    max-width: none;
-    margin: 0;
-  }
-  .SpendIndex-app-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_hand.png", $width: 839, $height: 936
-    );
-    margin-right: 0;
-  }
+  .AsteraIndex-subscrib-inner {
 
-  .SpendIndex-preOrder {
-    position: relative;
-    height: 897px;
-    padding: 0;
-  }
-  @include enter(
-    "SpendIndex-preOrder-inner", $SpendIndex-section-inner-md-anim,
-    "is-SpendIndex-preOrder-entered"
-  ) {
-    position: absolute;
-    top: 43.159609120521175%;
-    left: 0%;
-    transform: translateY(-43.159609120521175%);
-    background-image: url("https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/background_map.png");
-    background-size: cover;
-    padding: 100px;
-  }
-  .SpendIndex-preOrder-h2 {
-    margin-bottom: 40px;
-    font-size: 35px;
-    line-height: 1.3;
-    text-align: left;
-  }
-  .SpendIndex-preOrder-h2-em {
-    font-size: 35px;
-    letter-spacing: normal;
-  }
-  .SpendIndex-preOrder-ImageBlock {
-    display: none;
-  }
-  .SpendIndex-preOrder-LinkBlock {
-    margin-top: 40px;
-  }
-  .SpendIndex-preOrder-bg {
-    display: block;
-    position: absolute;
-    top: 43.159609120521175%;
-    right: 0;
-    transform: translateY(-46.47160068846816%);
-    width: 41.65446559297218%;
-  }
-  .SpendIndex-preOrder-bg-inner {
-    @include r-background-image-s3(
-      "https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/index_stacked_desktop.png", 569, 581
-    );
-    background-position-x: right;
-    background-size: cover;
   }
 
   .SpendFaq-container, .SpendTeam-container, .SpendJobs-container {

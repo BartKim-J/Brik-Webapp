@@ -81,7 +81,7 @@ let MessageBoard = React.createClass({
     const {activeMessage, fadingClasses} = this.state;
 
     return (
-      <img
+      <p
         className={classNames(
           'MessageBoard', className,
           activeMessage ? activeMessage.className : null,
@@ -92,7 +92,7 @@ let MessageBoard = React.createClass({
           this._ref = ref;
         }}
       >
-      </img>
+      </p>
     );
   }
 });

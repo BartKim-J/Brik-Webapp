@@ -237,36 +237,10 @@ let SpendMenu = React.createClass({
               <Link className="SpendMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
             </div>
             <nav className="SpendMenu-nav">
-              <PseudoButton onClick={this.handleButtonClick}>
-                <div className="SpendMenu-button pull-right">
-                  <span className="SpendMenu-button-bar SpendMenu-button-bar-1" />
-                  <span className="SpendMenu-button-bar SpendMenu-button-bar-2" />
-                  <span className="SpendMenu-button-bar SpendMenu-button-bar-3" />
-                </div>
-              </PseudoButton>
               <div className="SpendMenu-nav-inner">
-                <div className="SpendMenu-lists">
-                  <ul className="SpendMenu-items listUnstyled text-uppercase">
-                    {[
-                      {key: 'team', url: '/team'},
-                      {key: 'jobs', url: '/jobs'},
-                      {key: 'faq', url: '/faq'}/*,
-                      {key: 'promotion', url: '/promotion'}*/
-                    ].map(({key, url}) => (
-                      <li className="SpendMenu-item" key={key}>
-                        <Link className="SpendMenu-item-link" url={url} clickEvent={{category: 'Menu', label: key}}>{formatMessage({id: `menu.${key}`})}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <SocialLinks
-                    className="SpendMenu-SocialLinks"
-                    eventCategory="Menu" />
-                </div>
-                <LinkBlock className="SpendMenu-Indiegogo-LinkBlock">
-                  <a className="SpendMenu-indiegogo-button" href="http://igg.me/at/spendwallet" target="_blank">
-                    Pre-order on <img src="https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/indiegogo_black.png" alt="Indiegogo"></img>
+                  <a className="SpendMenu-indiegogo-button" href="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/ASTERA_v0.1_EN.pdf" target="_blank">
+                    {formatMessage({id: 'index.menu.whitepaper'})}
                   </a>
-                </LinkBlock>
               </div>
             </nav>
           </div>

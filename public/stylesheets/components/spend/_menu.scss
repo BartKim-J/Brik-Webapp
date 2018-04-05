@@ -9,7 +9,7 @@ $SpendMenu-item-border-color: #d5d5d5;
 $SpendMenu-item-link-color: #383838;
 $SpendMenu-item-link-md-color: #000000;
 
-$SpendMenu-index-md-anim: slideDown 1s 575ms both;
+//$SpendMenu-index-md-anim: slideDown 1s 575ms both;
 
 .SpendMenu {
   position: absolute;
@@ -20,7 +20,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 }
 .is-SpendMenu-scrolling {
   position: fixed;
-  transform: translate3d(0,-5px,0);
+  transform: translate3d(0,0,0);
 }
 .is-SpendMenu-open {
   transition: transform $SpendMenu-transitionDuration;
@@ -58,11 +58,12 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   background-color: $SpendMenu-open-bg;
 }
 .SpendMenu-inner-inner {
-  padding: 16px 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4px 0;
 }
 .SpendMenu-Logo {
   font-size: 33px;
-  line-height: 40px;
 }
 .is-SpendMenu-index-Logo-forceShown {
   display: block;
@@ -107,24 +108,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 .is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
   background-color: $SpendMenu-button-color;
 }
-.SpendMenu-button-bar-1,
-.SpendMenu-button-bar-2,
-.SpendMenu-button-bar-3 {
-  position: absolute;
-  left: 0;
-}
-.SpendMenu-button-bar-1 {
-  top: 6px;
-  transition-property: transform;
-}
-.SpendMenu-button-bar-2 {
-  top: 15px;
-  transition-property: opacity;
-}
-.SpendMenu-button-bar-3 {
-  top: 24px;
-  transition-property: transform;
-}
+
 .is-SpendMenu-open-in .SpendMenu-button-bar-1 {
   transform: translate3d(0,9px,0) rotateZ(45deg);
 }
@@ -135,7 +119,9 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   transform: translate3d(0,-9px,0) rotateZ(-45deg);
 }
 .SpendMenu-nav-inner {
-  display: none;
+    display: block;
+    float: left;
+    margin: 15px 0 0;
 }
 .is-SpendMenu-open-in .SpendMenu-nav-inner {
   display: block;
@@ -143,9 +129,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   padding: 54px 0;
 }
 .SpendMenu-lists {
-  margin-right: 19px;
-  height: 30px;
-  line-height: 30px;
+
 }
 .SpendMenu-item {
   border-bottom: 1px solid $SpendMenu-item-border-color;
@@ -163,11 +147,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   font-size: 26px;
 }
 .SpendMenu-Indiegogo-LinkBlock {
-  position: absolute;
-  right: 8.5%;
-  bottom: 16px;
-  left: 8.5%;
-  text-align: center;
+
 }
 .SpendMenu-IndiegogoLink {
   display: block;
@@ -177,28 +157,19 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
 }
 
 .SpendMenu-indiegogo-button {
-  color: black !important;
-  border-radius: 44px;
-  background-color: #E8E8E8;
-  padding: 7px 20px;
-  vertical-align: bottom;
+    font-family: CircularStd;
+    font-size: 8px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 2px;
+    border-bottom: solid 1px #2bffd8;
+    padding: 0px 5px 2px 5px;
 }
 
-.SpendMenu-indiegogo-button span {
-  vertical-align: middle !important;
-  padding-right: 5px;
-  font-weight: 400;
-}
-
-
-.SpendMenu-indiegogo-button img {
-  /*height: 30px !important;
-  padding: 5px 30px 5px 30px;
-  border-radius: 44px;
-  border: solid 2px #171717;*/
-  height: 15px !important;
-  letter-spacing: 1px;
-}
 
 /*.SpendMenu-items li:last-child > a {
 
@@ -217,6 +188,13 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   .SpendMenu-index .SpendMenu-Logo-link, .SpendMenu-index .SpendMenu-item-link {
     color: white;
   }
+
+  .SpendMenu-indiegogo-button {
+      font-size: 20px;
+      padding: 0px 10px 4px 10px;
+      border-bottom: solid 2px #2bffd8;
+  }
+
   .SpendMenu-button-bar {
     background-color: white;
   }
@@ -234,11 +212,13 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   .is-SpendMenu-scrolling.is-SpendMenu-open-in {
     position: fixed;
   }
+  /*
   @include enter("SpendMenu-index", $SpendMenu-index-md-anim);
   .SpendMenu-index.is-SpendMenu-scrolling,
   .SpendMenu-index.is-SpendMenu-open {
     visibility: visible;
   }
+  */
   .is-SpendMenu-scrolling.is-SpendMenu-index-entered,
   .is-SpendMenu-open.is-SpendMenu-index-entered {
     animation: none;
@@ -259,13 +239,12 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
     background-color: $SpendMenu-scrolling-bg;
   }
   .SpendMenu-index-inner {
-    max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
   }
   .SpendMenu-inner-inner {
-    width: 87.11566617862371%;
-    max-width: 1254.4655929721814px;
-    margin: 0 auto;
+    width: 85%;
+    padding: 16px 0;
   }
   .SpendMenu-index-inner-inner {
     max-width: none;
@@ -285,7 +264,7 @@ $SpendMenu-index-md-anim: slideDown 1s 575ms both;
   .SpendMenu-nav-inner {
     display: block;
     float: left;
-    margin: 5px 0 0;
+    margin: 15px 0 0;
   }
   .is-SpendMenu-open-in .SpendMenu-nav-inner {
     clear: none;

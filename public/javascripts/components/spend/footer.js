@@ -12,11 +12,7 @@ let SocialLinks = require('./socialLinks');
 let SpendFooter = React.createClass({
   statics: {
     LINKS: [
-      {key: 'team', url: '/team'},
-      {key: 'faq', url: '/faq'},
-      {key: 'jobs', url: '/jobs'},
-      {key: 'legal', url: '/legal'},
-      {key: 'presskit', url: '/presskit'}
+      //{key: 'presskit', url: '/presskit'}
     ]
   },
 
@@ -41,13 +37,13 @@ let SpendFooter = React.createClass({
             'SpendFooter-index-inner': isRouteIndex
           })}
         >
-          <div
-            className={classNames('SpendFooter-inner-inner', {
+          <div className="SpendFooter-index-inner-inner-line"></div>
+          <div className={classNames('SpendFooter-inner-inner', {
               'SpendFooter-index-inner-inner': isRouteIndex
             })}
           >
             <div className="SpendFooter-inner-inner-inner">
-              <div className="SpendFooter-Logo"><Logo /></div>
+              <div className="SpendFooter-Logo"><img className="SpendLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
               <ul
                 className="SpendFooter-link-items listUnstyled text-uppercase"
               >
@@ -63,14 +59,15 @@ let SpendFooter = React.createClass({
                 ))}
               </ul>
               <div className="SpendFooter-copyrights">
-                {formatMessage({id: `footer.copyrights`})} <br/>
-                <a className="SpendFooter-mail-link" href="mailto:hey@spendwallet.com"> {formatMessage({id: `footer.email`})} </a>
+              <a className="SpendFooter-mail-link" href="mailto:hey@aster.io"> {formatMessage({id: `footer.email`})} </a>
+               <br/>
+                {formatMessage({id: `footer.copyrights`})}
               </div>
               <SocialLinks
                 className="SpendFooter-SocialLinks"
                 linkClassName="SpendFooter-SocialLinks-link"
                 eventCategory="Footer" />
-                <LanguageButton/>
+
             </div>
           </div>
         </div>

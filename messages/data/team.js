@@ -13,10 +13,10 @@ module.exports = Immutable([{
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-lex.png',
   desc: `Lex has 10 years of firmware development experience from LG Electronics and Cisco Systems. He is in charge of making the product more secure and stable. Being the ultimate developer on weekdays, he enjoys ultimate frisbee on weekends.`
 }, {
-  name: `Chris`,
-  role: `CFO / Software Engineer`,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-chris.png',
-  desc: `Chris has been working in financial industry for the past five years. Majoring in computer science, he is also a heavy drinking mobile developer of the team. He doesn’t drink to program better; he programs in order to drink more.`
+  name: `Jay`,
+  role: `COO`,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
+  desc: `Jay majored in Industrial Engineering and Management Science, but he once was a trainee to become a K-Pop star. In short, he is a bold person of various talents. Jay is in charge of overall operation and business development.`
 }, {
   name: `Emin`,
   role: `CDO`,
@@ -27,11 +27,6 @@ module.exports = Immutable([{
   role: `VP of Hardware Engineering`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anton.png',
   desc: `Anton, who considers himself as a hobbyist maker, is in charge of electrical engineering on the team. He has experiences from semiconductor vendor ST-Ericsson and Qualcomm before. He creates things; some of which are beautiful and interesting.`
-}, {
-  name: `Jay`,
-  role: `Head of Business Development `,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
-  desc: `Jay majored in Industrial Engineering and Management Science, but he once was a trainee to become a K-Pop star. In short, he is a bold person of various talents. Jay is in charge of overall operation and business development in the US.`
 }, {
   name: `Nicklas`,
   role: `Software Engineer`,

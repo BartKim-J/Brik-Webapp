@@ -49,7 +49,7 @@ function subscribeToMailChimp(submittedEmail, lang) {
 
         if (lang == 'ko') {
           api.call('lists', 'subscribe', {
-            id: '4956ec09b5',
+            id: '1063c251f8',
             email: {email: submittedEmail},
             merge_vars: merge_vars,
             double_optin: false,
@@ -61,7 +61,7 @@ function subscribeToMailChimp(submittedEmail, lang) {
           });
         } else {
           api.call('lists', 'subscribe', {
-            id: '7d31ccc315',
+            id: '1063c251f8',
             email: {email: submittedEmail},
             merge_vars: merge_vars,
             double_optin: false,

@@ -13,10 +13,10 @@ module.exports = Immutable([{
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-lex.png',
   desc: `Lex는 10년간 LG전자, 시스코 등에서 펌웨어 및 미들웨어 개발을 했던 경험이 있습니다. 현재는 나른한 오후시간에 핸드드립 커피로 팀원들의 안락한 휴식을 방해하는 역할을 담당하고 있습니다.`
 }, {
-  name: `Chris`,
-  role: `CFO / Software Engineer`,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-chris.png',
-  desc: `Chris는 대학교에서 컴퓨터공학을 전공했지만 회계법인에서 5년간 일한 경험이 있습니다. 팀에서는 회사의 재무 및 모바일앱 개발을 담당하고 있습니다. 그는 종종 프로그래밍을 안주삼아 술을 마시고는 합니다.`
+  name: `Jay`,
+  role: `COO`,
+  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
+  desc: `Jay는 대학교에서 산업공학과 경영과학을 전공하였지만, 한때는 연습생으로 엔터테인먼트 필드에 몸을 담궜을 정도로 과감하고 다양한 재능을 가지고 있습니다. 팀에서는 운영과 사업을 총괄하고 있습니다.`
 }, {
   name: `Emin`,
   role: `CDO`,
@@ -27,11 +27,6 @@ module.exports = Immutable([{
   role: `VP of Hardware Engineering`,
   image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-anton.png',
   desc: `Anton은 메이커입니다. 취미로 전자공작을 하고 가구도 만듭니다. 퀄컴과 ST-Ericsson에서의 경험을 바탕으로 현재 팀의 하드웨어 엔지니어링을 리드하고 있습니다. 팀의 목소리도 담당하고 있습니다.`
-}, {
-  name: `Jay`,
-  role: `Head of Business Development `,
-  image: 'https://s3.ap-northeast-2.amazonaws.com/spendwallet/spendwallet.com/profile-jay.png',
-  desc: `Jay는 대학교에서 산업공학과 경영과학을 전공하였지만, 한때는 연습생으로 엔터테인먼트 필드에 몸을 담궜을 정도로 과감하고 다양한 재능을 가지고 있습니다. 팀에서는 미국에서의 운영과 사업 개발을 담당하고 있습니다.`
 }, {
   name: `Nicklas`,
   role: `Software Engineer`,

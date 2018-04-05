@@ -62,7 +62,8 @@ var LanguageButton = React.createClass({
   render: function(){
     let {formatMessage} = this.context.intl;
     return (
-        <button type="button" className="SpendFooter-LangButton" onClick={this.setLanguage}>{formatMessage({id: `index.button.language`})}</button>
+        <button type="button" className="SpendFooter-LangButton" onClick={this.setLanguage}>
+        <span>{formatMessage({id: `index.button.language`})}</span></button>
     );
   }
 });
