@@ -80,7 +80,7 @@ let AsteraIndex = React.createClass({
     return (
       <div className="AsteraIndex">
         <Helmet title={CONF.BRAND} />
-        <div className="container-fluid SpendIndex-container">
+        <div className="container-fluid AsteraIndex-container">
 
           <section className={classNames('AsteraIndex-Main')}>
             <div className="AsteraIndex-inner">

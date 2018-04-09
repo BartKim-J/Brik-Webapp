@@ -55,7 +55,7 @@ let SpendFooter = React.createClass({
                     })}
                     key={key}
                   >
-                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}><img src={img}/></Link>
+                    <a className="SpendFooter-link" href={url} target="_blank"><img src={img}/></a>
                   </li>
                 ))}
               </ul>
