@@ -67,7 +67,7 @@ $SpendMenu-item-link-md-color: #000000;
 }
 .is-SpendMenu-index-Logo-forceShown {
   display: block;
-  opacity: 0;
+  opacity: 1;
   transition: opacity $SpendMenu-index-Logo-forceShown-transitionDuration;
 }
 .is-SpendMenu-index-Logo-forceShown-in {
@@ -191,8 +191,8 @@ $SpendMenu-item-link-md-color: #000000;
 
   .SpendMenu-indiegogo-button {
       font-size: 20px;
-      padding: 0px 10px 4px 10px;
-      border-bottom: solid 2px #2bffd8;
+      padding: 0px 8px 4px 8px;
+      border-bottom: solid 3.6px #2bffd8;
   }
 
   .SpendMenu-button-bar {

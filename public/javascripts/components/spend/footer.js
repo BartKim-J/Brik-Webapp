@@ -12,7 +12,9 @@ let SocialLinks = require('./socialLinks');
 let SpendFooter = React.createClass({
   statics: {
     LINKS: [
-      //{key: 'presskit', url: '/presskit'}
+      {key: 'twitter', url: 'https://twitter.com/astera_io', img:'https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/twiiter_footer.png' },
+      {key: 'medium', url: 'https://medium.com/@asteraio', img:'https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/medium_footer.png'},
+      {key: 'telegram', url: 'https://t.me/asteraio', img:'https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/telegram_footer.png'}
     ]
   },
 
@@ -43,31 +45,26 @@ let SpendFooter = React.createClass({
             })}
           >
             <div className="SpendFooter-inner-inner-inner">
-              <div className="SpendFooter-Logo"><img className="SpendLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
               <ul
                 className="SpendFooter-link-items listUnstyled text-uppercase"
               >
-                {LINKS.map(({key, url}, i) => (
+                {LINKS.map(({key, url, img}, i) => (
                   <li
                     className={classNames('SpendFooter-link-item pull-left', {
                       'SpendFooter-link-item-last': i === LINKS.length - 1
                     })}
                     key={key}
                   >
-                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}>{formatMessage({id: `footer.${key}`})}</Link>
+                    <Link className="SpendFooter-link" url={url} clickEvent={{category: 'Footer', label: key}}><img src={img}/></Link>
                   </li>
                 ))}
               </ul>
               <div className="SpendFooter-copyrights">
-              <a className="SpendFooter-mail-link" href="mailto:hey@aster.io"> {formatMessage({id: `footer.email`})} </a>
-               <br/>
-                {formatMessage({id: `footer.copyrights`})}
+                <a className="SpendFooter-mail-link" href="mailto:hey@aster.io"> {formatMessage({id: `footer.email`})} </a>
+                 <br/>
+                  {formatMessage({id: `footer.copyrights`})}
               </div>
-              <SocialLinks
-                className="SpendFooter-SocialLinks"
-                linkClassName="SpendFooter-SocialLinks-link"
-                eventCategory="Footer" />
-
+              <div className="SpendFooter-Logo"><img className="SpendLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
             </div>
           </div>
         </div>

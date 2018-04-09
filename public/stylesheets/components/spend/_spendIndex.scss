@@ -86,14 +86,13 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   line-height: 1.26;
   color: black;
   position: relative;
+  margin: 0;
 }
-
-.Astera-Main-Header-p-Oval {
-  width: 594.0253295898438px;
-  height: 53px;
-  opacity: 0.1843636775362319;
-  background-color: #f8e71c;
+.AsteraIndex-text-p-oval {
+  background-color: rgba(248,231,28,.18);
   border-radius: 50%;
+  display:inline-block;
+  padding: 0px 30px 15px 0px;
 }
 
 .AsteraIndex-Main {
@@ -139,6 +138,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 
 .AsteraIndex-text-group {
   position: relative;
+  margin-bottom: 58px
 }
 
 .AsteraIndex-Form-group {
@@ -148,21 +148,30 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 }
 
 .AsteraIndex-descrip-text-group {
+  position: absolute;
   text-align: center;
-  margin-top: 450px;
+  width: 610px;
+  bottom: 60%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .AsteraIndex-descrip-hardware {
-    position: relative;
-    display: inline-block;
+    margin: 0 auto;
+    display: block;
 }
 .AsteraIndex-descrip-hardware img {
-    width: 1000px;
+    position: absolute;
+    width: 855px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .AsteraIndex-subscrib-text-group {
   text-align: center;
   margin-top: 80px;
+  margin: 0 auto;
 }
 
 .AsteraIndex-Form-group.center {
@@ -244,15 +253,15 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 }
 
 .AsteraIndex-descrip-text-h1 {
-      font-family: CircularStd;
-      font-size: 70px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.3142857142857143;
-      letter-spacing: normal;
-      color: #3a3a3a;
-      opacity: 0.6296988224637681;
+  font-family: CircularStd;
+  font-size: 57px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1578947368421053;
+  letter-spacing: normal;
+  color: #3a3a3a;
+  opacity: 0.6296988224637681;
 }
 
 .AsteraIndex-subscrib-h1 {
@@ -261,11 +270,6 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     font-weight: 500;
     color: #000000;
     margin-bottom: 30px;
-}
-
-.SpendIndex-section-heading, .SpendIndex-measure-numbers-more {
-  text-align: center;
-  margin: 0 20px;
 }
 
 .SpendMenu-indiegogo-button:hover {
@@ -293,21 +297,33 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 .AsteraIndex-Index-Inder {
 }
 
+//////////////////////////////////////////////
+//
+//  Screen Middle Size CSS
+//
+//  Table*
+//
+//////////////////////////////////////////////
+
 @media (max-width: $screen-md-min) {
+
+  /* Index CSS */
+
   .AsteraIndex-Main {
     height: 600px;
   }
-  .AsteraIndex-descrip {
-    height: 608px;
+  .AsteraIndex-text-group {
+      margin-bottom: 25px;
   }
   .AsteraIndex-text-h1 {
     font-size: 35px;
   }
-
   .AsteraIndex-text-p {
     font-size: 24px;
   }
-
+  .AsteraIndex-text-p-oval {
+    padding: 0px 20px 10px 0px;
+  }
   .AsteraIndex-Main-Circle {
     top:0%;
   }
@@ -315,12 +331,38 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   .AsteraIndex-Main-Circle img {
     width: 300px;
   }
+
+  /* descrip CSS */
+
+  .AsteraIndex-descrip {
+    height: 608px;
+  }
   .AsteraIndex-descrip-hardware {
 
   }
   .AsteraIndex-descrip-hardware img {
     width: 500px;
   }
+  .AsteraIndex-descrip-text-h1 {
+    font-size: 31.4px;
+  }
+  .AsteraIndex-descrip-text-group {
+    width: 340px;
+    bottom: 68%;
+  }
+
+  /* Subscribe CSS */
+
+  .AsteraIndex-subscrib {
+    height: 230px;
+  }
+  .AsteraIndex-subscrib-h1 {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  /* Form CSS */
+
   .AsteraIndex-Form {
     border-radius: 6px;
     box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
@@ -330,14 +372,17 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     top: 21px;
     width: 400px;
   }
+  .AsteraIndex-Form-group.center {
+    width: 400px;
+    margin: 0 auto;
+  }
   .AsteraIndex-Form-email {
     height: 52px;
     padding: 0px 14px;
-    font-size: 9px;
+    font-size: 12px;
     border: solid 1px #f3f3f3;
     border-radius: 6px 0 0 6px;
   }
-
   .AsteraIndex-Form-submit {
     height: 52px;
     line-height: 20px;
@@ -347,45 +392,41 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 
   }
   .AsteraIndex-Form-submit-text {
-     font-size: 9.7px;
+     font-size: 12.7px;
   }
-  .AsteraIndex-descrip-text-h1 {
-    font-size: 31.4px;
-  }
-  .AsteraIndex-descrip-text-group {
-    margin-top: 150px;
-  }
+
+  /* ETC */
+
 }
 
+//////////////////////////////////////////////
+//
+//  Screen Small Size CSS
+//
+//  *Mobile
+//
+//////////////////////////////////////////////
+
 @media (max-width: $screen-sm-min) {
+
+  /* Index CSS */
+
   .AsteraIndex-Main {
     height: 300px;
   }
-
   .AsteraIndex-descrip {
     height: 408px;
   }
-
   .AsteraIndex-content {
       left: 8.5%;
       top: 45px;
   }
-
   .AsteraIndex-text-group {
-
+      margin-bottom: 0px;
   }
-
   .AsteraIndex-Main-Circle {
     display:none;
   }
-
-  .AsteraIndex-descrip-hardware {
-
-  }
-  .AsteraIndex-descrip-hardware img {
-    width: 300px;
-  }
-
   .AsteraIndex-text-h1 {
     font-size: 19.2px;
   }
@@ -393,57 +434,55 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   .AsteraIndex-text-p {
     font-size: 13.6px;
   }
+  .AsteraIndex-text-p-oval {
+    padding: 0px 15px 5px 0px;
+  }
 
+  /* descrip */
+
+  .AsteraIndex-descrip-hardware {
+
+  }
+  .AsteraIndex-descrip-hardware img {
+    width: 320px;
+  }
   .AsteraIndex-descrip-text-h1 {
-    font-size: 22.4px;
+    font-size: 20px;
+  }
+  .AsteraIndex-descrip-text-group {
+    width: 320px;
+    bottom: 65%;
+  }
+  /* Subscribe */
+  .AsteraIndex-subscrib {
+    height: 200px;
   }
   .AsteraIndex-subscrib-h1 {
     font-size: 18.9px;
     margin-bottom: 0px;
   }
+  .AsteraIndex-subscrib-text-group {
+    width: 239px;
+    margin-top: 0px;
+  }
 
-  .SpendIndex-section-heading {
-    padding-bottom: 150px;
-  }
-  .SpendIndex-section-heading h1 {
-    height: 48px;
-  	font-size: 40px;
-    line-height: 40px;
-  }
-  .SpendIndex-section-heading p {
-    height: 30px;
-  	font-size: 25px;
-  }
-  .SpendIndex-container {
-    max-width: 1600px;
-    margin-right: auto;
-    margin-left: auto;
-    overflow: visible;
-  }
+  /* Form CSS */
 
   .AsteraIndex-Form {
     border-radius: 6px;
     box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
   }
-
   .AsteraIndex-Form-group {
     top: 21px;
     width: 240px;
   }
-
   .AsteraIndex-Form-group.center {
     width: 240px;
     margin: 0 auto;
   }
-
-  .AsteraIndex-subscrib-text-group {
-    margin-top: 0px;
-  }
-
   .AsteraIndex-descrip-text-group {
       margin-top: 160px;
   }
-
   .AsteraIndex-Form-email {
     height: 34.3px;
     padding: 0px 14px;
@@ -451,7 +490,6 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     border: solid 1px #f3f3f3;
     border-radius: 6px 0 0 6px;
   }
-
   .AsteraIndex-Form-submit {
     height: 34.3px;
     line-height: 20px;
@@ -464,14 +502,6 @@ $SpendIndex-measure-numbers-more-color: #73787b;
      font-size: 9.7px;
   }
 
-  .AsteraIndex-subscrib {
-    height: 200px;
-  }
-  .AsteraIndex-subscrib-inner {
+  /* ETC */
 
-  }
-
-  .SpendFaq-container, .SpendTeam-container, .SpendJobs-container {
-      padding-top: 100px;
-  }
 }

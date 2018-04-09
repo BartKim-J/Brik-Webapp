@@ -40,7 +40,7 @@ $SpendFooter-SocialLinks-link-color: #777;
   margin-bottom: 36px;
   font-size: 35px;
   line-height: 1.2;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .SpendFooter-Logo img {
   width: 123px;
@@ -55,8 +55,12 @@ $SpendFooter-SocialLinks-link-color: #777;
   line-height: 1.2;
   letter-spacing: 0.8px;
 }
+.SpendFooter-link-items img {
+    width: 20px;
+    height: 16px;
+}
 .SpendFooter-link-item {
-  margin-right: 2em;
+  margin-right: 3em;
 }
 .SpendFooter-link-item-last {
   margin-right: 0;
@@ -65,10 +69,15 @@ $SpendFooter-SocialLinks-link-color: #777;
   color: $SpendFooter-link-color;
 }
 .SpendFooter-copyrights {
-  margin-top: 12px;
+  margin-top: 40px;
   color: $SpendFooter-copyrights-color;
-  font-size: 9px;
-  letter-spacing: 0.3px;
+  font-family: CircularStd;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 .SpendFooter-SocialLinks {
   margin-top: 25px;
@@ -80,7 +89,7 @@ $SpendFooter-SocialLinks-link-color: #777;
 
 .SpendFooter-index-inner-inner-line {
     margin: 0 auto;
-    width: 80%;
+    width: 85%;
     height: 2px;
     border: solid 0.1px #d5d5d5;
     background-color: #ffffff;
@@ -105,6 +114,7 @@ $SpendFooter-SocialLinks-link-color: #777;
     max-width: 1600px;
     margin: 0 auto;
     position: relative;
+    height: 422px;
   }
   .SpendFooter-index-inner-inner {
     max-width: none;
@@ -119,7 +129,7 @@ $SpendFooter-SocialLinks-link-color: #777;
   }
   .SpendFooter-Logo {
     float: right;
-    margin: 15px 0 0;
+    margin: -96px 0 0;
   }
   .SpendFooter-Logo img {
     width: 255px;
@@ -132,6 +142,15 @@ $SpendFooter-SocialLinks-link-color: #777;
     font-size: 13px;
     line-height: 16px;
     letter-spacing: normal;
+    position: absolute;
+    bottom: 175px;
+  }
+  .SpendFooter-link-items img {
+      width: 33.5px;
+      height: 28px;
+  }
+  .SpendFooter-link-item {
+    margin-right: 6em;
   }
   .SpendFooter-copyrights {
     clear: left;

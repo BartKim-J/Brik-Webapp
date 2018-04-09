@@ -92,6 +92,11 @@ let AsteraIndex = React.createClass({
                   <FormattedHTMLMessage id="index.heading">
                     <p className="AsteraIndex-text-p"/>
                   </FormattedHTMLMessage>
+                  <div className="AsteraIndex-text-p-oval">
+                    <FormattedHTMLMessage id="index.heading.oval">
+                      <p className="AsteraIndex-text-p"/>
+                    </FormattedHTMLMessage>
+                  </div>
                   <div className="AsteraIndex-Main-Circle">
                     <img src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/background-circle.png" alt="Circle" />
                   </div>
@@ -118,12 +123,12 @@ let AsteraIndex = React.createClass({
 
           <section className={classNames('AsteraIndex-descrip')}>
             <div className="AsteraIndex-descrip-text-group">
-              <div className="AsteraIndex-descrip-hardware">
-                <img className="AsteraIndex-descrip-hardware" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/Astera_Hardware_view.png" alt="Hardware"/>
-              </div>
               <FormattedHTMLMessage id="index.charge.description">
                 <h1 className="AsteraIndex-descrip-text-h1"/>
               </FormattedHTMLMessage>
+            </div>
+            <div className="AsteraIndex-descrip-hardware">
+              <img className="AsteraIndex-descrip-hardware" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/Astera_Hardware_view_2.png" alt="Hardware"/>
             </div>
           </section>
 
