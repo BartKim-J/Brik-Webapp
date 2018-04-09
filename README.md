@@ -1,4 +1,4 @@
-# Spendwallet Website  
+# Astera Website  
 
 This is the code for Spendwallet website that are currently running on AWS. Can be found on http://spendwallet.com/   
 
