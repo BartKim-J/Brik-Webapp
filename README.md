@@ -64,4 +64,4 @@ Workflow for deploying an updating to the website:
 
 ## ASTERA AWS COMMMAND
 
-`astera_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images.
+`astera_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images. it contain process 9 to 15.
