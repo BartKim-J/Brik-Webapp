@@ -2,7 +2,7 @@
 
 This is the code for Spendwallet website that are currently running on AWS. Can be found on http://aster.io/   
 
-## Website test localhost
+## Website test on localhost
 
 1. npm run develop
 
@@ -61,3 +61,7 @@ Workflow for deploying an updating to the website:
 14. The app is now safely deployed to the server.  
 
 15. confirm by `$ docker ps`
+
+## ASTERA AWS COMMMAND
+
+`astera_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images.
