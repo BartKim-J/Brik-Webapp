@@ -1,6 +1,6 @@
 # Astera Website  
 
-This is the code for Spendwallet website that are currently running on AWS. Can be found on http://spendwallet.com/   
+This is the code for Spendwallet website that are currently running on AWS. Can be found on http://aster.io/   
 
 ## Docker deployment process to server  
 
