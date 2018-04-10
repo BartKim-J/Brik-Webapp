@@ -2,6 +2,16 @@
 
 This is the code for Spendwallet website that are currently running on AWS. Can be found on http://aster.io/   
 
+## Website test localhost
+
+1. npm run develop
+
+2. make a change
+
+3. access => http://localhost:3000/
+
+4. keep testing.
+
 ## Docker deployment process to server  
 
 Docker is good to ensure that the website runs independent of operating system and server.  
@@ -26,7 +36,7 @@ Workflow for deploying an updating to the website:
 
 2. Login and create a repository on https://hub.docker.com  
 
-3. Pull down website code from bitbucket, run project with: `$ npm install && npm run develop`  
+3. Pull down website code from bitbucket, run project with: `$ npm install`  
 
 4. Make changes  
 
