@@ -1,12 +1,12 @@
 # Astera Website  
 
-This is the code for Spendwallet website that are currently running on AWS. Can be found on http://aster.io/   
+This is the code for Spendwallet website that are currently running on AWS. Can be found on http://astera.io/   
 
 ## Website test on localhost
 
-1. npm run develop
+1. npm run develop.
 
-2. make a change
+2. make a change.
 
 3. access => http://localhost:3000/
 
@@ -65,3 +65,9 @@ Workflow for deploying an updating to the website:
 ## ASTERA AWS COMMMAND
 
 `astera_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images. it contain process 9 to 15.
+
+## ASTERA AWS INFO
+
+1. Use AWS EC2 - Ubuntu 14.04
+2. Use Docker CE latest version.
+3. Use nginx for port forwarding. (80 to 3000)
