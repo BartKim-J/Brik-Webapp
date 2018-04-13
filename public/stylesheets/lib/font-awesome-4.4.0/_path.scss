@@ -23,6 +23,20 @@
     url('#{$fa-font-path}/circularstd-medium-webfont.ttf?v=#{$fa-version}') format('truetype');
 //    url('#{$fa-font-path}/circularstd-medium-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
 //  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
+}
+
+@font-face {
+    font-family: 'AktivGrotesk';
+    src:
+  //src: url('#{$fa-font-path}/AktivGroteskKRMedium.eot?v=#{$fa-version}');
+  //src: url('#{$fa-font-path}/AktivGroteskKRMedium.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+  //  url('#{$fa-font-path}/AktivGroteskKRMedium.woff2?v=#{$fa-version}') format('woff2'),
+  //  url('#{$fa-font-path}/AktivGroteskKRMedium.woff?v=#{$fa-version}') format('woff'),
+      url('#{$fa-font-path}/AktivGroteskKRMedium.ttf?v=#{$fa-version}') format('truetype');
+  //    url('#{$fa-font-path}/circularstd-medium-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+  //  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+    font-weight: 500;
+    font-style: normal;
 }

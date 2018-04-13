@@ -5,6 +5,7 @@
 //== Colors
 
 // TODO
+$black:                  black;
 $gray-base:              #000;
 $gray-darker:            lighten($gray-base, 13.5%);
 $gray-dark:              #515151;
@@ -15,15 +16,17 @@ $gray-lighter:           lighten($gray-base, 93.5%);
 //== Scaffolding
 
 //** Background color for `<body>`
-$body-bg:               #f8f8f8;
+$body-bg:                 #f8f8f8;
 //** Global text color on `<body>`
-$text-color:            $gray-dark;
+$text-color:              $black;
 
 //== Typography
 
 $font-family-sans-serif:  "Lato", sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
-$font-family-base:        $font-family-sans-serif;
+$font-family-circle-std:  CircularStd;
+$font-family-AktivGrotesk: AktivGrotesk;
+$font-family-base:        $font-family-circle-std;
 
 $font-size-base:          14px;
 $font-size-large:         ceil($font-size-base*1.25);

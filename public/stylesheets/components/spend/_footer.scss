@@ -10,6 +10,9 @@ $SpendFooter-SocialLinks-link-color: #777;
     margin-top: 41px;
     border: none;
     text-align: center;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    bottom: 145px;
 }
 .SpendFooter-LangButton span {
     font-size: 12px;
@@ -18,8 +21,6 @@ $SpendFooter-SocialLinks-link-color: #777;
     padding-bottom: 4px;
     border-bottom: solid 1px #000000;
 }
-
-//<LanguageButton/>
 
 .SpendFooter {
   line-height: 1;
@@ -70,6 +71,7 @@ $SpendFooter-SocialLinks-link-color: #777;
 }
 .SpendFooter-copyrights {
   margin-top: 40px;
+  margin-bottom: 100px;
   color: $SpendFooter-copyrights-color;
   font-family: CircularStd;
   font-size: 12px;
@@ -99,7 +101,10 @@ $SpendFooter-SocialLinks-link-color: #777;
 @media (min-width: $screen-md-min) {
   .SpendFooter-LangButton {
     text-align: left;
-    margin-top: 90px;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    bottom: 100px;
+    left: 200px;
   }
   .SpendFooter-LangButton span {
     font-size: 20px;
@@ -121,7 +126,7 @@ $SpendFooter-SocialLinks-link-color: #777;
     margin: 0;
   }
   .SpendFooter-inner-inner-inner {
-    padding: 72px 7.5% 89px 7.5%;
+    padding: 72px 100px 89px 100px;
     @include clearfix;
   }
   .SpendFooter-index-inner-inner-line {

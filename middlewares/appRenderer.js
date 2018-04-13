@@ -22,7 +22,7 @@ function appRenderer(req, res, next) {
       let store;
       let content, title, meta;
       let {lang} = res;
-      let nonDataMessages = messages.lang('en').getNonData();
+      let nonDataMessages = messages.lang(lang).getNonData();
       let csrfToken = req.csrfToken();
       state = state.merge({route: {pathname: req.path}});
       store = createStore(spendReducer, state);

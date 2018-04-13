@@ -86,7 +86,6 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 
 }
 .AsteraIndex-text-h1 {
-  font-family: CircularStd;
   font-size: 50px;
   font-weight: 900;
   line-height: normal;
@@ -94,21 +93,34 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   padding-top:30px;
   position: relative;
 }
-.AsteraIndex-text-p {
-  font-family: CircularStd;
-  font-size: 35px;
+[lang="ko"] .AsteraIndex-text-h1 {
   font-weight: 500;
+}
+.AsteraIndex-text-p {
+  font-size: 35px;
   line-height: 1.26;
   color: black;
   position: relative;
   margin: 0;
+  display: inline-block;
 }
+[lang="ko"] .AsteraIndex-text-p {
+  line-height: 1.4;
+}
+
 .AsteraIndex-text-p-oval {
+  width: 100%;
+  height: 25%;
   background-color: rgba(248,231,28,.18);
   border-radius: 50%;
-  display:inline-block;
-  padding: 0px 30px 15px 0px;
+  position: absolute;
+  bottom: -3%;
 }
+
+[lang="ko"] .AsteraIndex-text-p-oval {
+  bottom: 25%;
+}
+
 .AsteraIndex-Main {
   max-width: 1600px;
   margin: 0 auto;
@@ -131,6 +143,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   position: relative;
   margin-bottom: 58px
 }
+
 .AsteraIndex-Main-Circle {
   position:absolute;
   top: 10%;
@@ -155,7 +168,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 .AsteraIndex-descrip-text-group {
   position: absolute;
   text-align: center;
-  width: 610px;
+  width: 680px;
   bottom: 60%;
   left: 50%;
   transform: translate(-50%, 0%);
@@ -172,9 +185,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   transform: translate(-50%, 0%);
 }
 .AsteraIndex-descrip-text-h1 {
-  font-family: CircularStd;
   font-size: 57px;
-  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.1578947368421053;
@@ -202,9 +213,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   top: 100px;
 }
 .AsteraIndex-subscrib-h1 {
-  font-family: CircularStd;
   font-size: 42px;
-  font-weight: 500;
   color: #000000;
   margin-bottom: 30px;
 }
@@ -230,8 +239,6 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   height: 88px;
   padding: 0px 37px;
 
-  font-family: CircularStd;
-  font-weight: 500;
   color: #363636;
   font-size: 23px;
 
@@ -260,9 +267,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   border: 0;
 }
 .AsteraIndex-Form-submit-text {
-  font-family: CircularStd;
   font-size: 25px;
-  font-weight: 500;
   text-align: center;
   color: #000000;
 }
@@ -297,7 +302,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     height: 600px;
   }
   .AsteraIndex-text-group {
-      margin-bottom: 25px;
+    margin-bottom: 25px;
   }
   .AsteraIndex-text-h1 {
     font-size: 35px;
@@ -306,8 +311,9 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     font-size: 24px;
   }
   .AsteraIndex-text-p-oval {
-    padding: 0px 20px 10px 0px;
+
   }
+
   .AsteraIndex-Main-Circle {
     top:0%;
   }
@@ -331,7 +337,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     font-size: 31.4px;
   }
   .AsteraIndex-descrip-text-group {
-    width: 340px;
+    width: 380px;
     bottom: 68%;
   }
 
@@ -416,7 +422,8 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     font-size: 13.6px;
   }
   .AsteraIndex-text-p-oval {
-    padding: 0px 15px 5px 0px;
+    height: 18px;
+    bottom: -3px;
   }
 
   /* descrip */
@@ -445,7 +452,7 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     margin-bottom: 0px;
   }
   .AsteraIndex-subscrib-text-group {
-    width: 239px;
+    width: 210px;
     margin-top: 0px;
   }
 

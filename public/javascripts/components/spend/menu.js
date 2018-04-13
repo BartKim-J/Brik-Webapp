@@ -238,7 +238,7 @@ let SpendMenu = React.createClass({
             </div>
             <nav className="SpendMenu-nav">
               <div className="SpendMenu-nav-inner">
-                  <a className="SpendMenu-indiegogo-button" href="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/ASTERA_v0.1_EN.pdf" target="_blank">
+                  <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper.content'})} target="_blank">
                     {formatMessage({id: 'index.menu.whitepaper'})}
                   </a>
               </div>

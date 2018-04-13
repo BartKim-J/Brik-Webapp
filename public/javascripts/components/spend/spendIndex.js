@@ -35,7 +35,6 @@ let AsteraIndex = React.createClass({
     contextTypes: {
       intl: intlShape.isRequired
     },
-
     getInitialState() {
       return {
 
@@ -85,17 +84,20 @@ let AsteraIndex = React.createClass({
           <section className={classNames('AsteraIndex-Main')}>
             <div className="AsteraIndex-inner">
               <div className="AsteraIndex-content">
+
                 <div className="AsteraIndex-text-group">
-                  <FormattedHTMLMessage id="index.heading.fat">
+                  <FormattedHTMLMessage id="index.heading_title">
                     <h1 className="AsteraIndex-text-h1"/>
                   </FormattedHTMLMessage>
-                  <FormattedHTMLMessage id="index.heading">
-                    <p className="AsteraIndex-text-p"/>
-                  </FormattedHTMLMessage>
-                  <div className="AsteraIndex-text-p-oval">
-                    <FormattedHTMLMessage id="index.heading.oval">
-                      <p className="AsteraIndex-text-p"/>
-                    </FormattedHTMLMessage>
+
+                  <div className="AsteraIndex-text-p">
+                    <div className="AsteraIndex-text-p-oval"/>
+                    <p className="AsteraIndex-text-p">
+                      {formatMessage({id: 'index.heading_1'})}<br />
+                      {formatMessage({id: 'index.heading_2'})}<br />
+                      {formatMessage({id: 'index.heading_3'})}<br />
+                      {formatMessage({id: 'index.heading_4'})}
+                    </p>
                   </div>
                   <div className="AsteraIndex-Main-Circle">
                     <img src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/background-circle.png" alt="Circle" />

@@ -24,7 +24,7 @@ function makeRoute(dataKey) {
 
     let data = dataModule[dataKey];
     let {messageId} = data;
-    let messageData = (messages.lang('en'))[messageId];
+    let messageData = (messages.lang(res.lang))[messageId];
     data = {
       [dataKey]: Object.assign(
         omit(data, 'messageId'),
