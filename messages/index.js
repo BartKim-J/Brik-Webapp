@@ -66,7 +66,7 @@ Spendwallet is seductively designed to completely replace your existing wallet. 
   'footer.faq': `FAQ`,
   'footer.legal': `Legal`,
   'footer.copyrights': `©2018 Astera. All Rights Reserved.`,
-  'footer.email': `hey@aster.io`,
+  'footer.email': `hey@astera.io`,
   'footer.presskit': `Press`,
 
   'promotion.title': `Thank you!`,
