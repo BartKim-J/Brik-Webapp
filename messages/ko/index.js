@@ -11,8 +11,11 @@ module.exports = messages.merge({
     'index.newsletter.heading': `더 많은 정보를 받아보고 싶으세요?`,
     'index.newsletter.submit': `구독`,
     'index.charge.description': `생체 데이터 블록체인을 위한<br />IoMT 기기`,
-    'index.menu.whitepaper': `백서 다운로드`,
-    'index.menu.whitepaper.content':'https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/ASTERA_WP_KO.pdf',
+    'index.menu.whitepaper': `백서 다운로드 `,
+    'index.menu.whitepaper_full': `전체`,
+    'index.menu.whitepaper_full.content':'/WP/ASTERA_WP_KO_FULL.pdf',
+    'index.menu.whitepaper_short':'요약',
+    'index.menu.whitepaper_short.content':'/WP/ASTERA_WP_KO_SHORT.pdf',
     'index.button.language': `Language: English`,
 
     jobOpenings: require('./data/jobOpenings'),

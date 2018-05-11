@@ -238,9 +238,16 @@ let SpendMenu = React.createClass({
             </div>
             <nav className="SpendMenu-nav">
               <div className="SpendMenu-nav-inner">
-                  <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper.content'})} target="_blank">
+                  <p className="SpendMenu-indiegogo-text">
                     {formatMessage({id: 'index.menu.whitepaper'})}
-                  </a>
+                    <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper_short.content'})} target="_blank">
+                      {formatMessage({id: 'index.menu.whitepaper_short'})}
+                    </a>
+                    /
+                    <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper_full.content'})} target="_blank">
+                      {formatMessage({id: 'index.menu.whitepaper_full'})}
+                    </a>
+                  </p>
               </div>
             </nav>
           </div>

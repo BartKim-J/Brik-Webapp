@@ -14,8 +14,11 @@ let messages = Immutable({
   'index.newsletter.submit': `Submit`,
   'index.newsletter.description': `To stay in touch on our latest updates.`,
   'index.charge.description': `IoMT hardware for<br /> health data blockchain.`,
-  'index.menu.whitepaper':'Download Whitepaper',
-  'index.menu.whitepaper.content':'https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/ASTERA_WP_EN.pdf',
+  'index.menu.whitepaper': `Download Whitepaper `,
+  'index.menu.whitepaper_full':'Full',
+  'index.menu.whitepaper_full.content':'/WP/ASTERA_WP_EN_FULL.pdf',
+  'index.menu.whitepaper_short':'Short',
+  'index.menu.whitepaper_short.content':'/WP/ASTERA_WP_EN_SHORT.pdf',
   'index.button.language': `언어: 한국어`,
 
   jobOpenings: require('./data/jobOpenings'),
