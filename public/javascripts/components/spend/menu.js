@@ -10,11 +10,10 @@ let {Link} = require('../router');
 let WindowListener = require('../windowListener');
 
 let {FormattedHTMLMessage} = require('../intl');
-let IndiegogoLink = require('./indiegogoLink');
 let Logo = require('./logo');
 let SocialLinks = require('./socialLinks');
 
-let SpendMenu = React.createClass({
+let AsteraMenu = React.createClass({
   mixins: [TransitionMixin],
 
   propTypes: {
@@ -47,7 +46,7 @@ let SpendMenu = React.createClass({
       indexEnteredClass: '',
 
       openClasses: this.props.isOpen ?
-        'is-SpendMenu-open is-SpendMenu-open-in' :
+        'is-AsteraMenu-open is-AsteraMenu-open-in' :
         '',
       indexLogoClasses: ''
     };
@@ -71,9 +70,9 @@ let SpendMenu = React.createClass({
     if (this.isRouteIndex()) {
       // TEMP: 32 hardcoded
       if (prevPageYOffset <= 32 && pageYOffset > 32) {
-        this.transitionIn('is-SpendMenu-index-Logo-forceShown');
+        this.transitionIn('is-AsteraMenu-index-Logo-forceShown');
       } else if (prevPageYOffset > 32 && pageYOffset <= 32) {
-        this.transitionOut('is-SpendMenu-index-Logo-forceShown');
+        this.transitionOut('is-AsteraMenu-index-Logo-forceShown');
       }
     }
 
@@ -90,12 +89,12 @@ let SpendMenu = React.createClass({
 
   componentWillMount() {
     this._transitions = {
-      'is-SpendMenu-open': {
+      'is-AsteraMenu-open': {
         key: 'openClasses',
         refKey: '_ref',
         duration: 500
       },
-      'is-SpendMenu-index-Logo-forceShown': {
+      'is-AsteraMenu-index-Logo-forceShown': {
         key: 'indexLogoClasses',
         refKey: '_logoRef',
         duration: 500
@@ -109,9 +108,9 @@ let SpendMenu = React.createClass({
     const {isOpen} = this.props;
     const {isOpen: isOpenNext} = nextProps;
     if (!isOpen && isOpenNext) {
-      this.transitionIn('is-SpendMenu-open');
+      this.transitionIn('is-AsteraMenu-open');
     } else if (isOpen && !isOpenNext) {
-      this.transitionOut('is-SpendMenu-open');
+      this.transitionOut('is-AsteraMenu-open');
     }
   },
   componentDidUpdate(prevProps, prevState) {
@@ -120,10 +119,10 @@ let SpendMenu = React.createClass({
     if (isRouteIndex) {
       if (!this._isRouteIndexPrev) {
         let state = {
-          indexEnteredClass: 'is-SpendMenu-index-entered-done'
+          indexEnteredClass: 'is-AsteraMenu-index-entered-done'
         };
         if (this._pageYOffset > 32) {
-          state.indexLogoClasses = 'is-SpendMenu-index-Logo-forceShown is-SpendMenu-index-Logo-forceShown-in';
+          state.indexLogoClasses = 'is-AsteraMenu-index-Logo-forceShown is-AsteraMenu-index-Logo-forceShown-in';
         }
         this.setState(state);
       } else {
@@ -137,13 +136,13 @@ let SpendMenu = React.createClass({
           (!prevOpenClasses && openClasses))
         {
           this.setState({
-            indexEnteredClass: 'is-SpendMenu-index-entered-done',
+            indexEnteredClass: 'is-AsteraMenu-index-entered-done',
           });
         }
       }
     } else if (this._isRouteIndexPrev) {
       this.setState({indexEnteredClass: ''});
-      this.resetTransition('is-SpendMenu-index-Logo-forceShown');
+      this.resetTransition('is-AsteraMenu-index-Logo-forceShown');
     }
 
     this._isRouteIndexPrev = isRouteIndex;
@@ -170,11 +169,11 @@ let SpendMenu = React.createClass({
     if (this.isRouteIndex()) {
       if (isScreenMd) {
         if (isInit) {
-          this.setState({indexEnteredClass: 'is-SpendMenu-index-entered'});
+          this.setState({indexEnteredClass: 'is-AsteraMenu-index-entered'});
         }
       } else {
         this.setState({
-          indexEnteredClass: 'is-SpendMenu-index-entered-done'
+          indexEnteredClass: 'is-AsteraMenu-index-entered-done'
         });
       }
     }
@@ -200,9 +199,9 @@ let SpendMenu = React.createClass({
 
     return (
       <header
-        className={classNames('SpendMenu', {
-          'SpendMenu-index': isRouteIndex,
-          'is-SpendMenu-scrolling': isScrolling
+        className={classNames('AsteraMenu', {
+          'AsteraMenu-index': isRouteIndex,
+          'is-AsteraMenu-scrolling': isScrolling
         }, openClasses, indexEnteredClass)}
         ref={ref => {
           this._ref = ref;
@@ -217,34 +216,34 @@ let SpendMenu = React.createClass({
           }} />
 
         <div
-          className={classNames('SpendMenu-inner', {
-            'SpendMenu-index-inner': isRouteIndex
+          className={classNames('AsteraMenu-inner', {
+            'AsteraMenu-index-inner': isRouteIndex
           })}
         >
           <div
-            className={classNames('SpendMenu-inner-inner clearfix', {
-              'SpendMenu-index-inner-inner': isRouteIndex
+            className={classNames('AsteraMenu-inner-inner clearfix', {
+              'AsteraMenu-index-inner-inner': isRouteIndex
             })}
           >
             <div
-              className={classNames('SpendMenu-Logo pull-left', {
-                'SpendMenu-index-Logo': isRouteIndex
+              className={classNames('AsteraMenu-Logo pull-left', {
+                'AsteraMenu-index-Logo': isRouteIndex
               }, indexLogoClasses)}
               ref={ref => {
                 this._logoRef = ref;
               }}
             >
-              <Link className="SpendMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
+              <Link className="AsteraMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
             </div>
-            <nav className="SpendMenu-nav">
-              <div className="SpendMenu-nav-inner">
-                  <p className="SpendMenu-indiegogo-text">
+            <nav className="AsteraMenu-nav">
+              <div className="AsteraMenu-nav-inner">
+                  <p className="AsteraMenu-Whitepaper-text">
                     {formatMessage({id: 'index.menu.whitepaper'})}
-                    <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper_short.content'})} target="_blank">
+                    <a className="AsteraMenu-Whitepaper-button" href={formatMessage({id: 'index.menu.whitepaper_short.content'})} target="_blank">
                       {formatMessage({id: 'index.menu.whitepaper_short'})}
                     </a>
                     /
-                    <a className="SpendMenu-indiegogo-button" href={formatMessage({id: 'index.menu.whitepaper_full.content'})} target="_blank">
+                    <a className="AsteraMenu-Whitepaper-button" href={formatMessage({id: 'index.menu.whitepaper_full.content'})} target="_blank">
                       {formatMessage({id: 'index.menu.whitepaper_full'})}
                     </a>
                   </p>
@@ -257,4 +256,4 @@ let SpendMenu = React.createClass({
   }
 });
 
-module.exports = SpendMenu;
+module.exports = AsteraMenu;

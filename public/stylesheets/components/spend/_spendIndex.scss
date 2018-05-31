@@ -402,10 +402,10 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   /* Index CSS */
 
   .AsteraIndex-Main {
-    height: 300px;
+    height: 350px;
   }
   .AsteraIndex-content {
-    left: 8.5%;
+    left: none;
     top: 45px;
   }
   .AsteraIndex-text-group {
@@ -415,11 +415,17 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     display:none;
   }
   .AsteraIndex-text-h1 {
-    font-size: 19.2px;
+    font-size: 25px;
+  }
+  .AsteraIndex-text-p {
+    font-size: 17px;
   }
 
-  .AsteraIndex-text-p {
-    font-size: 13.6px;
+  [lang="ko"] .AsteraIndex-text-h1 {
+      font-size: 21px;
+  }
+  [lang="ko"] .AsteraIndex-text-p {
+      font-size: 15px;
   }
   .AsteraIndex-text-p-oval {
     height: 18px;
@@ -463,33 +469,31 @@ $SpendIndex-measure-numbers-more-color: #73787b;
     box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
   }
   .AsteraIndex-Form-group {
-    top: 21px;
-    width: 240px;
+    top: 20px;
+    width: 93%;
   }
   .AsteraIndex-Form-group.center {
-    width: 240px;
+    width: 93%;
     margin: 0 auto;
   }
   .AsteraIndex-descrip-text-group {
       margin-top: 160px;
   }
   .AsteraIndex-Form-email {
-    height: 34.3px;
-    padding: 0px 14px;
-    font-size: 9px;
+    padding: 0px 20.8px;
+    font-size: 12.8px;
     border: solid 1px #f3f3f3;
-    border-radius: 6px 0 0 6px;
+    border-radius: 8px 0 0 8px;
   }
   .AsteraIndex-Form-submit {
-    height: 34.3px;
     line-height: 20px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 8px 8px 0;
   }
   .AsteraIndex-Form-email {
 
   }
   .AsteraIndex-Form-submit-text {
-     font-size: 9.7px;
+     font-size: 12.7px;
   }
 
   /* ETC */

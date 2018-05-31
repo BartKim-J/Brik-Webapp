@@ -1,242 +1,243 @@
-$SpendMenu-transitionDuration: 500ms;
-$SpendMenu-scrolling-border-color: #F3F3F3;
-$SpendMenu-scrolling-bg: rgba(#fff, 0.95);
-$SpendMenu-open-bg: #fff;
-$SpendMenu-index-Logo-forceShown-transitionDuration: 500ms;
-$SpendMenu-Logo-color: #3a3a3a;
-$SpendMenu-button-color: #3a3a3a;
-$SpendMenu-item-border-color: #d5d5d5;
-$SpendMenu-item-link-color: #383838;
-$SpendMenu-item-link-md-color: #000000;
+$AsteraMenu-transitionDuration: 500ms;
+$AsteraMenu-scrolling-border-color: #F3F3F3;
+$AsteraMenu-scrolling-bg: rgba(#fff, 0.95);
+$AsteraMenu-open-bg: #fff;
+$AsteraMenu-index-Logo-forceShown-transitionDuration: 500ms;
+$AsteraMenu-Logo-color: #3a3a3a;
+$AsteraMenu-button-color: #3a3a3a;
+$AsteraMenu-item-border-color: #d5d5d5;
+$AsteraMenu-item-link-color: #383838;
+$AsteraMenu-item-link-md-color: #000000;
 
-//$SpendMenu-index-md-anim: slideDown 1s 575ms both;
+//////////////////////////////////////////////
+//
+//  Screen Normal Size CSS
+//
+//  Desktop*
+//
+//////////////////////////////////////////////
 
-.SpendMenu {
+.AsteraMenu-index .AsteraMenu-Logo-link {
+      color: white;
+}
+.AsteraMenu {
   position: absolute;
-  top: 0;
+  top: 27px;
   right: 0;
   left: 0;
-  z-index: $SpendMenu-z-index;
+  z-index: $AsteraMenu-z-index;
 }
-.is-SpendMenu-scrolling {
-  position: fixed;
-  transform: translate3d(0,0,0);
+.AsteraMenu-Whitepaper-button {
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    padding-bottom: 2px;
+    padding: 0px 8px 4px 8px;
+    border-bottom: solid 3.6px #2bffd8;
 }
-.is-SpendMenu-open {
-  transition: transform $SpendMenu-transitionDuration;
+.AsteraMenu-Whitepaper-text {
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: normal;
 }
-.is-SpendMenu-open-in {
-  position: fixed;
-  bottom: 0;
-  transform: translate3d(0,0,0);
+.AsteraMenu-Whitepaper-LinkBlock {
+    position: static;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    float: left;
 }
-.SpendMenu-inner {
-  padding: 0 7% 0 8.5%;
-  border-bottom: 1px solid $SAFE-TRANSPARENT;
-  background-color: $SAFE-TRANSPARENT;
-  transition:
-    border-bottom-color $SpendMenu-transitionDuration,
-    background-color $SpendMenu-transitionDuration;
+.AsteraMenu-WhitepaperLink {
+    display: inline-block;
+    padding-right: 32px;
+    padding-left: 32px;
+    text-align: left;
 }
-.is-SpendMenu-scrolling .SpendMenu-inner {
-  border-bottom-color: $SpendMenu-scrolling-border-color;
-  background-color: $SpendMenu-scrolling-bg;
-}
-.SpendMenu-Logo-link, .is-SpendMenu-open .SpendMenu-Logo-link {
-  color: $SpendMenu-Logo-color !important;
-}
-.SpendMenu-item-link {
-  color: $SpendMenu-item-link-md-color !important;
-}
-.is-SpendMenu-open-in .SpendMenu-inner {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-bottom-color: $SAFE-TRANSPARENT;
-  background-color: $SpendMenu-open-bg;
-}
-.SpendMenu-inner-inner {
-  width: 100%;
-  margin: 0 auto;
-  padding: 4px 0;
-}
-.SpendMenu-Logo {
-  font-size: 33px;
-}
-.is-SpendMenu-index-Logo-forceShown {
-  display: block;
-  opacity: 1;
-  transition: opacity $SpendMenu-index-Logo-forceShown-transitionDuration;
-}
-.is-SpendMenu-index-Logo-forceShown-in {
-  opacity: 1;
-}
-.is-SpendMenu-open-in .SpendMenu-index-Logo {
-  display: block;
-}
-.is-SpendMenu-open-in .is-SpendMenu-index-Logo-forceShown {
-  opacity: 1;
-  transition: none;
-}
-.SpendMenu-Logo-link {
-  color: black;
-}
-.SpendMenu-nav {
-  float: right;
-  height: 40px;
-}
-.is-SpendMenu-open-in .SpendMenu-nav {
-  float: none;
-  height: auto;
-}
-.SpendMenu-button {
-  display: inline-block;
-  position: relative;
-  width: 28px;
-  height: 33px;
-  margin-top: 5px;
-}
-.SpendMenu-button-bar {
+
+.AsteraMenu-button-bar {
   display: inline-block;
   width: 28px;
   height: 3px;
   background-color: black;
   transition-duration: 500ms;
 }
-.is-SpendMenu-scrolling .SpendMenu-button-bar, .is-SpendMenu-open .SpendMenu-button-bar {
-  background-color: $SpendMenu-button-color;
+.is-AsteraMenu-scrolling {
+  top: 0;
+  position: fixed;
+  transform: translate3d(0,0,0);
+}
+.is-AsteraMenu-open {
+      transition: none;
+}
+.is-AsteraMenu-open-in {
+  position: absolute;
+  bottom: auto;
+}
+.AsteraMenu-inner {
+  padding: 0 8.5% 0 8.5%;
+  border-bottom: 1px solid $SAFE-TRANSPARENT;
+  background-color: $SAFE-TRANSPARENT;
+  transition:
+    border-bottom-color $AsteraMenu-transitionDuration,
+    background-color $AsteraMenu-transitionDuration;
+}
+.is-AsteraMenu-scrolling .AsteraMenu-inner {
+  border-bottom-color: $AsteraMenu-scrolling-border-color;
+  background-color: $AsteraMenu-scrolling-bg;
+}
+.AsteraMenu-Logo-link, .is-AsteraMenu-open .AsteraMenu-Logo-link {
+  color: $AsteraMenu-Logo-color !important;
+}
+.AsteraMenu-item-link {
+  color: $AsteraMenu-item-link-md-color !important;
+}
+.is-AsteraMenu-open-in .AsteraMenu-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom-color: $SAFE-TRANSPARENT;
+  background-color: $AsteraMenu-open-bg;
+}
+.AsteraMenu-inner-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 23px 0;
+}
+.AsteraMenu-index-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.AsteraMenu-index-inner-inner {
+  max-width: none;
+}
+.AsteraMenu-Logo {
+
+}
+.is-AsteraMenu-index-Logo-forceShown {
+  display: block;
+  opacity: 1;
+  transition: opacity $AsteraMenu-index-Logo-forceShown-transitionDuration;
+}
+.is-AsteraMenu-index-Logo-forceShown-in {
+  opacity: 1;
+}
+.is-AsteraMenu-open-in .AsteraMenu-index-Logo {
+  display: block;
+}
+.is-AsteraMenu-open-in .is-AsteraMenu-index-Logo-forceShown {
+  opacity: 1;
+  transition: none;
+}
+.AsteraMenu-Logo-link {
+  color: black;
+}
+.AsteraMenu-nav {
+  float: right;
+  height: 40px;
+}
+.is-AsteraMenu-open-in .AsteraMenu-nav {
+  float: right;
+  height: auto;
+}
+.AsteraMenu-button {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 33px;
+  margin-top: 5px;
+}
+.is-AsteraMenu-scrolling .AsteraMenu-button-bar, .is-AsteraMenu-open .AsteraMenu-button-bar {
+  background-color: $AsteraMenu-button-color;
 }
 
-.is-SpendMenu-open-in .SpendMenu-button-bar-1 {
+.is-AsteraMenu-open-in .AsteraMenu-button-bar-1 {
   transform: translate3d(0,9px,0) rotateZ(45deg);
 }
-.is-SpendMenu-open-in .SpendMenu-button-bar-2 {
+.is-AsteraMenu-open-in .AsteraMenu-button-bar-2 {
   opacity: 0;
 }
-.is-SpendMenu-open-in .SpendMenu-button-bar-3 {
+.is-AsteraMenu-open-in .AsteraMenu-button-bar-3 {
   transform: translate3d(0,-9px,0) rotateZ(-45deg);
 }
-.SpendMenu-nav-inner {
+.AsteraMenu-nav-inner {
     display: block;
     float: left;
-    margin: 10px 0 0;
+    margin: -8px 0 0;
 }
-.is-SpendMenu-open-in .SpendMenu-nav-inner {
+.is-AsteraMenu-open-in .AsteraMenu-nav-inner {
   display: block;
   clear: left;
   padding: 54px 0;
 }
-.SpendMenu-lists {
+.AsteraMenu-lists {
 
 }
-.SpendMenu-item {
-  border-bottom: 1px solid $SpendMenu-item-border-color;
+.AsteraMenu-item {
+  border-bottom: 1px solid $AsteraMenu-item-border-color;
 }
-.SpendMenu-item-link {
-  display: block;
-  padding: 0 11px;
-  color: $SpendMenu-item-link-color;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 2.4;
-}
-.SpendMenu-SocialLinks {
-  margin: 32px 22px 0;
-  font-size: 26px;
-}
-.SpendMenu-Indiegogo-LinkBlock {
-
-}
-.SpendMenu-IndiegogoLink {
-  display: block;
-  padding-right: 0;
-  padding-left: 0;
-  text-align: center;
-}
-
-.SpendMenu-indiegogo-button {
-    font-family: CircularStd;
-    font-size: 8px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-    padding-bottom: 2px;
-    border-bottom: solid 1px #2bffd8;
-    padding: 0px 5px 2px 5px;
-}
-.SpendMenu-indiegogo-text {
-    font-family: CircularStd;
-    font-size: 8px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-/*.SpendMenu-items li:last-child > a {
-
-}
-.SpendMenu-items li:last-child {
+.AsteraMenu-item-link {
   display: none;
-}*/
+}
+.AsteraMenu-SocialLinks {
+  display: none;
+}
 
-@media (min-width: $screen-md-min) {
-  .SpendMenu-items li:last-child {
+//////////////////////////////////////////////
+//
+//  Screen Middle Size CSS
+//
+//  Table*
+//
+//////////////////////////////////////////////
+@media (max-width: $screen-md-min) {
+  .AsteraMenu {
+    top: 25px;
+  }
+  .AsteraMenu-Whitepaper-button {
+    font-size: 16px;
+    padding: 0px 5px 2px 5px;
+    border-bottom: solid 1px #2bffd8;
+  }
+  .AsteraMenu-Whitepaper-text {
+    font-size: 16px;
+  }
+  .AsteraMenu-Whitepaper-LinkBlock {
+
+  }
+  .AsteraMenu-WhitepaperLink {
     display: block;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
   }
-  .SpendMenu {
-    top: 27px;
-  }
-  .SpendMenu-index .SpendMenu-Logo-link, .SpendMenu-index .SpendMenu-item-link {
-    color: white;
-  }
-
-  .SpendMenu-indiegogo-button {
-      font-size: 20px;
-      padding: 0px 8px 4px 8px;
-      border-bottom: solid 3.6px #2bffd8;
-  }
-  .SpendMenu-indiegogo-text {
-      font-size: 20px;
-  }
-  .SpendMenu-button-bar {
+  .AsteraMenu-button-bar {
     background-color: white;
   }
-  .is-SpendMenu-scrolling {
-    top: 0;
+  .is-AsteraMenu-scrolling {
+    top: 0px;
+  }
+  .is-AsteraMenu-open {
+    transition: transform $AsteraMenu-transitionDuration;
+  }
+  .is-AsteraMenu-open-in {
+    position: fixed;
+    bottom: 0;
     transform: translate3d(0,0,0);
   }
-  .is-SpendMenu-open {
-    transition: none;
-  }
-  .is-SpendMenu-open-in {
-    position: absolute;
-    bottom: auto;
-  }
-  .is-SpendMenu-scrolling.is-SpendMenu-open-in {
+  .is-AsteraMenu-scrolling.is-AsteraMenu-open-in {
     position: fixed;
   }
-  /*
-  @include enter("SpendMenu-index", $SpendMenu-index-md-anim);
-  .SpendMenu-index.is-SpendMenu-scrolling,
-  .SpendMenu-index.is-SpendMenu-open {
-    visibility: visible;
-  }
-  */
-  .is-SpendMenu-scrolling.is-SpendMenu-index-entered,
-  .is-SpendMenu-open.is-SpendMenu-index-entered {
+  .is-AsteraMenu-scrolling.is-AsteraMenu-index-entered,
+  .is-AsteraMenu-open.is-AsteraMenu-index-entered {
     animation: none;
   }
-  .SpendMenu-inner {
-    padding: 0;
+  .AsteraMenu-inner {
+    padding: 0 6% 0 6%;
   }
-  .is-SpendMenu-open-in .SpendMenu-inner {
+  .is-AsteraMenu-open-in .AsteraMenu-inner {
     position: static;
     top: auto;
     right: auto;
@@ -244,76 +245,164 @@ $SpendMenu-item-link-md-color: #000000;
     left: auto;
     background-color: $SAFE-TRANSPARENT;
   }
-  .is-SpendMenu-scrolling.is-SpendMenu-open-in .SpendMenu-inner {
-    border-bottom-color: $SpendMenu-scrolling-border-color;
-    background-color: $SpendMenu-scrolling-bg;
+  .is-AsteraMenu-scrolling.is-AsteraMenu-open-in .AsteraMenu-inner {
+    border-bottom-color: $AsteraMenu-scrolling-border-color;
+    background-color: $AsteraMenu-scrolling-bg;
   }
-  .SpendMenu-index-inner {
-    max-width: 1600px;
-    margin: 0 auto;
+  .AsteraMenu-index-inner {
+
   }
-  .SpendMenu-inner-inner {
-    width: 85%;
+  .AsteraMenu-inner-inner {
     padding: 16px 0;
   }
-  .SpendMenu-index-inner-inner {
-    max-width: none;
+  .AsteraMenu-index-inner-inner {
+
   }
-  .is-SpendMenu-index-Logo-forceShown {
+  .AsteraMenu-Logo {
+
+  }
+  .is-AsteraMenu-index-Logo-forceShown {
     opacity: 1;
     transition: none;
   }
+  .AsteraMenu-nav {
 
-  .is-SpendMenu-open-in .SpendMenu-nav {
-    float: right;
-    height: auto;
   }
-  .SpendMenu-button {
-    display: none;
+  .is-AsteraMenu-open-in .AsteraMenu-nav {
+
   }
-  .SpendMenu-nav-inner {
-    display: block;
-    float: left;
+  .AsteraMenu-button {
+    display: inline-block;
+  }
+  .AsteraMenu-nav-inner {
     margin: -5px 0 0;
   }
-  .is-SpendMenu-open-in .SpendMenu-nav-inner {
+  .is-AsteraMenu-open-in .AsteraMenu-nav-inner {
     clear: none;
     padding: 0;
   }
-  .SpendMenu-lists {
+  .AsteraMenu-lists {
     float: left;
     margin-right: 0;
   }
-  .SpendMenu-items {
+  .Asteraenu-items {
     float: left;
   }
-  .SpendMenu-item {
+  .AsteraMenu-item {
     float: left;
     border-bottom: 0;
     margin-right: 30px;
   }
-  .SpendMenu-item-link {
-    display: inline;
-    padding: 0;
-    color: #171717;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.1875;
+}
+
+//////////////////////////////////////////////
+//
+//  Screen Small Size CSS
+//
+//  *Mobile
+//
+//////////////////////////////////////////////
+
+@media (max-width: $screen-sm-min) {
+  .AsteraMenu {
+    top: 23px;
   }
-  .SpendMenu-SocialLinks {
-    display: none;
+  .AsteraMenu-Whitepaper-button {
+    font-size: 10.8px;
+    padding: 0px 5px 2px 5px;
+    border-bottom: solid 1px #2bffd8;
   }
-  .SpendMenu-Indiegogo-LinkBlock {
+  .AsteraMenu-Whitepaper-text {
+    font-size: 10.8px;
+  }
+  .AsteraMenu-Whitepaper-LinkBlock {
+
+  }
+  .AsteraMenu-WhitepaperLink {
+    display: block;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  .AsteraMenu-button-bar {
+    background-color: white;
+  }
+  .is-AsteraMenu-scrolling {
+    top: 0px;
+  }
+  .is-AsteraMenu-open {
+    transition: transform $AsteraMenu-transitionDuration;
+  }
+  .is-AsteraMenu-open-in {
+    position: fixed;
+    bottom: 0;
+    transform: translate3d(0,0,0);
+  }
+  .is-AsteraMenu-scrolling.is-AsteraMenu-open-in {
+    position: fixed;
+  }
+  .is-AsteraMenu-scrolling.is-AsteraMenu-index-entered,
+  .is-AsteraMenu-open.is-AsteraMenu-index-entered {
+    animation: none;
+  }
+  .AsteraMenu-inner {
+
+  }
+  .is-AsteraMenu-open-in .AsteraMenu-inner {
     position: static;
+    top: auto;
     right: auto;
     bottom: auto;
     left: auto;
+    background-color: $SAFE-TRANSPARENT;
+  }
+  .is-AsteraMenu-scrolling.is-AsteraMenu-open-in .AsteraMenu-inner {
+    border-bottom-color: $AsteraMenu-scrolling-border-color;
+    background-color: $AsteraMenu-scrolling-bg;
+  }
+  .AsteraMenu-index-inner {
+
+  }
+  .AsteraMenu-inner-inner {
+    padding: 5px 0;
+  }
+  .AsteraMenu-index-inner-inner {
+
+  }
+  .AsteraMenu-Logo {
+
+  }
+  .is-AsteraMenu-index-Logo-forceShown {
+    opacity: 1;
+    transition: none;
+  }
+  .AsteraMenu-nav {
+
+  }
+  .is-AsteraMenu-open-in .AsteraMenu-nav {
+
+  }
+  .AsteraMenu-button {
+    display: inline-block;
+  }
+  .AsteraMenu-nav-inner {
+    margin: 4px 0 0;
+    text-align: center;
+  }
+  .is-AsteraMenu-open-in .AsteraMenu-nav-inner {
+    clear: none;
+    padding: 0;
+  }
+  .AsteraMenu-lists {
+    float: left;
+    margin-right: 0;
+  }
+  .Asteraenu-items {
     float: left;
   }
-  .SpendMenu-IndiegogoLink {
-    display: inline-block;
-    padding-right: 32px;
-    padding-left: 32px;
-    text-align: left;
+  .AsteraMenu-item {
+    float: left;
+    border-bottom: 0;
+    margin-right: 30px;
   }
 }

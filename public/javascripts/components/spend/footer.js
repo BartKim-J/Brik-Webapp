@@ -64,7 +64,7 @@ let SpendFooter = React.createClass({
                  <br/>
                   {formatMessage({id: `footer.copyrights`})}
               </div>
-              <div className="SpendFooter-Logo"><img className="SpendLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
+              <div className="SpendFooter-Logo"><img className="AsteraLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
             </div>
             <LanguageButton/>
           </div>

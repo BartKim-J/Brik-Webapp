@@ -1,13 +1,22 @@
-.SpendLogo {
+.AsteraLogo {
     width: 197px;
     height: 44px;
     object-fit: contain;
 }
 
 @media (max-width: $screen-md-min) {
-  .SpendLogo {
+  .AsteraLogo {
+    width: 135px;
+    height: 44px;
+   object-fit: contain;
+  }
+}
+
+
+@media (max-width: $screen-sm-min) {
+  .AsteraLogo {
     width: 91px;
-    height: 21px;
+    height: 44px;
    object-fit: contain;
   }
 }
