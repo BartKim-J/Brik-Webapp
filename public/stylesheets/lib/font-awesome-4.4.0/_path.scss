@@ -15,12 +15,51 @@
 }
 
 @font-face {
+  font-family: 'InterUI';
+  src: url('#{$fa-font-path}/Inter-UI-Regular.woff2?v=#{$fa-version}');
+  //src: url('#{$fa-font-path}/Inter-UI-Regular.woff2?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    //url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterUI_Bold';
+  src: url('#{$fa-font-path}/Inter-UI-Bold.woff2?v=#{$fa-version}');
+  //src: url('#{$fa-font-path}/Inter-UI-Regular.woff2?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    //url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterUI_EX_Bold';
+  src: url('#{$fa-font-path}/Inter-UI-ExtraBold.woff2?v=#{$fa-version}');
+  //src: url('#{$fa-font-path}/Inter-UI-Regular.woff2?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    //url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    //url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    //url('#{$fa-font-path}/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+//  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'CircularStd';
-  src: url('#{$fa-font-path}/circularstd-medium-webfont.eot?v=#{$fa-version}');
-  src: url('#{$fa-font-path}/circularstd-medium-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
-    url('#{$fa-font-path}/circularstd-medium-webfont.woff2?v=#{$fa-version}') format('woff2'),
-    url('#{$fa-font-path}/circularstd-medium-webfont.woff?v=#{$fa-version}') format('woff'),
-    url('#{$fa-font-path}/circularstd-medium-webfont.ttf?v=#{$fa-version}') format('truetype');
+  src: url('#{$fa-font-path}/circularstd-medium-webfont.woff?v=#{$fa-version}');
+  //src: url('#{$fa-font-path}/circularstd-medium-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    //url('#{$fa-font-path}/circularstd-medium-webfont.woff2?v=#{$fa-version}') format('woff2'),
+    //url('#{$fa-font-path}/circularstd-medium-webfont.woff?v=#{$fa-version}') format('woff'),
+    //url('#{$fa-font-path}/circularstd-medium-webfont.ttf?v=#{$fa-version}') format('truetype');
 //    url('#{$fa-font-path}/circularstd-medium-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
 //  src: url('#{$fa-font-path}/FontAwesome.otf') format('opentype'); // used when developing fonts
   font-weight: 500;

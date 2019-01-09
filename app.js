@@ -14,6 +14,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
+
 let lang = require('./middlewares/lang');
 let appRenderer = require('./middlewares/appRenderer');
 let serfSafe = require('./middlewares/serfSafe');

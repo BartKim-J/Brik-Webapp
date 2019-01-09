@@ -9,6 +9,8 @@ let {FormattedHTMLMessage} = require('../intl');
 let Logo = require('./logo');
 let SocialLinks = require('./socialLinks');
 
+
+
 let SpendFooter = React.createClass({
   statics: {
     LINKS: [
@@ -39,34 +41,42 @@ let SpendFooter = React.createClass({
             'SpendFooter-index-inner': isRouteIndex
           })}
         >
-          <div className="SpendFooter-index-inner-inner-line"></div>
           <div className={classNames('SpendFooter-inner-inner', {
               'SpendFooter-index-inner-inner': isRouteIndex
             })}
           >
             <div className="SpendFooter-inner-inner-inner">
-              <ul
-                className="SpendFooter-link-items listUnstyled text-uppercase"
-              >
-                {LINKS.map(({key, url, img}, i) => (
-                  <li
-                    className={classNames('SpendFooter-link-item pull-left', {
-                      'SpendFooter-link-item-last': i === LINKS.length - 1
-                    })}
-                    key={key}
-                  >
-                    <a className="SpendFooter-link" href={url} target="_blank"><img src={img}/></a>
-                  </li>
-                ))}
-              </ul>
               <div className="SpendFooter-copyrights">
-                <a className="SpendFooter-mail-link" href="mailto:hey@aster.io"> {formatMessage({id: `footer.email`})} </a>
-                 <br/>
-                  {formatMessage({id: `footer.copyrights`})}
+                <span className="SpendFooter-Logo">brik.</span><br />
+                © Copyright 2018 brik.All rights reserved.
               </div>
-              <div className="SpendFooter-Logo"><img className="AsteraLogo" src="https://s3.ap-northeast-2.amazonaws.com/astera/ASTERA.com/grayscale-logo.png" alt="footer-logo"></img></div>
+
+              <div className="SpendFooter-index-inner-inner-line"></div>
+
+              <div className="AsteraMenu-Footer-Lists">
+                <div className="AsteraMenu-nav-inner">
+                  <div className="AsteraMenu-lists">
+                    <ul className="AsteraMenu-items listUnstyled">
+                      {[
+                        {key: 'Features', url: '/Features'},
+                        {key: 'Technology', url: '/Technology'},
+                        {key: 'Design', url: '/Design'},
+                        {key: 'Tech', url: '/Tech'},
+                        {key: 'Spec', url: '/Spec'},
+                        {key: 'Design', url: '/Design'}/*,
+                        {key: 'promotion', url: '/promotion'}*/
+                      ].map(({key, url}) => (
+                        <li className="AsteraFooterMenu-item" key={key}>
+                          <a className="AsteraFooterMenu-item" url={url} clickEvent={{category: 'Menu', label: key}}>{formatMessage({id: `${key}`})}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-            <LanguageButton/>
           </div>
         </div>
       </footer>

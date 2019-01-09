@@ -1,4 +1,4 @@
-const BRAND = 'ASTERA';
+const BRAND = 'brik.';
 const TITLE_SUFFIX = ` – ${BRAND}`;
 
 const FACEBOOK_URL = 'https://www.facebook.com/ASTERAio-171004023600848/?modal=admin_todo_tour';

@@ -62,6 +62,127 @@ $SpendIndex-measure-numbers-more-color: #73787b;
   animation-name: flash;
 }
 
+
+//////////////////////////////////////////////
+//
+//  Slider
+//
+//////////////////////////////////////////////
+
+.AsteraIndex-Image-Slider {
+
+}
+
+.AsteraIndex-Slider {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: none;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider-item {
+  float: left;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  background: #383838;
+  text-align: center;
+  border-radius: 4px !important;
+  transition: all .2s linear;
+}
+
+.slider-item-hide {
+    display: none;
+}
+
+.buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  padding: 0 2% 0 2%;
+}
+
+.buttons-wrapper .prev-button {
+  background-image: url(https://s3.ap-northeast-2.amazonaws.com/brikweb/brik.com/brik_slider_button_left.svg);
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 75px;
+  width: 75px;
+  border-radius: 75px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s linear;
+}
+
+.buttons-wrapper .next-button {
+  background-image: url(https://s3.ap-northeast-2.amazonaws.com/brikweb/brik.com/brik_slider_button_right.svg);
+  @extend .prev-button;
+}
+
+.buttons-wrapper button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* indicators */
+
+.indicators {
+  width: 100%;
+  position: absolute;
+  bottom: -4px;
+  z-index: 2 !important;
+  text-align: center;
+}
+
+.indicators li {
+  display: inline-block;
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.indicators li:last-child {
+  margin-right: 0;
+}
+
+.active-indicator {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #fff !important;
+}
+
+/* indicators */
+
 //////////////////////////////////////////////
 //
 //  Screen Normal Size CSS
@@ -70,128 +191,526 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 //
 //////////////////////////////////////////////
 
+.Astera-Index {
+    padding: 0px;
+
+    overflow: hidden;
+}
+
+.Astera-Index-container {
+    padding: 0px;
+}
+
 /* Index CSS */
+.AsteraIndex-text-logo {
+    font-family: CircularStd;
+    font-size: 55px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.4px;
+    text-align: center;
+    color: #000000;
+}
 
-.AsteraIndex-container {
-  padding-right: 0;
-  padding-left: 0;
-  overflow: hidden;
-  line-height: 0;
-}
-.AsteraIndex-index {
-  height: 1211px;
-  background-color: #e7f4f4;
-}
-.AsteraIndex-Index-Inder {
-
-}
-.AsteraIndex-text-h1 {
+.is-a-portable-screen {
+  font-family: InterUI;
   font-size: 50px;
-  font-weight: 900;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
   line-height: normal;
-  color: black;
-  padding-top:30px;
-  position: relative;
-}
-[lang="ko"] .AsteraIndex-text-h1 {
-  font-weight: 500;
-}
-.AsteraIndex-text-p {
-  font-size: 35px;
-  line-height: 1.26;
-  color: black;
-  position: relative;
-  margin: 0;
-  display: inline-block;
-}
-[lang="ko"] .AsteraIndex-text-p {
-  line-height: 1.4;
+  letter-spacing: -1.3px;
+  text-align: center;
+  color: #000000;
 }
 
-.AsteraIndex-text-p-oval {
-  width: 100%;
-  height: 25%;
-  background-color: rgba(248,231,28,.18);
-  border-radius: 50%;
+.Be-first-to-know-whe {
+  font-family: InterUI;
+  font-size: 40px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.Be-first-to-know-whe .text-style-1 {
+  font-family: CircularStd;
+  font-weight: 900;
+}
+
+.Brik-is-dead-simple {
+  font-family: InterUI_Bold;
+  font-size: 48px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+
+  margin-bottom: 27px;
+}
+
+.Take-brik-anywhere-t {
+
+  padding: 0 10%;
+
+  font-family: InterUI;
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.Brik-is-universal-w {
+  margin-bottom: 20px;
+
+  width: 70%;
+  padding-right: 15%;
+
+  font-family: InterUI_Bold;
+  font-size: 48px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.Brik-supports-all-st {
+
+  width: 55%;
+
+  font-family: InterUI;
+  font-size: 21px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.brik-is-modular-min {
   position: absolute;
-  bottom: -3%;
+  left: 7%;
+  top: 8%;
+
+  width: 60%;
+
+  font-family: InterUI_Bold;
+  font-size: 44px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
 }
 
-[lang="ko"] .AsteraIndex-text-p-oval {
-  bottom: 25%;
+.brik-comes-with-a-de {
+  position: absolute;
+  right: 7%;
+  top: 8%;
+
+
+  width: 45%;
+
+  font-family: InterUI;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.Technical-spec {
+  font-family: InterUI_Bold;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+
+  margin-bottom: 30px;
+}
+
+.CPU-Quad-Core-A17-W {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  opacity: 0.63;
+  font-family: InterUI;
+  font-size: 21px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.62;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.CPU-Quad-Core-A17-W-Bold {
+  font-family: InterUI_Bold;
+}
+
+.CPU-Quad-Core-A17-W-Line {
+    width: 65%;
+    border-bottom: 1.3px solid #535353;
+    opacity: 0.24;
+}
+
+.CPU-Quad-Core-A17-W-Line .text-style-1 {
+  font-weight: bold;
+  opacity: 1;
 }
 
 .AsteraIndex-Main {
   max-width: 1600px;
   margin: 0 auto;
+  margin-top: 160px;
   position: relative;
-  height: 910px;
   background-color: white;
 }
-.AsteraIndex-inner {
 
-}
 .AsteraIndex-content {
-  position: absolute;
-  right: 0;
-  top: 160px;
-  left: 7.5%;
-  z-index: 10;
-  text-align: left;
-}
-.AsteraIndex-text-group {
-  position: relative;
-  margin-bottom: 58px
+    margin: 0 auto;
+    text-align: center;
 }
 
-.AsteraIndex-Main-Circle {
-  position:absolute;
-  top: 10%;
-  right: 0%;
-  display:inline-block;
-  z-index: -1;
+.AsteraIndex-Sub {
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 55px;
+
+    position: relative;
+    background-color: white;
 }
-.AsteraIndex-Main-Circle img {
-    width: 600px;
+
+.AsteraIndex-Desc {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+}
+
+.AsteraIndex-Desc-content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.AsteraIndex-Desc-text-group {
+  text-align: center;
+  margin: 0 auto;
+  width: 65%;
+}
+
+.AsteraIndex-Desc_2 {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  position: relative;
+  background-color: white;
+
+  overflow: hidden;
+}
+
+.AsteraIndex-Desc_2-content {
+    text-align: right;
+}
+
+.AsteraIndex-Desc_2-text-group {
+  text-align: left;
+  margin-left: 15%;
+}
+
+.AsteraIndex-Desc_3 {
+  max-width: 1600px;
+  margin: 0 auto 100px auto;
+  background-color: white;
+
+}
+
+.AsteraIndex-Desc_3-content {
+    position: relative;
+
+    width: 86.5%;
+    height: 715px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: rgba(146,146,146,0.08);
+
+    overflow:hidden
+}
+
+.AsteraIndex-Desc_3-vote-target {
+    margin: 240px 5% 0px -70px;
+    padding: 50px;
+
+    display: flex;
+}
+
+.AsteraIndex-Desc_3-vote-form {
+    position: absolute;
+    display: flex;
+    padding: 0 2% 0 2%;
+
+    left:40%;
+    bottom: 5%;
+}
+
+.AsteraIndex-Desc_3-vote-box {
+  width: 150px;
+  height: 59px;
+  opacity: 0.61;
+  border-radius: 8px;
+  background-color: #00cc97;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.1s linear;
+}
+.AsteraIndex-Desc_3-vote-box-p {
+    font-family: InterUI;
+    font-size: 25px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.AsteraIndex-Desc_3-text-all-group {
+    text-align: left;
+}
+
+.AsteraIndex-Desc_3-text-group {
+  display: inline-block;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.AsteraIndex-Desc_3-text-group_2 {
+  display: inline-block;
+  text-align: left;
+  margin-left: 5%;
+  width: 546px;
+}
+
+.AsteraIndex-spec {
+    margin-top: 130px;
+    height: 550px;
+    background-color: white;
+}
+
+.AsteraIndex-spec-text-all-group {
+    text-align: left;
+}
+
+.AsteraIndex-spec-text-group {
+    position: relative;
+    margin-left: 15%;
+}
+
+.AsteraIndex-spec-text-spec {
+  display: inline-block;
+  float: left;
+}
+.AsteraIndex-spec-content {
+    text-align: right;
+}
+
+.AsteraIndex-text-group {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.AsteraIndex-Main-render-image {
+    margin: 0 auto;
+    margin-top: 82px;
+    margin-bottom: 82px;
+    z-index: -1;
+}
+
+.AsteraIndex-Main-render-image img {
+    max-width: 1152px;
+    min-width: 300px;
+    width: 80%;
+}
+
+.AsteraIndex-Main-render-image_2 {
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.AsteraIndex-Main-render-image_2 img {
+    max-width: 927px;
+    min-width: 300px;
+    width: 85%;
+}
+
+.AsteraIndex-Main-render-image_3 {
+    margin: 0 auto;
+    margin-left: 15%;
+    z-index: -1;
+}
+
+.AsteraIndex-Main-render-image_3 img {
+    max-width: 938px;
+    min-width: 700px;
+    width: 70%;
+}
+
+.AsteraIndex-Sub-render-image {
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.AsteraIndex-Sub-render-image img {
+    width: 100%;
+}
+
+.AsteraIndex-Spec-render-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+.AsteraIndex-Spec-render-image img {
+    max-width: 754px;
+    min-width: 500px;
+    width: 80%;
+}
+
+
+.AsteraIndex-vote-item {
+    text-align: right;
+    margin-right: -140px;
+
+    background: transparent;
+    button:focus {outline:0;}
+    cursor: pointer;
+
+
+    outline: none;
+    border: none;
+}
+
+.AsteraIndex-vote-item img {
+    max-width: 450px;
+    min-width: 200px;
+
+    width: 100%;
+}
+
+
+.AsteraIndex-vote-item-hidden {
+    text-align: right;
+    margin-right: -140px;
+
+    background: transparent;
+    button:focus {outline:0;}
+    cursor: pointer;
+
+    opacity: 0.5;
+
+    outline: none;
+    border: none;
+}
+
+.AsteraIndex-vote-item-hidden img {
+    max-width: 450px;
+    min-width: 200px;
+
+    width: 100%;
+}
+
+.AsteraIndex-Logo-Kickstarter {
+    position: absolute;
+    right: 1%;
+    bottom: 3%;
+}
+
+.AsteraIndex-Logo-Kickstarter img {
+    width: 169px;
 }
 
 /* descrip CSS */
 
 .AsteraIndex-descrip {
-  max-width: 1600px;
-  margin: 0 auto;
-  position: relative;
-  height: 1211px;
-  background-color: #e7f4f4;
-  padding-top: 1px;
+    max-width: 85%;
+
+    margin: 0px 0px 80px 15%;
+
+    height: 350px;
+    background-color: #b9f1e2;
+
+    padding-left: 10%;
+    padding-top: 1.5%;
 }
+
 .AsteraIndex-descrip-text-group {
-  position: absolute;
-  text-align: center;
-  width: 680px;
-  bottom: 60%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  text-align: left;
+  margin: 40px 0 40px 0;
+  width: 414px;
 }
-.AsteraIndex-descrip-hardware {
-  margin: 0 auto;
-  display: block;
+
+.AsteraIndex-descrip_2 {
+    position: relative;
+    max-width: 85%;
+
+    margin: 0px 0px 0px 15%;
+    margin-bottom: 50px;
+
+    height: 511px;
+    background-color: #b9f1e2;
+
+    padding-left: 10%;
+    padding-top: 1px;
 }
-.AsteraIndex-descrip-hardware img {
-  position: absolute;
-  width: 855px;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
+
+.AsteraIndex-descrip_2-text-group {
+  text-align: left;
+  width: 414px;
+  margin:  126px 0 50px 0;
 }
+
+
 .AsteraIndex-descrip-text-h1 {
-  font-size: 57px;
+  font-size: 40px;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.1578947368421053;
   letter-spacing: normal;
-  color: #3a3a3a;
-  opacity: 0.6296988224637681;
+  color: #000000;
+}
+
+.AsteraIndex-descrip-text-p {
+  font-size: 40px;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: normal;
+  line-height: 1.1578947368421053;
+  letter-spacing: normal;
+  color: #000000;
 }
 
 /* Subscribe CSS */
@@ -221,31 +740,34 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 /* Form CSS */
 
 .AsteraIndex-Form-group {
-  width: 600px;
-  position: relative;
+  width: 473.4px;
+  height: 79.2px;
   top: 45px;
 }
-.AsteraIndex-Form-group.center {
-  width: 600px;
-  margin: 0 auto;
-}
+
 .AsteraIndex-Form {
-  border-radius: 17px;
-  box-shadow: 0 19px 37px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 9.6px;
+  box-shadow: 0 2px 5px 0 rgba(233, 233, 233, 0.5);
 }
 .AsteraIndex-Form-email {
   text-align: left;
   width: 75%;
-  height: 88px;
+  height: 80px;
   padding: 0px 37px;
 
+  font-family: InterUI;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
   color: #363636;
-  font-size: 23px;
 
   border: solid 1px #f3f3f3;
-  border-radius: 17px 0 0 17px;
+  border-radius: 9.6px 0 0 9.6px;
+  border: none;
   background-color: #ffffff;
-
   line-height: 1.5;
 }
 .AsteraIndex-Form-email:focus {
@@ -254,22 +776,28 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 .AsteraIndex-Form-email::-moz-placeholder,
 .AsteraIndex-Form-email:-ms-input-placeholder,
 .AsteraIndex-Form-email::-webkit-input-placeholder {
-  color: $AsteraIndex-Form-email-placeholder-color;
-  opacity: 0.8;
+
 }
 .AsteraIndex-Form-submit {
   width: 25%;
-  height: 88px;
+  height: 80px;
   line-height: 49px;
-  border-radius: 0 17px 17px 0;
-  background-color: rgba(63,78,132,.1);
+  border-radius: 0 9.6px 9.6px 0;
+  background-color: #ffffff;
   vertical-align: top;
-  border: 0;
+  border: none;
+  border-color: #ffffff
 }
 .AsteraIndex-Form-submit-text {
-  font-size: 25px;
-  text-align: center;
-  color: #000000;
+    opacity: 0.56;
+    font-family: InterUI;
+    font-size: 21.6px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00b786;
 }
 .SpendIndex-Form-MessageBoard-success,
 .SpendIndex-Form-MessageBoard-error {
@@ -295,98 +823,157 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 //////////////////////////////////////////////
 
 @media (max-width: $screen-md-min) {
+    .buttons-wrapper .prev-button {
+        height: 60px;
+        width: 60px;
+        border-radius: 60px;
+    }
 
-  /* Index CSS */
+    .AsteraIndex-text-logo {
+        font-size: 45px;
+    }
+    .is-a-portable-screen {
+        font-size: 40px;
+    }
 
-  .AsteraIndex-Main {
-    height: 600px;
-  }
-  .AsteraIndex-text-group {
-    margin-bottom: 25px;
-  }
-  .AsteraIndex-text-h1 {
-    font-size: 35px;
-  }
-  .AsteraIndex-text-p {
-    font-size: 24px;
-  }
-  .AsteraIndex-text-p-oval {
+    .Be-first-to-know-whe {
+        font-size: 35px;
+    }
 
-  }
+    .Brik-is-dead-simple {
+        font-size: 35px;
+    }
+    .Take-brik-anywhere-t {
+        padding: 0 5%;
+        font-size: 18px;
+    }
 
-  .AsteraIndex-Main-Circle {
-    top:0%;
-  }
+    .brik-is-modular-min {
+      font-size: 30px;
+    }
+    .brik-comes-with-a-de {
+      right: 4%;
+      font-size: 12px;
 
-  .AsteraIndex-Main-Circle img {
-    width: 300px;
-  }
+    }
 
-  /* descrip CSS */
+    .Brik-is-universal-w {
+        width: 60%;
 
-  .AsteraIndex-descrip {
-    height: 608px;
-  }
-  .AsteraIndex-descrip-hardware {
+        font-size: 35px;
+    }
+    .Brik-supports-all-st {
+        width: 80%;
 
-  }
-  .AsteraIndex-descrip-hardware img {
-    width: 500px;
-  }
-  .AsteraIndex-descrip-text-h1 {
-    font-size: 31.4px;
-  }
-  .AsteraIndex-descrip-text-group {
-    width: 380px;
-    bottom: 68%;
-  }
+        font-size: 20px;
+    }
 
-  /* Subscribe CSS */
+    .Technical-spec {
+        font-size: 35px;
+    }
+    .CPU-Quad-Core-A17-W {
+        font-size: 17px;
+    }
 
-  .AsteraIndex-subscrib {
-    height: 230px;
-  }
-  .AsteraIndex-subscrib-h1 {
-    font-size: 23px;
-    margin-bottom: 15px;
-  }
+    .AsteraIndex-spec {
+        height: 700px;
+    }
+    .AsteraIndex-spec-text-group {
+        margin-left: 10%;
+    }
+    .AsteraIndex-Spec-render-image {
+        text-align: right;
 
-  /* Form CSS */
+        top: 300px;
+    }
+    .AsteraIndex-Spec-render-image img {
+        max-width: 754px;
 
-  .AsteraIndex-Form {
-    border-radius: 6px;
-    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
-  }
+        width: 100%;
+    }
 
-  .AsteraIndex-Form-group {
-    top: 21px;
-    width: 400px;
-  }
-  .AsteraIndex-Form-group.center {
-    width: 400px;
-    margin: 0 auto;
-  }
-  .AsteraIndex-Form-email {
-    height: 52px;
-    padding: 0px 14px;
-    font-size: 12px;
-    border: solid 1px #f3f3f3;
-    border-radius: 6px 0 0 6px;
-  }
-  .AsteraIndex-Form-submit {
-    height: 52px;
-    line-height: 20px;
-    border-radius: 0 6px 6px 0;
-  }
-  .AsteraIndex-Form-email {
+    .AsteraIndex-descrip {
 
-  }
-  .AsteraIndex-Form-submit-text {
-     font-size: 12.7px;
-  }
+    }
 
-  /* ETC */
+    .AsteraIndex-Main-render-image {
 
+    }
+
+    .AsteraIndex-Main-render-image img {
+        width: 100%;
+    }
+
+    .AsteraIndex-Desc_3 {
+
+    }
+
+    .AsteraIndex-spec {
+        margin-top: 50px;
+    }
+
+    .AsteraIndex-Desc_3-content {
+        height: 610px;
+    }
+    .AsteraIndex-Desc_3-vote-target {
+        margin: 170px 5% 0px -150px;
+        padding: 80px;
+    }
+    .AsteraIndex-vote-item {
+        margin-right: -140px;
+    }
+    .AsteraIndex-vote-item img {
+        max-width: 500px;
+        min-width: 150px;
+
+        width: 80%;
+    }
+    .AsteraIndex-vote-item-hidden {
+        margin-right: -140px;
+    }
+
+    .AsteraIndex-vote-item-hidden img {
+        max-width: 350px;
+        min-width: 200px;
+
+        width: 80%;
+    }
+    .AsteraIndex-Desc_3-vote-form {
+        position: absolute;
+        display: flex;
+        padding: 0 2% 0 2%;
+
+        left:40%;
+        bottom: 5%;
+    }
+    .AsteraIndex-Desc_3-vote-box {
+      width: 100px;
+      height: 39px;
+
+    }
+    .AsteraIndex-Desc_3-vote-box-p {
+        font-size: 18px;
+    }
+
+    .AsteraIndex-Form-group {
+        width: 380px;
+        height: 70px;
+    }
+    .AsteraIndex-Form-email {
+        font-size: 17px;
+        height: 70px;
+    }
+    .AsteraIndex-Form-submit {
+        height: 70px;
+    }
+    .AsteraIndex-Form-submit-text {
+        font-size: 17px;
+    }
+
+
+    .AsteraIndex-Logo-Kickstarter {
+
+    }
 }
 
 //////////////////////////////////////////////
@@ -399,103 +986,138 @@ $SpendIndex-measure-numbers-more-color: #73787b;
 
 @media (max-width: $screen-sm-min) {
 
-  /* Index CSS */
+    .buttons-wrapper .prev-button {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
 
-  .AsteraIndex-Main {
-    height: 350px;
-  }
-  .AsteraIndex-content {
-    left: none;
-    top: 45px;
-  }
-  .AsteraIndex-text-group {
-    margin-bottom: 0px;
-  }
-  .AsteraIndex-Main-Circle {
-    display:none;
-  }
-  .AsteraIndex-text-h1 {
-    font-size: 25px;
-  }
-  .AsteraIndex-text-p {
-    font-size: 17px;
-  }
+    .AsteraIndex-text-logo {
+        font-size: 40px;
+    }
 
-  [lang="ko"] .AsteraIndex-text-h1 {
-      font-size: 21px;
-  }
-  [lang="ko"] .AsteraIndex-text-p {
-      font-size: 15px;
-  }
-  .AsteraIndex-text-p-oval {
-    height: 18px;
-    bottom: -3px;
-  }
+    .is-a-portable-screen {
+        font-size: 35px;
+    }
 
-  /* descrip */
-  .AsteraIndex-descrip {
-    height: 408px;
-  }
-  .AsteraIndex-descrip-hardware {
+    .Be-first-to-know-whe {
+        font-size: 30px;
+    }
 
-  }
-  .AsteraIndex-descrip-hardware img {
-    width: 302px;
-  }
-  .AsteraIndex-descrip-text-h1 {
-    font-size: 20px;
-  }
-  .AsteraIndex-descrip-text-group {
-    width: 320px;
-    bottom: 65%;
-  }
-  /* Subscribe */
-  .AsteraIndex-subscrib {
-    height: 200px;
-  }
-  .AsteraIndex-subscrib-h1 {
-    font-size: 18.9px;
-    margin-bottom: 0px;
-  }
-  .AsteraIndex-subscrib-text-group {
-    width: 210px;
-    margin-top: 0px;
-  }
+    .Brik-is-dead-simple {
+        font-size: 25px;
+    }
+    .Take-brik-anywhere-t {
+        padding: none;
+        font-size: 15px;
+    }
 
-  /* Form CSS */
 
-  .AsteraIndex-Form {
-    border-radius: 6px;
-    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.05);
-  }
-  .AsteraIndex-Form-group {
-    top: 20px;
-    width: 93%;
-  }
-  .AsteraIndex-Form-group.center {
-    width: 93%;
-    margin: 0 auto;
-  }
-  .AsteraIndex-descrip-text-group {
-      margin-top: 160px;
-  }
-  .AsteraIndex-Form-email {
-    padding: 0px 20.8px;
-    font-size: 12.8px;
-    border: solid 1px #f3f3f3;
-    border-radius: 8px 0 0 8px;
-  }
-  .AsteraIndex-Form-submit {
-    line-height: 20px;
-    border-radius: 0 8px 8px 0;
-  }
-  .AsteraIndex-Form-email {
+    .Brik-is-universal-w {
+        width: 70%;
 
-  }
-  .AsteraIndex-Form-submit-text {
-     font-size: 12.7px;
-  }
+        font-size: 25px;
+    }
+    .Brik-supports-all-st {
 
-  /* ETC */
+        width: 90%;
 
+        font-size: 15px;
+    }
+
+
+    .Technical-spec {
+        font-size: 35px;
+    }
+    .CPU-Quad-Core-A17-W {
+        font-size: 17px;
+    }
+
+    .AsteraIndex-spec {
+        margin-top: 50px;
+    }
+    .AsteraIndex-spec-text-group {
+        margin-left: 10%;
+    }
+    .AsteraIndex-Spec-render-image {
+
+        top: 300px;
+    }
+    .AsteraIndex-Spec-render-image img {
+        max-width: 754px;
+
+        width: 100%;
+    }
+
+    .AsteraIndex-descrip {
+        max-width: 100%;
+
+        margin: 0px 0px 60px 0px;
+
+        height: 250px;
+    }
+    .AsteraIndex-descrip-text-group {
+        margin: 30px 0 30px 0;
+    }
+
+    .AsteraIndex-Desc {
+
+    }
+    .AsteraIndex-Desc-text-group {
+        width: 85%;
+    }
+
+    .AsteraIndex-descrip_2 {
+        max-width: 100%;
+
+        margin: 0px 0px 0px 0px;
+
+        height: 250px;
+    }
+    .AsteraIndex-descrip_2-text-group {
+        margin: 30px 0 30px 0;
+    }
+
+    .AsteraIndex-Desc_2 {
+
+    }
+    .AsteraIndex-Desc_2-content {
+
+    }
+    .AsteraIndex-Desc_2-text-group {
+        margin-left: 10%;
+    }
+    .AsteraIndex-Main-render-image_3 {
+
+    }
+
+    .AsteraIndex-Main-render-image_3 img {
+
+        width: 100%;
+    }
+
+    .AsteraIndex-Desc_3 {
+       display: none;
+    }
+
+    .AsteraIndex-Form-group {
+        width: 350px;
+        height: 60px;
+        margin: 0 auto;
+    }
+    .AsteraIndex-Form-email {
+        font-size: 15px;
+        height: 60px;
+    }
+    .AsteraIndex-Form-submit {
+        height: 60px;
+    }
+    .AsteraIndex-Form-submit-text {
+        font-size: 15px;
+    }
+
+
+    .AsteraIndex-Logo-Kickstarter {
+        display: none;
+    }
 }

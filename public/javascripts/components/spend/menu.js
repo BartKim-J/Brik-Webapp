@@ -57,7 +57,7 @@ let AsteraMenu = React.createClass({
   },
   updateIsScrolling() {
     this.setState({
-      isScrolling: (this._pageYOffset > this._scrollThreshold)
+      isScrolling: false
     });
   },
   /* public */ updateScrolling(pageYOffset = window.pageYOffset) {
@@ -235,21 +235,35 @@ let AsteraMenu = React.createClass({
             >
               <Link className="AsteraMenu-Logo-link" url="/" clickEvent={{category: 'Menu', label: 'Logo'}}><Logo /></Link>
             </div>
+
             <nav className="AsteraMenu-nav">
               <div className="AsteraMenu-nav-inner">
-                  <p className="AsteraMenu-Whitepaper-text">
-                    {formatMessage({id: 'index.menu.whitepaper'})}
-                    <a className="AsteraMenu-Whitepaper-button" href={formatMessage({id: 'index.menu.whitepaper_short.content'})} target="_blank">
-                      {formatMessage({id: 'index.menu.whitepaper_short'})}
-                    </a>
-                    /
-                    <a className="AsteraMenu-Whitepaper-button" href={formatMessage({id: 'index.menu.whitepaper_full.content'})} target="_blank">
-                      {formatMessage({id: 'index.menu.whitepaper_full'})}
-                    </a>
-                  </p>
+                <div className="AsteraMenu-lists">
+                  <ul className="AsteraMenu-items listUnstyled">
+                    {[
+                      {key: 'Features', url: '/Features'},
+                      {key: 'Technology', url: '/Technology'},
+                      {key: 'Design', url: '/Design'},
+                      {key: 'Tech', url: '/Tech'},
+                      {key: 'Spec', url: '/Spec'},
+                      {key: 'Design', url: '/Design'}/*,
+                      {key: 'promotion', url: '/promotion'}*/
+                    ].map(({key, url}) => (
+                      <li className="AsteraMenu-item" key={key}>
+                        <a className="SpendMenu-item" url={url} clickEvent={{category: 'Menu', label: key}}>{formatMessage({id: `${key}`})}</a>
+                      </li>
+                    ))}
+                      <li className="AsteraMenu-Buy">
+                        <a className="AsteraMenu-Buy" href="" target="_blank">
+                            <img className="AsteraMenu-Buy" src="https://s3.ap-northeast-2.amazonaws.com/brikweb/brik.com/brik_buy.png"></img>
+                        </a>
+                      </li>
+                  </ul>
+                </div>
               </div>
             </nav>
           </div>
+          <div className="AsteraMenu-Bottom-line"/>
         </div>
       </header>
     );

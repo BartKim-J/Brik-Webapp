@@ -1,13 +1,13 @@
 .AsteraLogo {
-    width: 197px;
-    height: 44px;
+    width: 96px;
+    height: 41px;
     object-fit: contain;
 }
 
 @media (max-width: $screen-md-min) {
   .AsteraLogo {
-    width: 135px;
-    height: 44px;
+      width: 96px;
+      height: 41px;
    object-fit: contain;
   }
 }
@@ -15,8 +15,8 @@
 
 @media (max-width: $screen-sm-min) {
   .AsteraLogo {
-    width: 91px;
-    height: 44px;
+      width: 96px;
+      height: 41px;
    object-fit: contain;
   }
 }

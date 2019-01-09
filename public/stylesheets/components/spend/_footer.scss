@@ -24,7 +24,7 @@ $SpendFooter-SocialLinks-link-color: #777;
 
 .SpendFooter {
   line-height: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .SpendFooter-mail-link {
@@ -38,11 +38,54 @@ $SpendFooter-SocialLinks-link-color: #777;
   padding: 30px 8.8% 50px 8.5%;
 }
 .SpendFooter-Logo {
-  margin-bottom: 36px;
-  font-size: 35px;
-  line-height: 1.2;
   margin: 30px auto;
+  margin-bottom: 36px;
+
+  width: 78px;
+  height: 48px;
+  font-family: CircularStd;
+  font-size: 38px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -1.3px;
+  color: #000000;
+
 }
+
+.AsteraMenu-Footer-Lists {
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.AsteraFooterMenu-item {
+    float: left;
+    border-bottom: 0;
+    margin-right: 8px;
+
+    opacity: 0.6;
+    font-family: InterUI;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000 !important;
+}
+
+.AsteraFooterMenu-item a {
+    color: #000000 !important;
+}
+
+.AsteraFooterMenu-item-link {
+  display: none;
+}
+.AsteraFooterMenu-item-SocialLinks {
+  display: none;
+}
+
 .SpendFooter-Logo img {
   width: 123px;
   height: 28px;
@@ -71,15 +114,16 @@ $SpendFooter-SocialLinks-link-color: #777;
 }
 .SpendFooter-copyrights {
   margin-top: 40px;
-  margin-bottom: 100px;
-  color: $SpendFooter-copyrights-color;
-  font-family: CircularStd;
-  font-size: 12px;
-  font-weight: 500;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  font-family: InterUI;
+  font-size: 17.1px;
+  font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+  color: #7a7a7a;
 }
 .SpendFooter-SocialLinks {
   margin-top: 25px;
@@ -91,11 +135,12 @@ $SpendFooter-SocialLinks-link-color: #777;
 
 .SpendFooter-index-inner-inner-line {
     margin: 0 auto;
-    width: 85%;
+    width: 100%;
     height: 2px;
+
     border: solid 0.1px #d5d5d5;
     background-color: #ffffff;
-    opacity: 0.5;
+    opacity: 0.42;
 }
 
 @media (min-width: $screen-md-min) {
@@ -130,11 +175,10 @@ $SpendFooter-SocialLinks-link-color: #777;
     @include clearfix;
   }
   .SpendFooter-index-inner-inner-line {
-
+      display: none;
   }
   .SpendFooter-Logo {
-    float: right;
-    margin: -96px 0 0;
+
   }
   .SpendFooter-Logo img {
      width: 200px;
@@ -169,4 +213,17 @@ $SpendFooter-SocialLinks-link-color: #777;
     display: block;
     margin-top: 25px;
   }
+
+
+  .AsteraMenu-Footer-Lists {
+      float: right;
+      margin-top: -53px;
+  }
+
+  .AsteraFooterMenu-item {
+      border-bottom: 0;
+
+      font-size: 18px;
+  }
+
 }
