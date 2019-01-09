@@ -1,4 +1,16 @@
+-------------
+# IMPORTANT NOTICE
+
+## This repository is now a legacy repository. The maintained components have been moved to [a new repository](https://bitbucket.org/atlassian/atlaskit-mk-2).
+
+**Packages that have been left in this repository are likely not actively maintained.**
+
+-------------
+
 # Brik Website  
+
+[![node](https://img.shields.io/badge/node-6.10%2B-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/npm-3.8%2B-brightgreen.svg)]()
 
 This is the code for Spendwallet website that are currently running on AWS. Can be found on http://brik.io/ or IP ADDRESS ( AW Elastic IP : 18.182.156.23 ) 
 
