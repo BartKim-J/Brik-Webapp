@@ -1,6 +1,6 @@
-# Astera Website  
+# Brik Website  
 
-This is the code for Spendwallet website that are currently running on AWS. Can be found on http://astera.io/   
+This is the code for Spendwallet website that are currently running on AWS. Can be found on http://brik.io/ or IP ADDRESS ( AW Elastic IP : 18.182.156.23 ) 
 
 ## Website test on localhost
 
@@ -52,22 +52,30 @@ Workflow for deploying an updating to the website:
 
 10. `$ docker ps`  
 
-11. `$ docker stop spend_webapp`  
+11. `$ docker stop brik_webapp`  
 
-12. `$ docker rm spend_webapp`  
+12. `$ docker rm brik_webapp`  
 
-13. `$ docker run -d -p 3000:3000 --name spend_webapp <your username>/<webapp-name>`  
+13. `$ docker run -d -p 3000:3000 --name brik_webapp <your username>/<webapp-name>`  
 
 14. The app is now safely deployed to the server.  
 
 15. confirm by `$ docker ps`
 
-## ASTERA AWS COMMMAND
+## BRIK AWS COMMMAND
 
-`astera_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images. it contain process 9 to 15.
+`brik_update`		     : is script. it will be pull new docker image and remove astera_webapp container and restart container with new images. it contain process 9 to 15.
 
-## ASTERA AWS INFO
+## BRIK AWS INFO
 
 1. Use AWS EC2 - Ubuntu 14.04
 2. Use Docker CE latest version.
 3. Use nginx for port forwarding. (80 to 3000)
+
+## AWS NETWORK SECURITY GROUP - XLAB DEFAULT
+
+!IMPORTANT
+
+## DOCKER HUB
+
+    Link : https://cloud.docker.com/u/xlabbrik/repository/docker/xlabbrik/brik_webapp
