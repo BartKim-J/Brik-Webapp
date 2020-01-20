@@ -31,7 +31,7 @@
     "loose-envify": "1.1.0",
     "mailchimp": "1.1.4",
     "marked": "0.3.5",
-    "morgan": "~1.6.1",
+    "morgan": "~1.9.1",
     "node-sass": "3.4.2",
     "object-assign": "4.0.1",
     "raw-loader": "0.5.1",
