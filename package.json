@@ -27,7 +27,7 @@
     "is-nan": "1.2.1",
     "isomorphic-fetch": "2.2.0",
     "jade": "~1.11.0",
-    "lodash": "3.10.1",
+    "lodash": "4.17.15",
     "loose-envify": "1.1.0",
     "mailchimp": "1.1.4",
     "marked": "0.3.5",
